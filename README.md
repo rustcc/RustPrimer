@@ -14,7 +14,6 @@ The Rust primer for beginners.
 4. 一个小时的Rust教程
 5. Cargo项目管理器
 6. 基本程序结构
-================================
 7. 基础类型和运算符
   7.1. 基础类型
   7.2. 切片
@@ -30,7 +29,6 @@ The Rust primer for beginners.
 15. 模块和包系统、Prelude
 16. Option、Result与错误处理
 17. 宏系统
-================================
 24. 堆、栈与Box
 25. 常用数据结构实现
 18. Rc, Arc, Cell, RefCell, UnsafeCell
@@ -40,7 +38,6 @@ The Rust primer for beginners.
 22. 并发
 23. 并行
 26. 安全
-================================
 27. Unsafe、原始指针
 28. FFI
 29. 运算符重载
@@ -52,7 +49,6 @@ The Rust primer for beginners.
   33.1. 操作系统与文件处理
   33.2. 时间日期处理
   33.3. 网络编程
-================================
 34. 实战篇
   34.1. 实战：Json处理
   34.2. 实战：Web 应用开发入门
