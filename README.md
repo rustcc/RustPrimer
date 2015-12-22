@@ -7,6 +7,7 @@ The Rust primer for beginners.
 
 1. 初识Rust
 2. 安装Rust
+ 
   2.1. Linux
   2.2. Mac
   2.3. Windows
@@ -15,6 +16,7 @@ The Rust primer for beginners.
 5. Cargo项目管理器
 6. 基本程序结构
 7. 基础类型和运算符
+
   7.1. 基础类型
   7.2. 切片
   7.3. 字符串类型
@@ -46,10 +48,12 @@ The Rust primer for beginners.
 32. Cargo参数配置
 32. 测试与评测
 33. 标准库介绍
+
   33.1. 操作系统与文件处理
   33.2. 时间日期处理
   33.3. 网络编程
 34. 实战篇
+
   34.1. 实战：Json处理
   34.2. 实战：Web 应用开发入门
   34.3. 实战：使用Postgresql数据库
