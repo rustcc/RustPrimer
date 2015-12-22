@@ -23,15 +23,15 @@ The Rust primer for beginners.
 ## 大纲
 
 1. 初识Rust
-2. 安装Rust
+2. 安装Rust「marvin-min 160105」
   1. Linux
   2. Mac
   3. Windows
-3. 编辑器
+3. 编辑器「wayslog 160105」
 4. 一个小时的Rust教程
 5. Cargo项目管理器
 6. 基本程序结构
-7. 基础类型和运算符
+7. 基础类型和运算符「wayslog 160125」
   1. 基础类型
   2. 切片
   3. 字符串类型
@@ -39,9 +39,9 @@ The Rust primer for beginners.
 8. 集合类型（Collections）
 9. 模式匹配
 10. Trait （特征）
-11. 可变性、拥有权、租借和生命期
+11. 可变性、所有权、租借和生命期「stormgbs 160105」
 12. 泛型
-13. 闭包
+13. 闭包「qdao 160120」
 14. 迭代器
 15. 模块和包系统、Prelude
 16. Option、Result与错误处理
@@ -51,7 +51,7 @@ The Rust primer for beginners.
 18. Rc, Arc, Cell, RefCell, UnsafeCell
 19. Marker: Send, Sync, Copy, Clone
 20. 通用引用类型 Borrow, AsRef, Into
-21. 多线程编程
+21. 多线程编程「anzhihun 160120」
 22. 并发
 23. 并行
 26. 安全
