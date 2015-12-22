@@ -7,20 +7,18 @@ The Rust primer for beginners.
 
 1. 初识Rust
 2. 安装Rust
-  1. Linux
-  2. Mac
-  3. Windows
+  -. Linux
+  -. Mac
+  -. Windows
 3. 编辑器
 4. 一个小时的Rust教程
 5. Cargo项目管理器
 6. 基本程序结构
 7. 基础类型和运算符
-
-  1. 基础类型
-  2. 切片
-  3. 字符串类型
-  4. 字符串的格式化
-  
+  -. 基础类型
+  -. 切片
+  -. 字符串类型
+  -. 字符串的格式化
 8. 集合类型（Collections）
 9. 模式匹配
 10. Trait （特征）
