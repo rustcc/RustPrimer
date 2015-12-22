@@ -27,7 +27,16 @@ The Rust primer for beginners.
   1. Linux
   2. Mac
   3. Windows
-3. 编辑器「wayslog 160105」
+3. 编辑器
+  1. vim「wayslog 160105」
+  2. emacs
+  3. vscode
+  4. atom「wayslog 160105」
+  5. sublime
+  6. visual studio
+  7. eclipse
+  8. Intellij IDEA
+  9. spacemacs「wayslog 160105」
 4. 一个小时的Rust教程
 5. Cargo项目管理器
 6. 基本程序结构
