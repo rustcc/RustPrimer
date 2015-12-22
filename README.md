@@ -7,11 +7,9 @@ The Rust primer for beginners.
 
 1. 初识Rust
 2. 安装Rust
- 
   1. Linux
   2. Mac
   3. Windows
-  
 3. 编辑器
 4. 一个小时的Rust教程
 5. Cargo项目管理器
