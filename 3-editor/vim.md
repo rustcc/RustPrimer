@@ -39,7 +39,26 @@ let g:racer_cmd = "<path-to-racer>/target/release/racer"
 let $RUST_SRC_PATH="<path-to-rust-srcdir>/src/"
 
 ```
+然后我们在终端中执行
+```bash
+vim +PluginInstall +qall
+```
+就能正常安装并且使用了。
 
-更详细内容可以参见我的[vimrc配置](https://github.com/wayslog/dotfiles/blob/master/_vimrc)，当然，我这个用的是比较老的版本的vundle，进攻参考。
+包括如下功能：
+
+  1. 基本的c-x c-o补全
+  2. 语法着色
+  3. gd跳转到定义（不好用）
+
+总体来看支持度并不高。
+## 2. 额外的
+Q1. 为什么没有自动补全
+A1. 事实上我是一直在用YCM来进行补全的，但是Racer并没有被YCM支持，而且似乎有人去YCM下提ISSUE，但是被作者拒绝了，于是就呵呵了。
+
+Q2. 颜色好搓
+A2. 我推荐一个配色，也是我自己用的 [molokai](https://github.com/tomasr/molokai)
+
+更详细内容可以参见我的[vimrc配置](https://github.com/wayslog/dotfiles/blob/master/_vimrc)，当然，我这个用的是比较老的版本的vundle，仅供参考。
 
 Have a nice Rust !
