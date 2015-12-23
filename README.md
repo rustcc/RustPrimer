@@ -33,14 +33,14 @@ The Rust primer for beginners.
 3. 编辑器
   1. vim「wayslog 160105」
   2. emacs
-  3. vscode
+  3. vscode「daogangtang 160105」
   4. atom「wayslog 160105」
   5. sublime
   6. visual studio
   7. eclipse
   8. Intellij IDEA
   9. spacemacs「wayslog 160105」
-4. 一个小时的Rust教程
+4. 一个小时的Rust教程「ee0703 160120」
 5. Cargo项目管理器
 6. 基本程序结构
 7. 基础类型和运算符「wayslog 160125」
@@ -60,9 +60,9 @@ The Rust primer for beginners.
 17. 宏系统
 24. 堆、栈与Box
 25. 常用数据结构实现
-18. Rc, Arc, Cell, RefCell, UnsafeCell
-19. Marker: Send, Sync, Copy, Clone
-20. 通用引用类型 Borrow, AsRef, Into
+18. Rc, Arc, Cell, RefCell, UnsafeCell「daogangtang 160120」
+19. Marker: Send, Sync, Copy, Clone「daogangtang 160125」
+20. 通用引用类型 Borrow, AsRef, Into「daogangtang 160130」
 21. 多线程编程「anzhihun 160120」
 22. 并发
 23. 并行
