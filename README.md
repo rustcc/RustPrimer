@@ -48,11 +48,11 @@ The Rust primer for beginners.
   2. 切片
   3. 字符串类型
   4. 字符串的格式化
-8. 集合类型（Collections）
 9. 模式匹配
 10. Trait （特征）
+11. 泛型
+12. 集合类型（Collections）「cai-lw 160205」
 11. 可变性、所有权、租借和生命期「stormgbs 160105」
-12. 泛型
 13. 闭包「qdao 160120」
 14. 迭代器
 15. 模块和包系统、Prelude
