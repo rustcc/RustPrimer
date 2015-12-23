@@ -49,14 +49,14 @@ The Rust primer for beginners.
   3. 字符串类型
   4. 字符串的格式化
 9. 模式匹配
-10. Trait （特征）
+10. Trait （特征）「JohnSmithX 160130」
 11. 泛型
 12. 集合类型（Collections）「cai-lw 160205」
 11. 可变性、所有权、租借和生命期「stormgbs 160105」
 13. 闭包「qdao 160120」
 14. 迭代器
 15. 模块和包系统、Prelude
-16. Option、Result与错误处理
+16. Option、Result与错误处理「JohnSmithX 160130」
 17. 宏系统
 24. 堆、栈与Box
 25. 常用数据结构实现
@@ -67,7 +67,7 @@ The Rust primer for beginners.
 22. 并发
 23. 并行
 26. 安全
-27. Unsafe、原始指针
+27. Unsafe、原始指针「JohnSmithX 160130」
 28. FFI
 29. 运算符重载
 30. Any与反射
