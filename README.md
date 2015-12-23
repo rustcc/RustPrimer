@@ -55,7 +55,7 @@ The Rust primer for beginners.
 11. 可变性、所有权、租借和生命期「stormgbs 160105」
 13. 闭包「qdao 160120」
 14. 迭代器
-15. 模块和包系统、Prelude
+15. 模块和包系统、Prelude「jessiex 160120」
 16. Option、Result与错误处理「JohnSmithX 160130」
 17. 宏系统
 24. 堆、栈与Box
