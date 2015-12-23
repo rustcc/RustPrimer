@@ -73,8 +73,29 @@ fn main() {
 通过上面章节我们知道，当所有权被转移给另一个绑定以后，你不能再使用原始绑定。然而，这里有一个trait会改变这个行为，它叫做Copy。因为i32类型实现了的Copy triat，这个Copy仅仅拷贝了值。最后把新值的所有权绑定给了y。
 
 默认实现Copy trait的类型：
+```rust
+clone_impl! { isize }
+clone_impl! { i8 }
+clone_impl! { i16 }
+clone_impl! { i32 }
+clone_impl! { i64 }
+
+clone_impl! { usize }
+clone_impl! { u8 }
+clone_impl! { u16 }
+clone_impl! { u32 }
+clone_impl! { u64 }
+
+clone_impl! { f32 }
+clone_impl! { f64 }
+
+clone_impl! { () }
+clone_impl! { bool }
+clone_impl! { char }
+```
+
+### move关键字
 ....
-...
 
 ### 可变性
 默认的变量绑定是只读的不可变的(immutable)，如要修改变量的值，必须在变量名前加上**mut**关键字。
