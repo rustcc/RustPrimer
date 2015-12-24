@@ -41,7 +41,7 @@ The Rust primer for beginners.
   8. Intellij IDEA
   9. spacemacs「wayslog 160105」
 4. 一个小时的Rust教程「ee0703 160120」
-5. Cargo项目管理器
+5. Cargo项目管理器「fuyingfuying 160131」
 6. 基本程序结构
 7. 基础类型和运算符「wayslog 160125」
   1. 基础类型
@@ -73,7 +73,7 @@ The Rust primer for beginners.
 29. 运算符重载
 30. Any与反射
 31. 属性和编译器参数
-32. Cargo参数配置
+32. Cargo参数配置「fuyingfuying 160131」
 32. 测试与评测
 33. 标准库介绍
   1. 操作系统与文件处理
