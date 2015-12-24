@@ -32,7 +32,7 @@ The Rust primer for beginners.
   3. Windows
 3. 编辑器
   1. vim「wayslog 160105」
-  2. emacs
+  2. emacs「tiansiyuan 160120」
   3. vscode「daogangtang 160105」
   4. atom「wayslog 160105」
   5. sublime
@@ -51,7 +51,7 @@ The Rust primer for beginners.
 9. 函数「qdao 160120」
 9. 模式匹配
 10. Trait （特征）「JohnSmithX 160130」
-11. 泛型
+11. 泛型「stormgbs 160120」
 12. 集合类型（Collections）「cai-lw 160205」
 11. 可变性、所有权、租借和生命期「stormgbs 160105」
 13. 闭包「qdao 160120」
