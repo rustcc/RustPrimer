@@ -65,8 +65,8 @@ The Rust primer for beginners.
 19. Marker: Send, Sync, Copy, Clone「daogangtang 160125」
 20. 通用引用类型 Borrow, AsRef, Into「daogangtang 160130」
 21. 多线程编程「anzhihun 160120」
-22. 并发
-23. 并行
+22. 并发「anzhihun 160120」
+23. 并行「anzhihun 160120」
 26. 安全
 27. Unsafe、原始指针「JohnSmithX 160130」
 28. FFI
