@@ -6,7 +6,7 @@ The Rust primer for beginners.
 
 1. 每个参与撰写的成员fork本项目，通过提pr的形式来协作书写；
 2. 本书源码使用markdown语法格式书写；
-3. 原则上每章（如有小节则每小节）对应独立的md文件；
+3. 原则上每章（如有小节则每小节）对应独立的md文件；文件命名规则：章节号加名字，如第三章第二节03-02-emacs.md；
 4. 在本项目的issue区提issue来认领各自负责的章节，项目评审组审核后会在大纲每个章节标题后面，标注已由谁认领，预计什么时间完成；
 5. 本项目会组织评审委员会来负责审校内容质量，审核通过后，才会合并pr。
 
@@ -32,7 +32,7 @@ The Rust primer for beginners.
   3. Windows
 3. 编辑器
   1. vim「wayslog 160105」
-  2. emacs
+  2. emacs「tiansiyuan 160120」
   3. vscode「daogangtang 160105」
   4. atom「wayslog 160105」
   5. sublime
@@ -41,16 +41,17 @@ The Rust primer for beginners.
   8. Intellij IDEA
   9. spacemacs「wayslog 160105」
 4. 一个小时的Rust教程「ee0703 160120」
-5. Cargo项目管理器
+5. Cargo项目管理器「fuyingfuying 160131」
 6. 基本程序结构
 7. 基础类型和运算符「wayslog 160125」
   1. 基础类型
   2. 切片
   3. 字符串类型
   4. 字符串的格式化
+9. 函数「qdao 160120」
 9. 模式匹配
 10. Trait （特征）「JohnSmithX 160130」
-11. 泛型
+11. 泛型「stormgbs 160120」
 12. 集合类型（Collections）「cai-lw 160205」
 11. 可变性、所有权、租借和生命期「stormgbs 160105」
 13. 闭包「qdao 160120」
@@ -64,15 +65,15 @@ The Rust primer for beginners.
 19. Marker: Send, Sync, Copy, Clone「daogangtang 160125」
 20. 通用引用类型 Borrow, AsRef, Into「daogangtang 160130」
 21. 多线程编程「anzhihun 160120」
-22. 并发
-23. 并行
+22. 并发「anzhihun 160120」
+23. 并行「anzhihun 160120」
 26. 安全
 27. Unsafe、原始指针「JohnSmithX 160130」
 28. FFI
 29. 运算符重载
 30. Any与反射
 31. 属性和编译器参数
-32. Cargo参数配置
+32. Cargo参数配置「fuyingfuying 160131」
 32. 测试与评测
 33. 标准库介绍
   1. 操作系统与文件处理
