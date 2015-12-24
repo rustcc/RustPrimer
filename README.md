@@ -43,12 +43,12 @@ The Rust primer for beginners.
 4. 一个小时的Rust教程「ee0703 160120」
 5. Cargo项目管理器
 6. 基本程序结构
-7. 函数「qdao 160120」
 7. 基础类型和运算符「wayslog 160125」
   1. 基础类型
   2. 切片
   3. 字符串类型
   4. 字符串的格式化
+9. 函数「qdao 160120」
 9. 模式匹配
 10. Trait （特征）「JohnSmithX 160130」
 11. 泛型
