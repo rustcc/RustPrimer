@@ -7,18 +7,33 @@
 vundel是vim的一个插件管理工具，基本上算是本类当中最为易用的了。
 首先我们需要安装它
 
+### linux or OS X
 ```bash
 mkdir -p  ~/.vim/bundle/
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 ```
-## 1.2 启用rust支持
-首先，你需要下载rust-lang的源码文件，并将其解压到一个路径下。
 
-然后，在你的`~/.vimrc`文件里添加如下内容
+### windows
+
+1. 首先找到你的gvim的安装路径，然后在路径下找到vimfiles文件夹
+2. 在这个文件夹中将vundle库克隆到vimfiles/bundle/目录下的Vundle.vim文件夹中
+
+## 1.2 启用rust支持
+
+### 1.2.1 下载源码
+
+首先，你需要下载rust-lang的源码文件，并将其解压到一个路径下。
+这个源码文件我们可以从[rust官网](https://www.rust-lang.org/downloads.html)下载到，请下载你对应平台的文件。
+然后将其解压到一个目录下，并找到其源码文件中的`src`目录。
+比如我们解压源码包到`C:\\rust-source\`，那么我们需要的路径就是`C:\\rust-source\src`，记好这个路径，我们将在下一步用到它。
+
+### 1.2.2 修改vim配置
+
+首先找到你的vimrc配置文件，然后在其中添加如下配置
 
 ```vim
-set nocompatible              " be iMproved, required
-filetype off                  " required
+set nocompatible
+filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
@@ -26,19 +41,33 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'racer-rust/vim-racer'
 Plugin 'rust-lang/rust.vim'
 
-call vundle#end()            " required
+call vundle#end()
+```
 
-let g:rustfmt_autosave = 1
-set hidden
-"" 需要注意的是下面这两行配置;
-"" 这一行指的是标注出来你编译的racer的路径
-let g:racer_cmd = "<path-to-racer>/target/release/racer"
-"" 这一行是将你下载的rust源码路径填进去，这里注意要填的是源码路径下的src，而不是直接填到你解压的路径下。
-"" 例如你将源码解压到了`/home/wayslog/tools/rust-1.5/`路径下，
-"" 那么你下面的值应该为`/home/wayslog/tools/rust-1.5/src`.
-let $RUST_SRC_PATH="<path-to-rust-srcdir>/src/"
+然后为了让配置生效，我们重启我们的(g)vim，然后在vim里执行如下命令
 
 ```
+:PluginInstall
+```
+
+这里vundle会自动的去仓库里拉取我们需要的文件，这里主要是vim-racer和rust.vim两个库。
+
+### 1.2.3 更多的配置
+
+为了让我们的vim能正常的使用，我们还需要在vimrc配置文件里加入一系列配置，
+
+```vim
+"" 开启rust的自动reformat的功能
+let g:rustfmt_autosave = 1
+
+"" 自动补全
+set hidden
+"" 这一行指的是你编译出来的racer所在的路径
+let g:racer_cmd = "<path-to-racer>/target/release/racer"
+"" 这里填写的就是我们在1.2.1中让你记住的目录
+let $RUST_SRC_PATH="<path-to-rust-srcdir>/src/"
+```
+
 
 更详细内容可以参见我的[vimrc配置](https://github.com/wayslog/dotfiles/blob/master/_vimrc)，当然，我这个用的是比较老的版本的vundle，进攻参考。
 
