@@ -2,9 +2,9 @@
 
 本文是VIM的Rust支持配置，在阅读本文之前，我们假定你已经拥有了一个可执行的rustc程序，并编译好了racer。
 
-## 1.1 使用vundel
+## 1.1 使用vundle
 
-vundel是vim的一个插件管理工具，基本上算是本类当中最为易用的了。
+vundle是vim的一个插件管理工具，基本上算是本类当中最为易用的了。
 首先我们需要安装它
 
 ### linux or OS X
@@ -60,7 +60,7 @@ call vundle#end()
 "" 开启rust的自动reformat的功能
 let g:rustfmt_autosave = 1
 
-"" 自动补全
+"" 手动补全
 set hidden
 "" 这一行指的是你编译出来的racer所在的路径
 let g:racer_cmd = "<path-to-racer>/target/release/racer"
@@ -68,6 +68,24 @@ let g:racer_cmd = "<path-to-racer>/target/release/racer"
 let $RUST_SRC_PATH="<path-to-rust-srcdir>/src/"
 ```
 
+## 1.3.1 总结
+
+经过不多的配置，我们的到了包括如下功能：
+
+  1. 基本的c-x c-o补全
+  2. 语法着色
+  3. gd跳转到定义（不好用）
+
+总体来看支持度并不高。
+
+### 1.3.1 额外的
+Q1. 为什么没有自动补全
+
+A1. 事实上我是一直在用YCM来进行补全的，但是Racer并没有被YCM支持，而且似乎有人去YCM下提ISSUE，但是被作者拒绝了，于是就呵呵了。
+
+Q2. 颜色好搓
+
+A2. 我推荐一个配色，也是我自己用的 [molokai](https://github.com/tomasr/molokai)
 
 更详细内容可以参见我的[vimrc配置](https://github.com/wayslog/dotfiles/blob/master/_vimrc)，当然，我这个用的是比较老的版本的vundle，进攻参考。
 
