@@ -2,6 +2,12 @@
 
 本文是VIM的Rust支持配置，在阅读本文之前，我们假定你已经拥有了一个可执行的rustc程序，并编译好了racer。
 
+## 0 我的vim截图
+
+应邀而加
+
+![此处应该有截图]["../image/03-editor-vim-wayslog.png"]
+
 ## 1.1 使用vundle
 
 vundle是vim的一个插件管理工具，基本上算是本类当中最为易用的了。
@@ -42,6 +48,8 @@ Plugin 'racer-rust/vim-racer'
 Plugin 'rust-lang/rust.vim'
 
 call vundle#end()
+
+filetype on
 ```
 
 然后为了让配置生效，我们重启我们的(g)vim，然后在vim里执行如下命令
@@ -60,7 +68,7 @@ call vundle#end()
 "" 开启rust的自动reformat的功能
 let g:rustfmt_autosave = 1
 
-"" 手动补全
+"" 手动补全和定义跳转
 set hidden
 "" 这一行指的是你编译出来的racer所在的路径
 let g:racer_cmd = "<path-to-racer>/target/release/racer"
@@ -77,6 +85,8 @@ let $RUST_SRC_PATH="<path-to-rust-srcdir>/src/"
   3. gd跳转到定义（不好用）
 
 总体来看支持度并不高。
+
+![此处应该有第二张截图]["../image/03-editor-vim-welldone.png"]
 
 ### 1.3.1 额外的
 Q1. 为什么没有自动补全
