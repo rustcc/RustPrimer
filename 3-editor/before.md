@@ -19,12 +19,12 @@ sudo /usr/local/bin/cargo install --git 'https://github.com/phildawes/racer.git'
 
 事实上我更推荐有条件的用户通过这种方式安装，因为自己实战操作一遍总是有些收获的。 
 
-1. 首先，我们需要下载racer的源码
+#### 2.1. 首先，我们需要下载racer的源码
 
 ```
 git clone https://github.com/phildawes/racer.git
 ```
-2. 然后，进入目录然后进行编译
+#### 2.2. 然后，进入目录然后进行编译
 
 ```
 cd racer && cargo build --release
@@ -32,7 +32,7 @@ cd racer && cargo build --release
 
 这样，我们会得到racer的二进制文件在 `target/release/racer`目录
 
-3. 最后，为了更好的支持racer，我们需要在[rust官网](https://www.rust-lang.org/downloads.html)下载到源码文件，请下载你对应平台的文件。然后将其解压到一个目录下。
+#### 2.3. 最后，为了更好的支持racer，我们需要在[rust官网](https://www.rust-lang.org/downloads.html)下载到源码文件，请下载你对应平台的文件。然后将其解压到一个目录下。
 
 然后，linux和unix用户请在你的`.bashrc`或者`.zshrc`的最后加入如下一行（注意用你的源码文件解压出来的路径替换掉下面的文件）：
 ```
@@ -42,7 +42,7 @@ export RUST_SRC_PATH=$RUST_SRC_HOME/src
 
 而Windows用户请在你的环境变量里增加两个环境变量： `RUST_SRC_HOME` 为 `你的源码文件解压路径` ； `RUST_SRC_PATH`为 `%RUST_SRC_PATH%\src\`
 
-4. 测试
+### 3. 测试
 
 请重新打开终端，并进入到关闭之前的路径。
 执行如下代码：
