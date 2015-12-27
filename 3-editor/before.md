@@ -26,6 +26,7 @@ sudo /usr/local/bin/cargo install --git 'https://github.com/phildawes/racer.git'
 ```
 git clone https://github.com/phildawes/racer.git
 ```
+
 #### 2.2. 进行编译 
 
 然后，进入目录然后进行编译
