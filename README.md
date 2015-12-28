@@ -31,6 +31,7 @@ The Rust primer for beginners.
   2. Mac
   3. Windows
 3. 编辑器
+  1. 前期准备「wayslog 160105」
   1. vim「wayslog 160105」
   2. emacs「tiansiyuan 160120」
   3. vscode「daogangtang 160105」
