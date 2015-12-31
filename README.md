@@ -31,6 +31,7 @@ The Rust primer for beginners.
   2. Mac
   3. Windows
 3. 编辑器
+  1. 前期准备「wayslog 160105」
   1. vim「wayslog 160105」
   2. emacs「tiansiyuan 160120」
   3. vscode「daogangtang 160105」
@@ -42,20 +43,20 @@ The Rust primer for beginners.
   9. spacemacs「wayslog 160105」
 4. 一个小时的Rust教程「ee0703 160120」
 5. Cargo项目管理器「fuyingfuying 160131」
-6. 基本程序结构
+6. 基本程序结构「daogangtang 160131」
 7. 基础类型和运算符「wayslog 160125」
   1. 基础类型
   2. 切片
   3. 字符串类型
   4. 字符串的格式化
 9. 函数「qdao 160120」
-9. 模式匹配
+9. 模式匹配「andelf 160120」
 10. Trait （特征）「JohnSmithX 160130」
 11. 泛型「stormgbs 160120」
 12. 集合类型（Collections）「cai-lw 160205」
 11. 可变性、所有权、租借和生命期「stormgbs 160105」
 13. 闭包「qdao 160120」
-14. 迭代器
+14. 迭代器「andelf 160120」
 15. 模块和包系统、Prelude「jessiex 160120」
 16. Option、Result与错误处理「JohnSmithX 160130」
 17. 宏系统
@@ -75,6 +76,7 @@ The Rust primer for beginners.
 31. 属性和编译器参数
 32. Cargo参数配置「fuyingfuying 160131」
 32. 测试与评测
+33. 代码风格
 33. 标准库介绍
   1. 操作系统与文件处理
   2. 时间日期处理
