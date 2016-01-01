@@ -41,7 +41,7 @@ The Rust primer for beginners.
   7. eclipse
   8. Intellij IDEA
   9. spacemacs「wayslog 160105」
-4. 一个小时掌握Rust「ee0703 160120」
+4. Rust一小时快速入门「ee0703 160120」
 5. Cargo项目管理器「fuyingfuying 160131」
 6. 基本程序结构「daogangtang 160131」
 7. 基础类型和运算符「wayslog 160125」
