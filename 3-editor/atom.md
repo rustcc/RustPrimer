@@ -1,0 +1,32 @@
+# Atom
+本文是rust的Atom编辑器配置。
+横向对比一下，不得不说，Atom无论在易用性还是界面上都比前辈们要好的很多，对于Rust的配置，也是基本上可以做到开箱即用。
+虽然本文独占一小节，但是其实能写的东西也就了了。
+可是，正是由于软件工程师的智慧，才让我们拥有了如此易用顺手的编辑器，同时也给了我们如此完美的语言——Rust。
+
+## 1.1 准备工作
+
+首先，你需要一个可执行的rustc编译器，一个cargo程序，一个已经编译好的racer程序和一份已经解压好的rust源码。
+我们假定你已经将这三个程序安装完毕，并且能够自由的从命令行里调用他们。
+
+另外，本文不讲解如何安装Atom，需要新安装的同学请自行前往[项目主页](https://github.com/atom/atom)安装。
+
+ps:无论是windows用户还是*nix用户都需要将以上三个程序加入你的PATH(Windows下叫Path)环境变量里。
+
+## 1.2 需要安装的插件包
+
+打开Atom，按Ctrl+Shift+p，搜索preference，打开Atom的配置中心，选择install选项卡。
+
+依次安装`rust-api-docs-helper`/`racer`/`language-rust`/`linter-rust`/`linter`。
+
+这里要单独说的一个就是linter，这是一个基础的lint组件包，atom的很多以linter为前缀的包都会依赖这个包，但是Atom并不会为我们自动的安装，因此需要我们自己去安装。
+
+## 1.3 稍微的一点配置
+
+以上，我们安装好了几个组件包，但是不要着急去打开一个Rust文件。你可能还需要一点点的配置。这里，我们在配置中心里打开`Packages`选项卡，在`Installed Packages`里搜索racer，并点击其`Setting`。
+
+这里需要将racer的可执行文件的绝对路径填入`Path to the Racer executable`里。同时，我们还需要将rust源码文件夹下的src目录加入到`Path to the Rust source code directory`里。
+
+## 2.1 完成安装
+
+好了，就是这么简单。你现在可以打开任意一个rust文件就会发现源码高亮已经默认打开了，编辑一下，racer也能自动补全，*如果不能*，尝试一下用`F3`键来显式的呼出racer的补全。
