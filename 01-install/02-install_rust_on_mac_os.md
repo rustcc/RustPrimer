@@ -2,7 +2,7 @@
 
 Rust 支持主流的操作系统，Linux,Mac和 windows。
 
-Rust 提供位 mac 用户提供了两种安装方式：
+Rust 为mac 用户提供了两种安装方式：
 
 ### 1、直接下载安装包：
 
