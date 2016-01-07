@@ -1,4 +1,4 @@
-#Rust for Mac-os
+#Rust for Windows
 
 Rust 支持主流的操作系统，Linux,Mac和 Windows。
 
