@@ -31,16 +31,16 @@ The Rust primer for beginners.
   2. Mac
   3. Windows
 3. 编辑器
-  1. 前期准备「wayslog 160105」
-  1. vim「wayslog 160105」
+  1. [前期准备](.\3-editor\before.md)「wayslog 160105」
+  1. [vim](.\3-editor\vim.md)「wayslog 160105」
   2. emacs「tiansiyuan 160120」
   3. vscode「daogangtang 160105」
-  4. atom「wayslog 160105」
+  4. [atom](.\3-editor\atom.md)「wayslog 160105」
   5. sublime
   6. visual studio
   7. eclipse
   8. Intellij IDEA
-  9. spacemacs「wayslog 160105」
+  9. [spacemacs](.\3-editor\spacemacs.md)「wayslog 160105」
 4. 一个小时掌握Rust「ee0703 160120」
 5. Cargo项目管理器「fuyingfuying 160131」
 6. 基本程序结构「daogangtang 160131」
