@@ -58,7 +58,7 @@ export RUST_SRC_HOME=/path/to/your/rust/source/
 export RUST_SRC_PATH=$RUST_SRC_HOME/src
 ```
 
-而Windows用户请在你的环境变量里增加两个环境变量： `RUST_SRC_HOME` 为 `你的源码文件解压路径` ； `RUST_SRC_PATH`为 `%RUST_SRC_PATH%\src\`
+而Windows用户请在你的环境变量里增加两个环境变量： `RUST_SRC_HOME` 为 `你的源码文件解压路径` ； `RUST_SRC_PATH`为 `%RUST_SRC_HOME%\src\`
 
 ### 3. 测试
 
