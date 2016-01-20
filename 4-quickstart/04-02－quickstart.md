@@ -1,8 +1,7 @@
 # 4.2 快速上手
 
-以下内容来自[learnxinyminutes](https://github.com/adambard/learnxinyminutes-docs),作者是，根据creative commons协议:
+>本小节的以下内容来自[learnxinyminutes](https://github.com/adambard/learnxinyminutes-docs)，作者是[Guangming Mao](http://maogm.com/)，遵从creative commons协议。
 
-<blockquote><div>
 Rust 是由 Mozilla 研究院开发的编程语言。Rust 将底层的性能控制与高级语言的便利性和安全保障结合在了一起。
 
 而 Rust 并不需要一个垃圾回收器或者运行时即可实现这个目的，这使得 Rust 库可以成为一种 C 语言的替代品。
@@ -289,5 +288,3 @@ Rust 还有很多很多其他内容 - 这只是 Rust 最基本的功能，帮助
 
 你可以在这个在线编译器 [Rust playpen](http://play.rust-lang.org) 上尝试 Rust 的一些特性
 或者上[官方网站](http://rust-lang.org).
-
-</div></blockquote>
