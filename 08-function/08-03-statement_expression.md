@@ -3,20 +3,22 @@
 
 ## 声明语句
   rust的声明语句可以分为两种，一种为变量声明语句，另一种为Item声明语句。  
-  1. 变量声明语句主要是指`let`语句，如:
+  1. 变量声明语句。主要是指`let`语句，如:
   ```rust  
   let a = 8;
   let b: Vec<f64> = Vec::new();
   let (a, c) = ("hi", false);  
   ```
-  由于let是语句，所以不能讲let语句赋给其他值。如下形式是错误的：
+  由于let是语句，所以不能将let语句赋给其他值。如下形式是错误的：
   ```rust
   let b = (let a = 8);
   ```
   rustc编译器会给出错误信息：![error](../image/08-03-img1.png)
 
-  2. Item声明，是指函数（function）、结构体（structure）、类型别名（type）、静态变量（static）、特质（trait）、实现（implementation）或模块（module）的声明。这些声明可以嵌套在任意块（block）中。关于Item声明，Rust Reference中的描述如下：
+  2. Item声明。是指函数（function）、结构体（structure）、类型别名（type）、静态变量（static）、特质（trait）、实现（implementation）或模块（module）的声明。这些声明可以嵌套在任意块（block）中。关于Item声明，Rust Reference中的描述如下：
   > An item declaration statement has a syntactic form identical to an item declaration within a module. Declaring an item — a function, enumeration, structure, type, static, trait, implementation or module — locally within a statement block is simply a way of restricting its scope to a narrow region containing all of its uses; it is otherwise identical in meaning to declaring the item outside the statement block.
+
+  当然，这里不能展开讲这些Item都是如何声明的，详情请看RustPrimer的其他相关章节。
 
 ## 表达式语句
   表达式语句，由一个表达式和一个分号组成，即在表达式后面加一个分号就将一个表达式转变为了一个语句。所以，有多少种表达式，就有多少种表达式语句。  

@@ -5,13 +5,13 @@
     //statements
   }
   ```
-  我们知道，函数的返回值类型是在参数列表后，加上箭头、类型来指定的。但是我们看到，main函数后面并没有指定参数类型。那不是矛盾了吗？其实并没有矛盾，main函数也有返回值，只不过默认省略了而已。main函数的完整形式如下：
+  我们知道，函数的返回值类型是在参数列表后，加上箭头、类型来指定的。但是我们看到，main函数后面并没有指定参数类型，我们之前也说过main函数没有返回值。那不是矛盾了吗？其实并没有矛盾，main函数也有返回值，只不过默认省略了而已。main函数的完整形式如下：
   ```rust
   fn main() -> () {
     //statements
   }
   ```
-  可以看到，main函数返回的是`()`，它是一个特殊的元组——没有元素的元组，称为`unit`。在Rust Reference的[8.1.3 Tuple types](https://doc.rust-lang.org/reference.html#tuple-types)中是这样写得：
+  可以看到，main函数返回的是`()`，它是一个特殊的元组——没有元素的元组，称为`unit`。在Rust Reference的[8.1.3 Tuple types](https://doc.rust-lang.org/reference.html#tuple-types)中是的描述如下：
   > For historical reasons and convenience, the tuple type with no elements (__()__) is often called ‘unit’ or ‘the unit type’.
 
   不过，由于返回的`()`是没用用处的，所以，__一般返回`()`的函数，我们说它没有返回值，并且默认省略不写__。`()`类型，其实就像是C/C++或是Java、C#中的`void`类型，用于说明函数没有返回值。
@@ -32,50 +32,53 @@
 ## return关键字
   rust也有`return`关键字，不过一般用于提前返回。来看一个简单地例子：
   ```rust
-  fn main() {
-    let a = [1,3,2,5,9,8];
-    println!("There is 7 in the array: {}", find(7, &a));
-    println!("There is 8 in the array: {}", find(8, &a));
-  }
+fn main() {
+  let a = [1,3,2,5,9,8];
+  println!("There is 7 in the array: {}", find(7, &a));
+  println!("There is 8 in the array: {}", find(8, &a));
+}
 
-  fn find(n: i32, a: &[i32]) -> bool {
-    for i in a {
-      if *i == n {
-        return true;
-      }
+fn find(n: i32, a: &[i32]) -> bool {
+  for i in a {
+    if *i == n {
+      return true;
     }
-    false
   }
+  false
+}
   ```
-  上例中，`find`函数，接受一个`i32`类型`n`和一个`i32`类型的切片(`slice`)`a`，返回一个`bool`值，若n是a的元素，则返回`true`，否则返回`false`。可以看到，`return`关键字，用在`for`循环的`if`表达式中，若此时a的元素与n相等，则立刻返回true，剩下的循环不必再进行，否则一直循环检测完整个切片(slice)，最后返回false。当然，return语句也可以用在最后返回，像C/C++一样使用：把`find`函数最后一句`false`改为`return false;`（注意分号不可省略）也是可以的，不过这就不是rust的编程风格了。这里需要注意的是，for循环中的i，其类型为&i32，需要使用解引用操作符来变换为i32类型。另外，切片（slice）在这里可以看作是对数组的引用，关于切片与数组的详细解释可以看[Rust Reference](https://doc.rust-lang.org/reference.html#array-and-slice-types)和[rustbyexample](http://rustbyexample.com/primitives/array.html)中的相关内容。
+  上例中，`find`函数，接受一个`i32`类型`n`和一个`i32`类型的切片(`slice`)`a`，返回一个`bool`值，若n是a的元素，则返回`true`，否则返回`false`。可以看到，`return`关键字，用在`for`循环的`if`表达式中，若此时a的元素与n相等，则立刻返回true，剩下的循环不必再进行，否则一直循环检测完整个切片(slice)，最后返回false。当然，return语句也可以用在最后返回，像C/C++一样使用：把`find`函数最后一句`false`改为`return false;`（注意分号不可省略）也是可以的，不过这就不是rust的编程风格了。这里需要注意的是，`for`循环中的`i`，其类型为`&i32`，需要使用解引用操作符来变换为`i32`类型。另外，切片（slice）在这里可以看作是对数组的引用，关于切片与数组的详细解释可以看[Rust Reference](https://doc.rust-lang.org/reference.html#array-and-slice-types)和[rustbyexample](http://rustbyexample.com/primitives/array.html)中的相关内容。
 
 ## 返回多个值
   rust的函数不支持多返回值，但是我们可以利用元组来返回多个值，配合rust的模式匹配，使用起来十分灵活。先看例子：
   ```rust
-  fn main() {
-    let (p2,p3) = pow_2_3(789);
-    println!("pow 2 of 789 is {}.", p2);
-    println!("pow 3 of 789 is {}.", p3);
-  }
+fn main() {
+  let (p2,p3) = pow_2_3(789);
+  println!("pow 2 of 789 is {}.", p2);
+  println!("pow 3 of 789 is {}.", p3);
+}
 
-  fn pow_2_3(n: i32) -> (i32, i32) {
-    (n*n, n*n*n)
-  }
+fn pow_2_3(n: i32) -> (i32, i32) {
+  (n*n, n*n*n)
+}
   ```
   可以看到，上例中，`pow_2_3`函数接收一个`i32`类型的值，返回其二次方和三次方的值，这两个值包装在一个元组中返回。在`main`函数中，`let`语句就可以使用模式匹配将函数返回的元组进行解构，将这两个返回值分别赋给`p2`和`p3`，从而可以得到`789`二次方的值和三次方的值。
 
 ## 发散函数
   发散函数（diverging function）是rust中的一个特殊语法。发散函数不返回，它使用感叹号`!`作为返回类型类标示：
   ```rust
-  fn main() {
-    println!("hello");
-    diverging();
-    println!("world");
-  }
-  fn diverging() -> ! {
-    panic!("This function will never return");
-  }
+fn main() {
+  println!("hello");
+  diverging();
+  println!("world");
+}
+
+fn diverging() -> ! {
+  panic!("This function will never return");
+}
   ```
-  由于发散函数不会返回，所以其后一般不再有其他语句可以执行。倘若其后还有其他语句，会出现如下编译警告：![error](../image/08-02-img1.png)
-  发散函数一般都以panic!宏调用或其他调用其他发散函数结束，所以，调用发散函数会导致当前线程崩溃。[Rust Reference](http://doc.rust-lang.org/reference.html#diverging-functions)中的描述如下：
+  由于发散函数不会返回，所以就算其后再有其他语句也是不会执行的。倘若其后还有其他语句，会出现如下编译警告：![error](../image/08-02-img1.png)
+  发散函数一般都以`panic!`宏调用或其他调用其他发散函数结束，所以，调用发散函数会导致当前线程崩溃。[Rust Reference 6.1.3.2 Diverging functions][ref]中的描述如下：
   > We call such functions "diverging" because they never return a value to the caller. Every control path in a diverging function must end with a panic!() or a call to another diverging function on every control path. The ! annotation does not denote a type.
+
+  [ref]:http://doc.rust-lang.org/reference.html#diverging-functions

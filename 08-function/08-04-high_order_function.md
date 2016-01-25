@@ -5,7 +5,7 @@
   前面说过，关键字`fn`可以用来定义函数。除此以外，它还用来构造函数类型。与函数定义主要的不同是，构造函数类型不需要函数名、参数名和函数体。在Rust Reference中的描述如下：
   > The function type constructor fn forms new function types. A function type consists of a possibly-empty set of function-type modifiers (such as unsafe or extern), a sequence of input types and an output type.
 
-  来看一下例子：
+  来看一个简单例子：
   ```rust
 fn inc(n: i32) -> i32 {//函数定义
   n + 1
@@ -19,7 +19,7 @@ fn main() {
 }
   ```
   上例首先使用`fn`定义了`inc`函数，它有一个`i32`类型参数，返回`i32`类型的值。然后再用`fn`定义了一个函数类型，这个函数类型有i32类型的参数和i32类型的返回值，并用`type`关键字定义了它的别名`IncType`。在`main`函数中定义了一个变量`func`，其类型就为`IncType`，并赋值为`inc`，然后在`pirntln`宏中调用：`func(3)`。可以看到，`inc`函数的类型其实就是`IncType`。  
-  这里有一个问题，我们将`inc`赋值给了`func`，而不是`&inc`，这样是将`inc`函数的拥有权转给了`func`吗，赋值后还可以以`inc()`形式调用`inc`函数吗？我么先来看一个例子：
+  这里有一个问题，我们将`inc`赋值给了`func`，而不是`&inc`，这样是将`inc`函数的拥有权转给了`func`吗，赋值后还可以以`inc()`形式调用`inc`函数吗？先来看一个例子：
   ```rust
 fn main() {
   let func: IncType = inc;

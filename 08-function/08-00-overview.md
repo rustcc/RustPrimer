@@ -1,24 +1,11 @@
-return type 2 *
-parameter defination 1 *
-multiple return 2 *
-early return 2 *
-statement and expression 3 *
-diverging function 2 *
-embeded function 5
-function pointer 4 x
-function type 4 *
-high order function 5
-function call（use as expression） 3 x
-return reference 2 x
-
 # 8 函数
   尽管rust是一门多范式的编程语言，但rust的编程风格是更偏向于函数式的，函数在rust中是“头等公民”——first-class type。这意味着，函数是可以作为数据在程序中进行传递，如：作为函数的参数。跟C、C++一样，rust也有一个唯一的main函数，作为整个程序的入口。rust的main函数形式如下：  
   ```rust
-  fn main() {
-    //statements  
-  }
+fn main() {
+  //statements  
+}
   ```
-  rust使用 __fn__ 关键字来声明和定义函数，__fn__ 关键字隔一个空格后跟函数名，函数名后跟着一个括号，函数参数定义在括号内。rust使用`snake_case`风格来命名函数，即所有字母小写并使用下划线类分隔单词，如：`foo_bar`。如果函数有返回值，则在括号后面加上箭头 __->__ ，在箭头后加上返回值的类型。  
+  rust使用 `fn` 关键字来声明和定义函数，`fn` 关键字隔一个空格后跟函数名，函数名后跟着一个括号，函数参数定义在括号内。rust使用`snake_case`风格来命名函数，即所有字母小写并使用下划线类分隔单词，如：`foo_bar`。如果函数有返回值，则在括号后面加上箭头 __->__ ，在箭头后加上返回值的类型。  
 
   这一章我们将学习以下与函数相关的知识：  
   1. [函数参数](08-01-arguement.md)
@@ -26,4 +13,4 @@ return reference 2 x
   3. [语句和表达式](08-03-statement_expression.md)
   4. [高阶函数](08-04-high_order_function.md)
 
-> ### 注：本章所有例子均在rustc1.4下编译通过，且例子中说明的所有的编译错误都是rustc1.4版本的编译器给出的。
+> ### 注：本章所有例子均在rustc1.4下编译通过，且例子中说明的所有的编译错误都是rustc1.4版本给出的。
