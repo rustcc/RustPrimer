@@ -1,18 +1,20 @@
 # Emacs
 
-本节介绍Emacs的Rust配置，我们假设Emacs已经在你的系统上安装好了，并且你有试用Emacs的经验。具体的安装和使用说明，见网上相关文档，在此不赘述。
+本节介绍 Emacs (Version 24) 的 Rust 配置，假设你已经安装好了 Emacs，并且有使用 Emacs 的经验。具体的安装和使用说明，见网上相关文档，在此不赘述。
 
-另外，本节的例子是在Mac OS上，Linux上的类似。在 Windows 用 Emacs？呵呵。
+另外，本节的例子是在 Mac OS 上，在 Linux 上面基本一样。
+
+在 Windows 上用 Emacs？呵呵。
 
 ## 1.1 简介
 
-Emacs 的 rust-mode 提供了语法高亮显示和 elisp 函数，可以围绕函数定义移动光标。有几个package提供了附加的功能，如自动补全和动态语法检查。
+Emacs 的 rust-mode 提供了语法高亮显示和 elisp 函数，可以围绕 Rust 函数定义移动光标。有几个插件提供了附加的功能，如自动补全和动态语法检查。
 
 ![](../image/03-editor-emacs-base.png)
 
 ## 1.2 安装插件
 
-需要将 melpa 代码库添加到你的插件列表中，才能安装 Rust 需要的插件。将下面的代码片段加入你的```~/.emacs.d/init.el``` 文件中。
+首先，需要将 melpa 代码库添加到你的插件列表中，才能安装 Rust 需要的插件。将下面的代码片段加入你的```~/.emacs.d/init.el``` 文件中。
 
 ```
 ;; Add melpa repository to archives
@@ -24,7 +26,7 @@ Emacs 的 rust-mode 提供了语法高亮显示和 elisp 函数，可以围绕�
 
 ```
 
-运行下面的命令，完成插件列表更新。
+运行下面的命令，更新插件列表。
 
 - M-x eval-buffer
 - M-x package-refresh-contents
@@ -89,13 +91,13 @@ Emacs 的 rust-mode 提供了语法高亮显示和 elisp 函数，可以围绕�
 Racer 需要 Rust 的源代码用于自动补全。
 
 - git clone https://github.com/rust-lang/rust.git ~/.rust
-- 重新启动 Emacs 并打开一个Rust源文件。
+- 重新启动 Emacs 并打开一个 Rust 源代码文件。
 
 ![](../image/03-editor-emacs-completion.png)
 
 ## 1.4 结论
 
-现在，可以在 Emacs 中编辑 Rust 文件了。功能总结如下：
+现在，可以在 Emacs 中编辑 Rust 源代码文件了。功能总结如下：
 
 - 语法高亮显示和自动缩进
 - 自动补全
@@ -103,5 +105,9 @@ Racer 需要 Rust 的源代码用于自动补全。
 - 跳转到函数定义
 - 内嵌文档
 
-
 ![](../image/03-editor-emacs-jump.gif)
+
+## 注释
+
+1. 本节的内容适用于 Emacs Version 24；版本 23 的配置方法不同；版本 22 及以下不支持。
+2. MacOS 自带的 Emacs 版本是 22，版本 24 可以从[这里](http://emacsformacosx.com/)下载。
