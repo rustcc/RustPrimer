@@ -76,7 +76,7 @@ The Rust primer for beginners.
 31. 属性和编译器参数
 32. Cargo参数配置「fuyingfuying 160131」
 32. 测试与评测
-33. 代码风格
+33. 代码风格「tiansiyuan」
 33. 标准库介绍
   1. 操作系统与文件处理
   2. 时间日期处理
