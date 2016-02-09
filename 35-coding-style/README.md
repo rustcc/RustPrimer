@@ -80,13 +80,13 @@ foo_bar(x, y, |z| {
 
 
 ``` rust
-// Good
+// 好
 struct Foo {
     short: f64,
     really_long: f64,
 }
 
-// Bad
+// 坏
 struct Bar {
     short:       f64,
     really_long: f64,
@@ -143,41 +143,38 @@ let diameter = 7;
 例如：
 
 ``` rust
-/// Sets up a default runtime configuration, given compiler-supplied arguments.
+/// 根据编译器提供的参数，设置一个缺省的运行时配置。
 ///
-/// This function will block until the entire pool of M:N schedulers has
-/// exited. This function also requires a local thread to be available.
+/// 这个函数将阻塞直到整个 M:N 调度器池退出了。
+/// 这个函数也要求一个本地的线程可用。
 ///
-/// # Arguments
+/// # 参数
 ///
-/// * `argc` & `argv` - The argument vector. On Unix this information is used
-///                     by `os::args`.
-/// * `main` - The initial procedure to run inside of the M:N scheduling pool.
-///            Once this procedure exits, the scheduling pool will begin to shut
-///            down. The entire pool (and this function) will only return once
-///            all child threads have finished executing.
+/// * `argc` 和 `argv` - 参数向量。在 Unix 系统上，该信息被`os::args`使用。
+///                     
+/// * `main` - 运行在 M:N 调度器池内的初始过程。
+///            一旦这个过程退出，调度池将开始关闭。
+///            整个池（和这个函数）将只有在所有子线程完成执行后。
 ///
-/// # Return value
+/// # 返回值
 ///
-/// The return value is used as the process return code. 0 on success, 101 on
-/// error.
+/// 返回值被用作进程返回码。成功是 0，101 是错误。
 ```
 
 ### 避免文档内注释
 
-Use inner doc comments _only_ to document crates and file-level modules:
+内嵌文档注释 _只用于_ 注释 crates 和文件级的模块：
 
 ``` rust
-//! The core library.
+//! 核心库。
 //!
-//! The core library is a something something...
+//! 核心库是...
 ```
 
 ### 解释上下文
 
-Rust doesn't have special constructors, only functions that return new
-instances.  These aren't visible in the automatically generated documentation
-for a type, so you should specifically link to them:
+Rust 没有特定的构造器，只是返回新实例的韩式。
+这些在自动生成的类型文档中是不可见的，因此你应该专门链接到它们：
 
 ``` rust
 /// An iterator that yields `None` forever after the underlying iterator
@@ -190,9 +187,7 @@ pub struct Fuse<I> {
 }
 ```
 
-% Braces, semicolons, and commas [FIXME: needs RFC]
-
-### Opening braces always go on the same line.
+### 开始的大括号总是出现的同一行。
 
 ``` rust
 fn foo() {
@@ -220,7 +215,7 @@ frob(|x| {
 })
 ```
 
-### `match` arms get braces, except for single-line expressions.
+### `match` 分支有大括号，除非是单行表达式。
 
 ``` rust
 match foo {
@@ -232,7 +227,7 @@ match foo {
 }
 ```
 
-### `return` statements get semicolons.
+### `return` 语句有分号。
 
 ``` rust
 fn foo() {
@@ -246,13 +241,7 @@ fn foo() {
 }
 ```
 
-### Trailing commas
-
-> **[FIXME]** We should have a guideline for when to include trailing
-> commas in `struct`s, `match`es, function calls, etc.
->
-> One possible rule: a trailing comma should be included whenever the
-> closing delimiter appears on a separate line:
+### 行尾的逗号
 
 ```rust
 Foo { bar: 0, baz: 1 }
@@ -268,59 +257,48 @@ match a_thing {
 }
 ```
 
-% Naming conventions
+### 一般命名约定
 
-### General conventions [RFC #430]
+通常，Rust 倾向于为“类型级”结构(类型和 traits)使用 `CamelCase` 而为“值级”结构使用 `snake_case` 。更确切的约定：
 
-> The guidelines below were approved by [RFC #430](https://github.com/rust-lang/rfcs/pull/430).
-
-In general, Rust tends to use `CamelCase` for "type-level" constructs
-(types and traits) and `snake_case` for "value-level" constructs. More
-precisely:
-
-| Item | Convention |
+| 条目 | 约定 |
 | ---- | ---------- |
-| Crates | `snake_case` (but prefer single word) |
+| Crates | `snake_case` (但倾向于单个词) |
 | Modules | `snake_case` |
 | Types | `CamelCase` |
 | Traits | `CamelCase` |
 | Enum variants | `CamelCase` |
 | Functions | `snake_case` |
 | Methods | `snake_case` |
-| General constructors | `new` or `with_more_details` |
+| General constructors | `new` 或 `with_more_details` |
 | Conversion constructors | `from_some_other_type` |
 | Local variables | `snake_case` |
 | Static variables | `SCREAMING_SNAKE_CASE` |
 | Constant variables | `SCREAMING_SNAKE_CASE` |
-| Type parameters | concise `CamelCase`, usually single uppercase letter: `T` |
-| Lifetimes | short, lowercase: `'a` |
+| Type parameters | 简洁 `CamelCase`，通常单个大写字母：`T` |
+| Lifetimes | 短的小写: `'a` |
 
 <p>
-In `CamelCase`, acronyms count as one word: use `Uuid` rather than
-`UUID`.  In `snake_case`, acronyms are lower-cased: `is_xid_start`.
+在 `CamelCase`中, 首字母缩略词被当成一个单词：用 `Uuid` 而不是
+`UUID`。在 `snake_case` 中，首字母缩略词全部是小写： `is_xid_start`。
 
-In `snake_case` or `SCREAMING_SNAKE_CASE`, a "word" should never
-consist of a single letter unless it is the last "word". So, we have
-`btree_map` rather than `b_tree_map`, but `PI_2` rather than `PI2`.
+在 `snake_case` 或 `SCREAMING_SNAKE_CASE` 中，“单词”永远不应该只包含一个字母，
+除非是最后一个“单词”。所以，我们有`btree_map` 而不是 `b_tree_map`，`PI_2` 而不是 `PI2`。
 
-### Referring to types in function/method names [RFC 344]
+### 引用函数/方法名中的类型
 
-> The guidelines below were approved by [RFC #344](https://github.com/rust-lang/rfcs/pull/344).
+函数名经常涉及类型名，最常见的约定例子像 `as_slice`。如果类型有一个纯粹的文本名字（忽略参数），
+在类型约定和函数约定之间转换是直截了当的：
 
-Function names often involve type names, the most common example being conversions
-like `as_slice`. If the type has a purely textual name (ignoring parameters), it
-is straightforward to convert between type conventions and function conventions:
-
-Type name | Text in methods
+类型名 | 方法中的文本
 --------- | ---------------
 `String`  | `string`
 `Vec<T>`  | `vec`
 `YourType`| `your_type`
 
-Types that involve notation follow the convention below. There is some
-overlap on these rules; apply the most specific applicable rule:
+涉及记号的类型遵循以下约定。这些规则有重叠；应用最适用的规则：
 
-Type name | Text in methods
+类型名 | 方法中的文本
 --------- | ---------------
 `&str`    | `str`
 `&[T]`    | `slice`
@@ -333,9 +311,9 @@ Type name | Text in methods
 
 ### 避免冗余的前缀
 
-Names of items within a module should not be prefixed with that module's name:
+一个模块中的条目的名字不应拿模块的名字做前缀：
 
-Prefer
+倾向于
 
 ``` rust
 mod foo {
@@ -343,7 +321,7 @@ mod foo {
 }
 ```
 
-over
+而不是
 
 ``` rust
 mod foo {
@@ -351,73 +329,63 @@ mod foo {
 }
 ```
 
-This convention avoids stuttering (like `io::IoError`). Library clients can
-rename on import to avoid clashes.
+这个约定避免了口吃（像 `io::IoError`）。库客户端可以在导入时重命名以避免冲突。
 
 ### Getter/setter 方法
 
-> The guidelines below were approved by [RFC #344](https://github.com/rust-lang/rfcs/pull/344).
+一些数据类型不希望提供对它们的域的直接访问，但是提供了 "getter" 和 "setter" 方法用于操纵域状态
+（经常提供检查或其他功能）。
 
-Some data structures do not wish to provide direct access to their fields, but
-instead offer "getter" and "setter" methods for manipulating the field state
-(often providing checking or other functionality).
+域 `foo: T` 的约定是：
 
-The convention for a field `foo: T` is:
+* 方法 `foo(&self) -> &T` 用于获得该域的当前值。
+* 方法 `set_foo(&self, val: T)` 用于设置域。（这里的 `val` 参数可能取 `&T` 或其他类型，取决于上下文。）
 
-* A method `foo(&self) -> &T` for getting the current value of the field.
-* A method `set_foo(&self, val: T)` for setting the field. (The `val` argument
-  here may take `&T` or some other type, depending on the context.)
+请注意，这个约定是关于通常数据类型的 getters/setters， *不是* 关于构建者对象的。
 
-Note that this convention is about getters/setters on ordinary data types, *not*
-on [builder objects](../ownership/builders.html).
+### 断言
 
-### Predicates
+* 简单的布尔断言应该加上 `is_` 或者其他的简短问题单词作为前缀，e.g.， `is_empty`。
+* 常见的例外： `lt`， `gt`，和其他已经确认的断言名。
 
-* Simple boolean predicates should be prefixed with `is_` or another
-  short question word, e.g., `is_empty`.
-* Common exceptions: `lt`, `gt`, and other established predicate names.
+### 导入
 
-### Imports
+一个 crate/模块的导入应该按顺序包括下面各个部分，之间以空行分隔：
 
-The imports of a crate/module should consist of the following
-sections, in order, with a blank space between each:
+* `extern crate` 指令
+* 外部 `use` 导入
+* 本地 `use` 导入
+* `pub use` 导入
 
-* `extern crate` directives
-* external `use` imports
-* local `use` imports
-* `pub use` imports
-
-For example:
+例如：
 
 ```rust
 // Crates.
 extern crate getopts;
 extern crate mylib;
 
-// Standard library imports.
+// 标准库导入。
 use getopts::{optopt, getopts};
 use std::os;
 
-// Import from a library that we wrote.
+// 从一个我们写的库导入。
 use mylib::webserver;
 
-// Will be reexported when we import this module.
+// 当我们导入这个模块时会被重新导出。
 pub use self::types::Webdata;
 ```
 
 ### 避免 `use *`，除非在测试里
 
-Glob imports have several downsides:
-* They make it harder to tell where names are bound.
-* They are forwards-incompatible, since new upstream exports can clash
-  with existing names.
+Glob 导入有几个缺点：
+* 更难知道名字在哪里绑定。
+* 它们前向不兼容，因为新的上流导出可能与现存的名字冲突。
 
-When writing a [`test` submodule](../testing/README.md), importing `super::*` is appropriate
-as a convenience.
+在写 `test` 子模块时，为方便导入 `super::*` 是合适的。
 
-### Prefer fully importing types/traits while module-qualifying functions.
+### 当模块限定函数时，倾向于完全导入类型/traits。
 
-For example:
+例如：
 
 ```rust
 use option::Option;
@@ -426,13 +394,10 @@ use mem;
 let i: isize = mem::transmute(Option(0));
 ```
 
-### Reexport the most important types at the crate level.
+### 在 crate 级重新导出最重要的类型。
 
-Crates `pub use` the most common types for convenience, so that clients do not
-have to remember or write the crate's module hierarchy to use these types.
+Crates `pub use` 最常见的类型为方便，因此，客户端不必记住或写 crate 的模块结构以使用这些类型。
 
-### Define types and operations together.
+### 类型和操作在一起定义。
 
-Type definitions and the functions/methods that operate on them should be
-defined together in a single module, with the type appearing above the
-functions/methods.
+类型定义和使用它们的函数/模块应该在同一模块中定义，类型出现在函数/模块前面。
