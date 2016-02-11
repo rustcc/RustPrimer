@@ -27,14 +27,14 @@ The Rust primer for beginners.
 
 1. 初识Rust
 2. 安装Rust「marvin-min 160105」
-  1. Linux
-  2. Mac
-  3. Windows
+  1. [Linux](./02-install/02-01-install_rust_on_linux.md)
+  2. [Mac](./02-install/02-02-install_rust_on_mac_os.md)
+  3. [Windows](./02-install/02-03-install_rust_on_windows.md)
 3. 编辑器
   1. [前期准备](./03-editors/03-01-before.md)「wayslog 160105」
   1. [vim](./03-editors/03-02-vim.md)「wayslog 160105」
   2. [emacs](./03-editors/03-03-emacs.md)「tiansiyuan 160120」
-  3. vscode「daogangtang 160105」
+  3. [vscode](./03-editors/03-04-emacs.md)「daogangtang 160105」
   4. [atom](./03-editors/03-05-atom.md)「wayslog 160105」
   5. sublime
   6. visual studio
