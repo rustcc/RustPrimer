@@ -42,8 +42,11 @@ The Rust primer for beginners.
   8. Intellij IDEA
   9. [spacemacs](./03-editors/03-10-spacemacs.md)「wayslog 160105」
 4. Rust一小时快速入门「ee0703 160120」
-5. Cargo项目管理器「fuyingfuying 160131」
+5. Cargo项目管理器、crate「fuyingfuying 160131」
 6. 基本程序结构「daogangtang 160131」
+  1. [注释](./06-flow/06-01-comment.md)
+  2. [条件](./06-flow/06-02-condition.md)
+  3. [循环](./06-flow/06-03-repeatition.md)
 7. 基础类型和运算符「wayslog 160125」
   1. 基础类型
   2. 切片
