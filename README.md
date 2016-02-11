@@ -40,7 +40,7 @@ The Rust primer for beginners.
   6. visual studio
   7. eclipse
   8. Intellij IDEA
-  9. spacemacs「wayslog 160105」
+  9. [spacemacs](./03-editors/03-10-spacemacs.md)「wayslog 160105」
 4. Rust一小时快速入门「ee0703 160120」
 5. Cargo项目管理器「fuyingfuying 160131」
 6. 基本程序结构「daogangtang 160131」
@@ -73,7 +73,7 @@ The Rust primer for beginners.
 28. FFI
 29. 运算符重载
 30. Any与反射
-31. 属性和编译器参数
+31. 属性和编译器参数「elton 160215」
 32. Cargo参数配置「fuyingfuying 160131」
 32. 测试与评测
 33. 代码风格「tiansiyuan」
