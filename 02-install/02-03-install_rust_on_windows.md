@@ -24,3 +24,7 @@ Rust在Windows上的安装和你在windows上安装其它软件一样。
 `rustc --version`
 
 看到 以 **rustc 1.5.0** 开头，说明你安装成功了。
+
+**注意**
+
+中国科学技术大学镜像源包含 [rust-static](http://mirrors.ustc.edu.cn/rust-static/)，梯子暂时出问题的同学可以尝试从这里下载编译器；除此之外。还有 Crates 源，详见[这里的说明](https://servers.ustclug.org/2016/01/mirrors-add-rust-crates/)。
