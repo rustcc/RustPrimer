@@ -181,6 +181,166 @@ let e = x.1; // e = "world hello"
 
 ```
 
+## 结构体 struct
+
+在Rust中，结构体是一个非常高级的概念。我们可以将一些常用的数据、属性聚合在一起，就形成了一个结构体。总体作用与各种语言里的class非常类似，甚至写法都类似。
+
+所不同的是，Rust的结构体有三种最基本的形式。
+
+以下三种名字是我自创的……看个笑话就好啦：
+
+### 老少咸宜型结构体
+
+这种结构体呢，他可以大致看成这样的一个声明形势:
+
+```
+struct A {
+    attr1: i32,
+    atrr2: String,
+}
+```
+
+唔，模样好像和我以前写过的结构体不太一样，不过勉强能认识。
+
+### 元组类型结构体
+
+好了，高级货来了，这种结构体可谓Rust独有，唔，至少C系的语言里是没有的：
+
+```
+struct B(i32, u16, bool);
+```
+
+它可以看作是一个有名字的元组，具体使用方法和一般的元组基本类似。好吧，也不算台出格。
+
+### WTF类型结构体
+
+前面老少咸宜型的结构体，有人倾向于先写一个空结构体占位，就出现了如下这个存在
+
+```
+struct C {
+
+}
+```
+
+但是编译的时候，Rust编译器明确的拒绝了你的需求。
+于是爱动脑筋的小伙伴为了满足编译器大爷，写出了这么个存在
+
+```
+struct D;
+```
+
+锵～～编译居然通过了……
+
+留给别人或者两个星期之后的自己一个晦莫如深的WTF结构体。。。
+
+老实说，Rust中允许空结构体我也很不理解，大概可以看成一种标记和占位的存在？但是明显有更好用的enum。于是这样的存在就真WTF了……
+
+### 实现结构体 impl
+
+Rust没有继承，它和Golang不约而同的选择了trait(Golang叫Interface)作为其实现多态的基础。当然了，我们要想对一个结构体写一些专门的成员函数应该怎么写呢？
+
+答： impl
+
+talk is cheap ,举个栗子：
+
+```
+struct Person {
+    name: String,
+}
+
+impl Person {
+    fn new(n: &str) -> Person {
+        Person {
+            name: n.to_string(),
+        }
+    }
+    
+    fn greeting(&self) {
+        println!("{} say hello .", self.name);
+    }
+
+}
+
+fn main() {
+
+    let peter = Person::new("Peter");
+    peter.greeting();
+}
+
+```
+
+看见了self，Python程序员不厚道的笑了。
+
+我们来分析一下，上面的`impl`中，new被Person这个结构体自身所调用，其特征是`::`的调用，Java程序员站出来了：类函数！ 而带有`self`的`greeting`，更像是一个成员函数。
+
+恩，回答正确，然而不加分。
+
+Rust允许我们灵活的对一个struct进行你想要的实现，在编程的自由度上无疑有了巨大的提高。
+
+至于更高级的关于trait和范型的用法，我们将在以后的章节进行详细介绍。
+
+## 枚举类型 enum
+
+同struct一样，Rust的枚举(enum)类型也具有两种不同的实现。一种极具Rust特点的枚举类型
+
+同结构体，以下两种名字也是我瞎掰的：
+
+### 有特点的枚举
+
+```
+enum SpecialPoint {
+    Point(i32, i32),
+    Special(String),
+}
+```
+
+枚举里面居然能包含一些你需要的，特定的数据信息！
+
+这是常规的枚举所无法做到的，更像枚举类，不是么？
+
+### 有别人特点的枚举
+
+```
+enum Direction {
+    West,
+    North,
+    Sourth,
+    East,
+}
+
+```
+
+至少这种我以前见过，程序员如是说。
+
+### 使用枚举
+
+和struct的成员访问符号`.`不同的是，枚举类型要想访问其成员，几乎无一例外的必须要用到模式匹配。并且， 你可以写一个 Direction::West，但是你绝对不能写成Direction.West。虽然编译器足够聪明能发现你这个粗心的毛病。
+
+关于模式匹配，我不会说太多，还是举个栗子
+
+```
+enum SpecialPoint {
+    Point(i32, i32),
+    Special(String),
+}
+
+fn main() {
+    let sp = SpecialPoint::Point(0, 0);
+    match sp {
+        SpecialPoint::Point(x, y) => {
+            println!("I'am SpecialPoint(x={}, y={})", x, y);
+        }
+        SpecialPoint::Special(why) => {
+            println!("I'am Special because I am {}", why);
+        }
+    }
+}
+
+```
+
+呐呐呐，这就是模式匹配取值啦。
+当然了，`enum`其实也是可以`impl`的，一般人我不告诉他！
+
 ## 函数类型 Functions
 
 函数同样的是一个类型，这里只给大家普及一些基本的概念，函数类型涉及到比较高阶的应用，希望大家能在后面的`闭包`章节仔细参读
