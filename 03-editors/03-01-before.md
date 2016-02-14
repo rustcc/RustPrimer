@@ -1,5 +1,15 @@
 # 前期准备
 
+## 下载 Rust 源代码（供 racer 使用）
+
+### 从github下载
+
+`git clone https://github.com/rust-lang/rust.git`
+
+### 从官网下载源代码包
+
+下载地址： `https://static.rust-lang.org/dist/rustc-nightly-src.tar.gz`
+
 ## racer
 racer是一个由rust的爱好者提供的rust自动补全和语法分析工具，被用来提供基本的补全功能和定义跳转功能。其本身完全由rust写成，补全功能已经比较完善了。
 
@@ -11,6 +21,7 @@ racer是一个由rust的爱好者提供的rust自动补全和语法分析工具�
 
 ```bash
 sudo /usr/local/bin/cargo install --git 'https://github.com/phildawes/racer.git'
+注：现已更新为： cargo install racer
 ```
 
 来安装最新版的racer。（注：windows版的请大家补充，笔者还没有真正实践过。）
@@ -62,3 +73,10 @@ windows:
 target\release\racer complete std::io::B
 ```
 你将会看到racer的提示，这表示ruacer已经执行完成了。
+
+
+## 安装 rustfmt
+
+`cargo install rustfmt`
+
+
