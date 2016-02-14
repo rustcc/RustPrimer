@@ -32,9 +32,9 @@ The Rust primer for beginners.
 5. Cargo项目管理器
 6. 基本程序结构
 7. 基础类型和运算符「wayslog 160125」
-  1. [基础类型](07-primitive/07-01-types.md)
-  3. [字符串类型](07-primitive/07-02-strings.md)
-  4. [基本操作符和字符串的格式化](07-primitive/07-03-operator-and-format.md)
+  1. [基础类型](7-primitive-type/07-01-types.md)
+  3. [字符串类型](7-primitive-type/07-02-strings.md)
+  4. [基本操作符和字符串的格式化](7-primitive-type/07-03-operator-and-format.md)
 8. 集合类型（Collections）
 9. 模式匹配
 10. Trait （特征）
