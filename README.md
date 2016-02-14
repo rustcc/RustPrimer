@@ -48,43 +48,42 @@ The Rust primer for beginners.
   2. [条件](./06-flow/06-02-condition.md)
   3. [循环](./06-flow/06-03-repeatition.md)
 7. 基础类型和运算符「wayslog 160125」
-  1. 基础类型
-  2. 切片
-  3. 字符串类型
-  4. 字符串的格式化
-9. 函数「qdao 160120」
+  1. [基础类型](7-primitive-type/07-01-types.md)
+  3. [字符串类型](7-primitive-type/07-02-strings.md)
+  4. [基本操作符和字符串的格式化](7-primitive-type/07-03-operator-and-format.md)
+8. 函数「qdao 160120」
 9. 模式匹配「andelf 160120」
 10. Trait （特征）「JohnSmithX 160130」
 11. 泛型「stormgbs 160120」
 12. 集合类型（Collections）「cai-lw 160205」
-11. 可变性、所有权、租借和生命期「stormgbs 160105」
-13. 闭包「qdao 160120」
-14. 迭代器「andelf 160120」
-15. 模块和包系统、Prelude「jessiex 160120」
-16. Option、Result与错误处理「JohnSmithX 160130」
-17. 宏系统
-24. 堆、栈与Box
-25. 常用数据结构实现
-18. Rc, Arc, Cell, RefCell, UnsafeCell「daogangtang 160120」
-19. Marker: Send, Sync, Copy, Clone「daogangtang 160125」
-20. 通用引用类型 Borrow, AsRef, Into「daogangtang 160130」
-21. 多线程编程「anzhihun 160120」
-22. 并发「anzhihun 160120」
-23. 并行「anzhihun 160120」
-26. 安全
-27. Unsafe、原始指针「JohnSmithX 160130」
-28. FFI
-29. 运算符重载
-30. Any与反射
-31. 属性和编译器参数「elton 160215」
-32. Cargo参数配置「fuyingfuying 160131」
-32. 测试与评测
-33. 代码风格「tiansiyuan」
-33. 标准库介绍
+13. 可变性、所有权、租借和生命期「stormgbs 160105」
+14. 闭包「qdao 160120」
+15. 迭代器「andelf 160120」
+16. 模块和包系统、Prelude「jessiex 160120」
+17. Option、Result与错误处理「JohnSmithX 160130」
+18. 宏系统
+19. 堆、栈与Box
+20. 常用数据结构实现
+21. Rc, Arc, Cell, RefCell, UnsafeCell「daogangtang 160120」
+22. Marker: Send, Sync, Copy, Clone「daogangtang 160125」
+23. 通用引用类型 Borrow, AsRef, Into「daogangtang 160130」
+24. 多线程编程「anzhihun 160120」
+25. 并发「anzhihun 160120」
+26. 并行「anzhihun 160120」
+27. 安全
+28. Unsafe、原始指针「JohnSmithX 160130」
+29. FFI
+30. 运算符重载
+31. Any与反射
+32. 属性和编译器参数「elton 160215」
+33. Cargo参数配置「fuyingfuying 160131」
+34. 测试与评测
+35. 代码风格「tiansiyuan」
+36. 标准库介绍
   1. 操作系统与文件处理
   2. 时间日期处理
   3. 网络编程
-34. 实战篇
+37. 实战篇
   1. 实战：Json处理
   2. 实战：Web 应用开发入门
   3. 实战：使用Postgresql数据库
