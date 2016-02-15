@@ -73,7 +73,7 @@ The Rust primer for beginners.
 23. 并行「anzhihun 160120」
 26. 安全
 27. Unsafe、原始指针「JohnSmithX 160130」
-28. FFI
+28. FFI「42 160222」
 29. 运算符重载
 30. Any与反射
 31. 属性和编译器参数「elton 160215」
