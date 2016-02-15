@@ -62,8 +62,8 @@ The Rust primer for beginners.
 14. 迭代器「andelf 160120」
 15. 模块和包系统、Prelude「jessiex 160120」
 16. Option、Result与错误处理「JohnSmithX 160130」
-17. 宏系统
-24. 堆、栈与Box
+17. 宏系统「tennix 160222」
+24. 堆、栈与Box「tennix 160222」
 25. 常用数据结构实现
 18. Rc, Arc, Cell, RefCell, UnsafeCell「daogangtang 160120」
 19. Marker: Send, Sync, Copy, Clone「daogangtang 160125」
