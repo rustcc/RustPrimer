@@ -48,10 +48,9 @@ The Rust primer for beginners.
   2. [条件](./06-flow/06-02-condition.md)
   3. [循环](./06-flow/06-03-repeatition.md)
 7. 基础类型和运算符「wayslog 160125」
-  1. 基础类型
-  2. 切片
-  3. 字符串类型
-  4. 字符串的格式化
+  1. [基础类型](07-primitive-type/07-01-types.md)
+  2. [字符串类](07-primitive-type/07-02-strings.md)
+  4. [基础运算符和字符串格式化](07-primitive-type/07-03-operator-and-format.md)
 9. 函数「qdao 160120」
 9. 模式匹配「andelf 160120」
 10. Trait （特征）「JohnSmithX 160130」
