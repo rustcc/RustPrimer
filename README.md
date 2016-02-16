@@ -12,7 +12,8 @@ The Rust primer for beginners.
 
 ## 格式排版
 
-按github上的markdown规范来。
+1. 按github上的markdown规范来；
+2. 中英文之间使用一个空格隔开。
 
 ## 写作要求
 
