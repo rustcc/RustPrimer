@@ -64,22 +64,23 @@ The Rust primer for beginners.
 16. Option、Result与错误处理「JohnSmithX 160130」
 17. 宏系统「tennix 160222」
 24. 堆、栈与Box「tennix 160222」
-25. 常用数据结构实现
+
 18. Rc, Arc, Cell, RefCell, UnsafeCell「daogangtang 160120」
 19. Marker: Send, Sync, Copy, Clone「daogangtang 160125」
 20. 通用引用类型 Borrow, AsRef, Into「daogangtang 160130」
 21. 多线程编程「anzhihun 160120」
 22. 并发「anzhihun 160120」
 23. 并行「anzhihun 160120」
-26. 安全
 27. Unsafe、原始指针「JohnSmithX 160130」
 28. FFI「42 160222」
-29. 运算符重载
-30. Any与反射
+29. 运算符重载「wayslog 160221」
 31. 属性和编译器参数「elton 160215」
 32. Cargo参数配置「fuyingfuying 160131」
 32. 测试与评测
 33. 代码风格「tiansiyuan」
+30. Any与反射
+26. 安全
+25. 常用数据结构实现
 33. 标准库介绍
   1. 操作系统与文件处理
   2. 时间日期处理
