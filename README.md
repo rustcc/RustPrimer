@@ -78,7 +78,7 @@ The Rust primer for beginners.
 32. 测试与评测「daogangtang 160222」
   1. [测试 (testing)](./31-testing/31-01-threearchtest.md)
   2. 评测 (benchmark)
-33. [代码风格](./35-coding-style/35-01-style)「tiansiyuan」
+33. [代码风格](./35-coding-style/35-01-style.md)「tiansiyuan」
 30. Any与反射
 26. 安全
 25. 常用数据结构实现
