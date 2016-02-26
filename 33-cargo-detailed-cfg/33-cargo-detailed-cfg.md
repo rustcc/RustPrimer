@@ -250,8 +250,8 @@ $ cargo build --release --features "shumway pdf"
 # 库名称，默认与项目名称相同
 name = "foo"
 
-# 此选项仅用于[lib]`段落，其决定构建目标的构建方式，
-# 可以取`dylib, `rlib, `staticlib 三种值之一，表示生成动态库、r库或者静态库。
+# 此选项仅用于[lib]段落，其决定构建目标的构建方式，
+# 可以取dylib, rlib, staticlib 三种值之一，表示生成动态库、r库或者静态库。
 crate-type = ["dylib"]
 
 # path字段声明了此构建目标相对于cargo.toml文件的相对路径
