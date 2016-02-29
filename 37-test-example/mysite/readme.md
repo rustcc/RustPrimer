@@ -220,3 +220,84 @@ $curl -X POST -d '{"msg":"Just trust the Rust"}' http://localhost:3000/set
 {"msg":"Just trust the Rust"}
 ```
 iron 基本告一段落
+当然还有如何使用html模版引擎，那就是直接看文档就行了。
+
+##[nickel](http://nickel.rs/) 
+
+当然既然是web框架肯定是iron能干的nicke也能干，所以那我们就看看如何做一个hello 和返回一个html
+的页面
+
+同样我们创建`cargo new site --bin`，然后添加nickel到cargo.toml中,`cargo build`
+
+``` rust
+
+#[macro_use] extern crate nickel;
+
+use nickel::Nickel;
+
+fn main() {
+    let mut server = Nickel::new();
+
+    server.utilize(router! {
+        get "**" => |_req, _res| {
+            "Hello world!"
+        }
+    });
+
+    server.listen("127.0.0.1:6767");
+}
+```
+简单来看，也就是这样回事。
+
+1. 引入了nickel的宏
+2. 初始化Nickel
+3. 调用utilize来定义路由模块。
+4. `router!` 宏，传入的参数是 get 方法和对应的路径，"**"是全路径匹配。
+5. listen启动服务器
+
+[当然我们要引入关于html模版相关的信息](http://nickel.rs/#easy-templating)
+
+``` rust 
+#[macro_use] extern crate nickel;
+
+use std::collections::HashMap;
+use nickel::{Nickel, HttpRouter};
+
+fn main() {
+    let mut server = Nickel::new();
+
+    server.get("/", middleware! { |_, response|
+        let mut data = HashMap::new();
+        data.insert("name", "user");
+        return response.render("site/assets/template.tpl", &data);
+    });
+
+    server.listen("127.0.0.1:6767");
+}
+
+```
+上面的信息你可以编译，使用curl看看发现出现
+
+```
+$ curl http://127.0.0.1:6767
+Internal Server Error
+```
+看看文档，没发现什么问题，我紧紧更换了一个文件夹的名字，这个文件夹我也创建了。
+然后我在想难道是服务器将目录写死了吗？于是将上面的路径改正这个，问题解决。
+
+```rust 
+return response.render("examples/assets/template.tpl", &data);
+```
+我们看一下目录结构
+
+```
+.
+|-- Cargo.lock
+|-- Cargo.toml
+|-- examples
+|   `-- assets
+|       `-- template.tpl
+|-- src
+|   `-- main.rs
+
+```
