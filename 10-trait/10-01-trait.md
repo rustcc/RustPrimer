@@ -9,7 +9,7 @@ trait HasArea {
     fn area(&self) -> f64;
 }
 ```
-**trait**不需要函数体，实现代码交给具体实现它的类型去补充：
+**trait**里面的函数可以没有函数体，实现代码交给具体实现它的类型去补充：
 
 ```rust
 struct Circle {
@@ -118,7 +118,9 @@ impl HasArea for i32 {
 5.area();
 ```
 
-这样的做法一般是不被推崇的，但**Rust**对其做了一些限制来避免不必要的类型污染，只有该trait在你当前的作用域中，才能使用它为内置类型所约定的方法：
+这样的做法是有限制的。Rust 有一个“孤儿规则”：当你为某类型实现某 trait 的时候，必须要求类型或者 trait 至少有一个是在当前 crate 中定义的。你不能为第三方的类型实现第三方的 trait 。
+
+在调用 trait 中定义的方法的时候，一定要记得让这个 trait 可被访问。
 
 ```rust
 let mut f = std::fs::File::open("foo.txt").ok().expect("Couldn’t open foo.txt");
