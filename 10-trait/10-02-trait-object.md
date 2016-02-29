@@ -1,6 +1,6 @@
-# 10.2 trait对象
+# 10.2 trait对象 （trait object）
 
-trait对象在**Rust**中可以是指任何实现了该trait的类型对象。
+trait对象在**Rust**中是指使用指针封装了的 trait，比如 `&SomeTrait` 和 `Box<SomeTrait>`。
 
 ```rust
 trait Foo { fn method(&self) -> String; }
@@ -20,11 +20,11 @@ fn main() {
 }
 ```
 
-`x: &Foo`其中`x`是一个`Foo`trait对象的指针，用指针的目的是因为，`x`可以是任意实现`Foo`的类型实例，内存大小并不确定，但指针的大小是固定的。
+`x: &Foo`其中`x`是一个trait对象，用指针的目的是因为，`x`可以是任意实现`Foo`的类型实例，内存大小并不确定，但指针的大小是固定的。
 
 ## trait对象的实现
 
-在`std::raw`模块中trait对象的实现：
+`&SomeTrait` 类型和普通的指针类型`&i32`不同。它不仅包括指向真实对象的指针，还包括一个指向虚函数表的指针。它的内部实现定义在在`std::raw`模块中：
 
 ```rust
 pub struct TraitObject {
