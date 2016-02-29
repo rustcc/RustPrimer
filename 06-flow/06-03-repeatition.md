@@ -126,7 +126,7 @@ while true {
 }
 ```
 
-针对这种情况，Rust 专门优化提供了一个语句 loop（运行速度会快一点）。
+针对这种情况，Rust 专门优化提供了一个语句 loop。
 
 ```
 loop {
@@ -134,7 +134,20 @@ loop {
 }
 ```
 
-想无限循环，就直接上loop。
+`loop` 与 `while true` 的主要区别在编译阶段的静态分析。
+
+比如说，如下代码：
+
+```
+let mut a;
+loop {
+     a = 1;
+     // ... break ...
+}
+do_something(a)
+```
+
+如果是`loop`循环，编译器会正确分析出变量`a`会被正确初始化，而如果换成`while true`，则会发生编译错误。这个微小的区别也会影响生命周期分析。
 
 ## break 和 continue
 
