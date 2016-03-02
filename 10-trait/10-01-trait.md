@@ -122,9 +122,9 @@ impl HasArea for i32 {
 
 ```rust
 let mut f = std::fs::File::open("foo.txt").ok().expect("Couldn’t open foo.txt");
-let buf = b"whatever"; // byte string literal. buf: &[u8; 8]
+let buf = b"whatever"; //  buf: &[u8; 8]
 let result = f.write(buf);
-# result.unwrap(); // ignore the error
+# result.unwrap();
 ```
 
 这里是错误：

@@ -49,10 +49,9 @@ struct FooVtable {
 之前的代码可以解读为：
 
 ```rust
-
+// u8:
+// 这个函数只会被指向u8的指针调用
 fn call_method_on_u8(x: *const ()) -> String {
-    // the compiler guarantees that this function is only called
-    // with `x` pointing to a u8
     let byte: &u8 = unsafe { &*(x as *const u8) };
 
     byte.method()
@@ -63,16 +62,13 @@ static Foo_for_u8_vtable: FooVtable = FooVtable {
     size: 1,
     align: 1,
 
-    // cast to a function pointer
     method: call_method_on_u8 as fn(*const ()) -> String,
 };
 
 
 // String:
-
+// 这个函数只会被指向String的指针调用
 fn call_method_on_String(x: *const ()) -> String {
-    // the compiler guarantees that this function is only called
-    // with `x` pointing to a String
     let string: &String = unsafe { &*(x as *const String) };
 
     string.method()
@@ -80,7 +76,6 @@ fn call_method_on_String(x: *const ()) -> String {
 
 static Foo_for_String_vtable: FooVtable = FooVtable {
     destructor: /* compiler magic */,
-    // values for a 64-bit computer, halve them for 32-bit ones
     size: 24,
     align: 8,
 
@@ -93,17 +88,15 @@ let x: u8 = 1;
 
 // let b: &Foo = &a;
 let b = TraitObject {
-    // store the data
+    // data存储实际值的引用
     data: &a,
-    // store the methods
+    // vtable存储实际类型实现Foo的方法
     vtable: &Foo_for_String_vtable
 };
 
 // let y: &Foo = x;
 let y = TraitObject {
-    // store the data
     data: &x,
-    // store the methods
     vtable: &Foo_for_u8_vtable
 };
 
@@ -133,9 +126,21 @@ note: the trait cannot require that `Self : Sized`
 let o = &v as &Clone;
         ^~
 ```
+让我来分析一下错误的原因：
+
+```rust
+pub trait Clone: Sized {
+    fn clone(&self) -> Self;
+
+    fn clone_from(&mut self, source: &Self) { ... }
+}
+```
+
+虽然`Clone`本身集成了`Sized`这个trait，但是它的方法`fn clone(&self) -> Self`和`fn clone_from(&mut self, source: &Self) { ... }`含有`Self`类型，而在使用trait对象方法的时候**Rust**是动态派发的，我们根本不知道这个trait对象的实际类型，它可以是任何一个实现了该trait的类型的值，所以`Self`在这里的大小不是`Self: Sized`的，这样的情况在**Rust**中被称为`object-unsafe`或者`not object-safe`，这样的trait是不能成为trait对象的。
 
 总结：
 
-* trait本生不要求`Self: Sized`
-* trait的方法要求`Self: Sized`
-* 或者traitd的方法没有任何类型参数和不适用`Self`
+* trait的方法要求`Self: Sized`，就是方法的参数和返回值必须要有确定的size
+* 或者trait的方法没有任何类型参数和不使用`Self`
+
+参考[stackoverflow](http://stackoverflow.com/questions/29985153/trait-object-is-not-object-safe-error)
