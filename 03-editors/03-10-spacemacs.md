@@ -38,7 +38,7 @@ touch ~/.spacemacs
 
 ### 前期准备
 
-为了让Spacemacs支持Rust，我们还需要一点小小的配置。首先，请参照[前期准备](https://github.com/rustcc/RustPrimer/blob/master/3-editor/before.md)，安装好你的racer。
+为了让Spacemacs支持Rust，我们还需要一点小小的配置。首先，请参照[前期准备](../03-editors/03-01-before.md)，安装好你的racer。
 
 在这里，强烈建议将racer的环境变量加入到系统变量中(通常他们在`/etc/profile/`里进行配置)并重新启动系统，因为真的有很多人直接点击emacs的图标启动它的，这样做很可能导致emacs并不继承自己的环境变量，这是很令人无奈的。
 
@@ -90,7 +90,7 @@ values."
    ;; are declared in a layer which is not a member of
    ;; the list `dotspacemacs-configuration-layers'. (default t)
    dotspacemacs-delete-orphan-packages t))
-   
+
 ;; ...
 ;; 以下配置文件内容省略
 ;; ...

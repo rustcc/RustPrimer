@@ -12,7 +12,8 @@ The Rust primer for beginners.
 
 ## 格式排版
 
-按github上的markdown规范来。
+1. 按github上的markdown规范来；
+2. 中英文之间使用一个空格隔开。
 
 ## 写作要求
 
@@ -27,61 +28,88 @@ The Rust primer for beginners.
 
 1. 初识Rust
 2. 安装Rust「marvin-min 160105」
-  1. Linux
-  2. Mac
-  3. Windows
+  1. [Linux](./02-install/02-01-install_rust_on_linux.md)
+  2. [Mac](./02-install/02-02-install_rust_on_mac_os.md)
+  3. [Windows](./02-install/02-03-install_rust_on_windows.md)
 3. 编辑器
-  1. [前期准备](.\3-editor\before.md)「wayslog 160105」
-  1. [vim](.\3-editor\vim.md)「wayslog 160105」
-  2. emacs「tiansiyuan 160120」
-  3. vscode「daogangtang 160105」
-  4. [atom](.\3-editor\atom.md)「wayslog 160105」
+  1. [前期准备](./03-editors/03-01-before.md)「wayslog 160105」
+  1. [vim](./03-editors/03-02-vim.md)「wayslog 160105」
+  2. [emacs](./03-editors/03-03-emacs.md)「tiansiyuan 160120」
+  3. [vscode](./03-editors/03-04-emacs.md)「daogangtang 160105」
+  4. [atom](./03-editors/03-05-atom.md)「wayslog 160105」
   5. sublime
   6. visual studio
   7. eclipse
   8. Intellij IDEA
-  9. spacemacs「wayslog 160105」
-4. Rust一小时快速入门「ee0703 160120」
-5. Cargo项目管理器「fuyingfuying 160131」
+  9. [spacemacs](./03-editors/03-10-spacemacs.md)「wayslog 160105」
+4. [Rust一小时快速入门](./04-quickstart/04-00-intro.md)「ee0703 160120」
+  1. [第一个Rust程序](./04-quickstart/04-01-hello-world.md)
+  2. [简单的数学运算](./04-quickstart/04-02-basic-math.md)
+  3. [快速上手](./04-quickstart/04-03-cheet-sheet.md)
+5. [Cargo项目管理器、crate](./05-cargo-projects-manager/05-cargo-projects-manager.md)「fuyingfuying 160131」
 6. 基本程序结构「daogangtang 160131」
+  1. [注释](./06-flow/06-01-comment.md)
+  2. [条件](./06-flow/06-02-condition.md)
+  3. [循环](./06-flow/06-03-repeatition.md)
 7. 基础类型和运算符「wayslog 160125」
-  1. 基础类型
-  2. 切片
-  3. 字符串类型
-  4. 字符串的格式化
-9. 函数「qdao 160120」
+  1. [基础类型](07-primitive-type/07-01-types.md)
+  2. [字符串类](07-primitive-type/07-02-strings.md)
+  4. [基础运算符和字符串格式化](07-primitive-type/07-03-operator-and-format.md)
+8. [函数](./08-function/08-00-overview.md)「qdao 160120」
+  1. [函数参数](./08-function/08-01-argument.md)
+  2. [函数返回值](./08-function/08-02-return_value.md)
+  3. [语句和表达式](08-function/08-03-statement_expression.md)
+  4. [高阶函数](08-function/08-04-high_order_function.md)
 9. 模式匹配「andelf 160120」
-10. Trait （特征）「JohnSmithX 160130」
-11. 泛型「stormgbs 160120」
+10. [Trait （特征）](10-trait/10-00-overview.md)「JohnSmithX 160130」
+  1. [trait关键字](10-trait/10-01-trait.md)
+  2. [trait对象](10-trait/10-02-trait-object.md)
+11. [泛型](11-generics/11-01-generics.md)「stormgbs 160120」
 12. 集合类型（Collections）「cai-lw 160205」
-11. 可变性、所有权、租借和生命期「stormgbs 160105」
-13. 闭包「qdao 160120」
-14. 迭代器「andelf 160120」
-15. 模块和包系统、Prelude「jessiex 160120」
-16. Option、Result与错误处理「JohnSmithX 160130」
-17. 宏系统
-24. 堆、栈与Box
-25. 常用数据结构实现
-18. Rc, Arc, Cell, RefCell, UnsafeCell「daogangtang 160120」
-19. Marker: Send, Sync, Copy, Clone「daogangtang 160125」
-20. 通用引用类型 Borrow, AsRef, Into「daogangtang 160130」
-21. 多线程编程「anzhihun 160120」
-22. 并发「anzhihun 160120」
-23. 并行「anzhihun 160120」
-26. 安全
-27. Unsafe、原始指针「JohnSmithX 160130」
-28. FFI
-29. 运算符重载
-30. Any与反射
-31. 属性和编译器参数
-32. Cargo参数配置「fuyingfuying 160131」
-32. 测试与评测
-33. 代码风格
-33. 标准库介绍
+13. [可变性、所有权、租借和生命期](13-ownership-system/13-00-ownership_system.md)「stormgbs 160105」
+  1. [所有权](13-ownership-system/13-01-ownership.md)
+  2. [引用和借用](13-ownership-system/13-02-borrowing_references.md)
+  3. [生命周期](13-ownership-system/13-03-lifetimes.md)
+14. [闭包](14-closure/14-00-overview.md)「qdao 160120」
+  1. [闭包的语法](14-closure/14-01-syntax.md)
+  2. [闭包的实现](14-closure/14-02-implementation.md)
+  3. [闭包作为参数和返回值](14-closure/14-03-as_argument_return_value.md)
+15. 迭代器「andelf 160120」
+16. 模块和包系统、Prelude「jessiex 160120」
+17. Option、Result与错误处理「JohnSmithX 160130」
+18. [宏系统](18-macro/18-01-macro.md)「tennix 160222」
+19. 堆、栈与Box「tennix 160222」
+20. Rc, Arc, Mutex, RwLock, Cell, RefCell「daogangtang 160120」
+  1. [Rc, Arc](./20-rcarc/20-01-rcarc.md)
+  2. [Mutex, RwLock](./20-rcarc/20-02-mutex.md)
+  3. [Cell, RefCell](./20-rcarc/20-03-cell.md)
+21. 通用引用类型 Borrow, AsRef, Into「daogangtang 160130」
+22. Marker: Send, Sync, Copy, Clone「daogangtang 160125」
+23. 并发，并行，多线程编程「anzhihun 160120」
+  1. [线程](./23-concurrency-parallel-threads/24-01-thread.md)
+  2. [消息传递](./23-concurrency-parallel-threads/24-02-message-passing.md)
+  3. [共享内存](./23-concurrency-parallel-threads/24-03-share-memory.md)
+  4. [同步](./23-concurrency-parallel-threads/24-04-synchronize.md)
+  5. [并行](./23-concurrency-parallel-threads/24-05-parallel.md)
+24. Unsafe、原始指针「JohnSmithX 160130」
+25. FFI「42 160222」
+26. [运算符重载](26-operator-overload/26-01-operator.md)「wayslog 160221」
+27. [属性和编译器参数](27-attr-and-compiler-args/27-00-preface.md)「elton 160215」
+  1. [属性](27-attr-and-compiler-args/27-01-attributes.md)
+  2. [编译器参数](27-attr-and-compiler-args/27-02-rustc-options.md)
+28. [Cargo参数配置](28-cargo-detailed-cfg/28-01-cargo-detailed-cfg.md)「fuyingfuying 160131」
+29. 测试与评测「daogangtang 160222」
+  1. [测试 (testing)](29-testing/29-01-threearchtest.md)
+  2. 评测 (benchmark)
+30. [代码风格](30-coding-style/30-01-style.md)「tiansiyuan」
+31. Any与反射
+32. 安全
+33. 常用数据结构实现
+34. 标准库介绍
   1. 操作系统与文件处理
   2. 时间日期处理
   3. 网络编程
-34. 实战篇
+35. 实战篇
   1. 实战：Json处理
   2. 实战：Web 应用开发入门
   3. 实战：使用Postgresql数据库
