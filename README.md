@@ -60,7 +60,7 @@ The Rust primer for beginners.
   2. [函数返回值](./08-function/08-02-return_value.md)
   3. [语句和表达式](08-function/08-03-statement_expression.md)
   4. [高阶函数](08-function/08-04-high_order_function.md)
-9. 模式匹配「andelf 160120」
+9. 模式匹配「wayslog」
 10. [Trait （特征）](10-trait/10-00-overview.md)「JohnSmithX 160130」
   1. [trait关键字](10-trait/10-01-trait.md)
   2. [trait对象](10-trait/10-02-trait-object.md)
@@ -115,7 +115,7 @@ The Rust primer for beginners.
   1. 操作系统与文件处理
   2. 时间日期处理
   3. 网络编程
-35. 实战篇
+35. 实战篇「wangyu190810 已完成」
   1. 实战：Json处理
   2. 实战：Web 应用开发入门
   3. 实战：使用Postgresql数据库
