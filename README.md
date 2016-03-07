@@ -84,7 +84,7 @@ The Rust primer for beginners.
   2. [Mutex, RwLock](./20-rcarc/20-02-mutex.md)
   3. [Cell, RefCell](./20-rcarc/20-03-cell.md)
 21. 几个特殊的Trait: Into, From, Borrow, AsRef 等 「daogangtang 160130」
-  1. Into/From 及其在 String 和 &str 互转上的应用
+  1. [Into/From 及其在 String 和 &str 互转上的应用](./21-intoborrow/21-01-into.md)
   2. Cow 及其在 String 和 &str 上的应用
   3. AsRef, AsMut
   3. Borrow, BorrowMut, ToOwned
