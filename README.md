@@ -38,7 +38,7 @@ The Rust primer for beginners.
   3. [vscode](./03-editors/03-04-emacs.md)「daogangtang 160105」
   4. [atom](./03-editors/03-05-atom.md)「wayslog 160105」
   5. sublime
-  6. visual studio
+  6. [visual studio](./03-editors/03-07-visualstudio.md)「marvinguo 」
   7. eclipse
   8. Intellij IDEA
   9. [spacemacs](./03-editors/03-10-spacemacs.md)「wayslog 160105」
