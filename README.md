@@ -110,7 +110,7 @@ The Rust primer for beginners.
 30. [代码风格](30-coding-style/30-01-style.md)「tiansiyuan」
 31. Any与反射
 32. 安全
-33. 常用数据结构实现
+33. 常用数据结构实现「Naupio」
 34. 标准库介绍
   1. 操作系统与文件处理
   2. 时间日期处理
