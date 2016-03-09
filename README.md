@@ -38,7 +38,7 @@ The Rust primer for beginners.
   3. [vscode](./03-editors/03-04-emacs.md)「daogangtang 160105」
   4. [atom](./03-editors/03-05-atom.md)「wayslog 160105」
   5. sublime
-  6. visual studio
+  6. [visual studio](./03-editors/03-07-visualstudio.md)「marvinguo 」
   7. eclipse
   8. Intellij IDEA
   9. [spacemacs](./03-editors/03-10-spacemacs.md)「wayslog 160105」
@@ -60,7 +60,7 @@ The Rust primer for beginners.
   2. [函数返回值](./08-function/08-02-return_value.md)
   3. [语句和表达式](08-function/08-03-statement_expression.md)
   4. [高阶函数](08-function/08-04-high_order_function.md)
-9. 模式匹配「andelf 160120」
+9. 模式匹配「wayslog」
 10. [Trait （特征）](10-trait/10-00-overview.md)「JohnSmithX 160130」
   1. [trait关键字](10-trait/10-01-trait.md)
   2. [trait对象](10-trait/10-02-trait-object.md)
@@ -83,8 +83,14 @@ The Rust primer for beginners.
   1. [Rc, Arc](./20-rcarc/20-01-rcarc.md)
   2. [Mutex, RwLock](./20-rcarc/20-02-mutex.md)
   3. [Cell, RefCell](./20-rcarc/20-03-cell.md)
-21. 通用引用类型 Borrow, AsRef, Into「daogangtang 160130」
-22. Marker: Send, Sync, Copy, Clone「daogangtang 160125」
+21. 几个特殊的Trait: Into, From, Borrow, AsRef 等 「daogangtang 160130」
+  1. [Into/From 及其在 String 和 &str 互转上的应用](./21-intoborrow/21-01-into.md)
+  2. Cow 及其在 String 和 &str 上的应用
+  3. AsRef, AsMut
+  3. Borrow, BorrowMut, ToOwned
+  4. Deref 与 Deref coercions
+  5. Clone, Drop
+22. Marker: Send, Sync, Copy, Sized, PhantomData
 23. 并发，并行，多线程编程「anzhihun 160120」
   1. [线程](./23-concurrency-parallel-threads/24-01-thread.md)
   2. [消息传递](./23-concurrency-parallel-threads/24-02-message-passing.md)
@@ -104,12 +110,12 @@ The Rust primer for beginners.
 30. [代码风格](30-coding-style/30-01-style.md)「tiansiyuan」
 31. Any与反射
 32. 安全
-33. 常用数据结构实现
+33. 常用数据结构实现「Naupio」
 34. 标准库介绍
   1. 操作系统与文件处理
   2. 时间日期处理
   3. 网络编程
-35. 实战篇
+35. 实战篇「wangyu190810 已完成」
   1. 实战：Json处理
   2. 实战：Web 应用开发入门
   3. 实战：使用Postgresql数据库
