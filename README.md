@@ -78,7 +78,7 @@ The Rust primer for beginners.
   3. [闭包作为参数和返回值](14-closure/14-03-as_argument_return_value.md)
 15. 迭代器「andelf 160120」
 16. 模块和包系统、Prelude「jessiex 160120」
-17. Option、Result与错误处理「JohnSmithX 160130」
+17. [Option、Result与错误处理](17-error-handling/17-01-option-result.md)「JohnSmithX 160130」
 18. [宏系统](18-macro/18-01-macro.md)「tennix 160222」
 19. 堆、栈与Box「tennix 160222」
 20. Rc, Arc, Mutex, RwLock, Cell, RefCell「daogangtang 160120」
@@ -100,6 +100,8 @@ The Rust primer for beginners.
   4. [同步](./23-concurrency-parallel-threads/24-04-synchronize.md)
   5. [并行](./23-concurrency-parallel-threads/24-05-parallel.md)
 24. Unsafe、原始指针「JohnSmithX 160130」
+  1. [Unsafe](24-unsafety-rawpointer/24-01-unsafety.md)
+  2. [原始指针](24-unsafety-rawpointer/24-02-raw-pointer.md)
 25. FFI「42 160222」
 26. [运算符重载](26-operator-overload/26-01-operator.md)「wayslog 160221」
 27. [属性和编译器参数](27-attr-and-compiler-args/27-00-preface.md)「elton 160215」
@@ -111,13 +113,13 @@ The Rust primer for beginners.
   2. 评测 (benchmark)
 30. [代码风格](30-coding-style/30-01-style.md)「tiansiyuan」
 31. Any与反射
-32. 安全
+32. 安全（safety）
 33. 常用数据结构实现「Naupio」
 34. 标准库介绍
   1. 操作系统与文件处理
   2. 时间日期处理
   3. 网络编程
 35. 实战篇「wangyu190810 已完成」
-  1. 实战：Json处理
-  2. 实战：Web 应用开发入门
-  3. 实战：使用Postgresql数据库
+  1. [实战：Json处理](37-test-example/json_data/readme.md)
+  2. [实战：Web 应用开发入门](37-test-example/mysite/readme.md)
+  3. [实战：使用Postgresql数据库](37-test-example/db/readme.md)
