@@ -51,10 +51,11 @@ The Rust primer for beginners.
   1. [注释](./06-flow/06-01-comment.md)
   2. [条件](./06-flow/06-02-condition.md)
   3. [循环](./06-flow/06-03-repeatition.md)
-7. 基础类型和运算符「wayslog 160125」
-  1. [基础类型](07-primitive-type/07-01-types.md)
-  2. [字符串类](07-primitive-type/07-02-strings.md)
-  4. [基础运算符和字符串格式化](07-primitive-type/07-03-operator-and-format.md)
+7. 类型、运算符和字符串「wayslog 160125」
+  1. [基础类型](07-type/07-01-types.md)
+  2. [复合类型](07-type/07-02-compound-types.md)
+  2. [字符串类](07-type/07-03-strings.md)
+  4. [基础运算符和字符串格式化](07-type/07-04-operator-and-format.md)
 8. [函数](./08-function/08-00-overview.md)「qdao 160120」
   1. [函数参数](./08-function/08-01-arguement.md)
   2. [函数返回值](./08-function/08-02-return_value.md)
