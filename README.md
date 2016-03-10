@@ -60,7 +60,9 @@ The Rust primer for beginners.
   2. [函数返回值](./08-function/08-02-return_value.md)
   3. [语句和表达式](08-function/08-03-statement_expression.md)
   4. [高阶函数](08-function/08-04-high_order_function.md)
-9. 模式匹配「wayslog」
+9. [模式匹配](09-match/09-00-overview.md)「wayslog」
+  1. [match关键字](09-match/09-01-match.md)
+  2. [模式](09-match/09-02-pattern.md)
 10. [Trait （特征）](10-trait/10-00-overview.md)「JohnSmithX 160130」
   1. [trait关键字](10-trait/10-01-trait.md)
   2. [trait对象](10-trait/10-02-trait-object.md)
