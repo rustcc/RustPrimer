@@ -26,7 +26,7 @@ The Rust primer for beginners.
 
 ## 大纲
 
-1. 初识Rust
+1. 初识Rust「daogangtang」
 2. 安装Rust「marvin-min 160105」
   1. [Linux](./02-install/02-01-install_rust_on_linux.md)
   2. [Mac](./02-install/02-02-install_rust_on_mac_os.md)
@@ -67,7 +67,7 @@ The Rust primer for beginners.
   1. [trait关键字](10-trait/10-01-trait.md)
   2. [trait对象](10-trait/10-02-trait-object.md)
 11. [泛型](11-generics/11-01-generics.md)「stormgbs 160120」
-12. 集合类型（Collections）「cai-lw 160205」
+12. 集合类型（Collections）「」
 13. [可变性、所有权、租借和生命期](13-ownership-system/13-00-ownership_system.md)「stormgbs 160105」
   1. [所有权](13-ownership-system/13-01-ownership.md)
   2. [引用和借用](13-ownership-system/13-02-borrowing_references.md)
