@@ -67,7 +67,7 @@ The Rust primer for beginners.
   1. [trait关键字](10-trait/10-01-trait.md)
   2. [trait对象](10-trait/10-02-trait-object.md)
 11. [泛型](11-generics/11-01-generics.md)「stormgbs 160120」
-12. 集合类型（Collections）「」
+12. 集合类型（Collections）「wayslog」
 13. [可变性、所有权、租借和生命期](13-ownership-system/13-00-ownership_system.md)「stormgbs 160105」
   1. [所有权](13-ownership-system/13-01-ownership.md)
   2. [引用和借用](13-ownership-system/13-02-borrowing_references.md)
@@ -76,8 +76,8 @@ The Rust primer for beginners.
   1. [闭包的语法](14-closure/14-01-syntax.md)
   2. [闭包的实现](14-closure/14-02-implementation.md)
   3. [闭包作为参数和返回值](14-closure/14-03-as_argument_return_value.md)
-15. 迭代器「andelf 160120」
-16. 模块和包系统、Prelude「jessiex 160120」
+15. 迭代器「wayslog」
+16. 模块和包系统、Prelude「daogangtang」
 17. [Option、Result与错误处理](17-error-handling/17-01-option-result.md)「JohnSmithX 160130」
 18. [宏系统](18-macro/18-01-macro.md)「tennix 160222」
 19. 堆、栈与Box「tennix 160222」
@@ -92,7 +92,7 @@ The Rust primer for beginners.
   3. Borrow, BorrowMut, ToOwned
   4. Deref 与 Deref coercions
   5. Clone, Drop
-22. Marker: Send, Sync, Copy, Sized, PhantomData
+22. Marker: Send, Sync, Copy, Sized, PhantomData「daogangtang」
 23. 并发，并行，多线程编程「anzhihun 160120」
   1. [线程](./23-concurrency-parallel-threads/24-01-thread.md)
   2. [消息传递](./23-concurrency-parallel-threads/24-02-message-passing.md)
@@ -112,10 +112,10 @@ The Rust primer for beginners.
   1. [测试 (testing)](29-testing/29-01-threearchtest.md)
   2. 评测 (benchmark)
 30. [代码风格](30-coding-style/30-01-style.md)「tiansiyuan」
-31. Any与反射
-32. 安全（safety）
+31. Any与反射「wayslog」
+32. 安全（safety）「daogangtang」
 33. 常用数据结构实现「Naupio」
-34. 标准库介绍
+34. 标准库介绍「wayslog」
   1. 操作系统与文件处理
   2. 时间日期处理
   3. 网络编程
