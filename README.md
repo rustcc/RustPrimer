@@ -85,13 +85,13 @@ The Rust primer for beginners.
   1. [Rc, Arc](./20-rcarc/20-01-rcarc.md)
   2. [Mutex, RwLock](./20-rcarc/20-02-mutex.md)
   3. [Cell, RefCell](./20-rcarc/20-03-cell.md)
-21. 几个特殊的Trait: Into, From, Borrow, AsRef 等 「daogangtang 160130」
+21. 类型系统相关的Trait 「daogangtang 160130」
   1. [Into/From 及其在 String 和 &str 互转上的应用](./21-intoborrow/21-01-into.md)
-  2. Cow 及其在 String 和 &str 上的应用
-  3. AsRef, AsMut
+  2. AsRef, AsMut
   3. Borrow, BorrowMut, ToOwned
   4. Deref 与 Deref coercions
-  5. Clone, Drop
+  5. Cow 及其在 String 和 &str 上的应用
+  6. Clone, Drop
 22. Marker: Send, Sync, Copy, Sized, PhantomData「daogangtang」
 23. 并发，并行，多线程编程「anzhihun 160120」
   1. [线程](./23-concurrency-parallel-threads/24-01-thread.md)
