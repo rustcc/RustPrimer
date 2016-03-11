@@ -26,7 +26,7 @@ The Rust primer for beginners.
 
 ## 大纲
 
-1. 初识Rust
+1. [初识Rust](./01-1st-glance/README.md)
 2. 安装Rust「marvin-min 160105」
   1. [Linux](./02-install/02-01-install_rust_on_linux.md)
   2. [Mac](./02-install/02-02-install_rust_on_mac_os.md)
@@ -38,7 +38,7 @@ The Rust primer for beginners.
   3. [vscode](./03-editors/03-04-emacs.md)「daogangtang 160105」
   4. [atom](./03-editors/03-05-atom.md)「wayslog 160105」
   5. sublime
-  6. visual studio
+  6. [visual studio](./03-editors/03-07-visualstudio.md)「marvinguo 」
   7. eclipse
   8. Intellij IDEA
   9. [spacemacs](./03-editors/03-10-spacemacs.md)「wayslog 160105」
@@ -57,7 +57,7 @@ The Rust primer for beginners.
   2. [字符串类](07-type/07-03-strings.md)
   4. [基础运算符和字符串格式化](07-type/07-04-operator-and-format.md)
 8. [函数](./08-function/08-00-overview.md)「qdao 160120」
-  1. [函数参数](./08-function/08-01-argument.md)
+  1. [函数参数](./08-function/08-01-arguement.md)
   2. [函数返回值](./08-function/08-02-return_value.md)
   3. [语句和表达式](08-function/08-03-statement_expression.md)
   4. [高阶函数](08-function/08-04-high_order_function.md)
@@ -68,32 +68,33 @@ The Rust primer for beginners.
   1. [trait关键字](10-trait/10-01-trait.md)
   2. [trait对象](10-trait/10-02-trait-object.md)
 11. [泛型](11-generics/11-01-generics.md)「stormgbs 160120」
-12. 集合类型（Collections）「cai-lw 160205」
-13. [可变性、所有权、租借和生命期](13-ownership-system/13-00-ownership_system.md)「stormgbs 160105」
-  1. [所有权](13-ownership-system/13-01-ownership.md)
-  2. [引用和借用](13-ownership-system/13-02-borrowing_references.md)
-  3. [生命周期](13-ownership-system/13-03-lifetimes.md)
-14. [闭包](14-closure/14-00-overview.md)「qdao 160120」
-  1. [闭包的语法](14-closure/14-01-syntax.md)
-  2. [闭包的实现](14-closure/14-02-implementation.md)
-  3. [闭包作为参数和返回值](14-closure/14-03-as_argument_return_value.md)
-15. 迭代器「andelf 160120」
-16. 模块和包系统、Prelude「jessiex 160120」
-17. Option、Result与错误处理「JohnSmithX 160130」
+12. [可变性、所有权、租借和生命期](12-ownership-system/12-00-ownership_system.md)「stormgbs 160105」
+  1. [所有权](12-ownership-system/12-01-ownership.md)
+  2. [引用和借用](12-ownership-system/12-02-borrowing_references.md)
+  3. [生命周期](12-ownership-system/12-03-lifetimes.md)
+13. [闭包](13-closure/13-00-overview.md)「qdao 160120」
+  1. [闭包的语法](13-closure/13-01-syntax.md)
+  2. [闭包的实现](13-closure/13-02-implementation.md)
+  3. [闭包作为参数和返回值](13-closure/13-03-as_argument_return_value.md)
+14. 集合类型（Collections）「wayslog」
+15. 迭代器「wayslog」
+16. 模块和包系统、Prelude「daogangtang」
+  1. [模块（module）和包（crate）](16-modules/16-01-module.md)
+  2. [Prelude](16-modules/16-02-prelude.md)
+17. [Option、Result与错误处理](17-error-handling/17-01-option-result.md)「JohnSmithX 160130」
 18. [宏系统](18-macro/18-01-macro.md)「tennix 160222」
-19. 堆、栈与Box「tennix 160222」
+19. [堆、栈与Box](./19-heap-stack/heap-stack.md)「tennix 160222」
 20. Rc, Arc, Mutex, RwLock, Cell, RefCell「daogangtang 160120」
   1. [Rc, Arc](./20-rcarc/20-01-rcarc.md)
   2. [Mutex, RwLock](./20-rcarc/20-02-mutex.md)
   3. [Cell, RefCell](./20-rcarc/20-03-cell.md)
-21. 几个特殊的Trait: Into, From, Borrow, AsRef 等 「daogangtang 160130」
+21. 类型系统相关的Trait 「daogangtang 160130」
   1. [Into/From 及其在 String 和 &str 互转上的应用](./21-intoborrow/21-01-into.md)
-  2. Cow 及其在 String 和 &str 上的应用
-  3. AsRef, AsMut
-  3. Borrow, BorrowMut, ToOwned
-  4. Deref 与 Deref coercions
-  5. Clone, Drop
-22. Marker: Send, Sync, Copy, Sized, PhantomData
+  2. [AsRef, AsMut](./21-intoborrow/21-02-asref.md)
+  3. [Borrow, BorrowMut, ToOwned](./21-intoborrow/21-03-borrow.md)
+  4. [Deref 与 Deref coercions](./21-intoborrow/21-04-deref.md)
+  5. [Cow 及其在 String 和 &str 上的应用](./21-intoborrow/21-05-cow.md)
+22. Marker: Send, Sync, Copy, Sized, PhantomData「daogangtang」
 23. 并发，并行，多线程编程「anzhihun 160120」
   1. [线程](./23-concurrency-parallel-threads/24-01-thread.md)
   2. [消息传递](./23-concurrency-parallel-threads/24-02-message-passing.md)
@@ -101,6 +102,8 @@ The Rust primer for beginners.
   4. [同步](./23-concurrency-parallel-threads/24-04-synchronize.md)
   5. [并行](./23-concurrency-parallel-threads/24-05-parallel.md)
 24. Unsafe、原始指针「JohnSmithX 160130」
+  1. [Unsafe](24-unsafety-rawpointer/24-01-unsafety.md)
+  2. [原始指针](24-unsafety-rawpointer/24-02-raw-pointer.md)
 25. FFI「42 160222」
 26. [运算符重载](26-operator-overload/26-01-operator.md)「wayslog 160221」
 27. [属性和编译器参数](27-attr-and-compiler-args/27-00-preface.md)「elton 160215」
@@ -111,14 +114,14 @@ The Rust primer for beginners.
   1. [测试 (testing)](29-testing/29-01-threearchtest.md)
   2. 评测 (benchmark)
 30. [代码风格](30-coding-style/30-01-style.md)「tiansiyuan」
-31. Any与反射
-32. 安全
-33. 常用数据结构实现
-34. 标准库介绍
+31. Any与反射「wayslog」
+32. 安全（safety）「daogangtang」
+33. 常用数据结构实现「Naupio」
+34. 标准库介绍「wayslog」
   1. 操作系统与文件处理
   2. 时间日期处理
   3. 网络编程
 35. 实战篇「wangyu190810 已完成」
-  1. 实战：Json处理
-  2. 实战：Web 应用开发入门
-  3. 实战：使用Postgresql数据库
+  1. [实战：Json处理](35-action/json_data/readme.md)
+  2. [实战：Web 应用开发入门](35-action/mysite/readme.md)
+  3. [实战：使用Postgresql数据库](35-action/db/readme.md)
