@@ -26,7 +26,7 @@ The Rust primer for beginners.
 
 ## 大纲
 
-1. 初识Rust
+1. 初识Rust「daogangtang」
 2. 安装Rust「marvin-min 160105」
   1. [Linux](./02-install/02-01-install_rust_on_linux.md)
   2. [Mac](./02-install/02-02-install_rust_on_mac_os.md)
@@ -60,12 +60,14 @@ The Rust primer for beginners.
   2. [函数返回值](./08-function/08-02-return_value.md)
   3. [语句和表达式](08-function/08-03-statement_expression.md)
   4. [高阶函数](08-function/08-04-high_order_function.md)
-9. 模式匹配「wayslog」
+9. [模式匹配](09-match/09-00-overview.md)「wayslog」
+  1. [match关键字](09-match/09-01-match.md)
+  2. [模式](09-match/09-02-pattern.md)
 10. [Trait （特征）](10-trait/10-00-overview.md)「JohnSmithX 160130」
   1. [trait关键字](10-trait/10-01-trait.md)
   2. [trait对象](10-trait/10-02-trait-object.md)
 11. [泛型](11-generics/11-01-generics.md)「stormgbs 160120」
-12. 集合类型（Collections）「cai-lw 160205」
+12. 集合类型（Collections）「wayslog」
 13. [可变性、所有权、租借和生命期](13-ownership-system/13-00-ownership_system.md)「stormgbs 160105」
   1. [所有权](13-ownership-system/13-01-ownership.md)
   2. [引用和借用](13-ownership-system/13-02-borrowing_references.md)
@@ -74,9 +76,9 @@ The Rust primer for beginners.
   1. [闭包的语法](14-closure/14-01-syntax.md)
   2. [闭包的实现](14-closure/14-02-implementation.md)
   3. [闭包作为参数和返回值](14-closure/14-03-as_argument_return_value.md)
-15. 迭代器「andelf 160120」
-16. 模块和包系统、Prelude「jessiex 160120」
-17. Option、Result与错误处理「JohnSmithX 160130」
+15. 迭代器「wayslog」
+16. 模块和包系统、Prelude「daogangtang」
+17. [Option、Result与错误处理](17-error-handling/17-01-option-result.md)「JohnSmithX 160130」
 18. [宏系统](18-macro/18-01-macro.md)「tennix 160222」
 19. 堆、栈与Box「tennix 160222」
 20. Rc, Arc, Mutex, RwLock, Cell, RefCell「daogangtang 160120」
@@ -90,7 +92,7 @@ The Rust primer for beginners.
   3. Borrow, BorrowMut, ToOwned
   4. Deref 与 Deref coercions
   5. Clone, Drop
-22. Marker: Send, Sync, Copy, Sized, PhantomData
+22. Marker: Send, Sync, Copy, Sized, PhantomData「daogangtang」
 23. 并发，并行，多线程编程「anzhihun 160120」
   1. [线程](./23-concurrency-parallel-threads/24-01-thread.md)
   2. [消息传递](./23-concurrency-parallel-threads/24-02-message-passing.md)
@@ -98,6 +100,8 @@ The Rust primer for beginners.
   4. [同步](./23-concurrency-parallel-threads/24-04-synchronize.md)
   5. [并行](./23-concurrency-parallel-threads/24-05-parallel.md)
 24. Unsafe、原始指针「JohnSmithX 160130」
+  1. [Unsafe](24-unsafety-rawpointer/24-01-unsafety.md)
+  2. [原始指针](24-unsafety-rawpointer/24-02-raw-pointer.md)
 25. FFI「42 160222」
 26. [运算符重载](26-operator-overload/26-01-operator.md)「wayslog 160221」
 27. [属性和编译器参数](27-attr-and-compiler-args/27-00-preface.md)「elton 160215」
@@ -108,14 +112,14 @@ The Rust primer for beginners.
   1. [测试 (testing)](29-testing/29-01-threearchtest.md)
   2. 评测 (benchmark)
 30. [代码风格](30-coding-style/30-01-style.md)「tiansiyuan」
-31. Any与反射
-32. 安全
+31. Any与反射「wayslog」
+32. 安全（safety）「daogangtang」
 33. 常用数据结构实现「Naupio」
-34. 标准库介绍
+34. 标准库介绍「wayslog」
   1. 操作系统与文件处理
   2. 时间日期处理
   3. 网络编程
 35. 实战篇「wangyu190810 已完成」
-  1. 实战：Json处理
-  2. 实战：Web 应用开发入门
-  3. 实战：使用Postgresql数据库
+  1. [实战：Json处理](37-test-example/json_data/readme.md)
+  2. [实战：Web 应用开发入门](37-test-example/mysite/readme.md)
+  3. [实战：使用Postgresql数据库](37-test-example/db/readme.md)
