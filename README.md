@@ -87,11 +87,10 @@ The Rust primer for beginners.
   3. [Cell, RefCell](./20-rcarc/20-03-cell.md)
 21. 类型系统相关的Trait 「daogangtang 160130」
   1. [Into/From 及其在 String 和 &str 互转上的应用](./21-intoborrow/21-01-into.md)
-  2. AsRef, AsMut
-  3. Borrow, BorrowMut, ToOwned
-  4. Deref 与 Deref coercions
-  5. Cow 及其在 String 和 &str 上的应用
-  6. Clone, Drop
+  2. [AsRef, AsMut](./21-intoborrow/21-02-asref.md)
+  3. [Borrow, BorrowMut, ToOwned](./21-intoborrow/21-03-borrow.md)
+  4. [Deref 与 Deref coercions](./21-intoborrow/21-04-deref.md)
+  5. [Cow 及其在 String 和 &str 上的应用](./21-intoborrow/21-05-cow.md)
 22. Marker: Send, Sync, Copy, Sized, PhantomData「daogangtang」
 23. 并发，并行，多线程编程「anzhihun 160120」
   1. [线程](./23-concurrency-parallel-threads/24-01-thread.md)
