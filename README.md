@@ -80,7 +80,7 @@ The Rust primer for beginners.
 16. 模块和包系统、Prelude「daogangtang」
 17. [Option、Result与错误处理](17-error-handling/17-01-option-result.md)「JohnSmithX 160130」
 18. [宏系统](18-macro/18-01-macro.md)「tennix 160222」
-19. 堆、栈与Box「tennix 160222」
+19. [堆、栈与Box](./19-heap-stack/heap-stack.md)「tennix 160222」
 20. Rc, Arc, Mutex, RwLock, Cell, RefCell「daogangtang 160120」
   1. [Rc, Arc](./20-rcarc/20-01-rcarc.md)
   2. [Mutex, RwLock](./20-rcarc/20-02-mutex.md)
