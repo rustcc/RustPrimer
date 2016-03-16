@@ -56,7 +56,7 @@ The Rust primer for beginners.
   2. [字符串类](07-primitive-type/07-02-strings.md)
   4. [基础运算符和字符串格式化](07-primitive-type/07-03-operator-and-format.md)
 8. [函数](./08-function/08-00-overview.md)「qdao 160120」
-  1. [函数参数](./08-function/08-01-argument.md)
+  1. [函数参数](./08-function/08-01-arguement.md)
   2. [函数返回值](./08-function/08-02-return_value.md)
   3. [语句和表达式](08-function/08-03-statement_expression.md)
   4. [高阶函数](08-function/08-04-high_order_function.md)
