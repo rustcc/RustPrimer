@@ -119,6 +119,6 @@ The Rust primer for beginners.
   2. 时间日期处理
   3. 网络编程
 35. 实战篇「wangyu190810 已完成」
-  1. [实战：Json处理](37-test-example/json_data/readme.md)
-  2. [实战：Web 应用开发入门](37-test-example/mysite/readme.md)
-  3. [实战：使用Postgresql数据库](37-test-example/db/readme.md)
+  1. [实战：Json处理](35-action/json_data/readme.md)
+  2. [实战：Web 应用开发入门](35-action/mysite/readme.md)
+  3. [实战：使用Postgresql数据库](35-action/db/readme.md)
