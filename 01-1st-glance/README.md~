@@ -1,0 +1,43 @@
+What is Rust Programming Language? As we attempt to answer that question we will focus a little on the history of this systems language. We will see what inspires it and who developed it.
+
+In addition we will throw in some basic syntax examples. To be ore precise the famous Hello World code snippet. This however will not be a tutorial.
+
+So What is Rust Programming Language?
+In basic terms Rust is a fast running systems programming language designed in a way that guarantees thread and memory safety and prevents segfaults.
+
+Rust can be classified as a general purpose, multi-paradigm, compiled programming language such as C or C++. Unlike the latter languages mentioned here, Rust is designed to be thread safe. It supports pure functional, imperative procedural, and object-oriented coding styles.
+
+Originally developed in 2010 by Graydon Hoare at Mozilla Research, this systems language is now maintained by the Rust Project Developers which is an open development community.
+
+So What is Rust Programming Languages Goal?
+Its goal is to create highly concurrent and safe software systems. It does this by placing emphasis on safety, concurrency and control of memory. Even though Rust borrows its syntax from C and C++ it does not permit null pointers or dangling pointers. Both of which have been causes of system crashes, memory leaks and insecure code in C and C++.
+
+Rather than classes Rust uses implementations, traits and structured types. Implementations are what would be classes in C++ and other object-oriented languages.
+
+The common control structures such as if else, and loop statements for and while are present in Rust. Blocks of code are scoped with curly brackets as is the case in C and C++ style languages.
+
+Rust has managed to be memory safe without the overhead of automated garbage collectors the way they are implemented in .NET and Java programming languages.
+
+This is an example of a code snippet of Rust programming language showcasing the classic Hello World application:
+
+
+fn main() {
+println!("hello, world");
+}
+1
+2
+3
+fn main() {
+println!("hello, world");
+}
+Other popular languages that have influenced Rust include C, C++, C#, Erlang, Haskell, OCaml, Ruby, Scheme and Swift among others. Rust has also been an influencer and the list includes C# 7, Elm, Idris, Swift.
+
+Because Rust provides its installer you can simply download the installer from the official website and run it on your respective operating system. Installers are available for Windows, Mac and Linux (In the form of scripts) for both 32bit and 64bit CPU architectures under the Apache License 2.0 or MIT Licenses.
+
+Rust targets the following operating systems: Linux, OS X, Windows, FreeBSD, Android and a little of iOS. If you are interested  how to remove rust from your system you can simply run the uninstall command of the installer.
+
+Rust also implements a dependency system called Cargo. In a later article we will be taking a closer look at what it entails together with the related crates.
+
+Without going into too much detail, you can get started with Rust programming by accessing the book online right here. Happy Rust programming.
+
+
