@@ -28,7 +28,7 @@
   ```rust
   ();        // unit type
   "hello";   // string type
-  '15';       // character type
+  '1';       // character type
   15;         // integer type
   ```
 
