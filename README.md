@@ -56,7 +56,7 @@ The Rust primer for beginners.
   2. [字符串类](07-primitive-type/07-02-strings.md)
   4. [基础运算符和字符串格式化](07-primitive-type/07-03-operator-and-format.md)
 8. [函数](./08-function/08-00-overview.md)「qdao 160120」
-  1. [函数参数](./08-function/08-01-argument.md)
+  1. [函数参数](./08-function/08-01-arguement.md)
   2. [函数返回值](./08-function/08-02-return_value.md)
   3. [语句和表达式](08-function/08-03-statement_expression.md)
   4. [高阶函数](08-function/08-04-high_order_function.md)
@@ -121,6 +121,6 @@ The Rust primer for beginners.
   2. 时间日期处理
   3. 网络编程
 35. 实战篇「wangyu190810 已完成」
-  1. [实战：Json处理](37-test-example/json_data/readme.md)
-  2. [实战：Web 应用开发入门](37-test-example/mysite/readme.md)
-  3. [实战：使用Postgresql数据库](37-test-example/db/readme.md)
+  1. [实战：Json处理](35-action/json_data/readme.md)
+  2. [实战：Web 应用开发入门](35-action/mysite/readme.md)
+  3. [实战：使用Postgresql数据库](35-action/db/readme.md)

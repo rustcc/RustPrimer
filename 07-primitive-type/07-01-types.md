@@ -101,7 +101,7 @@ error: aborting due to previous error
 ```
 let arr = [1, 2, 3, 4, 5, 6];
 let slice_complete = &arr[..]; // 获取全部元素
-let slice_middle = &arr[1..4]; // 获取中间元素，最后取得的Slice为 [2, 3, 4] 。切片遵循左开右闭原则。
+let slice_middle = &arr[1..4]; // 获取中间元素，最后取得的Slice为 [2, 3, 4] 。切片遵循左闭右开原则。
 let slice_right = &arr[1..]; // 最后获得的元素为[2, 3, 4, 5, 6]，长度为5。
 let slice_left = &arr[..3]; // 最后获得的元素为[1, 2, 3]，长度为3。
 ```
