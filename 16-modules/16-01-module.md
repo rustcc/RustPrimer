@@ -259,6 +259,11 @@ use super::xxx;
 ``` 
 它表示，引用根路径下的 `xxx::yyy`，这个根路径，指的是当前 crate 的根路径。
 
+路径中的 `*` 符号：
+```
+use xxx:*
+```
+表示导入 `xxx` 模块下的所有可见 item（加了 pub 标识的 item）。
 
 ### Re-exporting
 
