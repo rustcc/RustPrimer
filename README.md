@@ -78,6 +78,8 @@ The Rust primer for beginners.
   3. [闭包作为参数和返回值](14-closure/14-03-as_argument_return_value.md)
 15. 迭代器「wayslog」
 16. 模块和包系统、Prelude「daogangtang」
+  1. [模块（module）和包（crate）](16-modules/16-01-module.md)
+  2. [Prelude](16-modules/16-02-prelude.md)
 17. [Option、Result与错误处理](17-error-handling/17-01-option-result.md)「JohnSmithX 160130」
 18. [宏系统](18-macro/18-01-macro.md)「tennix 160222」
 19. [堆、栈与Box](./19-heap-stack/heap-stack.md)「tennix 160222」
