@@ -292,7 +292,7 @@ extern crate xxx;
 ```
 extern crate xxx;
 
-use xxx::yyy:zzz;
+use xxx::yyy::zzz;
 ``` 
 
 引入的时候，可以通过 `as` 关键字重命名。
@@ -300,7 +300,7 @@ use xxx::yyy:zzz;
 ```
 extern crate xxx as foo;
 
-use foo::yyy:zzz;
+use foo::yyy::zzz;
 ```
 
 
