@@ -35,7 +35,7 @@ assert_eq!(z, w);
 ```
 let x:&'static str = "hello world";
 
-let y:String = x.to_string();
+let mut y:String = x.to_string();
 println!("{}", y);
 y.push_str(", world");
 println!("{}", y);
