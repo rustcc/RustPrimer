@@ -26,7 +26,7 @@ The Rust primer for beginners.
 
 ## 大纲
 
-1. 初识Rust「daogangtang」
+1. [初识Rust](./01-1st-glance/README.md)
 2. 安装Rust「marvin-min 160105」
   1. [Linux](./02-install/02-01-install_rust_on_linux.md)
   2. [Mac](./02-install/02-02-install_rust_on_mac_os.md)
