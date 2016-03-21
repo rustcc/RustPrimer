@@ -171,4 +171,3 @@ fn main() {
     assert_eq!(s.pop(), None);
 }
 ```
-### [代码链接参考](https://github.com/DiscoViking/algorithms/blob/master/src/stack.rs)
