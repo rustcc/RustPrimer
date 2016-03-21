@@ -140,7 +140,16 @@ pub trait Clone: Sized {
 
 总结：
 
-* trait的方法要求`Self: Sized`，就是方法的参数和返回值必须要有确定的size
-* 或者trait的方法没有任何类型参数和不使用`Self`
+如果一个`trait`方法是`object safe`的，它需要满足：
+* 方法有`Self: Sized`约束， 或者
+* 同时满足以下所有条件：
+  * 没有泛型参数
+  * 不是静态函数
+  * 除了`self`之外的其它参数和返回值不能使用`Self`类型
+
+如果一个`trait`是`object-safe`的，它需要满足：
+* 所有的方法都是`object-safe`的，并且
+* trait 不要求 `Self: Sized` 约束
 
 参考[stackoverflow](http://stackoverflow.com/questions/29985153/trait-object-is-not-object-safe-error)
+[object safe rfc](https://github.com/rust-lang/rfcs/blob/master/text/0255-object-safety.md)
