@@ -64,6 +64,7 @@ pub enum Option<T> {
     None,
     Some(T),
 }```
+
 Option 里面包括元素，None 和 Some(T) ，这样就很轻松的描述了 next 如果指向的是栈末尾的元素的时候，都是在同样 Option 类型下。这样方便了功能的实现，也方便了错误处理。Option 有很多强大的共能的，读者可以参考下面几个连接：
 [Option标准库文档](http://doc.rust-lang.org/nightly/std/option/enum.Option.html)
 [Error Handling in Rust](http://blog.burntsushi.net/rust-error-handling/)
