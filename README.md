@@ -116,9 +116,10 @@ The Rust primer for beginners.
 31. Any与反射「wayslog」
 32. 安全（safety）「daogangtang」
 33. 常用数据结构实现「Naupio」
-  1.[栈结构](33-data-struct/33-01-stack.md)
-  2.[队列](33-data-struct/33-02-queue.md)
-  3.MORE...
+  1. [栈结构](33-data-struct/33-01-stack.md)
+  2. [队列](33-data-struct/33-02-queue.md)
+  3. [优先队列](33-data-struct/33-03-priority_queue.md)
+  4. TODO...
 34. 标准库介绍「wayslog」
   1. 操作系统与文件处理
   2. 时间日期处理
