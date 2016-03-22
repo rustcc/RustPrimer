@@ -69,14 +69,14 @@ The Rust primer for beginners.
   2. [trait对象](10-trait/10-02-trait-object.md)
 11. [泛型](11-generics/11-01-generics.md)「stormgbs 160120」
 12. [可变性、所有权、租借和生命期](12-ownership-system/12-00-ownership_system.md)「stormgbs 160105」
-  1. [所有权](12-ownership-system/12-01-ownership.md)
-  2. [引用和借用](12-ownership-system/12-02-borrowing_references.md)
-  3. [生命周期](12-ownership-system/12-03-lifetimes.md)
-13. [闭包](13-closure/13-00-overview.md)「qdao 160120」
-  1. [闭包的语法](13-closure/13-01-syntax.md)
-  2. [闭包的实现](13-closure/13-02-implementation.md)
-  3. [闭包作为参数和返回值](13-closure/13-03-as_argument_return_value.md)
-14. 集合类型（Collections）「wayslog」
+  1. [所有权](12-ownership-system/13-01-ownership.md)
+  2. [引用和借用](12-ownership-system/13-02-borrowing_references.md)
+  3. [生命周期](12-ownership-system/13-03-lifetimes.md)
+13. 集合类型（Collections）「wayslog」
+14. [闭包](14-closure/14-00-overview.md)「qdao 160120」
+  1. [闭包的语法](14-closure/14-01-syntax.md)
+  2. [闭包的实现](14-closure/14-02-implementation.md)
+  3. [闭包作为参数和返回值](14-closure/14-03-as_argument_return_value.md)
 15. 迭代器「wayslog」
 16. 模块和包系统、Prelude「daogangtang」
   1. [模块（module）和包（crate）](16-modules/16-01-module.md)
