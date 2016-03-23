@@ -26,7 +26,7 @@ The Rust primer for beginners.
 
 ## 大纲
 
-1. 初识Rust「daogangtang」
+1. [初识Rust](./01-1st-glance/README.md)
 2. 安装Rust「marvin-min 160105」
   1. [Linux](./02-install/02-01-install_rust_on_linux.md)
   2. [Mac](./02-install/02-02-install_rust_on_mac_os.md)
@@ -35,7 +35,7 @@ The Rust primer for beginners.
   1. [前期准备](./03-editors/03-01-before.md)「wayslog 160105」
   1. [vim](./03-editors/03-02-vim.md)「wayslog 160105」
   2. [emacs](./03-editors/03-03-emacs.md)「tiansiyuan 160120」
-  3. [vscode](./03-editors/03-04-emacs.md)「daogangtang 160105」
+  3. [vscode](./03-editors/03-04-vscode.md)「daogangtang 160105」
   4. [atom](./03-editors/03-05-atom.md)「wayslog 160105」
   5. sublime
   6. [visual studio](./03-editors/03-07-visualstudio.md)「marvinguo 」
@@ -116,6 +116,10 @@ The Rust primer for beginners.
 31. Any与反射「wayslog」
 32. 安全（safety）「daogangtang」
 33. 常用数据结构实现「Naupio」
+  1. [栈结构](33-data-struct/33-01-stack.md)
+  2. [队列](33-data-struct/33-02-queue.md)
+  3. [优先队列](33-data-struct/33-03-priority_queue.md)
+  4. TODO...
 34. 标准库介绍「wayslog」
   1. 操作系统与文件处理
   2. 时间日期处理
