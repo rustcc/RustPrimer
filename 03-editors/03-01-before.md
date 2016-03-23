@@ -72,7 +72,7 @@ windows:
 ```
 target\release\racer complete std::io::B
 ```
-你将会看到racer的提示，这表示ruacer已经执行完成了。
+你将会看到racer的提示，这表示racer已经执行完成了。
 
 
 ## 安装 rustfmt

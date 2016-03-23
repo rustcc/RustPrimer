@@ -26,7 +26,7 @@ The Rust primer for beginners.
 
 ## 大纲
 
-1. 初识Rust「daogangtang」
+1. [初识Rust](./01-1st-glance/README.md)
 2. 安装Rust「marvin-min 160105」
   1. [Linux](./02-install/02-01-install_rust_on_linux.md)
   2. [Mac](./02-install/02-02-install_rust_on_mac_os.md)
@@ -35,7 +35,7 @@ The Rust primer for beginners.
   1. [前期准备](./03-editors/03-01-before.md)「wayslog 160105」
   1. [vim](./03-editors/03-02-vim.md)「wayslog 160105」
   2. [emacs](./03-editors/03-03-emacs.md)「tiansiyuan 160120」
-  3. [vscode](./03-editors/03-04-emacs.md)「daogangtang 160105」
+  3. [vscode](./03-editors/03-04-vscode.md)「daogangtang 160105」
   4. [atom](./03-editors/03-05-atom.md)「wayslog 160105」
   5. sublime
   6. [visual studio](./03-editors/03-07-visualstudio.md)「marvinguo 」
@@ -56,7 +56,7 @@ The Rust primer for beginners.
   2. [字符串类](07-primitive-type/07-02-strings.md)
   4. [基础运算符和字符串格式化](07-primitive-type/07-03-operator-and-format.md)
 8. [函数](./08-function/08-00-overview.md)「qdao 160120」
-  1. [函数参数](./08-function/08-01-argument.md)
+  1. [函数参数](./08-function/08-01-arguement.md)
   2. [函数返回值](./08-function/08-02-return_value.md)
   3. [语句和表达式](08-function/08-03-statement_expression.md)
   4. [高阶函数](08-function/08-04-high_order_function.md)
@@ -78,20 +78,21 @@ The Rust primer for beginners.
   3. [闭包作为参数和返回值](14-closure/14-03-as_argument_return_value.md)
 15. 迭代器「wayslog」
 16. 模块和包系统、Prelude「daogangtang」
+  1. [模块（module）和包（crate）](16-modules/16-01-module.md)
+  2. [Prelude](16-modules/16-02-prelude.md)
 17. [Option、Result与错误处理](17-error-handling/17-01-option-result.md)「JohnSmithX 160130」
 18. [宏系统](18-macro/18-01-macro.md)「tennix 160222」
-19. 堆、栈与Box「tennix 160222」
+19. [堆、栈与Box](./19-heap-stack/heap-stack.md)「tennix 160222」
 20. Rc, Arc, Mutex, RwLock, Cell, RefCell「daogangtang 160120」
   1. [Rc, Arc](./20-rcarc/20-01-rcarc.md)
   2. [Mutex, RwLock](./20-rcarc/20-02-mutex.md)
   3. [Cell, RefCell](./20-rcarc/20-03-cell.md)
-21. 几个特殊的Trait: Into, From, Borrow, AsRef 等 「daogangtang 160130」
+21. 类型系统相关的Trait 「daogangtang 160130」
   1. [Into/From 及其在 String 和 &str 互转上的应用](./21-intoborrow/21-01-into.md)
-  2. Cow 及其在 String 和 &str 上的应用
-  3. AsRef, AsMut
-  3. Borrow, BorrowMut, ToOwned
-  4. Deref 与 Deref coercions
-  5. Clone, Drop
+  2. [AsRef, AsMut](./21-intoborrow/21-02-asref.md)
+  3. [Borrow, BorrowMut, ToOwned](./21-intoborrow/21-03-borrow.md)
+  4. [Deref 与 Deref coercions](./21-intoborrow/21-04-deref.md)
+  5. [Cow 及其在 String 和 &str 上的应用](./21-intoborrow/21-05-cow.md)
 22. Marker: Send, Sync, Copy, Sized, PhantomData「daogangtang」
 23. 并发，并行，多线程编程「anzhihun 160120」
   1. [线程](./23-concurrency-parallel-threads/24-01-thread.md)
@@ -115,11 +116,15 @@ The Rust primer for beginners.
 31. Any与反射「wayslog」
 32. 安全（safety）「daogangtang」
 33. 常用数据结构实现「Naupio」
+  1. [栈结构](33-data-struct/33-01-stack.md)
+  2. [队列](33-data-struct/33-02-queue.md)
+  3. [优先队列](33-data-struct/33-03-priority_queue.md)
+  4. TODO...
 34. 标准库介绍「wayslog」
   1. 操作系统与文件处理
   2. 时间日期处理
   3. 网络编程
 35. 实战篇「wangyu190810 已完成」
-  1. [实战：Json处理](37-test-example/json_data/readme.md)
-  2. [实战：Web 应用开发入门](37-test-example/mysite/readme.md)
-  3. [实战：使用Postgresql数据库](37-test-example/db/readme.md)
+  1. [实战：Json处理](35-action/json_data/readme.md)
+  2. [实战：Web 应用开发入门](35-action/mysite/readme.md)
+  3. [实战：使用Postgresql数据库](35-action/db/readme.md)
