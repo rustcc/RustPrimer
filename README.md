@@ -121,6 +121,7 @@ The Rust primer for beginners.
   3. [优先队列](33-data-struct/33-03-priority_queue.md)
   4. [二叉树](33-data-struct/33-04-binary_tree.md)
   5. [链表](33-data-struct/33-05-linked_list.md)
+  6. [图结构](33-data-struct/33-06-graph.md)
 34. 标准库介绍「wayslog」
   1. 操作系统与文件处理
   2. 时间日期处理
