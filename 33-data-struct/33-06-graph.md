@@ -70,7 +70,7 @@ impl Graphadj {
         match v1.nodeid < self.nodenums && v2.nodeid<self.nodenums {
             true => {
                 self.graphadj[v1.nodeid][v2.nodeid] = Edge::have_edge();
-                //下面这句注释加上相当于把图当成无向图
+                //下面这句注释去掉相当于把图当成无向图
                 //self.graphadj[v2.nodeid][v1.nodeid] = Edge::have_edge();
             }
             false => {
