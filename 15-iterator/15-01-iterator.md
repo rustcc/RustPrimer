@@ -57,6 +57,17 @@ impl<I: Iterator> IntoIterator for I
 
 任意一个 `Iterator` 都可以被用在 for 循环上！
 
+### 无限迭代器
+
+Rust支持通过省略高位的形式生成一个无限长度的自增序列，即：
+
+```
+let inf_seq = (1..).into_iter();
+```
+不过不用担心这个无限增长的序列撑爆你的内存，占用你的CPU，因为适配器的惰性的特性，它本身是安全的，除非你对这个序列进行collect或者fold！
+不过，我想聪明如你，不会犯这种错误吧！
+因此，想要应用这个，你需要用take或者take_while来截断他，必须？ 除非你将它当作一个生成器。当然了，那就是另外一个故事了。
+
 ## 消费者与适配器
 
 说完了for循环，我们大致弄清楚了 `Interator` 和 `IntoInterator` 之间的关系。下面我们来说一说消费者和适配器。
@@ -64,6 +75,8 @@ impl<I: Iterator> IntoIterator for I
 消费者是迭代器上一种特殊的操作，其主要作用就是将迭代器转换成其他类型的值，而非另一个迭代器。
 
 而适配器，则是对迭代器进行遍历，并且其生成的结果是另一个迭代器，可以被链式调用直接调用下去。
+
+由上面的推论我们可以得出: *迭代器其实也是一种适配器！*
 
 ### 消费者
 
@@ -118,7 +131,7 @@ let m = (1..20).fold(1u64, |mul, x| mul*x);
 (1..20).map(|x| x+1);
 ```
 
-上面的代码展示了一个“迭代器的自加一”操作，但是，如果你尝试编译这段代码，编译器会给你提示：
+上面的代码展示了一个“迭代器所有元素的自加一”操作，但是，如果你尝试编译这段代码，编译器会给你提示：
 
 ```
 warning: unused result which must be used: iterator adaptors are lazy and
@@ -140,3 +153,75 @@ let v: Vec<_> = (1..20).filter(|x| x%2 == 0).collect();
 ```
 
 以上代码表示筛选出所有的偶数。
+
+## 其他
+
+上文中我们了解了迭代器、适配器、消费者的基本概念。下面将以例子来介绍Rust中的其他的适配器和消费者。
+
+### skip和take
+
+take(n)的作用是取前n个元素，而skip(n)正好相反，跳过前n个元素。
+
+```
+let v = vec![1, 2, 3, 4, 5, 6];
+let v_take = v.iter()
+    .cloned()
+    .take(2)
+    .collect::<Vec<_>>();
+assert_eq!(v_take, vec![1, 2]);
+
+let v_skip: Vec<_> = v.iter()
+    .cloned()
+    .skip(2)
+    .collect();
+assert_eq!(v_skip, vec![3, 4, 5, 6]);
+```
+
+### zip 和 enumerate的恩怨情仇
+
+zip是一个适配器，他的作用就是将两个迭代器的内容压缩到一起，形成 `Iterator<Item=(ValueFromA, ValueFromB)>` 这样的新的迭代器；
+
+```
+let names = vec!["WaySLOG", "Mike", "Elton"];
+let scores = vec![60, 80, 100];
+let score_map: HashMap<_, _> = names.iter()
+    .zip(scores.iter())
+    .collect();
+println!("{:?}", score_map);
+```
+
+而enumerate, 熟悉的Python的同学又叫了：Python里也有！对的，作用也是一样的，就是把迭代器的下标显示出来，即：
+
+```
+let v = vec![1u64, 2, 3, 4, 5, 6];
+let val = v.iter()
+    .enumerate()
+    // 迭代生成标，并且每两个元素剔除一个
+    .filter(|&(idx, _)| idx % 2 == 0)
+    // 将下标去除,如果调用unzip获得最后结果的话，可以调用下面这句，终止链式调用
+    // .unzip::<_,_, vec<_>, vec<_>>().1
+    .map(|(idx, val)| val)
+    // 累加 1+3+5 = 9
+    .fold(0u64, |sum, acm| sum + acm);
+
+println!("{}", val);
+```
+
+### 一系列查找函数
+
+Rust的迭代器有一系列的查找函数，比如：
+
+* find(): 传入一个闭包函数，从开头到结尾依次查找能令这个闭包返回true的第一个元素，返回Option<Item>
+* position(): 类似find函数，不过这次输出的是Option<usize>，第几个元素。
+* all(): 传入一个函数，对所有元素调用这个函数，一旦有一个返回false,则整个表达式返回false，否则返回true
+* any(): 类似all()，不过这次是任何一个返回true，则整个表达式返回true，否则false
+* max()和min(): 查找整个迭代器里所有元素，返回最大或最小值的元素。注意：因为第七章讲过的PartialOrder的原因，浮点数无法参被max正确的理解
+
+
+以上，为常用的一些迭代器和适配器及其用法，仅作科普，对于这一章。我希望大家能够多练习去理解，而不是死记硬背。
+
+好吧，留个习题：
+
+## 习题
+
+利用迭代器生成一个升序的长度为10的水仙花数序列，然后对这个序列进行逆序,并输出
