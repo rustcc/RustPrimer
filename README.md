@@ -76,8 +76,11 @@ The Rust primer for beginners.
   1. [闭包的语法](13-closure/13-01-syntax.md)
   2. [闭包的实现](13-closure/13-02-implementation.md)
   3. [闭包作为参数和返回值](13-closure/13-03-as_argument_return_value.md)
-14. 集合类型（Collections）「wayslog」
-15. 迭代器「wayslog」
+14. [集合类型(Collections)](14-collections/14-00-overview.md)「wayslog」
+  1. [动态数组](14-collections/14-01-vec.md)
+  2. [哈希表](14-collections/14-02-hashmap.md)
+15. [迭代器](15-iterator/15-00-overview.md)「wayslog」
+  1. [迭代器、适配器、消费者](15-iterator/15-01-iterator.md)
 16. 模块和包系统、Prelude「daogangtang」
   1. [模块（module）和包（crate）](16-modules/16-01-module.md)
   2. [Prelude](16-modules/16-02-prelude.md)
