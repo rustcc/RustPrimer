@@ -1,6 +1,7 @@
 # Sublime
 
-Sublime Text是一款非常有名的文本编辑器，其本身也具备强大的插件机制。通过配置各种插件可以在令您在使用Sublime Text编辑rust代码时提供更加良好的支持。
+Sublime Text是一款非常有名的文本编辑器，其本身也具备强大的插件机制。通过配置各种插件可以在使用Sublime Text编辑rust代码时获得更加良好的支持。
+
 本文主要展示在已经预装rust的Windows环境下的安装，如果您还没有安装rust，请先参照本书的[安装章节](../02-install/02-03-install_rust_on_windows.md)安装rust。
 
 ## 安装
@@ -11,7 +12,7 @@ Sublime Text是一款非常有名的文本编辑器，其本身也具备强大�
 
 ### rust的安装
 
-请在rust官网的[下载页面](https://www.rust-lang.org/downloads.html)下载rust的源代码压缩包并在本地解压缩安装，在稍后的配置环节我们将会用到这个路径。国内的用户如果下载官网的rust源码包速度过慢，可以考虑使用中科大的[镜像](http://mirrors.ustc.edu.cn/)下载rust源码包。
+请在rust官网的[下载页面](https://www.rust-lang.org/downloads.html)下载rust的源代码压缩包并在本地解压缩安装，在稍后的配置环节我们将会用到这个路径。如果国内下载速度过慢，可以考虑使用中科大的[镜像](http://mirrors.ustc.edu.cn/)下载rust源码包。
 
 ### 下载Rust并编译代码提示插件racer
 
@@ -26,7 +27,7 @@ Sublime Text是一款非常有名的文本编辑器，其本身也具备强大�
 Sublime Text3在安装各种插件前需要先安装Package Control，如果您的编辑器已安装Package Control请跳过本段直接安装rust相关插件。
 
 您可以查看[Package Control官网](https://packagecontrol.io/installation)学习如何安装。
-或者在Sublime Text3中使用 `ctrl+~` 快捷键启动控制台，粘贴以下代码并回车进行安装。
+也可以直接在编辑器中使用 `ctrl+~` 快捷键启动控制台，粘贴以下代码并回车进行安装。
 
 ```shell
 
