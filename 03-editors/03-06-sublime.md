@@ -57,5 +57,5 @@ import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc5
 
 ## 快速编译
 
-Sublime本身支持多种编译系统，您可以在Tools选项卡下的Build System中选择Rust或者Cargo作为编译系统，选中后使用快捷键 `ctrl+B` 对代码进行快速编译。
+Sublime本身支持多种编译系统，在Tools选项卡下的Build System中选择Rust或者Cargo作为编译系统，选中后使用快捷键 `ctrl+B` 即可对代码进行快速编译。
 
