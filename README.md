@@ -93,7 +93,7 @@ The Rust primer for beginners.
   3. [Borrow, BorrowMut, ToOwned](./21-intoborrow/21-03-borrow.md)
   4. [Deref 与 Deref coercions](./21-intoborrow/21-04-deref.md)
   5. [Cow 及其在 String 和 &str 上的应用](./21-intoborrow/21-05-cow.md)
-22. Marker: Send, Sync, Copy, Sized, PhantomData「daogangtang」
+22. [Send 和 Sync](./22-marker/21-01-sendsync.md)「daogangtang」
 23. 并发，并行，多线程编程「anzhihun 160120」
   1. [线程](./23-concurrency-parallel-threads/24-01-thread.md)
   2. [消息传递](./23-concurrency-parallel-threads/24-02-message-passing.md)
@@ -114,7 +114,7 @@ The Rust primer for beginners.
   2. 评测 (benchmark)
 30. [代码风格](30-coding-style/30-01-style.md)「tiansiyuan」
 31. Any与反射「wayslog」
-32. 安全（safety）「daogangtang」
+32. [安全（safety）](32-safety/32-01-safety.md)「daogangtang」
 33. 常用数据结构实现「Naupio」
   1. [栈结构](33-data-struct/33-01-stack.md)
   2. [队列](33-data-struct/33-02-queue.md)
