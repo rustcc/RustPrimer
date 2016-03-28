@@ -4,7 +4,7 @@
 
 安全，本身是一个相当大的话题。安全性，本身也需要一个局部性的定义。
 
-Rust 的定义中，凡是 **可能** 会导致程序出错的特性，都被认为是 **不安全的（unsafe）**。反之，则是 **安全的（safe）**。
+Rust 的定义中，凡是 **可能** 会导致程序内存使用出错的特性，都被认为是 **不安全的（unsafe）**。反之，则是 **安全的（safe）**。
 
 基于这种定义，C 语言，基本是不安全的语言（它是众多不安全特性的集合。特别是指针相关特性，多线程相关特性）。
 
@@ -12,7 +12,7 @@ Rust 的这个定义，隐含了一个先决假设：人之初，性本恶。人
 
 根据 Rust 的定义，C 语言几乎是不安全的代名字。但是，从本质上来说，一段程序是否安全，并不由开发它的语言决定。用 C 语言开发出的程序，不一定就是不安全的代码，只不过相对来说，需要花更多的精力进行良好的设计和长期的实际运行验证。Rust 使开发出安全可靠的代码相对容易了。
 
-世界本身是肮脏的。正如，纯函数式语言中还必须有用于处理副作用的 `Monad` 存在一样，Rust 仅凭安全的特性集合，也是无法处理世界的所有结构和问题的。所以，Rust 中，还有 `unsafe` 部分的存在。实际上，Rust 的 std 本身也是建立在大量 `unsafe` 代码的基础之上的。
+世界本身是肮脏的。正如，纯函数式语言中还必须有用于处理副作用的 `Monad` 存在一样，Rust 仅凭安全的特性集合，也是无法处理世界的所有结构和问题的。所以，Rust 中，还有 `unsafe` 部分的存在。实际上，Rust 的 std 本身也是建立在大量 `unsafe` 代码的基础之上的。所以，世界就是纯粹建立在不纯粹之上，“安全”建立在“不安全”之上。
 
 因此，Rust 本身可以被认为是两种编程语言的混合：`Safe Rust` 和 `Unsafe Rust`。
 
@@ -58,9 +58,10 @@ Rust 中定义的不确定性行为有如下一些：
 
 下面一些链接，给出了安全性更详细的讲解（部分未来会有对应的中文翻译）。
 
-[1] [Unsafe](http://doc.rust-lang.org/book/unsafe.html)
-[2] [Meet Safe and Unsafe](http://doc.rust-lang.org/nightly/nomicon/meet-safe-and-unsafe.html)
-[3] [How Safe and Unsafe Interact](http://doc.rust-lang.org/nightly/nomicon/safe-unsafe-meaning.html)
-[4] [蓦然回首万事空 ————空指针漫谈](http://jimhuang.cn/2015/09/12/%E8%93%A6%E7%84%B6%E5%9B%9E%E9%A6%96%E4%B8%87%E4%BA%8B%E7%A9%BA%20%E2%80%94%E2%80%94%E2%80%94%E2%80%94%E7%A9%BA%E6%8C%87%E9%92%88%E6%BC%AB%E8%B0%88/)
+[1] [Unsafe](http://doc.rust-lang.org/book/unsafe.html) 
+[2] [Meet Safe and Unsafe](http://doc.rust-lang.org/nightly/nomicon/meet-safe-and-unsafe.html) 
+[3] [How Safe and Unsafe Interact](http://doc.rust-lang.org/nightly/nomicon/safe-unsafe-meaning.html) 
+[4] [蓦然回首万事空 ————空指针漫谈](http://jimhuang.cn/2015/09/12/%E8%93%A6%E7%84%B6%E5%9B%9E%E9%A6%96%E4%B8%87%E4%BA%8B%E7%A9%BA%20%E2%80%94%E2%80%94%E2%80%94%E2%80%94%E7%A9%BA%E6%8C%87%E9%92%88%E6%BC%AB%E8%B0%88/) 
+
 
 
