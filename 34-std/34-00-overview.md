@@ -5,6 +5,8 @@
 
 * 注： 由于笔者的电脑是openSUSE Linux的，所以本章所有代码均只在 `openSUSE Leap 42.1 && rustc 1.9.0-nightly (52e0bda64 2016-03-05)` 下编译通过，对Linux适配可能会更好一点，其他系统的同学请自行参照。
 
-1. [系统命令:调用grep](34-std/34-01-process.md)
-2. [目录操作:简单grep](34-std/34-02-fs-and-path.md)
-3. [网络模块:W猫的信鸽](34-std/34-03-net.md)
+另：本章原本设计的时候附加有时间api的处理，但是在本章写作的时候Rust的大部分时间API还处于Unstable状态，随时可能遭到删除或重写。因此，我们暂时删除了时间API的操作。等以后Rust的API稳定之后，再来补齐这一节。
+
+1. [系统命令:调用grep](34-01-process.md)
+2. [目录操作:简单grep](34-02-fs-and-path.md)
+3. [网络模块:W回音](34-03-net.md)

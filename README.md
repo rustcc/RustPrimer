@@ -126,10 +126,10 @@ The Rust primer for beginners.
   4. [二叉树](33-data-struct/33-04-binary_tree.md)
   5. [链表](33-data-struct/33-05-linked_list.md)
   6. [图结构](33-data-struct/33-06-graph.md)
-34. 标准库介绍「wayslog」
-  1. 操作系统与文件处理
-  2. 时间日期处理
-  3. 网络编程
+34. [标准库介绍](34-std/34-00-overview.md)「wayslog」
+  1. [系统命令:调用grep](34-std/34-01-process.md)
+  2. [目录操作:简单grep](34-std/34-02-fs-and-path.md)
+  3. [网络模块:W回音](34-std/34-03-net.md)
 35. 实战篇「wangyu190810 已完成」
   1. [实战：Json处理](35-action/json_data/readme.md)
   2. [实战：Web 应用开发入门](35-action/mysite/readme.md)
