@@ -267,7 +267,8 @@ fn main() {
 ```  
 > **报错：**  
 error: use of moved value: `x` [E0382]  
-<anon>:5 	println!("x={:?}", x);  
+<anon>:5 	println!("x={:?}", x);   
+
 这是因为move关键字，会把闭包中的外部变量的所有权move到包体内，发生了所有权转移的问题，所以println访问x会如上错误。如果我们去掉println就可以编译通过。  
 
 那么，如果我们想在包体外依然访问x，即x不失去所有权，怎么办？
