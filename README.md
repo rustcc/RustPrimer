@@ -51,10 +51,11 @@ The Rust primer for beginners.
   1. [注释](./06-flow/06-01-comment.md)
   2. [条件](./06-flow/06-02-condition.md)
   3. [循环](./06-flow/06-03-repeatition.md)
-7. 基础类型和运算符「wayslog 160125」
-  1. [基础类型](07-primitive-type/07-01-types.md)
-  2. [字符串类](07-primitive-type/07-02-strings.md)
-  4. [基础运算符和字符串格式化](07-primitive-type/07-03-operator-and-format.md)
+7. 类型、运算符和字符串「wayslog 160125」
+  1. [基础类型](07-type/07-01-types.md)
+  2. [复合类型](07-type/07-02-compound-types.md)
+  2. [字符串类](07-type/07-03-strings.md)
+  4. [基础运算符和字符串格式化](07-type/07-04-operator-and-format.md)
 8. [函数](./08-function/08-00-overview.md)「qdao 160120」
   1. [函数参数](./08-function/08-01-arguement.md)
   2. [函数返回值](./08-function/08-02-return_value.md)
@@ -67,16 +68,19 @@ The Rust primer for beginners.
   1. [trait关键字](10-trait/10-01-trait.md)
   2. [trait对象](10-trait/10-02-trait-object.md)
 11. [泛型](11-generics/11-01-generics.md)「stormgbs 160120」
-12. 集合类型（Collections）「wayslog」
-13. [可变性、所有权、租借和生命期](13-ownership-system/13-00-ownership_system.md)「stormgbs 160105」
-  1. [所有权](13-ownership-system/13-01-ownership.md)
-  2. [引用和借用](13-ownership-system/13-02-borrowing_references.md)
-  3. [生命周期](13-ownership-system/13-03-lifetimes.md)
-14. [闭包](14-closure/14-00-overview.md)「qdao 160120」
-  1. [闭包的语法](14-closure/14-01-syntax.md)
-  2. [闭包的实现](14-closure/14-02-implementation.md)
-  3. [闭包作为参数和返回值](14-closure/14-03-as_argument_return_value.md)
-15. 迭代器「wayslog」
+12. [可变性、所有权、租借和生命期](12-ownership-system/12-00-ownership_system.md)「stormgbs 160105」
+  1. [所有权](12-ownership-system/12-01-ownership.md)
+  2. [引用和借用](12-ownership-system/12-02-borrowing_references.md)
+  3. [生命周期](12-ownership-system/12-03-lifetimes.md)
+13. [闭包](13-closure/13-00-overview.md)「qdao 160120」
+  1. [闭包的语法](13-closure/13-01-syntax.md)
+  2. [闭包的实现](13-closure/13-02-implementation.md)
+  3. [闭包作为参数和返回值](13-closure/13-03-as_argument_return_value.md)
+14. [集合类型(Collections)](14-collections/14-00-overview.md)「wayslog」
+  1. [动态数组](14-collections/14-01-vec.md)
+  2. [哈希表](14-collections/14-02-hashmap.md)
+15. [迭代器](15-iterator/15-00-overview.md)「wayslog」
+  1. [迭代器、适配器、消费者](15-iterator/15-01-iterator.md)
 16. 模块和包系统、Prelude「daogangtang」
   1. [模块（module）和包（crate）](16-modules/16-01-module.md)
   2. [Prelude](16-modules/16-02-prelude.md)
@@ -113,7 +117,7 @@ The Rust primer for beginners.
   1. [测试 (testing)](29-testing/29-01-threearchtest.md)
   2. 评测 (benchmark)
 30. [代码风格](30-coding-style/30-01-style.md)「tiansiyuan」
-31. Any与反射「wayslog」
+31. [Any与反射](31-any/31-01-any.md)「wayslog」
 32. [安全（safety）](32-safety/32-01-safety.md)「daogangtang」
 33. 常用数据结构实现「Naupio」
   1. [栈结构](33-data-struct/33-01-stack.md)
@@ -122,10 +126,10 @@ The Rust primer for beginners.
   4. [二叉树](33-data-struct/33-04-binary_tree.md)
   5. [链表](33-data-struct/33-05-linked_list.md)
   6. [图结构](33-data-struct/33-06-graph.md)
-34. 标准库介绍「wayslog」
-  1. 操作系统与文件处理
-  2. 时间日期处理
-  3. 网络编程
+34. [标准库介绍](34-std/34-00-overview.md)「wayslog」
+  1. [系统命令:调用grep](34-std/34-01-process.md)
+  2. [目录操作:简单grep](34-std/34-02-fs-and-path.md)
+  3. [网络模块:W回音](34-std/34-03-net.md)
 35. 实战篇「wangyu190810 已完成」
   1. [实战：Json处理](35-action/json_data/readme.md)
   2. [实战：Web 应用开发入门](35-action/mysite/readme.md)
