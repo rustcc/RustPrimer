@@ -117,7 +117,7 @@ The Rust primer for beginners.
   1. [测试 (testing)](29-testing/29-01-threearchtest.md)
   2. 评测 (benchmark)
 30. [代码风格](30-coding-style/30-01-style.md)「tiansiyuan」
-31. Any与反射「wayslog」
+31. [Any与反射](31-any/31-01-any.md)「wayslog」
 32. [安全（safety）](32-safety/32-01-safety.md)「daogangtang」
 33. 常用数据结构实现「Naupio」
   1. [栈结构](33-data-struct/33-01-stack.md)
