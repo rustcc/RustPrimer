@@ -30,4 +30,26 @@ Rust 运行在以下操作系统上：Linux, OS X, Windows, FreeBSD, Android, iO
 
 本书（RustPrimer）旨在为中文 Rustaceans 初学者提供一个正确、最新、易懂的中文教程。本书会一直完善跟进，永不停歇。
 
+本书是整个 Rust 中文社区共同努力的结果。其中，参与本书书写及校订的 Rustacean 有（排名不分先后）：
+
+- daogangtang
+- wayslog
+- marvin-min
+- tiansiyuan
+- marvinguo
+- ee0703
+- fuyingfuying
+- qdao
+- JohnSmithX
+- stormgbs
+- tennix
+- anzhihun
+- elton
+- 42
+- Naupio
+- F001
+- wangyu190810
+
+等。在此，向他们的辛苦工作和无私奉献表示尊敬和感谢！
+
 祝用 Rust 编程愉快！
