@@ -27,7 +27,7 @@ The Rust primer for beginners.
 ## 大纲
 
 1. [初识Rust](./01-1st-glance/README.md)
-2. [安装Rust](./02-install/02-01-install_rust_on_linux.md)「marvin-min 160105」
+2. [安装Rust](./02-install/02-00-preface.md)「marvin-min 160105」
   1. [Linux](./02-install/02-01-install_rust_on_linux.md)
   2. [Mac](./02-install/02-02-install_rust_on_mac_os.md)
   3. [Windows](./02-install/02-03-install_rust_on_windows.md)
