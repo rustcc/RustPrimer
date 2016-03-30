@@ -27,7 +27,7 @@ The Rust primer for beginners.
 ## 大纲
 
 1. [初识Rust](./01-1st-glance/README.md)
-2. 安装Rust「marvin-min 160105」
+2. [安装Rust](./02-install/02-01-install_rust_on_linux.md)「marvin-min 160105」
   1. [Linux](./02-install/02-01-install_rust_on_linux.md)
   2. [Mac](./02-install/02-02-install_rust_on_mac_os.md)
   3. [Windows](./02-install/02-03-install_rust_on_windows.md)
@@ -127,7 +127,7 @@ The Rust primer for beginners.
   1. [系统命令:调用grep](34-std/34-01-process.md)
   2. [目录操作:简单grep](34-std/34-02-fs-and-path.md)
   3. [网络模块:W回音](34-std/34-03-net.md)
-35. [实战篇](35-action/json_data/readme.md)「wangyu190810 已完成」
+35. [实战篇](35-action/35-00-preface.md)「wangyu190810 已完成」
   1. [实战：Json处理](35-action/json_data/readme.md)
   2. [实战：Web 应用开发入门](35-action/mysite/readme.md)
   3. [实战：使用Postgresql数据库](35-action/db/readme.md)
