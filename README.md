@@ -104,7 +104,9 @@ The Rust primer for beginners.
 24. [Unsafe、原始指针](24-unsafety-rawpointer/24-00-preface.md)「JohnSmithX 160130」
   1. [Unsafe](24-unsafety-rawpointer/24-01-unsafety.md)
   2. [原始指针](24-unsafety-rawpointer/24-02-raw-pointer.md)
-25. FFI「42 160222」
+25. [FFI](25-ffi/25-00-preface.md)「42 160222」
+  1. [rust调用ffi函数](25-ffi/25-01-calling-ffi-functions.md)
+  2. [将rust编译成库](25-ffi/25-02-compiling-rust-to-lib.md)
 26. [运算符重载](26-operator-overload/26-01-operator.md)「wayslog 160221」
 27. [属性和编译器参数](27-attr-and-compiler-args/27-00-preface.md)「elton 160215」
   1. [属性](27-attr-and-compiler-args/27-01-attributes.md)
