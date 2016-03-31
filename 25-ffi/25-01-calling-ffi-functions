@@ -1,0 +1,77 @@
+# 调用ffi函数
+
+> 下文提到的ffi皆指cffi。
+
+**Rust**作为一门**系统**级语言，自带对ffi调用的支持。
+
+## Get Start
+### 引入libc库
+
+由于cffi的数据类型与rust不完全相同，我们需要引入libc库来表达对应ffi函数中的类型。
+
+在`Cargo.toml`中添加以下行:
+
+```
+[dependencies]
+libc = "0.2.9"
+```
+
+在你的rs文件中引入库:
+```
+extern crate libc
+```
+
+在以前libc库是和rust一起发布的，后来libc被移入了`crates.io`通过cargo安装。
+
+### 声明你的ffi函数
+
+就像c语言需要include声明了对应函数的头文件一样，rust中调用ffi也需要对对应函数进行声明。
+
+```
+use libc::c_int;
+use libc::c_void;
+use libc::size_t;
+
+#[link(name = "yourlib")]
+extern {
+    fn your_func(arg1: c_int, arg2: *mut c_void) -> size_t; // 声明ffi函数
+    fn your_func2(arg1: c_int, arg2: *mut c_void) -> size_t;
+    static ffi_global: c_int; // 声明ffi全局变量
+}
+```
+
+声明一个ffi库需要一个标记有`#[link(name = "yourlib")]`的`extern`块。`name`为对应的库(so/dll/dylib)的名字。
+如：如果你需要`snappy`库(libsnappy.so/libsnappy.dll/libsnappy.dylib), 则对应的`name`为`snappy`。
+在一个extern块中你可以声明任意多的函数和变量。
+
+### 调用ffi函数
+
+声明完成后就可以进行调用了。
+由于此函数来自外部的c库，所以rust并不能保证该函数的安全性。因此，调用任何一个ffi函数需要一个unsafe块。
+```
+let result: size_t = unsafe {
+    your_func(1 as c_int, Box::into_raw(Box::new(3)) as *mut c_void)
+};
+```
+
+### 封装unsafe，暴露安全接口
+
+作为一个库作者，对外暴露不安全接口是一种非常不合格的做法。在做c库的rust binding时，我们做的最多的将是将不安全的c接口封装成一个安全接口。
+通常做法是：在一个叫ffi.rs之类的文件中写上所有的extern块用以声明ffi函数。在一个叫wrapper.rs之类的文件中进行包装：
+```
+fn your_func_wrapper(arg1: i32, arg2: &mut i32) -> isize {
+    unsafe { your_func(1 as c_int, Box::into_raw(Box::new(3)) as *mut c_void) } as isize
+}
+```
+对外暴露(pub use) your_func_wrapper 即可。
+
+## 数据结构对应
+### 结构体
+### Union
+### Enum
+### 回调函数
+## 内存安全
+### 析构问题
+### ownership处理
+## 静态库/动态库
+## bindgen
