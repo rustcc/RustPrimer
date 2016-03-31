@@ -7,7 +7,7 @@
 比如：`fn test() {}`会变成`_ZN4test20hf06ae59e934e5641haaE`.
 这样的函数名为ffi调用带来了困难，因此，rust提供了`#[no_mangle]`属性为函数修饰。
 对于带有`#[no_mangle]`属性的函数，rust编译器不会为它进行函数名混淆。
-对于
+如
 ```
 #[no_mangle]
 extern "C" fn test() {}
