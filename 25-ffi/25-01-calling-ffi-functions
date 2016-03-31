@@ -66,12 +66,58 @@ fn your_func_wrapper(arg1: i32, arg2: &mut i32) -> isize {
 对外暴露(pub use) your_func_wrapper 即可。
 
 ## 数据结构对应
+libc为我们提供了很多原始数据类型，比如c_int, c_float等，但是对于自定义类型，如结构体，则需要我们自行定义。
 ### 结构体
+rust中结构体默认的内存表示和c并不兼容。如果要将结构体传给ffi函数，请为rust的结构体打上标记：
+```
+#[repr(C)]
+struct RustObject {
+    a: c_int,
+    // other members
+}
+```
+此外，如果使用`#[repr(C, packed)]`将不为此结构体填充空位以对齐。
 ### Union
+比较遗憾的是，rust到目前为止(2016-03-31)还没有一个很好的应对c的union的方法。只能通过一些hack来实现。([https://github.com/rust-lang/rfcs/pull/1444](rfc))
 ### Enum
+和rust一样，添加`#[repr(C)]`标记即可。
 ### 回调函数
+和c库打交道时，我们经常会遇到一个函数接受一个回调函数的情况。将一个rust函数转变成c可执行的回调函数非常简单：在函数前面加上`extern "C"`即可
+```rust
+extern "C" fn callback(a: c_int) { // 这个函数是传给c调用的
+    println!("hello {}!", a);
+}
+
+#[link(name = "yourlib")]
+extern {
+   fn run_callback(data: i32, cb: extern fn(i32));
+}
+
+fn main() {
+    unsafe {
+        run_callback(1 as i32, callback); // 打印 1
+    }
+}
+```
+对应c库代码:
+```c
+typedef void (*rust_callback)(int32_t);
+
+void run_callback(int32_t data, rust_callback callback) {
+    callback(data); // 调用传过来的回调函数
+}
+```
+### 字符串
+rust为了应对不同的情况，有很多种字符串类型。其中`CStr`和`CString`是专用于ffi交互的。
+#### CStr
+对于产生于c的字符串(如在c程序中进行的malloc)，rust使用`CStr`来表示，和`str`类型对应，表明我们并不拥有这个字符串。
+```
+### 透明结构体
 ## 内存安全
 ### 析构问题
+### 空指针优化
 ### ownership处理
+### panic
 ## 静态库/动态库
+## 调用约定
 ## bindgen
