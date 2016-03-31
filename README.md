@@ -112,7 +112,7 @@ The Rust primer for beginners.
 28. [Cargo参数配置](28-cargo-detailed-cfg/28-01-cargo-detailed-cfg.md)「fuyingfuying 160131」
 29. [测试与评测](29-testing/29-00-preface.md)「daogangtang 160222」
   1. [测试 (testing)](29-testing/29-01-threearchtest.md)
-  2. 评测 (benchmark)
+  2. [评测 (benchmark)](29-testing/29-02-bench.md)
 30. [代码风格](30-coding-style/30-01-style.md)「tiansiyuan」
 31. [Any与反射](31-any/31-01-any.md)「wayslog」
 32. [安全（safety）](32-safety/32-01-safety.md)「daogangtang」
