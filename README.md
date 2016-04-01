@@ -131,6 +131,20 @@ The Rust primer for beginners.
   2. [实战：Web 应用开发入门](35-action/mysite/readme.md)
   3. [实战：使用Postgresql数据库](35-action/db/readme.md)
 
+## 版权规定
+
+本书使用 `CC BY-NC-SA 3.0` 协议，转载请注明地址。
+
+## gitbook生成
+
+直接用：
+
+```
+gitbook serve
+```
+
+即可
+
 ## ChangeLog
 
 1. 2016年3月31日，初稿完成。发布 v1.0 版。
