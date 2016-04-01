@@ -133,4 +133,4 @@ The Rust primer for beginners.
 
 ## ChangeLog
 
-1. 2016年3月31日，初稿完成。
+1. 2016年3月31日，初稿完成。发布 v1.0 版。
