@@ -61,7 +61,7 @@ b.rs:3     println!("{}", a);
 先看如下代码：
 ```rust
 {
-    let a: String = String::new("xyz");
+    let a: String = String::from("xyz");
     let b = a;
     println!("{}", a);
 }
@@ -114,7 +114,7 @@ move前后的a和b对应内存的地址不同。
 如果我们想实现对**String**的”深拷贝“怎么办？  可以直接调用**String**的Clone特性实现对内存的值拷贝而不是简单的地址拷贝。
 ```rust
 {
-    let a: String = String::new("xyz");
+    let a: String = String::from("xyz");
     let b = a.clone();  // <-注意此处的clone
     println!("{}", a);
 }
