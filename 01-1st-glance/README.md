@@ -32,8 +32,8 @@ Rust 运行在以下操作系统上：Linux, OS X, Windows, FreeBSD, Android, iO
 
 本书是整个 Rust 中文社区共同努力的结果。其中，参与本书书写及校订的 Rustacean 有（排名不分先后）：
 
-- daogangtang
-- wayslog
+- daogangtang（Mike 猫）
+- wayslog（猫猫反抗团团长）
 - marvin-min
 - tiansiyuan
 - marvinguo
@@ -44,10 +44,10 @@ Rust 运行在以下操作系统上：Linux, OS X, Windows, FreeBSD, Android, iO
 - stormgbs
 - tennix
 - anzhihun
-- elton
+- elton（e猫）
 - 42
 - Naupio
-- F001
+- F001（失落的神喵）
 - wangyu190810
 
 等。在此，向他们的辛苦工作和无私奉献表示尊敬和感谢！
