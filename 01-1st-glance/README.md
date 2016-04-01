@@ -49,6 +49,7 @@ Rust 运行在以下操作系统上：Linux, OS X, Windows, FreeBSD, Android, iO
 - Naupio（N猫）
 - F001（失落的神喵）
 - wangyu190810
+- domty
 
 等。在此，向他们的辛苦工作和无私奉献表示尊敬和感谢！
 
