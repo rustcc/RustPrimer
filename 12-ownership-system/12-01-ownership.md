@@ -10,7 +10,7 @@ int* foo {
     char *c = "xyz";   // 变量c的作用域开始
     return &a;
 }                   // 变量a和c的作用域结束
-````
+```
 
 尽管可以编译通过，但这是一段非常糟糕的代码，现实中我相信大家都不会这么去写。变量a和c都是局部变量，函数结束后将局部变量a的地址返回，但局部变量a存在栈中，在离开作用域后，局部变量所申请的栈上内存都会被系统回收，从而造成了**悬空指针**的问题。**这是一个非常典型的内存安全问题。很多编程语言都存在类似这样的内存安全问题**。再来看变量c，c的值是常量字符串，存储于常量区，可能这个函数我们只调用了一次，我们可能不再想使用这个字符串，但"xyz"只有当整个程序结束后系统才能回收这片内存，这点让程序员是不是也很无奈？
 > 备注：对于"xyz"，可根据实际情况，通过堆的方式，手动管理（申请和释放）内存。
@@ -182,6 +182,7 @@ pub trait Copy: Clone { }
 **哪些情况下我们自定义的类型（如某个Struct等）可以实现Copy特性？**  
 只要这种类型的属性类型都实现了Copy特性，那么这个类型就可以实现Copy特性。  
 例如：
+
 ```rust
 struct Foo {  //可实现Copy特性
     a: i32,
@@ -198,38 +199,41 @@ struct Bar {  //不可实现Copy特性
 **那么我们如何来实现Copy特性呢？**  
 有两种方式可以实现。  
 1. **通过derive让Rust编译器自动实现**  
+
 ```rust
 #derive(Copy, Clone)]
 struct Foo {
     a: i32,
     b: bool,
 }
-```  
+```
+
 编译器会自动检查Foo的所有属性是否实现了Copy特性，一旦检查通过，便会为Foo自动实现Copy特性。
+
 2. **自己实现Clone和Copy trait**
+
 ```rust
 #[derive(Debug)]
 struct Foo {
     a: i32,
     b: bool,
 }
-
 impl Copy for Foo {}
 impl Clone for Foo {
     fn clone(&self) -> Foo {
         Foo{a: self.a, b: self.b}
     }
 }
-
 fn main() {
     let x = Foo{ a: 100, b: true};
     let mut y = x;
     y.b = false;
-    
+
     println!("{:?}", x);  //打印：Foo { a: 100, b: true }
     println!("{:?}", y);  //打印：Foo { a: 100, b: false }
 }
-```    
+```
+
 从结果我们发现let mut y = x后，x并没有因为所有权move而出现不可访问错误。  
 因为Foo继承了Copy特性和Clone特性，所以我们均需要手动实现这两个特性。
 
