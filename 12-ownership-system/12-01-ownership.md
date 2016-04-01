@@ -213,6 +213,7 @@ struct Foo {
 2. **自己实现Clone和Copy trait**
 
 ```rust
+
 #[derive(Debug)]
 struct Foo {
     a: i32,
@@ -232,6 +233,7 @@ fn main() {
     println!("{:?}", x);  //打印：Foo { a: 100, b: true }
     println!("{:?}", y);  //打印：Foo { a: 100, b: false }
 }
+
 ```
 
 从结果我们发现let mut y = x后，x并没有因为所有权move而出现不可访问错误。  
