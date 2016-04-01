@@ -11,7 +11,7 @@
   * [emacs](./03-editors/03-03-emacs.md)「tiansiyuan」
   * [vscode](./03-editors/03-04-vscode.md)「daogangtang」
   * [atom](./03-editors/03-05-atom.md)「wayslog」
-  * [atom](./03-editors/03-06-sublime.md)
+  * [sublime](./03-editors/03-06-sublime.md)
   * [visual studio](./03-editors/03-07-visualstudio.md)「marvinguo」
   * [spacemacs](./03-editors/03-10-spacemacs.md)「wayslog」
 * [Rust一小时快速入门](./04-quickstart/04-00-intro.md)「ee0703」

@@ -26,7 +26,7 @@ $ cd adder
 ### `#[test]` 标识
 打开 `src/lib,rs` 文件，可以看到如下代码
 
-```
+```rust
 #[test]
 fn it_works() {
     // do test work
@@ -56,13 +56,13 @@ test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured
 
 Rust 提供了两个宏来执行测试断言：
 
-```
+```rust
 assert!(expr)               测试表达式是否为 true 或 false
 assert_eq!(expr, expr)      测试两个表达式的结果是否相等
 ```
 比如
 
-```
+```rust
 #[test]
 fn it_works() {
     assert!(false);
@@ -98,7 +98,7 @@ thread '<main>' panicked at 'Some tests failed', /home/steve/src/rust/src/libtes
 如果你的测试函数没完成，或没有更新，或是故意让它崩溃，但为了让测试能够顺利完成，我们主动可以给测试函数加上 `#[should_panic]` 标识，就不会让 `cargo test` 报错了。
 
 如
-```
+```rust
 #[test]
 #[should_panic]
 fn it_works() {
@@ -129,7 +129,7 @@ test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured
 
 有时候，某个测试函数非常耗时，或暂时没更新，我们想不让它参与测试，但是又不想删除它，这时， `#[ignore]` 就派上用场了。
 
-```
+```rust
 #[test]
 #[ignore]
 fn expensive_test() {
@@ -142,7 +142,7 @@ fn expensive_test() {
 ## 模块级
 
 有时，我们会组织一批测试用例，这时，模块化的组织结构就有助于建立结构性的测试体系。Rust 中，可以类似如下写法：
-```
+```rust
 pub fn add_two(a: i32) -> i32 {
     a + 2
 }
@@ -178,7 +178,7 @@ tests
 
 我们在 tests 目录下，建立一个文件 `testit.rs` ，名字随便取皆可。内容为：
 
-```
+```rust
 extern crate adder;
 
 #[test]
@@ -221,38 +221,38 @@ Rust 对文档的哲学，是不要单独写文档，一是代码本身是文档
 
 比如，我们给上面库加点文档：
 
-```
-//! The `adder` crate provides functions that add numbers to other numbers.
-//!
-//! # Examples
-//!
-//! ```
-//! assert_eq!(4, adder::add_two(2));
-//! ```
+    //! The `adder` crate provides functions that add numbers to other numbers.
+    //!
+    //! # Examples
+    //!
+    //! ```
+    //! assert_eq!(4, adder::add_two(2));
+    //! ```
 
-/// This function adds two to its argument.
-///
-/// # Examples
-///
-/// ```
-/// use adder::add_two;
-///
-/// assert_eq!(4, add_two(2));
-/// ```
-pub fn add_two(a: i32) -> i32 {
-    a + 2
-}
+    /// This function adds two to its argument.
+    ///
+    /// # Examples
+    ///
+    /// ```
+    /// use adder::add_two;
+    ///
+    /// assert_eq!(4, add_two(2));
+    /// ```
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn it_works() {
-        assert_eq!(4, add_two(2));
+    pub fn add_two(a: i32) -> i32 {
+        a + 2
     }
-}
-```
+
+    #[cfg(test)]
+    mod tests {
+        use super::*;
+
+        #[test]
+        fn it_works() {
+            assert_eq!(4, add_two(2));
+        }
+    }
+
 
 运行 `cargo test`，结果如下：
 
