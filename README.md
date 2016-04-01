@@ -133,7 +133,7 @@ The Rust primer for beginners.
 
 ## 版权规定
 
-本书使用 `CC BY-NC-SA 3.0` 协议，转载请注明地址。
+本书使用 `CC BY-NC-SA 4.0` 协议，转载请注明地址。
 
 ## gitbook生成
 
