@@ -22,7 +22,7 @@ The Rust primer for beginners.
 
 ## 大纲
 
-1. [初识Rust](./01-1st-glance/README.md)
+1. [初识Rust](./01-1st-glance/README.md)「daogangtang, tiansiyuan」
 2. [安装Rust](./02-install/02-00-preface.md)「marvin-min」
   1. [Linux](./02-install/02-01-install_rust_on_linux.md)
   2. [Mac](./02-install/02-02-install_rust_on_mac_os.md)
@@ -33,7 +33,7 @@ The Rust primer for beginners.
   2. [emacs](./03-editors/03-03-emacs.md)「tiansiyuan」
   3. [vscode](./03-editors/03-04-emacs.md)「daogangtang」
   4. [atom](./03-editors/03-05-atom.md)「wayslog」
-  6. [sublime](./03-editors/03-06-sublime.md)
+  6. [sublime](./03-editors/03-06-sublime.md)「domty」
   7. [visual studio](./03-editors/03-07-visualstudio.md)「marvinguo」
   9. [spacemacs](./03-editors/03-10-spacemacs.md)「wayslog」
 4. [Rust一小时快速入门](./04-quickstart/04-00-intro.md)「ee0703」
