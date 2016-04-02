@@ -45,7 +45,7 @@ fn add_one(x: i32) -> i32 {
 
 模块注释使用 ```//!```，用于说明本模块的功能。一般置于模块文件的头部。
 
-```
+```rust
 //! # The Rust Standard Library
 //!
 //! The Rust Standard Library provides the essential runtime
@@ -59,12 +59,10 @@ PS: 相对于 `///`, `//!` 用来注释包含它的项（也就是说，crate，
 
 Rust 也支持兼容 C 的块注释写法：`/* */`。但是不推荐使用，请尽量不要使用这种注释风格（会被鄙视的）。
 
-```
+```rust
 /*
     let x = 42;
     println!("{}", x);
 
 */
-
-
 ```

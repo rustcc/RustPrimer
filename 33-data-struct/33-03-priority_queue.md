@@ -13,7 +13,7 @@ tags： RustPrimer
 
 下面是优先队列的实现：
 
-首先实现定义PriorityQueue结构体
+首先定义 PriorityQueue 结构体
 ```rust
 #[derive(Debug)]
 struct PriorityQueue<T> where T: PartialOrd + Clone {

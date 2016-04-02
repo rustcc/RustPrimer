@@ -287,4 +287,28 @@ extern crate foo;
 
 ## 调试
 
-虽然宏功能很强大，但是调试起来要比普通代码困难，因为编译器默认情况下给出的提示都是对宏展开之后的，而不是你写的原程序，要想在编译器错误与原程序之间建立联系比较困难，因为这要求你大脑能够人肉编译展开宏代码。不过还好编译器为我们提供了 `--pretty expanded` 选项，能让我们看到展开后的代码，通过这个展开后的代码，往上靠就与你自己写的原程序有个直接对应关系，往下靠与编译器给出的错误也是直接对应关系。
+虽然宏功能很强大，但是调试起来要比普通代码困难，因为编译器默认情况下给出的提示都是对宏展开之后的，而不是你写的原程序，要想在编译器错误与原程序之间建立联系比较困难，因为这要求你大脑能够人肉编译展开宏代码。不过还好编译器为我们提供了 `--pretty=expanded` 选项，能让我们看到展开后的代码，通过这个展开后的代码，往上靠就与你自己写的原程序有个直接对应关系，往下靠与编译器给出的错误也是直接对应关系。
+
+目前将宏展开需要使用 unstable option，通过 `rustc -Z unstable-options --pretty=expanded hello.rs` 可以查看宏展开后的代码，如果是使用的 cargo 则通过 `cargo rustc -- -Z unstable-options --pretty=expanded` 将项目里面的宏都展开。不过目前是没法只展开部分宏的，而且由于 hygiene 的原因，会对宏里面的名字做些特殊的处理(mangle)，所以程序里面的宏全部展开后代码的可读性比较差，不过依然比依靠大脑展开靠谱。
+
+下面可以看看最简单的 hello-word 程序里面的 `println!("Hello, world!")` 展开结果，为了 hygiene 这里内部临时变量用了 `__STATIC_FMTSTR` 这样的名字以避免名字冲突，即使这简单的一句展开后看起来也还是不那么直观的，具体这里就不详细分析了。
+
+```
+$ rustc -Z unstable-options --pretty expanded hello.rs
+#![feature(prelude_import)]
+#![no_std]
+#[prelude_import]
+use std::prelude::v1::*;
+#[macro_use]
+extern crate std as std;
+fn main() {
+    ::std::io::_print(::std::fmt::Arguments::new_v1({
+                                                        static __STATIC_FMTSTR:
+                                                               &'static [&'static str]
+                                                               =
+                                                            &["Hello, world!\n"];
+                                                        __STATIC_FMTSTR
+                                                    },
+                                                    &match () { () => [], }));
+}
+```
