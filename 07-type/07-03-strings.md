@@ -33,7 +33,7 @@ assert_eq!(z, w);
 它能动态的去增长或者缩减，那么怎么声明它呢？我们先介绍一种简单的方式，从`str`中转换：
 
 ```
-let x:&'static str = "hello world";
+let x:&'static str = "hello";
 
 let mut y:String = x.to_string();
 println!("{}", y);
