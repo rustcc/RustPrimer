@@ -31,7 +31,7 @@ The Rust primer for beginners.
   1. [前期准备](./03-editors/03-01-before.md)「wayslog」
   1. [vim](./03-editors/03-02-vim.md)「wayslog」
   2. [emacs](./03-editors/03-03-emacs.md)「tiansiyuan」
-  3. [vscode](./03-editors/03-04-emacs.md)「daogangtang」
+  3. [vscode](./03-editors/03-04-vscode.md)「daogangtang」
   4. [atom](./03-editors/03-05-atom.md)「wayslog」
   6. [sublime](./03-editors/03-06-sublime.md)「domty」
   7. [visual studio](./03-editors/03-07-visualstudio.md)「marvinguo」
