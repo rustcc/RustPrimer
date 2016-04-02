@@ -186,7 +186,7 @@ fn main() {
 13:25 error: use of moved value: `ast.a` [E0382]
 <anon>:13     println!("{}", ast.a);
 ```
-为什么呢？因为Rust本身，在你调用一个函数的时候，如果传入的不是一个引用，那么无疑，这个参数的onwer将被move掉。同理，impl中的self，如果你写的不是一个引用的话，也是会被默认的move掉哟！
+为什么呢？因为Rust本身，在你调用一个函数的时候，如果传入的不是一个引用，那么无疑，这个参数的owner将被move掉。同理，impl中的self，如果你写的不是一个引用的话，也是会被默认的move掉哟！
 
 那么如何避免这种情况呢？答案是`Copy`和`Clone`：
 
