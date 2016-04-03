@@ -21,24 +21,21 @@ let y = 6; // 创建另一个绑定
 
 文档注释使用 ```///```，一般用于函数或结构体（字段）的说明，置于要说明的对象上方。文档注释内部可使用markdown格式的标记语法，可用于 rustdoc 工具的自动文档提取。
 
-```
-/// Adds one to the number given.
-///
-/// # Examples
-///
-/// ```
-/// let five = 5;
-///
-/// assert_eq!(6, add_one(5));
-/// # fn add_one(x: i32) -> i32 {
-/// #     x + 1
-/// # }
-/// ```
-fn add_one(x: i32) -> i32 {
-    x + 1
-}
-
-```
+    /// Adds one to the number given.
+    ///
+    /// # Examples
+    ///
+    /// ```
+    /// let five = 5;
+    ///
+    /// assert_eq!(6, add_one(5));
+    /// # fn add_one(x: i32) -> i32 {
+    /// #     x + 1
+    /// # }
+    /// ```
+    fn add_one(x: i32) -> i32 {
+        x + 1
+    }
 
 
 ## 模块注释
