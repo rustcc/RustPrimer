@@ -2,6 +2,9 @@
 The Rust primer for beginners.
 给初学者的Rust中文教程。
 
+## 在线地址
+* <http://rustprimer.b0.upaiyun.com>
+
 ## 协作规则
 
 1. 每个参与撰写的成员fork本项目，通过提pr的形式来协作书写；
