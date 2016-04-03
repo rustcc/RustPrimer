@@ -154,4 +154,4 @@ path = "bin/bin1.rs"
 # 构建、清理、更新以及安装
 领会了toml描述文件的写法，是一个重要的方面。另一个重要的方面，就是cargo工具本身为我们程序猿提供的各种好用的工具。如果大家感兴趣，自己在终端中输入'cargo --help'查看即可。其中开发时最常用的命令就是'cargo build'，用于构建项目。此外，'cargo clean'命令可以清理target文件夹中的所有内容；'cargo update'根据toml描述文件重新检索并更新各种依赖项的信息，并写入lock文件，例如依赖项版本的更新变化等等；'cargo install'可用于实际的生产部署。这些命令在实际的开发部署中均是非常有用的。
 
-**cargo更多详细用法请参见['33. cargo参数配置'](../33-cargo-detailed-cfg/33-cargo-detailed-cfg.md)**
+**cargo更多详细用法请参见['28. cargo参数配置'](../28-cargo-detailed-cfg/28-01-cargo-detailed-cfg.md)**
