@@ -28,7 +28,7 @@ sudo /usr/local/bin/cargo install --git 'https://github.com/phildawes/racer.git'
 
 ### 2. 编译安装
 
-事实上我更推荐有条件的用户通过这种方式安装，因为自己实战操作一遍总是有些收获的。 
+事实上我更推荐有条件的用户通过这种方式安装，因为自己实战操作一遍总是有些收获的。
 
 #### 2.1. 下载源码
 
@@ -38,7 +38,7 @@ sudo /usr/local/bin/cargo install --git 'https://github.com/phildawes/racer.git'
 git clone https://github.com/phildawes/racer.git
 ```
 
-#### 2.2. 进行编译 
+#### 2.2. 进行编译
 
 然后，进入目录然后进行编译
 
@@ -64,6 +64,7 @@ export RUST_SRC_PATH=$RUST_SRC_HOME/src
 
 请重新打开终端，并进入到关闭之前的路径。
 执行如下代码：
+
 linux:
 ```
 ./target/release/racer complete std::io::B
@@ -78,5 +79,3 @@ target\release\racer complete std::io::B
 ## 安装 rustfmt
 
 `cargo install rustfmt`
-
-
