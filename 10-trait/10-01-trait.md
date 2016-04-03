@@ -38,7 +38,7 @@ fn main() {
 这个程序会输出：
 
 ```
-circle c has an area of 1
+circle c has an area of 3.141592653589793
 ```
 
 ## trait与泛型
