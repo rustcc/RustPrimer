@@ -23,7 +23,7 @@ Rust在Windows上的安装和你在windows上安装其它软件一样。
 
 `rustc --version`
 
-看到 以 **rustc 1.5.0** 开头，说明你安装成功了。
+看到 以 **rustc 1.6.0** 开头，说明你安装成功了。
 
 **注意**
 
