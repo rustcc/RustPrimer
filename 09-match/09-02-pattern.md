@@ -154,7 +154,7 @@ let ref mut mrx = x;
 ```
 let x = 1u32;
 match x {
-    e @ 1 ... 5 | e @ 10..15 => println!("get:{}", e),
+    e @ 1 ... 5 | e @ 10 ... 15 => println!("get:{}", e),
     _ => (),
 }
 ```
