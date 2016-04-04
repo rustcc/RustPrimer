@@ -11,13 +11,13 @@
 
 在`Cargo.toml`中添加以下行:
 
-```
+```toml
 [dependencies]
 libc = "0.2.9"
 ```
 
 在你的rs文件中引入库:
-```
+```rust
 extern crate libc
 ```
 
@@ -27,7 +27,7 @@ extern crate libc
 
 就像`c语言`需要`#include`声明了对应函数的头文件一样，`rust`中调用`ffi`也需要对对应函数进行声明。
 
-```
+```rust
 use libc::c_int;
 use libc::c_void;
 use libc::size_t;
@@ -48,7 +48,7 @@ extern {
 
 声明完成后就可以进行调用了。
 由于此函数来自外部的c库，所以rust并不能保证该函数的安全性。因此，调用任何一个`ffi`函数需要一个`unsafe`块。
-```
+```rust
 let result: size_t = unsafe {
     your_func(1 as c_int, Box::into_raw(Box::new(3)) as *mut c_void)
 };
@@ -58,14 +58,14 @@ let result: size_t = unsafe {
 
 作为一个库作者，对外暴露不安全接口是一种非常不合格的做法。在做c库的`rust binding`时，我们做的最多的将是将不安全的c接口封装成一个安全接口。
 通常做法是：在一个叫`ffi.rs`之类的文件中写上所有的`extern块`用以声明ffi函数。在一个叫`wrapper.rs`之类的文件中进行包装：
-```
+```rust
 // ffi.rs
 #[link(name = "yourlib")]
 extern {
     fn your_func(arg1: c_int, arg2: *mut c_void) -> size_t;
 }
 ```
-```
+```rust
 // wrapper.rs
 fn your_func_wrapper(arg1: i32, arg2: &mut i32) -> isize {
     unsafe { your_func(1 as c_int, Box::into_raw(Box::new(3)) as *mut c_void) } as isize
@@ -81,7 +81,7 @@ fn your_func_wrapper(arg1: i32, arg2: &mut i32) -> isize {
 
 `rust`中结构体默认的内存表示和c并不兼容。如果要将结构体传给ffi函数，请为`rust`的结构体打上标记：
 
-```
+```rust
 #[repr(C)]
 struct RustObject {
     a: c_int,
@@ -134,7 +134,7 @@ rust为了应对不同的情况，有很多种字符串类型。其中`CStr`和`
 #### CStr
 
 对于产生于c的字符串(如在c程序中使用`malloc`产生)，rust使用`CStr`来表示，和`str`类型对应，表明我们并不拥有这个字符串。
-```
+```rust
 use std::ffi::CStr;
 use libc::c_char;
 #[link(name = "yourlib")]
@@ -150,7 +150,7 @@ fn get_string() -> String {
     }
 }
 ```
-在这里`get_string`使用`CStr::from_ptr`从c的`char*`获取一个字符串，并且转化成了一个String. 
+在这里`get_string`使用`CStr::from_ptr`从c的`char*`获取一个字符串，并且转化成了一个String.
 
 * 注意to_string_lossy()的使用：因为在rust中一切字符都是采用utf8表示的而c不是，
   因此如果要将c的字符串转换到rust字符串的话，需要检查是否都为有效`utf-8`字节。`to_string_lossy`将返回一个`Cow<str>`类型，
@@ -159,7 +159,7 @@ fn get_string() -> String {
 #### CString
 
 和`CStr`表示从c中来，rust不拥有归属权的字符串相反，`CString`表示由rust分配，用以传给c程序的字符串。
-```
+```rust
 use std::ffi::CString;
 use std::os::raw::c_char;
 
@@ -251,16 +251,16 @@ fn main() {
 
 前面看到，声明一个被c调用的函数时，采用`extern "C" fn`的语法。此处的`"C"`即为c调用约定的意思。此外，rust还支持：
 
-> stdcall
-> aapcs
-> cdecl
-> fastcall
-> vectorcall //这种call约定暂时需要开启abi_vectorcall feature gate.
-> Rust
-> rust-intrinsic
-> system
-> C
-> win64
+* stdcall
+* aapcs
+* cdecl
+* fastcall
+* vectorcall //这种call约定暂时需要开启abi_vectorcall feature gate.
+* Rust
+* rust-intrinsic
+* system
+* C
+* win64
 
 ## bindgen
 

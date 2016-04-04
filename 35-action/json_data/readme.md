@@ -23,7 +23,7 @@ vagrant@ubuntu-14:~/tmp/test/rustprimer$ tree
 
 - Caogo.toml ，文件中填写一些项目的相关信息，比如版本号，联系人，项目名，文件的内容如下：
 
-```
+```toml
 [package]
 name = "json_data"
 version = "0.1.0"
@@ -39,7 +39,7 @@ authors = ["wangxxx <xxxxx@qq.com>"]
 
 rustc-serialize 这个是第三方的模块，需要从[cargo](https://crates.io/crates/rustc-serialize)下载。
 下载很简单，只需修改一下cargo.toml文件就行了.
-```
+```toml
 [package]
 name = "json_data"
 version = "0.1.0"
@@ -59,7 +59,7 @@ $ cargo build
 2. 在`.cargo`文件夹下，创建一个`config`文件，在文件中填写中科大软件源，可能以后会出现其他的源，先用这个
 3. `config`文件内容如下
 
-```
+```toml
 [registry]
 index = "git://crates.mirrors.ustc.edu.cn/index"
 
@@ -71,7 +71,7 @@ cargo build 执行之后的提示信息
  Downloading rustc-serialize v0.3.18 (registry git://crates.mirrors.ustc.edu.cn/index)
    Compiling rustc-serialize v0.3.18 (registry git://crates.mirrors.ustc.edu.cn/index)
    Compiling json_data v0.1.0 (file:///home/vagrant/tmp/test/rustprimer/json_data)
-``` 
+```
 再次执行tree命令:
 
 ```
@@ -92,11 +92,11 @@ cargo build 执行之后的提示信息
 ```
 可以看到多了很多文件，重点关注`cargo.lock`,开打文件:
 
-```
+```toml
 [root]
 name = "json_data"
 version = "0.1.0"
-dependencies = [ 
+dependencies = [
  "rustc-serialize 0.3.18 (registry+git://crates.mirrors.ustc.edu.cn/index)",
 ]
 
@@ -110,7 +110,7 @@ source = "registry+git://crates.mirrors.ustc.edu.cn/index"
 
 还有生成了target文件夹，生成了可执行文件json_data,因为main.rs中的执行结果就是打印`hello world`
 ```
-$ cargo run 
+$ cargo run
 
 Hello, world!
 ```
@@ -153,4 +153,3 @@ fn main() {
 
 ```
 当然我们也可以在文本中作为api的返回结果使用，下来的章节中，我们将讨论这个问题
-

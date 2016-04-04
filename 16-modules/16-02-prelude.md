@@ -5,7 +5,7 @@ Rust 的标准库，有一个 `prelude` 子模块，这里面包含了默认导�
 
 大体上有下面一些内容：
 
-```
+```rust
 std::marker::{Copy, Send, Sized, Sync}
 std::ops::{Drop, Fn, FnMut, FnOnce}
 std::mem::drop
@@ -22,4 +22,3 @@ std::slice::SliceConcatExt
 std::string::{String, ToString}
 std::vec::Vec
 ```
-

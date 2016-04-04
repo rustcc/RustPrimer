@@ -1,6 +1,6 @@
 # 测试
 
-> 程序测试是一种找到缺陷的有效方式，但是它对证明没有缺陷却无能为力。 
+> 程序测试是一种找到缺陷的有效方式，但是它对证明没有缺陷却无能为力。
 >
 >    Edsger W. Dijkstra, "The Humble Programmer" (1972)
 
@@ -221,37 +221,39 @@ Rust 对文档的哲学，是不要单独写文档，一是代码本身是文档
 
 比如，我们给上面库加点文档：
 
-    //! The `adder` crate provides functions that add numbers to other numbers.
-    //!
-    //! # Examples
-    //!
-    //! ```
-    //! assert_eq!(4, adder::add_two(2));
-    //! ```
+```rust
+//! The `adder` crate provides functions that add numbers to other numbers.
+//!
+//! # Examples
+//!
+//! ```
+//! assert_eq!(4, adder::add_two(2));
+//! ```
 
-    /// This function adds two to its argument.
-    ///
-    /// # Examples
-    ///
-    /// ```
-    /// use adder::add_two;
-    ///
-    /// assert_eq!(4, add_two(2));
-    /// ```
+/// This function adds two to its argument.
+///
+/// # Examples
+///
+/// ```
+/// use adder::add_two;
+///
+/// assert_eq!(4, add_two(2));
+/// ```
 
-    pub fn add_two(a: i32) -> i32 {
-        a + 2
-    }
+pub fn add_two(a: i32) -> i32 {
+   a + 2
+}
 
-    #[cfg(test)]
-    mod tests {
-        use super::*;
+#[cfg(test)]
+mod tests {
+   use super::*;
 
-        #[test]
-        fn it_works() {
-            assert_eq!(4, add_two(2));
-        }
-    }
+   #[test]
+   fn it_works() {
+      assert_eq!(4, add_two(2));
+   }
+}
+```
 
 
 运行 `cargo test`，结果如下：
@@ -289,8 +291,3 @@ test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured
 我们可以看到，Rust 对测试，对文档，对文档中的示例代码测试，都有特性支持。从这些细节之处，可以看出 Rust 设计的周密性和严谨性。
 
 但是，光有好工具是不够的，工程的质量更重要的是写代码的人决定的。我们应该在 Rust 严谨之风的熏陶下，养成良好的编码和编写测试的习惯，掌握一定的分析方法，把质量要求贯彻到底。
-
-
-
- 
-

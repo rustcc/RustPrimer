@@ -9,7 +9,7 @@ Rust 中，本操作符行为可以重载。这也是 Rust 操作符的基本特
 
 ## 强制隐藏转换（coercion）
 
-`Deref` 神奇的地方并不在本身 `解引` 这个意义上，Rust 的设计者在它之上附加了一个特性：`强制隐藏转换`，这才是它神奇之处。 
+`Deref` 神奇的地方并不在本身 `解引` 这个意义上，Rust 的设计者在它之上附加了一个特性：`强制隐藏转换`，这才是它神奇之处。
 
 这种隐式转换的规则为：
 
@@ -30,7 +30,7 @@ Rust 编译器会在做 `*v` 操作的时候，自动先把 `v` 做引用归一�
 
 下面举一些例子：
 
-```
+```rust
 fn foo(s: &str) {
     // borrow a string for a second
 }
@@ -43,7 +43,7 @@ foo(&owned);
 ```
 因为 `String` 实现了 `Deref<Target=str>`。
 
-```
+```rust
 use std::rc::Rc;
 
 fn foo(s: &str) {
@@ -59,7 +59,7 @@ foo(&counted);
 ```
 因为 `Rc<T>` 实现了 `Deref<Target=T>`。
 
-```
+```rust
 fn foo(s: &[i32]) {
     // borrow a slice for a second
 }
@@ -71,7 +71,7 @@ foo(&owned);
 ```
 因为 `Vec<T>` 实现了 `Deref<Target=[T]>`。
 
-```
+```rust
 struct Foo;
 
 impl Foo {

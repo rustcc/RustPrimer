@@ -23,7 +23,7 @@ struct PriorityQueue<T> where T: PartialOrd + Clone {
 第二行的`where T: PartialOrd + Clone`指的是 PriorityQueue 存储的泛型 T 是满足 `PartialOrd` 和 `Clone` trait 约束的，意味着泛型 T 是可排序和克隆的。
 
 后面是一下基本的方法实现，比较简单，就直接看代码吧。
-```
+```rust
 impl<T> PriorityQueue<T> where T: PartialOrd + Clone {
     fn new() -> PriorityQueue<T> {
         PriorityQueue { pq: Vec::new() }
@@ -88,7 +88,7 @@ impl<T> PriorityQueue<T> where T: PartialOrd + Clone {
 ```
 
 下面是测试代码：
-```
+```rust
 fn test_keep_min() {
     let mut pq = PriorityQueue::new();
     pq.insert(3);
