@@ -11,7 +11,7 @@
 
 首先我们先来看一下`str`， 从字面意思上，Rust的string被表达为： `&'static str`(看不懂这个表达式没关系，&表示引用你知道吧，static表示静态你知道吧，好了，齐了)，即，你在代码里写的，所有的用`""`包裹起来的字符串，都被声明成了一个不可变，静态的字符串。而我们的如下语句：
 
-```
+```rust
 let x = "Hello";
 let x:&'static str = "Hello";
 ```
@@ -20,7 +20,7 @@ let x:&'static str = "Hello";
 字符串也支持转义字符：
 比如如下：
 
-```
+```rust
 let z = "foo
 bar"
 let w = "foo\nbar";
@@ -32,21 +32,20 @@ assert_eq!(z, w);
 光有`str`，确实不够什么卵用，毕竟我们在实际应用中要的更多的还是一个可变的，不定长的字符串。这时候，一种在堆上声明的字符串`String`被设计了出来。
 它能动态的去增长或者缩减，那么怎么声明它呢？我们先介绍一种简单的方式，从`str`中转换：
 
-```
+```rust
 let x:&'static str = "hello";
 
 let mut y:String = x.to_string();
 println!("{}", y);
 y.push_str(", world");
 println!("{}", y);
-
 ```
 
 我知道你一定会问：——
     那么如何将一个`String`重新变成`&str`呢？
     答：用 `&*` 符号
-    
-```
+
+```rust
 fn use_str(s: &str) {
     println!("I am: {}", s);
 }
@@ -70,14 +69,14 @@ fn main() {
 
 有人会把Rust中的字符串和其惯用的字符串等同起来，于是就出现了如下代码
 
-```
+```rust
 let x = "hello".to_string();
 x[1]; //编译错误！
 ```
 
 Rust的字符串实际上是不支持通过下标访问的，但是呢，我们可以通过将其转变成数组的方式访问
 
-```
+```rust
 let x = "哎哟我去".to_string();
 for i in x.as_bytes() {
     print!("{} ", i);
@@ -95,4 +94,4 @@ x.chars().nth(2);
 ## 字符串切片
 
 对字符串切片是一件非常危险的事，虽然Rust支持，但是我并不推荐。因为Rust的字符串Slice实际上是切的bytes。这也就造成了一个严重后果，如果你切片的位置正好是一个Unicode字符的内部，Rust会发生Runtime的panic，导致整个程序崩溃。
-因为这个操作是如此的危险，所以我就不演示了…… 
+因为这个操作是如此的危险，所以我就不演示了……

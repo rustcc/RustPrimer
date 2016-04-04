@@ -58,7 +58,7 @@
 
 show u the code:
 
-```
+```rust
 fn avg(vals: &[f64]) -> f64 {
     let sum: f64 = sum(vals);
     let num: f64 = len(vals) as f64;
@@ -76,7 +76,7 @@ Rust是支持运算符重载的（某咖啡语言哭晕在厕所）。
 
 关于这部分呢，在本书的第30节会有很详细的叙述，因此在这里我就不铺开讲了，上个栗子给大家，仅作参考：
 
-```
+```rust
 use std::ops::{Add, Sub};
 
 #[derive(Copy, Clone)]
@@ -126,7 +126,7 @@ output:
 
 首先我们来分析一下format的一个典型调用
 
-```
+```rust
 fn main() {
     let s = format!("{1}是个有着{0:>0width$}KG重，{height:?}cm高的大胖子",
                     81, "wayslog", width=4, height=178);
@@ -142,7 +142,7 @@ fn main() {
 
 比如这样：
 
-```
+```rust
 format!("{:b}", 2);
 // 调用 `Binary` trait
 // Get : 10
@@ -183,11 +183,11 @@ parameter := integer '$'
 
 最后，留个作业吧。
 给出参数列表如下：
- (500.0, 12, "ELTON", "QB", 8, CaiNiao="Mike")
- 
- 请写出能最后输出一下句子并且将参数*都*被用过*至少一遍*的格式化字符串，并自己去play实验一下。
- 
- ```
- rust.cc社区的唐Mike眼睛度数足有0500.0度却还是每天辛苦码代码才能赚到100个QB。
- 但是elton却只需睡  12  个小时就可以迎娶白富美了。
- ```
+`(500.0, 12, "ELTON", "QB", 8, CaiNiao="Mike")`
+
+请写出能最后输出一下句子并且将参数*都*被用过*至少一遍*的格式化字符串，并自己去play实验一下。
+
+```
+rust.cc社区的唐Mike眼睛度数足有0500.0度却还是每天辛苦码代码才能赚到100个QB。
+但是elton却只需睡  12  个小时就可以迎娶白富美了。
+```

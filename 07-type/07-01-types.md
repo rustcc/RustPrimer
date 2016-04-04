@@ -6,7 +6,7 @@
 
 Rust自带了`bool`类型，其可能值为`true`或者`false`。
 我们可以通过这样的方式去声明它：
-```
+```rust
 let is_she_love_me = false;
 let mut is_he_love_me: bool = true;
 ```
@@ -17,7 +17,7 @@ let mut is_he_love_me: bool = true;
 在Rust中，一个`char`类型表示一个*Unicode*字符,这也就意味着，在某些语言里代表一个字符(8bit)的char，在Rust里实际上是四个字节(32bit)。
 同时，我们可以将各种奇怪的非中文字符随心所欲的赋值给一个char类型。需要注意的是，Rust中我们要用`'`来表示一个char，如果用`"`的话你得到的实际上是一个`&'static str`。
 
-```
+```rust
 let c = 'x';
 let cc = '王';
 ```
@@ -36,9 +36,9 @@ let cc = '王';
 
 有人说了，你看我整个`i128`行不。
 
-答，不行，谁家电脑是128位的啊……… 
+答，不行，谁家电脑是128位的啊………
 
-但是真的有人提议支持这个类型： https://github.com/rust-lang/rfcs/pull/1504 
+但是真的有人提议支持这个类型： https://github.com/rust-lang/rfcs/pull/1504
 
 ### 自适应类型
 
@@ -50,15 +50,15 @@ let cc = '王';
 
 Rust的数组是被表示为`[T;N]`。其中N表示数组大小，并且这个大小一定是个编译时就能获得的整数值，T表示`泛型`类型，即任意类型。我们可以这么来声明和使用一个数组:
 
-```
+```rust
 let a = [8, 9, 10];
-let b: [u8;3] = [8, 6, 5]; 
+let b: [u8;3] = [8, 6, 5];
 print!("{}", a[0]);
 ```
 
 和Golang一样，Rust的数组中的`N`（大小）也是类型的一部分，即`[u8; 3] != [u8; 4]`。这么设计是为了更安全和高效的使用内存，当然了，这会给第一次接触类似概念的人带来一点点困难，比如以下代码。
 
-```
+```rust
 fn show(arr: [u8;3]) {
     for i in &arr {
         print!("{} ", i);
@@ -98,7 +98,7 @@ error: aborting due to previous error
 这里`&`符号是一个难点，我们不妨放开这个符号，简单的把它看成是`Slice`的甲鱼臀部——规定。另外，同样的，`Slice`也是可以通过下标的方式访问其元素，下标也是从0开始的哟。
 你可以这么声明并使用一个`Slice`：
 
-```
+```rust
 let arr = [1, 2, 3, 4, 5, 6];
 let slice_complete = &arr[..]; // 获取全部元素
 let slice_middle = &arr[1..4]; // 获取中间元素，最后取得的Slice为 [2, 3, 4] 。切片遵循左闭右开原则。
@@ -109,7 +109,7 @@ let slice_left = &arr[..3]; // 最后获得的元素为[1, 2, 3]，长度为3。
 怎么样，了解了吧。
 那么接下来我们用`Slice`来改造一下上面的函数
 
-```
+```rust
 fn show(arr: &[u8]) {
     for i in arr {
         print!("{} ", i);
@@ -141,7 +141,7 @@ fn main() {
 
 下面介绍几种典型的`Vec`的用法:
 
-```
+```rust
 let mut v1: Vec<i32> = vec![1, 2, 3]; // 通过vec!宏来声明
 let v2 = vec![0; 10]; // 声明一个初始长度为10的值全为0的动态数组
 println!("{}", v1[0]); // 通过下标来访问数组元素
@@ -175,11 +175,10 @@ for i in &mut v1 {
 
 下面是一个小例子
 
-```
+```rust
 fn foo(x: i32) -> i32 { x+1 }
 
 let x: fn(i32) -> i32 = foo;
 
 assert_eq!(11, x(10));
-
 ```

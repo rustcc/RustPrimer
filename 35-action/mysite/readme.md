@@ -1,6 +1,6 @@
 # rust web 开发
 
-rust既然是系统级的编程语言，所以当然也能用来开发 web,不过想我这样凡夫俗子，肯定不能从头自己写一个 web 
+rust既然是系统级的编程语言，所以当然也能用来开发 web,不过想我这样凡夫俗子，肯定不能从头自己写一个 web
 服务器，肯定要依赖已经存在的 rust web开发框架来完成 web 开发。
 
 rust目前比较有名的框架是iron和nickel，我们两个都写一下简单的使用教程。
@@ -10,7 +10,7 @@ rust目前比较有名的框架是iron和nickel，我们两个都写一下简单
 接上一篇，使用cargo获取第三方库。`cargo new mysite --bin`
 
 在cargo.toml中添加iron的依赖，
-```
+```toml
 [dependencies]
 iron = "*"
 ```
@@ -46,7 +46,7 @@ fn main() {
 简单点看：
 
 `iron::new().http("localhost:3000").unwrap()`
-这句是服务器的基本的定义，new内部是一个[rust lambda 表达式](https://doc.rust-lang.org/book/closures.html) 
+这句是服务器的基本的定义，new内部是一个[rust lambda 表达式](https://doc.rust-lang.org/book/closures.html)
 
 ```rust
 let plus_one = |x: i32| x + 1;
@@ -149,14 +149,14 @@ Could not compile `mysite`.
 编译出错了，太糟糕了，提示说没有read_to_string这个方法，然后我去文档查了一下，发现有[read_to_string方法](http://ironframework.io/doc/iron/request/struct.Body.html)
 再看提示信息
 
-``` rust
+```
 src/main.rs:29:36: 29:52 help: items from traits can only be used if the trait is in scope; the following trait is implemented but not in scope, perhaps add a `use` for it:
 src/main.rs:29:36: 29:52 help: candidate #1: use `std::io::Read`
 ```
 
 让我们添加一个`std::io::Read`,这个如果操作过文件，你一定知道怎么写，添加一下，应该能过去了，还是继续出错了，看看报错
 
-``` rust
+```
    Compiling mysite v0.1.0 (file:///home/vagrant/tmp/test/rustprimer/mysite)
 src/main.rs:30:36: 30:52 error: this function takes 1 parameter but 0 parameters were supplied [E0061]
 src/main.rs:30         let payload = request.body.read_to_string();
@@ -222,7 +222,7 @@ $curl -X POST -d '{"msg":"Just trust the Rust"}' http://localhost:3000/set
 iron 基本告一段落
 当然还有如何使用html模版引擎，那就是直接看文档就行了。
 
-##[nickel](http://nickel.rs/) 
+##[nickel](http://nickel.rs/)
 
 当然既然是web框架肯定是iron能干的nicke也能干，所以那我们就看看如何做一个hello 和返回一个html
 的页面
@@ -252,12 +252,12 @@ fn main() {
 1. 引入了nickel的宏
 2. 初始化Nickel
 3. 调用utilize来定义路由模块。
-4. `router!` 宏，传入的参数是 get 方法和对应的路径，"**"是全路径匹配。
+4. `router!` 宏，传入的参数是 get 方法和对应的路径，"\*\*"是全路径匹配。
 5. listen启动服务器
 
 [当然我们要引入关于html模版相关的信息](http://nickel.rs/#easy-templating)
 
-``` rust 
+``` rust
 #[macro_use] extern crate nickel;
 
 use std::collections::HashMap;
@@ -285,7 +285,7 @@ Internal Server Error
 看看文档，没发现什么问题，我紧紧更换了一个文件夹的名字，这个文件夹我也创建了。
 然后我在想难道是服务器将目录写死了吗？于是将上面的路径改正这个，问题解决。
 
-```rust 
+```rust
 return response.render("examples/assets/template.tpl", &data);
 ```
 我们看一下目录结构
