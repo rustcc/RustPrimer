@@ -6,7 +6,7 @@
 
 ```rust
 let y = (2, "hello world");
-let x: (3, &str) = (3, "world hello");
+let x: (i32, &str) = (3, "world hello");
 
 // 然后呢，你能用很简单的方式去访问他们：
 
