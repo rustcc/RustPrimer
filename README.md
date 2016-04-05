@@ -32,7 +32,7 @@ https://wayslog.gitbooks.io/rustprimer/content/
   1. [第一个Rust程序](./04-quickstart/04-01-hello-world.md)
   2. [简单的数学运算](./04-quickstart/04-02-basic-math.md)
   3. [快速上手](./04-quickstart/04-03-cheet-sheet.md)
-5. [Cargo项目管理器、crate](./05-cargo-projects-manager/05-cargo-projects-manager.md)「fuyingfuying」
+5. [Cargo项目管理器](./05-cargo-projects-manager/05-cargo-projects-manager.md)「fuyingfuying」
 6. [基本程序结构](./06-flow/06-00-preface.md)「daogangtang」
   1. [注释](./06-flow/06-01-comment.md)
   2. [条件](./06-flow/06-02-condition.md)

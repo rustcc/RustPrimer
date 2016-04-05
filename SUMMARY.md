@@ -18,7 +18,7 @@
   * [第一个Rust程序](./04-quickstart/04-01-hello-world.md)
   * [简单的数学运算](./04-quickstart/04-02-basic-math.md)
   * [快速上手](./04-quickstart/04-03-cheet-sheet.md)
-* [Cargo项目管理器、crate](./05-cargo-projects-manager/05-cargo-projects-manager.md)「fuyingfuying」
+* [Cargo项目管理器](./05-cargo-projects-manager/05-cargo-projects-manager.md)「fuyingfuying」
 * [基本程序结构](./06-flow/06-00-preface.md)「daogangtang」
   * [注释](./06-flow/06-01-comment.md)
   * [条件](./06-flow/06-02-condition.md)
