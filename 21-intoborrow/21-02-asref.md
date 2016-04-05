@@ -15,7 +15,7 @@
 
 下面举个简单的例子：
 
-```
+```rust
 fn is_hello<T: AsRef<str>>(s: T) {
    assert_eq!("hello", s.as_ref());
 }
@@ -36,4 +36,3 @@ is_hello(s);
 对于一个类型为 `T` 的对象 `foo`，如果 `T` 实现了 `AsMut<U>`，那么，`foo` 可执行 `.as_mut()` 操作，即 `foo.as_mut()`。操作的结果，我们得到了一个类型为 `&mut U` 的可变（mutable）引用。
 
 注：在转换的过程中，`foo` 会被可变（mutable）借用。
-

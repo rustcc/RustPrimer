@@ -1,12 +1,12 @@
 # 目录操作:简单grep
 
-上一节我们实现了通过Command调用subprocess。这一节，我们将通过自己的代码去实现一个简单的grep。当然了，这种基础的工具你是能找到源码的，而我们的实现也并不像真正的grep那样注重效率，本节的主要作用就在于演示标准库API的使用。
+上一节我们实现了通过`Command`调用subprocess。这一节，我们将通过自己的代码去实现一个简单的grep。当然了，这种基础的工具你是能找到源码的，而我们的实现也并不像真正的grep那样注重效率，本节的主要作用就在于演示标准库API的使用。
 
 首先，我们需要对当前目录进行递归，遍历，每当查找到文件的时候，我们回调一个函数。
 
 于是，我们就有了这么个函数：
 
-```
+```rust
 use std::env::args;
 use std::io;
 use std::fs::{self, File, DirEntry};
@@ -44,7 +44,7 @@ fn visit_dirs(dir: &Path, pattern: &String, cb: &Fn(&DirEntry, &String)) -> io::
 好了，继续，我们需要读取每个查到的文件，同时判断每一行里有没有所查找的内容。
 我们用一个BufferIO去读取各个文件，同时用String的自带方法来判断内容是否存在。
 
-```
+```rust
 fn call_back(de: &DirEntry, pt: &String) {
     let mut f = File::open(de.path()).unwrap();
     let mut buf = io::BufReader::new(f);
@@ -59,8 +59,7 @@ fn call_back(de: &DirEntry, pt: &String) {
 
 最后，我们将整个函数调用起来，如下：
 
-```
-
+```rust
 use std::env::args;
 use std::io;
 use std::fs::{self, File, DirEntry};

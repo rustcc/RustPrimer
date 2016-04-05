@@ -1,8 +1,8 @@
 # 哈希表
 
-和动态数组Vec一样，哈希表(HashMap)也是Rust内置的集合类型之一，同属`std::collections`模块下。
+和动态数组`Vec`一样，哈希表(HashMap)也是Rust内置的集合类型之一，同属`std::collections`模块下。
 
-它提供了一个O(1)的查询方法，是实现快速搜索必备的类型之一。
+它提供了一个`O(1)`的查询方法，是实现快速搜索必备的类型之一。
 
 这里呢，主要给大家介绍一下HashMap的几种典型用法。
 
@@ -11,7 +11,7 @@
 顾名思义, HashMap 要求一个可哈希（实现 Hash trait）的Key类型，和一个编译时知道大小的Value类型。
 同时，Rust还要求你的Key类型必须是可比较的，在Rust中，你可以为你的类型轻易的加上编译器属性：
 
-```
+```rust
 #[derive(PartialEq, Eq, Hash)]
 ```
 
@@ -30,7 +30,7 @@
 
 对于这种实用的类型，我们推荐用一个例子来解释：
 
-```
+```rust
 use std::collections::HashMap;
 
 // 声明
@@ -80,7 +80,7 @@ WaySLOG来自: HeBei
 
 我们在编程的过程中，经常遇到这样的场景，统计一个字符串中所有的字符总共出现过几次。借助各种语言内置的Map类型我们总能完成这件事，但是完成的几乎都并不令人满意。很多人讨厌的一点是：为什么我要判断这个字符在字典中有没有出现，就要写一个大大的if条件！烦不烦？烦！于是，现代化的编程语言开始集成了类似Python里`setdefault`类似的语法，下面是一段Python代码：
 
-```
+```rust
 val = {}
 for c in "abcdefasdasdawe":
     val[c] = 1 + val.setdefault(c, 0)
@@ -90,7 +90,7 @@ print val
 唔，总感觉怪怪的。那么Rust是怎么解决这个问题的呢？
 以下内容摘自标注库api注释：
 
-```
+```rust
 use std::collections::HashMap;
 
 let mut letters = HashMap::new();

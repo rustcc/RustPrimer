@@ -201,7 +201,7 @@ struct Bar {  //不可实现Copy特性
 1. **通过derive让Rust编译器自动实现**  
 
 ```rust
-#derive(Copy, Clone)]
+#[derive(Copy, Clone)]
 struct Foo {
     a: i32,
     b: bool,

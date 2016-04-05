@@ -20,10 +20,10 @@
   ```rust
   fn main() {
     let a = 3;
-    println!("{}", inc(3));
+    println!("{}", inc(a));
   }
 
-  fn inc(n: i32) ->　i32 {
+  fn inc(n: i32) -> i32 {
     n + 1
   }
   ```

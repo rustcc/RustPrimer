@@ -10,7 +10,7 @@
 ## for
 
 for 语句用于遍历一个迭代器。
-```
+```rust
 for var in iterator {
     code
 }
@@ -18,7 +18,7 @@ for var in iterator {
 Rust 迭代器返回一系列的元素，每个元素是循环中的一次重复。然后它的值与 var 绑定，它在循环体中有效。每当循环体执行完后，我们从迭代器中取出下一个值，然后我们再重复一遍。当迭代器中不再有值时，for 循环结束。
 
 比如：
-```
+```rust
 for x in 0..10 {
     println!("{}", x); // x: i32
 }
@@ -39,7 +39,7 @@ for x in 0..10 {
 
 不熟悉迭代器概念的同学可能傻眼了，下面不仿用 C 形式的 for 语句做下对比：
 
-```
+```rust
 // C 语言的 for 循环例子
 for (x = 0; x < 10; x++) {
     printf( "%d\n", x );
@@ -57,7 +57,7 @@ for 语句就是迭代器遍历的语法糖。
 
 上述迭代器的形式虽好，但是好像在循环过程中，少了索引信息。Rust 考虑到了这一点，当你需要记录你已经循环了多少次了的时候，你可以使用 `.enumerate()` 函数。比如：
 
-```
+```rust
 for (i,j) in (5..10).enumerate() {
     println!("i = {} and j = {}", i, j);
 }
@@ -73,7 +73,7 @@ i = 4 and j = 9
 ```
 再比如：
 
-```
+```rust
 let lines = "Content of line one\nContent of line two\nContent of line three\nContent of line four".lines();
 for (linenumber, line) in lines.enumerate() {
     println!("{}: {}", linenumber, line);
@@ -93,7 +93,7 @@ for (linenumber, line) in lines.enumerate() {
 
 Rust 提供了 while 语句，条件表达式为真时，执行语句体。当你不确定应该循环多少次时可选择 while。
 
-```
+```rust
 while expression {
     code
 }
@@ -101,7 +101,7 @@ while expression {
 
 比如：
 
-```
+```rust
 let mut x = 5; // mut x: i32
 let mut done = false; // mut done: bool
 
@@ -120,7 +120,7 @@ while !done {
 
 有一种情况，我们经常会遇到，就是写一个无限循环：
 
-```
+```rust
 while true {
     // do something    
 }
@@ -128,7 +128,7 @@ while true {
 
 针对这种情况，Rust 专门优化提供了一个语句 loop。
 
-```
+```rust
 loop {
     // do something
 }
@@ -138,7 +138,7 @@ loop {
 
 比如说，如下代码：
 
-```
+```rust
 let mut a;
 loop {
      a = 1;
@@ -158,7 +158,7 @@ do_something(a)
 
 像上面那个 while 例子：
 
-```
+```rust
 let mut x = 5;
 let mut done = false;
 
@@ -174,7 +174,7 @@ while !done {
 ```
 可以优化成：
 
-```
+```rust
 let mut x = 5;
 
 loop {
@@ -189,7 +189,7 @@ loop {
 
 下面这个例子演示 continue 的用法：
 
-```
+```rust
 for x in 0..10 {
     if x % 2 == 0 { continue; }
 
@@ -212,7 +212,7 @@ for x in 0..10 {
 
 如下代码只会在 x 和 y 都为奇数时打印他们：
 
-```
+```rust
 'outer: for x in 0..10 {
     'inner: for y in 0..10 {
         if x % 2 == 0 { continue 'outer; } // continues the loop over x
@@ -221,4 +221,3 @@ for x in 0..10 {
     }
 }
 ```
-
