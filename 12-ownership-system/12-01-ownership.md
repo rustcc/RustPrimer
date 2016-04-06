@@ -28,7 +28,7 @@ int* foo() {
 上面定义了一个i32类型的标识符a，如果你直接println，你会收到一个error报错：
 > error: use of possibly uninitialized variable: `a`
 
-这是**因为Rust并不会像其他语言一样可以为变量默认初始化值，Rust明确规定变量的初始值必须有程序员自己决定**。
+这是**因为Rust并不会像其他语言一样可以为变量默认初始化值，Rust明确规定变量的初始值必须由程序员自己决定**。
 
 正确的做法：
 ```rust
