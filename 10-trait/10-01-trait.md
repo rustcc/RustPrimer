@@ -33,7 +33,7 @@ fn main() {
     println!("circle c has an area of {}", c.area());
 }
 ```
-**注**: **&self**表示的是**area**这个函数会将调用者的借贷引用作为参数
+**注**: **&self**表示的是**area**这个函数会将调用者的借代引用作为参数
 
 这个程序会输出：
 
