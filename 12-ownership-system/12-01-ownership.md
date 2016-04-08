@@ -261,7 +261,8 @@ fn main() {
 }
 ```
 >结果： x=100, y=102  
-  
+
+注意: 例子1是比较特别的，使不使用 move 对结果都没什么影响，因为环境变量 x 是 i32 类型，属于 primitive type，实现了 Copy trait，在闭包使用 move 的时候，是先 clone 了一份 x ，在 move 的时候是 move 了这份 clone 的 x，所以后面的 println！引用 x 的时候没有报错。
 **例子2：**
 ```rust
 fn main() {
