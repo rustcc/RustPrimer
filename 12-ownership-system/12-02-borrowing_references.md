@@ -19,7 +19,7 @@ Borrowing(**&x**)并不会发生所有权moved，所以println可以同时访问
 fn main() {
 	let mut x: i32 = 100;
 	{
-		let mut y: &i32 = &mut x;
+		let y: &mut i32 = &mut x;
 		*y += 2;
 	}
 	println!("{}", x);
