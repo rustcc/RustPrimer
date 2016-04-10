@@ -19,6 +19,7 @@ https://wayslog.gitbooks.io/rustprimer/content/
   1. [Linux](./02-install/02-01-install_rust_on_linux.md)
   2. [Mac](./02-install/02-02-install_rust_on_mac_os.md)
   3. [Windows](./02-install/02-03-install_rust_on_windows.md)
+  4. [版本管理工具: multirust](./02-install/02-04-multirust.md)
 3. [编辑器](./03-editors/03-00-preface.md)
   1. [前期准备](./03-editors/03-01-before.md)「wayslog」
   1. [vim](./03-editors/03-02-vim.md)「wayslog」
