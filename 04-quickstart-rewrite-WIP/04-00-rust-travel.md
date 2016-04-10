@@ -62,9 +62,9 @@ fn main() {
 - 查看Cargo.toml文件
 
 > ps: cat Cargo.toml  
-> [package]
-name = "hellorust"
-version = "0.1."
+> [package]  
+name = "hellorust"  
+version = "0.1."  
 authors = ["YourName <YourEmail>"]  
 > [dependencies]
 
