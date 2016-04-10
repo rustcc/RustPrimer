@@ -22,15 +22,15 @@
 * [Rust快速入门WIP](./04-quickstart-rewrite-WIP)「Naupio重写中」
   * [Rust旅程](./04-quickstart-rewrite-WIP/04-00-rust-travel.md)
   * [基本类型](./04-quickstart-rewrite-WIP/04-01-primitive-type.md)
-  * [输入输出]
-  * [操作流]
-  * [文档和注释]
-  * [字符串和数组]
-  * [结构体和枚举]
-  * [模式匹配]
-  * [函数和方法]
-  * [类型和特性]
-  * [模块和包箱]
+  * [TODO输入输出]
+  * [TODO操作流]
+  * [TODO文档和注释]
+  * [TODO字符串和数组]
+  * [TODO结构体和枚举]
+  * [TODO模式匹配]
+  * [TODO函数和方法]
+  * [TODO类型和特性]
+  * [TODO模块和包箱]
 * [Cargo项目管理器](./05-cargo-projects-manager/05-cargo-projects-manager.md)「fuyingfuying」
 * [基本程序结构](./06-flow/06-00-preface.md)「daogangtang」
   * [注释](./06-flow/06-01-comment.md)
