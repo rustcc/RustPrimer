@@ -32,19 +32,7 @@ https://wayslog.gitbooks.io/rustprimer/content/
 4. [Rust一小时快速入门](./04-quickstart/04-00-intro.md)「ee0703」
   1. [第一个Rust程序](./04-quickstart/04-01-hello-world.md)
   2. [简单的数学运算](./04-quickstart/04-02-basic-math.md)
-  3. [快速上手](./04-quickstart/04-03-cheet-sheet.md)
-4. [Rust快速入门WIP](./04-quickstart-rewrite-WIP)「Naupio重写中」
-  1. [Rust旅程](./04-quickstart-rewrite-WIP/04-01-rust-travel.md)
-  2. [基本类型](./04-quickstart-rewrite-WIP/04-02-primitive-type.md)
-  3. [TODO输入输出]
-  4. [TODO操作流]
-  5. [TODO文档和注释]
-  6. [TODO字符串和数组]
-  7. [TODO结构体和枚举]
-  8. [TODO模式匹配]
-  9. [TODO函数和方法]
-  10. [TODO类型和特性]
-  11. [TODO模块和包箱]
+  3. [快速上手](./04-quickstart/04-03-cheet-sheet.md)  
 5. [Cargo项目管理器](./05-cargo-projects-manager/05-cargo-projects-manager.md)「fuyingfuying」
 6. [基本程序结构](./06-flow/06-00-preface.md)「daogangtang」
   1. [注释](./06-flow/06-01-comment.md)

@@ -19,18 +19,6 @@
   * [第一个Rust程序](./04-quickstart/04-01-hello-world.md)
   * [简单的数学运算](./04-quickstart/04-02-basic-math.md)
   * [快速上手](./04-quickstart/04-03-cheet-sheet.md)
-* [Rust快速入门WIP](./04-quickstart-rewrite-WIP)「Naupio重写中」
-  * [Rust旅程](./04-quickstart-rewrite-WIP/04-00-rust-travel.md)
-  * [基本类型](./04-quickstart-rewrite-WIP/04-01-primitive-type.md)
-  * [TODO输入输出]
-  * [TODO操作流]
-  * [TODO文档和注释]
-  * [TODO字符串和数组]
-  * [TODO结构体和枚举]
-  * [TODO模式匹配]
-  * [TODO函数和方法]
-  * [TODO类型和特性]
-  * [TODO模块和包箱]
 * [Cargo项目管理器](./05-cargo-projects-manager/05-cargo-projects-manager.md)「fuyingfuying」
 * [基本程序结构](./06-flow/06-00-preface.md)「daogangtang」
   * [注释](./06-flow/06-01-comment.md)
