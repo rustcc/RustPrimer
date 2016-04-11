@@ -15,7 +15,7 @@
 `AsRef` 更通用，更普遍，覆盖类型更多，是 `Borrow` 的超集。
 
 举例：
-```
+```rust
 use std::borrow::Borrow;
 
 fn check<T: Borrow<str>>(s: T) {

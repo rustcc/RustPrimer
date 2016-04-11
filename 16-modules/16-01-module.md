@@ -39,7 +39,7 @@ Rust 提供了一个关键字 `mod`，它可以在一个文件中定义一个模
 
 比如，在上述 `lib.rs` 中，我们写上如下代码：
 
-```
+```rust
 mod aaa {
     const X: i32 = 10;
 
@@ -50,7 +50,7 @@ mod aaa {
 ```
 我们可以继续写如下代码：
 
-```
+```rust
 mod aaa {
     const X: i32 = 10;
 
@@ -67,7 +67,7 @@ mod aaa {
 ```
 还可以继续写：
 
-```
+```rust
 mod aaa {
     const X: i32 = 10;
 
@@ -97,7 +97,7 @@ mod ccc {
 
 为了让外部能使用模块中 item，需要使用 `pub` 关键字。外部引用的时候，使用 `use` 关键字。例如：
 
-```
+```rust
 mod ccc {
     pub fn print_ccc() {
         println!("{}", 25);
@@ -131,14 +131,14 @@ foo
 ```
 我们在 `aaa.rs` 中，写上：
 
-```
+```rust
 pub fn print_aaa() {
     println!("{}", 25);
 }
 ```
 在 `main.rs` 中，写上：
 
-```
+```rust
 mod aaa;
 
 use aaa::print_aaa;
@@ -180,26 +180,36 @@ src
 └── main.rs
 
 ```
+
 `a/b/c/d.rs` 文件内容：
-```
+
+```rust
 pub fn print_ddd() {
     println!("i am ddd.");
 }
 ```
+
 `a/b/c/mod.rs` 文件内容：
-```
+
+```rust
 pub mod d;
 ```
+
 `a/b/mod.rs` 文件内容：
-```
+
+```rust
 pub mod c;
 ```
+
 `a/mod.rs` 文件内容：
-```
+
+```rust
 pub mod b;
 ```
+
 `main.rs` 文件内容：
-```
+
+```rust
 mod a;
 
 use a::b::c::d;
@@ -232,19 +242,19 @@ fn main() {
 2. `use xxx::{self, yyy}`，表示，加载当前路径下模块 `xxx` 本身，以及模块 `xxx` 下的 `yyy`；
 
 `super` 表示，当前模块路径的上一级路径，可以理解成父模块。
-```
+```rust
 use super::xxx;
 ```
 表示引用父模块中的 `xxx`。
 
 另外，还有一种特殊的路径形式：
-```
+```rust
 ::xxx::yyy
 ```
 它表示，引用根路径下的 `xxx::yyy`，这个根路径，指的是当前 crate 的根路径。
 
 路径中的 `*` 符号：
-```
+```rust
 use xxx:*
 ```
 表示导入 `xxx` 模块下的所有可见 item（加了 pub 标识的 item）。
@@ -255,7 +265,7 @@ use xxx:*
 
 还是举上面那个 `a::b::c::d` 的例子。我们在 `main.rs` 中，要调用 `d`，得使用 `use a::b::c::d;` 来调用。而如果我们修改 `a/mod.rs` 文件为：
 `a/mod.rs` 文件内容：
-```
+```rust
 pub mod b;
 pub use b::c::d;
 ```
@@ -265,7 +275,7 @@ pub use b::c::d;
 
 前面我们讲的，都是在当前 crate 中的技术。真正我们在开发时，会大量用到外部库。外部库是通过
 
-```
+```rust
 extern crate xxx;
 ```
 这样来引入的。
@@ -273,7 +283,7 @@ extern crate xxx;
 注：要使上述引用生效，还必须在 `Cargo.toml` 的 `dependecies` 段，加上 `xxx="version num"` 这种依赖说明，详情见 `Cargo 项目管理` 这一章。
 
 引入后，就相当于引入了一个符号 `xxx`，后面可以直接以这个 `xxx` 为根引用这个 crate 中的 item：
-```
+```rust
 extern crate xxx;
 
 use xxx::yyy::zzz;
@@ -281,10 +291,8 @@ use xxx::yyy::zzz;
 
 引入的时候，可以通过 `as` 关键字重命名。
 
-```
+```rust
 extern crate xxx as foo;
 
 use foo::yyy::zzz;
 ```
-
-

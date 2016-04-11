@@ -2,23 +2,15 @@
 The Rust primer for beginners.
 给初学者的Rust中文教程。
 
-## 协作规则
+## 在线阅读地址
 
-1. 每个参与撰写的成员fork本项目，通过提pr的形式来协作书写；
-2. 本书源码使用markdown语法格式书写；
-3. 原则上每章（如有小节则每小节）对应独立的md文件；文件命名规则：章节号加名字，如第三章第二节03-02-emacs.md；
-4. 在本项目的issue区提issue来认领各自负责的章节，项目评审组审核后会在大纲每个章节标题后面，标注已由谁认领，预计什么时间完成；
-5. 本项目会组织评审委员会来负责审校内容质量，审核通过后，才会合并pr。
+[点我阅读](https://wayslog.gitbooks.io/rustprimer/content/)
 
-## 格式排版
+也可复制以下链接：
 
-1. 按github上的markdown规范来；
-2. 中英文之间使用一个空格隔开。
-
-## 写作要求
-
-理论与实践结合，多举例，把事情讲清楚。必要时逐行分析，不怕啰嗦。要求描述精确，给出的示例尽量完整，能复制到文件中直接编译。所有给的例子，都要求能正常编译通过。举例的代码风格要符合官方规范，尽量消除警告。
-
+```
+https://wayslog.gitbooks.io/rustprimer/content/
+```
 
 ## 大纲
 
@@ -27,11 +19,12 @@ The Rust primer for beginners.
   1. [Linux](./02-install/02-01-install_rust_on_linux.md)
   2. [Mac](./02-install/02-02-install_rust_on_mac_os.md)
   3. [Windows](./02-install/02-03-install_rust_on_windows.md)
+  4. [版本管理工具: multirust](./02-install/02-04-multirust.md)
 3. [编辑器](./03-editors/03-00-preface.md)
   1. [前期准备](./03-editors/03-01-before.md)「wayslog」
   1. [vim](./03-editors/03-02-vim.md)「wayslog」
   2. [emacs](./03-editors/03-03-emacs.md)「tiansiyuan」
-  3. [vscode](./03-editors/03-04-emacs.md)「daogangtang」
+  3. [vscode](./03-editors/03-04-vscode.md)「daogangtang」
   4. [atom](./03-editors/03-05-atom.md)「wayslog」
   6. [sublime](./03-editors/03-06-sublime.md)「domty」
   7. [visual studio](./03-editors/03-07-visualstudio.md)「marvinguo」
@@ -39,8 +32,8 @@ The Rust primer for beginners.
 4. [Rust一小时快速入门](./04-quickstart/04-00-intro.md)「ee0703」
   1. [第一个Rust程序](./04-quickstart/04-01-hello-world.md)
   2. [简单的数学运算](./04-quickstart/04-02-basic-math.md)
-  3. [快速上手](./04-quickstart/04-03-cheet-sheet.md)
-5. [Cargo项目管理器、crate](./05-cargo-projects-manager/05-cargo-projects-manager.md)「fuyingfuying」
+  3. [快速上手](./04-quickstart/04-03-cheet-sheet.md)  
+5. [Cargo项目管理器](./05-cargo-projects-manager/05-cargo-projects-manager.md)「fuyingfuying」
 6. [基本程序结构](./06-flow/06-00-preface.md)「daogangtang」
   1. [注释](./06-flow/06-01-comment.md)
   2. [条件](./06-flow/06-02-condition.md)

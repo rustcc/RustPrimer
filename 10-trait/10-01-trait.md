@@ -33,12 +33,12 @@ fn main() {
     println!("circle c has an area of {}", c.area());
 }
 ```
-**注**: **&self**表示的是**area**这个函数会将调用者的借贷引用作为参数
+**注**: **&self**表示的是**area**这个函数会将调用者的借代引用作为参数
 
 这个程序会输出：
 
 ```
-circle c has an area of 1
+circle c has an area of 3.141592653589793
 ```
 
 ## trait与泛型

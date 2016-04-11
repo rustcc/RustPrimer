@@ -125,8 +125,7 @@ let diameter = 7;
 它们支持 [Markdown 语法](https://en.wikipedia.org/wiki/Markdown)
 而且是注释你的公开API的主要方式。
 
-支持的 markdown 语法包括列在 [GitHub Flavored Markdown]
-(https://help.github.com/articles/github-flavored-markdown) 文档中的所有扩展，加上上角标。
+支持的 markdown 语法包括列在 [GitHub Flavored Markdown](https://help.github.com/articles/github-flavored-markdown) 文档中的所有扩展，加上上角标。
 
 ### 总结行
 
@@ -136,8 +135,7 @@ let diameter = 7;
 
 所有的文档注释，包括总结行，一个以大写字母开始，以句号、问号，或者感叹号结束。最好使用完整的句子而不是片段。
 
-总结行应该以 [第三人称单数陈述句形式]
-(http://en.wikipedia.org/wiki/English_verbs#Third_person_singular_present) 来写。
+总结行应该以 [第三人称单数陈述句形式](http://en.wikipedia.org/wiki/English_verbs#Third_person_singular_present) 来写。
 基本上，这意味着用 "Returns" 而不是 "Return"。
 
 例如：
@@ -173,7 +171,7 @@ let diameter = 7;
 
 ### 解释上下文
 
-Rust 没有特定的构造器，只是返回新实例的韩式。
+Rust 没有特定的构造器，只有返回新实例的函数。
 这些在自动生成的类型文档中是不可见的，因此你应该专门链接到它们：
 
 ``` rust

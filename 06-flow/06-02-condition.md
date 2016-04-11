@@ -8,29 +8,29 @@
 
 Rust 中的 if 表达式基本就是如下几种形式：
 
-```
+```rust
 // 形式 1
 if expr1 {
 
 }
- 
+
 // 形式 2
 if expr1 {
 
 }
 else {
-    
+
 }
 
 // 形式 3
 if expr1 {
-    
+
 }
 else if expr2 {
     // else if 可多重
 }
 else {
-    
+
 }
 
 ```
@@ -42,7 +42,7 @@ else {
 
 鉴于上述第二点，因为是表达式，所以我们可以写出如下代码：
 
-```
+```rust
 let x = 5;
 
 let y = if x == 5 {
@@ -54,17 +54,17 @@ let y = if x == 5 {
 
 或者压缩成一行：
 
-```
+```rust
 let x = 5;
 
 let y = if x == 5 { 10 } else { 15 }; // y: i32
 ```
 
-## if let 
+## if let
 
 我们在代码中常常会看到 `if let` 成对出现，这实际上是一个 match 的简化用法。直接举例来说明：
 
-```
+```rust
 let x = Some(5);
 
 if let Some(y) = x {
@@ -76,14 +76,14 @@ let z = if let Some(y) = x {
 }
 else {
     0
-}
+};
 // z 值为 5    
 
 ```
 
-上面代码等价于 
+上面代码等价于
 
-```
+```rust
 let x = Some(5);
 match x {
     Some(y) => println!("{}", y),
@@ -93,7 +93,7 @@ match x {
 let z = match x {
     Some(y) => y,
     None => 0
-}
+};
 ```
 
 设计这个语法的目的是，在条件判断的时候，直接做一次模式匹配，方便代码书写，使代码更紧凑。
@@ -104,7 +104,7 @@ Rust 中没有类似于 C 的 `switch` 关键字，但它有用于模式匹配�
 
 match 的使用非常简单，举例如下：
 
-```
+```rust
 let x = 5;
 
 match x {
@@ -119,4 +119,3 @@ match x {
 }
 ```
 注意，match 也是一个表达式。match 后面会专门论述，请参见 **模式匹配** 这一章。
-

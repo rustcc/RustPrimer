@@ -14,7 +14,7 @@ Rust 建立在所有权之上的这一套机制，它要求一个资源同一时
 
 例子：
 
-```
+```rust
 use std::rc::Rc;
 
 let five = Rc::new(5);
@@ -36,7 +36,7 @@ let five3 = five.clone();
 
 例子：
 
-```
+```rust
 use std::rc::Rc;
 
 let five = Rc::new(5);
@@ -59,7 +59,7 @@ let strong_five: Option<Rc<_>> = weak_five.upgrade();
 5. `Arc` 对于多线程的共享状态**几乎是必须的**（减少复制，提高性能）。
 
 示例：
-```
+```rust
 use std::sync::Arc;
 use std::thread;
 
@@ -91,7 +91,7 @@ fn main() {
 
 下面这个例子，表述的是如何实现多个对象同时引用另外一个对象。
 
-```
+```rust
 use std::rc::Rc;
 
 struct Owner {

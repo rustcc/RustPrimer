@@ -4,7 +4,7 @@
 
 另外，本节的例子是在 Mac OS 上，在 Linux 上面基本一样。
 
-在 Windows 上用 Emacs？呵呵。
+Windows的Emacs用户仅作参考。
 
 ## 1.1 简介
 

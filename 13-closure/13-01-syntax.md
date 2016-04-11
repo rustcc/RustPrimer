@@ -95,7 +95,7 @@ let mut num = 5;
 let y = &mut num;
 ```
 
-如果你的闭包需要它，然而，相反Rust会取得所有权并移动环境：
+如果你的闭包需要它，Rust会取得所有权并移动环境：
 
 ```rust
 let nums = vec![1, 2, 3];

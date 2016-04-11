@@ -5,6 +5,7 @@
   * [Linux](./02-install/02-01-install_rust_on_linux.md)
   * [Mac](./02-install/02-02-install_rust_on_mac_os.md)
   * [Windows](./02-install/02-03-install_rust_on_windows.md)
+  * [版本管理工具: multirust](./02-install/02-04-multirust.md)
 * [编辑器](./03-editors/03-00-preface.md)
   * [前期准备](./03-editors/03-01-before.md)「wayslog」
   * [vim](./03-editors/03-02-vim.md)「wayslog」
@@ -18,7 +19,7 @@
   * [第一个Rust程序](./04-quickstart/04-01-hello-world.md)
   * [简单的数学运算](./04-quickstart/04-02-basic-math.md)
   * [快速上手](./04-quickstart/04-03-cheet-sheet.md)
-* [Cargo项目管理器、crate](./05-cargo-projects-manager/05-cargo-projects-manager.md)「fuyingfuying」
+* [Cargo项目管理器](./05-cargo-projects-manager/05-cargo-projects-manager.md)「fuyingfuying」
 * [基本程序结构](./06-flow/06-00-preface.md)「daogangtang」
   * [注释](./06-flow/06-01-comment.md)
   * [条件](./06-flow/06-02-condition.md)
