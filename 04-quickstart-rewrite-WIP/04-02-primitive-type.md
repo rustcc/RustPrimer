@@ -70,4 +70,4 @@ fn main() {
     assert_eq!(a, b);
 }
 ```
-这里使用了 bool 类型，bool 类型只有 true 和 false 两个值。通常用来做逻辑判断。
+这里使用了 bool，只有true和false两个值，通常用来做逻辑判断的类型。
