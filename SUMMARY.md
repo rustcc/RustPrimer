@@ -77,13 +77,13 @@
   * [共享内存](./23-concurrency-parallel-threads/24-03-share-memory.md)
   * [同步](./23-concurrency-parallel-threads/24-04-synchronize.md)
   * [并行](./23-concurrency-parallel-threads/24-05-parallel.md)
-* [Unsafe、原始指针](24-unsafety-rawpointer/24-00-preface.md)「JohnSmithX」
-  * [Unsafe](24-unsafety-rawpointer/24-01-unsafety.md)
-  * [原始指针](24-unsafety-rawpointer/24-02-raw-pointer.md)
+* [Unsafe、原始指针](24-unsafe-rawpointer/24-00-preface.md)「JohnSmithX」
+  * [Unsafe](24-unsafe-rawpointer/24-01-unsafety.md)
+  * [原始指针](24-unsafe-rawpointer/24-02-raw-pointer.md)
 * [FFI](25-ffi/25-00-preface.md)「42」
   * [rust调用ffi函数](25-ffi/25-01-calling-ffi-functions.md)
   * [将rust编译成库](25-ffi/25-02-compiling-rust-to-lib.md)
-* [运算符重载](26-operator-overload/26-01-operator.md)「wayslog」
+* [运算符重载](26-operator-overloading/26-01-operator.md)「wayslog」
 * [属性和编译器参数](27-attr-and-compiler-args/27-00-preface.md)「elton」
   * [属性](27-attr-and-compiler-args/27-01-attributes.md)
   * [编译器参数](27-attr-and-compiler-args/27-02-rustc-options.md)
@@ -93,14 +93,14 @@
   * [评测 (benchmark)](29-testing/29-02-bench.md)
 * [代码风格](30-coding-style/30-01-style.md)「tiansiyuan」
 * [Any与反射](31-any/31-01-any.md)「wayslog」
-* [安全（safety）](32-safety/32-01-safety.md)「daogangtang」
-* [常用数据结构实现](33-data-struct/33-00-preface.md)「Naupio」
-  * [栈结构](33-data-struct/33-01-stack.md)
-  * [队列](33-data-struct/33-02-queue.md)
-  * [优先队列](33-data-struct/33-03-priority_queue.md)
-  * [二叉树](33-data-struct/33-04-binary_tree.md)
-  * [链表](33-data-struct/33-05-linked_list.md)
-  * [图结构](33-data-struct/33-06-graph.md)
+* [安全（safe）](32-safe/32-01-safe.md)「daogangtang」
+* [常用数据结构实现](33-data-structure/33-00-preface.md)「Naupio」
+  * [栈结构](33-data-structure/33-01-stack.md)
+  * [队列](33-data-structure/33-02-queue.md)
+  * [优先队列](33-data-structure/33-03-priority_queue.md)
+  * [二叉树](33-data-structure/33-04-binary_tree.md)
+  * [链表](33-data-structure/33-05-linked_list.md)
+  * [图结构](33-data-structure/33-06-graph.md)
 * [标准库介绍](34-std/34-00-overview.md)「wayslog」
   * [系统命令:调用grep](34-std/34-01-process.md)
   * [目录操作:简单grep](34-std/34-02-fs-and-path.md)
