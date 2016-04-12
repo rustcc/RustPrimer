@@ -11,7 +11,7 @@ fn say_hi(name: &str) {
   println!("Hi, {}", name);
 }
   ```
-  上例中，`say_hi`函数拥有一个参数，名为`name`，类型为`&str`，并且没有返回值。  
+  上例中，`say_hi`函数拥有一个参数，名为`name`，类型为`&str`。  
 
 ## 将函数作为参数
   在rust中，函数是 `first-class` 类型，所以rust的函数参数不仅可以是一般的类型，也可以是函数。如：
