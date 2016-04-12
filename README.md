@@ -12,6 +12,28 @@ The Rust primer for beginners.
 https://wayslog.gitbooks.io/rustprimer/content/
 ```
 
+## 社区
+
+### QQ群
+
+群号：
+```
+    Rust语言中文社区 144605258 （已满）
+    Rust编程语言社区2群 303838735
+```
+
+*进群必须附带您的github地址，否则不予通过*
+
+### 社区
+
+chat: https://chat.rust-china.org/ (使用github验证登录)
+
+blog: https://rust-china.org/
+
+wiki: https://wiki.rust-china.org/
+
+### 聊天工具
+
 ## 大纲
 
 1. [初识Rust](./01-1st-glance/README.md)「daogangtang, tiansiyuan」
@@ -126,7 +148,7 @@ https://wayslog.gitbooks.io/rustprimer/content/
 
 ## 版权规定
 
-本书使用 `CC BY-NC-SA 4.0` 协议，转载请注明地址。
+本书使用 `CC BY-SA 3.0` 协议，转载请注明地址。
 
 ## gitbook生成
 
