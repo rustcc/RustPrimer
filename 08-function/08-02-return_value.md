@@ -77,7 +77,7 @@ fn diverging() -> ! {
   panic!("This function will never return");
 }
   ```
-  由于发散函数不会返回，所以就算其后再有其他语句也是不会执行的。倘若其后还有其他语句，会出现如下编译警告：![error](../image/08-02-img1.png)
+  由于发散函数不会返回，所以就算其后再有其他语句也是不会执行的。倘若其后还有其他语句，会出现如下编译警告：![error](../image/08-02-img1.png)。当然了，我们要知道的是不发散的函数也是可以不返回的，比如无限循环之类的。
   发散函数一般都以`panic!`宏调用或其他调用其他发散函数结束，所以，调用发散函数会导致当前线程崩溃。[Rust Reference 6.1.3.2 Diverging functions][ref]中的描述如下：
   > We call such functions "diverging" because they never return a value to the caller. Every control path in a diverging function must end with a panic!() or a call to another diverging function on every control path. The ! annotation does not denote a type.
 
