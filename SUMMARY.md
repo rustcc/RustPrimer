@@ -78,7 +78,7 @@
   * [同步](./23-concurrency-parallel-threads/24-04-synchronize.md)
   * [并行](./23-concurrency-parallel-threads/24-05-parallel.md)
 * [Unsafe、原始指针](24-unsafe-rawpointer/24-00-preface.md)「JohnSmithX」
-  * [Unsafe](24-unsafe-rawpointer/24-01-unsafety.md)
+  * [Unsafe](24-unsafe-rawpointer/24-01-unsafe.md)
   * [原始指针](24-unsafe-rawpointer/24-02-raw-pointer.md)
 * [FFI](25-ffi/25-00-preface.md)「42」
   * [rust调用ffi函数](25-ffi/25-01-calling-ffi-functions.md)
