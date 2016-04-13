@@ -114,7 +114,7 @@ wiki: https://wiki.rust-china.org/
   4. [同步](./23-concurrency-parallel-threads/24-04-synchronize.md)
   5. [并行](./23-concurrency-parallel-threads/24-05-parallel.md)
 24. [Unsafe、原始指针](24-unsafe-rawpointer/24-00-preface.md)「JohnSmithX」
-  1. [Unsafe](24-unsafe-rawpointer/24-01-unsafety.md)
+  1. [Unsafe](24-unsafe-rawpointer/24-01-unsafe.md)
   2. [原始指针](24-unsafe-rawpointer/24-02-raw-pointer.md)
 25. [FFI](25-ffi/25-00-preface.md)「42」
   1. [rust调用ffi函数](25-ffi/25-01-calling-ffi-functions.md)
