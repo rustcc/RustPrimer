@@ -46,7 +46,7 @@ authors = ["you@example.com"]
 # 这时，自定义的构建流程可以使用rust语言，写在"build.rs"文件中。
 build = "build.rs"
 
-# 显示声明软件包文件夹内哪些文件被排除在项目的构建流程之外，
+# 显式声明软件包文件夹内哪些文件被排除在项目的构建流程之外，
 # 哪些文件包含在项目的构建流程中
 exclude = ["build/**/*.o", "doc/**/*.html"]
 include = ["src/**/*", "Cargo.toml"]
