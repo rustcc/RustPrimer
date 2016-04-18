@@ -21,7 +21,7 @@ fn main() {
 	println!("add i8: {}", add_i8(2i8, 3i8));
 	println!("add i16: {}", add_i16(20i16, 30i16));
 	println!("add f64: {}", add_f64(1.23, 1.23));
-}	
+}
 ```
 
 如果有很多地方都需要支持多种类型，编程的代码量就非常繁重，而且代码也非常臃肿，编程就真的变成了苦逼搬砖的感觉，枯燥而乏味:D。
@@ -54,7 +54,7 @@ let a = Some(100.111f32);
 ```
 编译器会自行推导出a为Option<f32>类型，也就是说Option中的T在这里是f32类型。
 
-当然，你也可以显示声明a的类型，但必须保证和右值的类型一样，不然编译器会报"mismatched types"类型不匹配错误。
+当然，你也可以显式声明a的类型，但必须保证和右值的类型一样，不然编译器会报"mismatched types"类型不匹配错误。
 ```rust
 let a:Option<f32> = Some(100.111);  //编译自动推导右值中的100.111为f32类型。
 let b:Option<f32> = Some(100.111f32);
@@ -114,7 +114,7 @@ fn add<T: Add<T, Output=T>>(a:T, b:T) -> T {
 fn main() {
 	println!("{}", add(100i32, 1i32));
 	println!("{}", add(100.11f32, 100.22f32));
-	
+
 	let p1 = Point{x: 1, y: 1};
 	let p2 = Point{x: 2, y: 2};
 	println!("{:?}", add(p1, p2));
@@ -139,7 +139,7 @@ struct Point<T: Add<T, Output = T>> { //限制类型T必须实现了Add trait，
 
 impl<T: Add<T, Output = T>> Add for Point<T> {
     type Output = Point<T>;
-    
+
     fn add(self, p: Point<T>) -> Point<T> {
         Point{
             x: self.x + p.x,
@@ -156,7 +156,7 @@ fn main() {
 	let p1 = Point{x: 1.1f32, y: 1.1f32};
 	let p2 = Point{x: 2.1f32, y: 2.1f32};
 	println!("{:?}", add(p1, p2));
-	
+
 	let p3 = Point{x: 1i32, y: 1i32};
 	let p4 = Point{x: 2i32, y: 2i32};
 	println!("{:?}", add(p3, p4));
