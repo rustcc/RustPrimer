@@ -82,7 +82,7 @@ fn main() {
 
 很简单，我们知道，在Linux中，`fork`出来的函数会继承父进程的所有句柄。因此，子进程也就会继承父进程的标准输出，也就是造成了这样的问题。这也是最后我们用out无法接收到最后的输出也就知道了，因为在前面已经被输出出来了呀！
 
-那么怎么做呢？给这个子进程一个pipline就好了！
+那么怎么做呢？给这个子进程一个pipeline就好了！
 
 ```rust
 use std::process::*;
@@ -100,7 +100,7 @@ fn main() {
         .arg("-r")
         .arg(&pattern)
         .arg(&pt)
-        // 设置pipline
+        // 设置pipeline
         .stdout(Stdio::piped())
         .spawn().unwrap();
     // 做些其他的事情
