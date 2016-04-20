@@ -11,9 +11,9 @@ Rust中线程等待和其他语言在机制上并无差异，大致有下面几�
 * 等待一段时间后，再接着继续执行。看起来就像一个人工作累了，休息一会再工作。通过调用相关的API可以让当前线程暂停执行进入睡眠状态，此时调度器不会调度它执行，等过一段时间后，线程自动进入就绪状态，可以被调度执行，继续从之前睡眠时的地方执行。对应的API有`std::thread::sleep`，`std::thread::sleep_ms`，`std::thread::park_timeout`，`std::thread::park_timeout_ms`，还有一些类似的其他API，由于太多，详细信息就请参见官网[`std::thread`](https://doc.rust-lang.org/stable/std/thread/index.html)。
 * 这一种方式有点特殊，时间非常短，就一个时间片，当前线程自己主动放弃当前时间片的调度，让调度器重新选择线程来执行，这样就把运行机会给了别的线程，但是要注意的是，如果别的线程没有更好的理由执行，当然最后执行机会还是它的。在实际的应用业务中，比如生产者制造出一个产品后，可以放弃一个时间片，让消费者获得执行机会，从而快速地消费才生产的产品。这样的控制粒度非常小，需要合理使用，如果需要连续放弃多个时间片，可以借用循环实现。对应的API是`std::thread::yield_now`，详细信息参见官网[`std::thread`](https://doc.rust-lang.org/stable/std/thread/index.html)。
 * 1和2的等待都无须其他线程的协助，即可在一段时间后继续执行。最后我们还遇到一种等待，是需要其他线程参与，才能把等待的线程叫醒，否则，线程会一直等待下去。好比一个女人，要是没有遇到一个男人，就永远不可能摆脱单身的状态。相关的API包括`std::thread::JoinHandle::join`，`std::thread::park`，`std::sync::Mutex::lock`等，还有一些同步相关的类的API也会导致线程等待。详细信息参见官网[`std::thread`](https://doc.rust-lang.org/stable/std/thread/index.html)和[`std::sync`](https://doc.rust-lang.org/stable/std/sync/index.html)。
-    
+
 第一种和第三种等待方式，其实我们在上面的介绍中，都已经遇到过了，它们也是使用的最多的两种方式。在此，也可以回过头去看看前面的使用方式和使用效果，结合自己的理解，做一些简单的练习。
-    
+
 毫无疑问，第三种方式稍显复杂，要将等待的线程叫醒，必然基于一定的规则，比如早上7点必须起床，那么就定一个早上7点的闹钟，到时间了就响，没到时间别响。不管基于什么规则，要触发叫醒这个事件，就肯定是某个条件已经达成了。基于这样的逻辑，在操作系统和编程语言中，引入了一种叫着**条件变量**的东西。可以模拟现实生活中的闹钟的行为，条件达成就通知等待条件的线程。Rust的条件变量就是`std::sync::Condvar`，详情参见官网[条件变量](https://doc.rust-lang.org/std/sync/struct.Condvar.html)。但是通知也并不只是条件变量的专利，还有其他的方式也可以触发通知，下面我们就来瞧一瞧。
 
 ### 通知
@@ -24,7 +24,7 @@ Rust中线程等待和其他语言在机制上并无差异，大致有下面几�
 * 除了`Condvar`之外，其实*锁*也是具有自动通知功能的，当持有锁的线程释放锁的时候，等待锁的线程就会自动被唤醒，以抢占锁。关于锁的介绍，在下面有详解。
 * 通过条件变量和锁，还可以构建更加复杂的自动通知方式，比如`std::sync::Barrier`。
 * 通知也可以是1:1的，也可以是1:N的，`Condvar`可以控制通知一个还是N个，而锁则不能控制，只要释放锁，所有等待锁的其他线程都会同时醒来，而不是只有最先等待的线程。
-    
+
 下面我们分析一个简单的例子：
 
 ```rust
@@ -32,7 +32,7 @@ use std::sync::{Arc, Mutex, Condvar};
 use std::thread;
 
 fn main() {
-    
+
 	let pair = Arc::new((Mutex::new(false), Condvar::new()));
 	let pair2 = pair.clone();
 
@@ -81,7 +81,7 @@ use std::sync::atomic::{AtomicUsize, Ordering};
 fn main() {
 	let var : Arc<AtomicUsize> = Arc::new(AtomicUsize::new(5));
 	let share_var = var.clone();
-	
+
 	// 创建一个新线程
 	let new_thread = thread::spawn(move|| {
 		println!("share value in new thread: {}", share_var.load(Ordering::SeqCst));
@@ -111,7 +111,7 @@ use std::sync::{Arc, Mutex};
 fn main() {
 	let var : Arc<Mutex<u32>> = Arc::new(Mutex::new(5));
 	let share_var = var.clone();
-	
+
 	// 创建一个新线程
 	let new_thread = thread::spawn(move|| {
 		let mut val = share_var.lock().unwrap();
@@ -132,14 +132,14 @@ share value in main thread: 9
 ```
 结果都一样，看来用`Mutex`也能实现，但如果从效率上比较，原子类型会更胜一筹。暂且不论这点，我们从代码里面看到，虽然有`lock`，但是并么有看到有类似于`unlock`的代码出现，并不是不需要释放锁，而是Rust为了提高安全性，已然在`val`销毁的时候，自动释放锁了。同时我们发现，为了修改共享的值，开发者必须要调用`lock`才行，这样就又解决了一个安全问题。不得不再次赞叹一下Rust在多线程方面的安全性做得真是太好了。如果是其他语言，我们要做到安全，必然得自己来实现这些。
 
-为了保障锁使用的安全性问题，Rust做了很多工作，但从效率来看还不如原子类型，那么锁是否就没有存在的价值了？显示事实不可能是这样的，既然存在，那必然有其价值。它能解决原子类型锁不能解决的那百分之十的问题。我们再来看一下之前的一个例子：
+为了保障锁使用的安全性问题，Rust做了很多工作，但从效率来看还不如原子类型，那么锁是否就没有存在的价值了？显然事实不可能是这样的，既然存在，那必然有其价值。它能解决原子类型锁不能解决的那百分之十的问题。我们再来看一下之前的一个例子：
 
 ```rust
 use std::sync::{Arc, Mutex, Condvar};
 use std::thread;
 
 fn main() {
-    
+
 	let pair = Arc::new((Mutex::new(false), Condvar::new()));
 	let pair2 = pair.clone();
 
