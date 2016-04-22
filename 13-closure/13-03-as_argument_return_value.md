@@ -51,7 +51,7 @@ let answer = call_with_one(&|x| x + 2);
 assert_eq!(3, answer);
 ```
 
-现在我们取得一个trait对象，一个`&Fn`。并且当我们将我们的闭包传递给`call_with_one`时我们必须获取一个引用，所以我们试用`&||`。
+现在我们取得一个trait对象，一个`&Fn`。并且当我们将我们的闭包传递给`call_with_one`时我们必须获取一个引用，所以我们使用`&||`。
 
 ## 函数指针和闭包
 
