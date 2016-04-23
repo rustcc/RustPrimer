@@ -162,4 +162,171 @@ gitbook serve
 
 ## ChangeLog
 
+## via google translate, straight copy / paste:
+# RustPrimer
+The Rust primer for beginners.
+Rust Chinese to beginners tutorial.
+
+## Read online address
+
+[Point I read] (https://wayslog.gitbooks.io/rustprimer/content/)
+
+You can also copy the following link:
+
+`` `
+https://wayslog.gitbooks.io/rustprimer/content/
+`` `
+
+## Community
+
+### QQ group
+
+Group number:
+`` `
+    Rust language Chinese community 144 605 258 (full)
+    Rust programming language community group 2 303 838 735
+`` `
+
+* Into the group must be accompanied by your github address, or not by *
+
+### Community
+
+chat: https://chat.rust-china.org/ (using github authentication login)
+
+blog: https://rust-china.org/
+
+wiki: https://wiki.rust-china.org/
+
+### Chat Tools
+
+## Outline
+
+1. [acquaintance Rust] (./ 01-1st-glance / README.md) "daogangtang, tiansiyuan"
+2. [Install Rust] (./ 02-install / 02-00-preface.md) "marvin-min"
+  1. [Linux] (./ 02-install / 02-01-install_rust_on_linux.md)
+  2. [Mac] (./ 02-install / 02-02-install_rust_on_mac_os.md)
+  3. [Windows] (./ 02-install / 02-03-install_rust_on_windows.md)
+  4. [Version Manager: multirust] (./ 02-install / 02-04-multirust.md)
+3. [Editor] (./ 03-editors / 03-00-preface.md)
+  1. [preparation] (./ 03-editors / 03-01-before.md) "wayslog"
+  1. [vim] (./ 03-editors / 03-02-vim.md) "wayslog"
+  2. [emacs] (./ 03-editors / 03-03-emacs.md) "tiansiyuan"
+  3. [vscode] (./ 03-editors / 03-04-vscode.md) "daogangtang"
+  4. [atom] (./ 03-editors / 03-05-atom.md) "wayslog"
+  6. [sublime] (./ 03-editors / 03-06-sublime.md) "domty"
+  7. [visual studio] (./ 03-editors / 03-07-visualstudio.md) "marvinguo"
+  9. [spacemacs] (./ 03-editors / 03-10-spacemacs.md) "wayslog"
+4. [Rust one hour QuickStart] (./ 04-quickstart / 04-00-intro.md) "ee0703"
+  1. [The first Rust program] (./ 04-quickstart / 04-01-hello-world.md)
+  2. [Simple math] (./ 04-quickstart / 04-02-basic-math.md)
+  3. [Quick Start] (./ 04-quickstart / 04-03-cheet-sheet.md)
+5. [Cargo Project Manager] (./ 05-cargo-projects-manager / 05-cargo-projects-manager.md) "fuyingfuying"
+6. [basic program structure] (./ 06-flow / 06-00-preface.md) "daogangtang"
+  1. [Note] (./ 06-flow / 06-01-comment.md)
+  2. [condition] (./ 06-flow / 06-02-condition.md)
+  3. [loop] (./ 06-flow / 06-03-repeatition.md)
+7. [types, operators and string] (07-type / 07-00-preface.md) "wayslog"
+  1. [base type] (07-type / 07-01-types.md)
+  2. [composite type] (07-type / 07-02-compound-types.md)
+  2. [string class] (07-type / 07-03-strings.md)
+  4. [base operators and string formatting] (07-type / 07-04-operator-and-format.md)
+8. [function] (./ 08-function / 08-00-overview.md) "qdao"
+  1. [function parameters] (./ 08-function / 08-01-arguement.md)
+  2. [function return value] (./ 08-function / 08-02-return_value.md)
+  3. [statements and expressions] (08-function / 08-03-statement_expression.md)
+  4. [higher-order functions] (08-function / 08-04-high_order_function.md)
+9. [pattern matching] (09-match / 09-00-overview.md) "wayslog"
+  1. [match keyword] (09-match / 09-01-match.md)
+  2. [Mode] (09-match / 09-02-pattern.md)
+10. [Trait (feature)] (10-trait / 10-00-overview.md) "JohnSmithX"
+  1. [trait Keyword] (10-trait / 10-01-trait.md)
+  2. [trait Object] (10-trait / 10-02-trait-object.md)
+11. [generic] (11-generics / 11-01-generics.md) "stormgbs"
+12. [variability, ownership, lease and lifetime] (12-ownership-system / 12-00-ownership_system.md) "stormgbs"
+  1. [ownership] (12-ownership-system / 12-01-ownership.md)
+  2. [citation and borrowing] (12-ownership-system / 12-02-borrowing_references.md)
+  3. [lifecycle] (12-ownership-system / 12-03-lifetimes.md)
+13. [closure] (13-closure / 13-00-overview.md) "qdao"
+  1. [closure syntax] (13-closure / 13-01-syntax.md)
+  2. [Closure achieve] (13-closure / 13-02-implementation.md)
+  3. [closures as parameters and return values] (13-closure / 13-03-as_argument_return_value.md)
+14. [collection types (Collections)] (14-collections / 14-00-overview.md) "wayslog"
+  1. [dynamic array] (14-collections / 14-01-vec.md)
+  2. [hash table] (14-collections / 14-02-hashmap.md)
+15. [iterator] (15-iterator / 15-00-overview.md) "wayslog"
+  1. [iterations, adapters, consumers] (15-iterator / 15-01-iterator.md)
+16. [modules and packages system, Prelude] (16-modules / 16-00-preface.md) "daogangtang"
+  1. [module (module) and packages (crate)] (16-modules / 16-01-module.md)
+  2. [Prelude] (16-modules / 16-02-prelude.md)
+17. [Option, Result and error handling] (17-error-handling / 17-01-option-result.md) "JohnSmithX"
+18. [macro system] (18-macro / 18-01-macro.md) "tennix"
+19. [heap, stack and Box] (./ 19-heap-stack / heap-stack.md) "tennix"
+20. [Some smart pointer] (./ 20-rcarc / 20-00-preface.md) "daogangtang"
+  1. [Rc, Arc] (./ 20-rcarc / 20-01-rcarc.md)
+  2. [Mutex, RwLock] (./ 20-rcarc / 20-02-mutex.md)
+  3. [Cell, RefCell] (./ 20-rcarc / 20-03-cell.md)
+21. [type system of several common Trait] (./ 21-intoborrow / 21-00-preface.md) "daogangtang"
+  1. [Into / From Its Application in String and & str system conversion on] (./ 21-intoborrow / 21-01-into.md)
+  2. [AsRef, AsMut] (./ 21-intoborrow / 21-02-asref.md)
+  3. [Borrow, BorrowMut, ToOwned] (./ 21-intoborrow / 21-03-borrow.md)
+  4. [Deref and Deref coercions] (./ 21-intoborrow / 21-04-deref.md)
+  5. [Cow on a String and Its Application & str] (./ 21-intoborrow / 21-05-cow.md)
+22. [Send and Sync] (./ 22-marker / 21-01-sendsync.md) "daogangtang"
+23. [concurrent, parallel, multi-threaded programming] (./ 23-concurrency-parallel-threads / 23-00-preface.md) "anzhihun"
+  1. [thread] (./ 23-concurrency-parallel-threads / 24-01-thread.md)
+  2. [messaging] (./ 23-concurrency-parallel-threads / 24-02-message-passing.md)
+  3. [Shared Memory] (./ 23-concurrency-parallel-threads / 24-03-share-memory.md)
+  4. [Synchronization] (./ 23-concurrency-parallel-threads / 24-04-synchronize.md)
+  5. [parallel] (./ 23-concurrency-parallel-threads / 24-05-parallel.md)
+24. [Unsafe, raw pointer] (24-unsafety-rawpointer / 24-00-preface.md) "JohnSmithX"
+  1. [Unsafe] (24-unsafety-rawpointer / 24-01-unsafety.md)
+  2. [raw pointer] (24-unsafety-rawpointer / 24-02-raw-pointer.md)
+25. [FFI] (25-ffi / 25-00-preface.md) "42"
+  1. [rust calling ffi function] (25-ffi / 25-01-calling-ffi-functions.md)
+  2. [The rust compiled into libraries] (25-ffi / 25-02-compiling-rust-to-lib.md)
+26. [operator overloading] (26-operator-overload / 26-01-operator.md) "wayslog"
+27. [property and compiler parameters] (27-attr-and-compiler-args / 27-00-preface.md) "elton"
+  1. [Properties] (27-attr-and-compiler-args / 27-01-attributes.md)
+  2. [compiler argument] (27-attr-and-compiler-args / 27-02-rustc-options.md)
+28. [Cargo parameter configuration] (28-cargo-detailed-cfg / 28-01-cargo-detailed-cfg.md) "fuyingfuying"
+29. [Test and Evaluation] (29-testing / 29-00-preface.md) "daogangtang"
+  1. [Test (testing)] (29-testing / 29-01-threearchtest.md)
+  2. [evaluation (benchmark)] (29-testing / 29-02-bench.md)
+30. [Code Style] (30-coding-style / 30-01-style.md) "tiansiyuan"
+31. [Any and reflection] (31-any / 31-01-any.md) "wayslog"
+32. [security (safety)] (32-safety / 32-01-safety.md) "daogangtang"
+33. [common data structure to achieve] (33-data-struct / 33-00-preface.md) "Naupio"
+  1. [stack structure] (33-data-struct / 33-01-stack.md)
+  2. [queue] (33-data-struct / 33-02-queue.md)
+  3. [PQ] (33-data-struct / 33-03-priority_queue.md)
+  4. [binary] (33-data-struct / 33-04-binary_tree.md)
+  5. [list] (33-data-struct / 33-05-linked_list.md)
+  6. [Fig structure] (33-data-struct / 33-06-graph.md)
+34. [standard library presentation] (34-std / 34-00-overview.md) "wayslog"
+  1. [system commands: Call grep] (34-std / 34-01-process.md)
+  2. [directory operations: simple grep] (34-std / 34-02-fs-and-path.md)
+  3. [Network Module: W Echo] (34-std / 34-03-net.md)
+35. [actual articles] (35-action / 35-00-preface.md) "wangyu190810"
+  1. [combat: Json Processing] (35-action / json_data / readme.md)
+  2. [combat: Web application development entry] (35-action / mysite / readme.md)
+  3. [combat: use Postgresql Database] (35-action / db / readme.md)
+
+## Copyright regulations
+
+This book uses the `CC BY-SA 3.0` agreement, please indicate the address.
+
+## Gitbook generation
+
+Directly:
+
+`` `
+gitbook serve
+`` `
+
+To
+
+## ChangeLog
+
+1. March 31, 2016, to complete the first draft. V1.0 release version.
+
 1. 2016年3月31日，初稿完成。发布 v1.0 版。
