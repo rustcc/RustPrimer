@@ -11,7 +11,7 @@
     //statements
   }
   ```
-  main函数的返回值类型`()`，它是一个特殊的元组——没有元素的元组，称为`unit`，它表示一个函数没有任何信息需要返回。在Rust Reference的[8.1.3 Tuple types](https://doc.rust-lang.org/reference.html#tuple-types)中是的描述如下：
+  main函数的返回值类型是`()`，它是一个特殊的元组——没有元素的元组，称为`unit`，它表示一个函数没有任何信息需要返回。在Rust Reference的[8.1.3 Tuple types](https://doc.rust-lang.org/reference.html#tuple-types)中是的描述如下：
   > For historical reasons and convenience, the tuple type with no elements (__()__) is often called ‘unit’ or ‘the unit type’.
 
   `()`类型，其实类似于C/C++、Java、C#中的`void`类型。
@@ -65,7 +65,7 @@ fn pow_2_3(n: i32) -> (i32, i32) {
   可以看到，上例中，`pow_2_3`函数接收一个`i32`类型的值，返回其二次方和三次方的值，这两个值包装在一个元组中返回。在`main`函数中，`let`语句就可以使用模式匹配将函数返回的元组进行解构，将这两个返回值分别赋给`p2`和`p3`，从而可以得到`789`二次方的值和三次方的值。
 
 ## 发散函数
-  发散函数（diverging function）是rust中的一个特殊语法。发散函数不返回，它使用感叹号`!`作为返回类型表示：
+  发散函数（diverging function）是rust中的一个特性。发散函数不返回，它使用感叹号`!`作为返回类型表示：
   ```rust
 fn main() {
   println!("hello");
