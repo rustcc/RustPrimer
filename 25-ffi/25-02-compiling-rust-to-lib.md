@@ -22,7 +22,7 @@ extern "C" fn test() {}
 ```
 至此，`test`函数将能够被正常的由`cffi`调用。
 ## 指定`crate`类型
-`rustc`默认编译产生`rust`自用的`rlib`格式库，要让`rustc`产生动态链接库或者静态链接库，需要显示指定。
+`rustc`默认编译产生`rust`自用的`rlib`格式库，要让`rustc`产生动态链接库或者静态链接库，需要显式指定。
 
 1. 方法1: 在文件中指定。
    在文件头加上`#![crate_type = "foo"]`, 其中`foo`的可选类型有`bin`, `lib`, `rlib`, `dylib`, `staticlib`.分别对应可执行文件，
