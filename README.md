@@ -108,11 +108,11 @@ wiki: https://wiki.rust-china.org/
   5. [Cow 及其在 String 和 &str 上的应用](./21-intoborrow/21-05-cow.md)
 22. [Send 和 Sync](./22-marker/21-01-sendsync.md)「daogangtang」
 23. [并发，并行，多线程编程](./23-concurrency-parallel-threads/23-00-preface.md)「anzhihun」
-  1. [线程](./23-concurrency-parallel-threads/24-01-thread.md)
-  2. [消息传递](./23-concurrency-parallel-threads/24-02-message-passing.md)
-  3. [共享内存](./23-concurrency-parallel-threads/24-03-share-memory.md)
-  4. [同步](./23-concurrency-parallel-threads/24-04-synchronize.md)
-  5. [并行](./23-concurrency-parallel-threads/24-05-parallel.md)
+  1. [线程](./23-concurrency-parallel-threads/23-01-thread.md)
+  2. [消息传递](./23-concurrency-parallel-threads/23-02-message-passing.md)
+  3. [共享内存](./23-concurrency-parallel-threads/23-03-share-memory.md)
+  4. [同步](./23-concurrency-parallel-threads/23-04-synchronize.md)
+  5. [并行](./23-concurrency-parallel-threads/23-05-parallel.md)
 24. [Unsafe、原始指针](24-unsafe-rawpointer/24-00-preface.md)「JohnSmithX」
   1. [Unsafe](24-unsafe-rawpointer/24-01-unsafe.md)
   2. [原始指针](24-unsafe-rawpointer/24-02-raw-pointer.md)
