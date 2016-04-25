@@ -12,6 +12,28 @@ The Rust primer for beginners.
 https://wayslog.gitbooks.io/rustprimer/content/
 ```
 
+## 社区
+
+### QQ群
+
+群号：
+```
+    Rust语言中文社区 144605258 （已满）
+    Rust编程语言社区2群 303838735
+```
+
+*进群必须附带您的github地址，否则不予通过*
+
+### 社区
+
+chat: https://chat.rust-china.org/ (使用github验证登录)
+
+blog: https://rust-china.org/
+
+wiki: https://wiki.rust-china.org/
+
+### 聊天工具
+
 ## 大纲
 
 1. [初识Rust](./01-1st-glance/README.md)「daogangtang, tiansiyuan」
@@ -91,13 +113,13 @@ https://wayslog.gitbooks.io/rustprimer/content/
   3. [共享内存](./23-concurrency-parallel-threads/24-03-share-memory.md)
   4. [同步](./23-concurrency-parallel-threads/24-04-synchronize.md)
   5. [并行](./23-concurrency-parallel-threads/24-05-parallel.md)
-24. [Unsafe、原始指针](24-unsafety-rawpointer/24-00-preface.md)「JohnSmithX」
-  1. [Unsafe](24-unsafety-rawpointer/24-01-unsafety.md)
-  2. [原始指针](24-unsafety-rawpointer/24-02-raw-pointer.md)
+24. [Unsafe、原始指针](24-unsafe-rawpointer/24-00-preface.md)「JohnSmithX」
+  1. [Unsafe](24-unsafe-rawpointer/24-01-unsafe.md)
+  2. [原始指针](24-unsafe-rawpointer/24-02-raw-pointer.md)
 25. [FFI](25-ffi/25-00-preface.md)「42」
   1. [rust调用ffi函数](25-ffi/25-01-calling-ffi-functions.md)
   2. [将rust编译成库](25-ffi/25-02-compiling-rust-to-lib.md)
-26. [运算符重载](26-operator-overload/26-01-operator.md)「wayslog」
+26. [运算符重载](26-operator-overloading/26-01-operator.md)「wayslog」
 27. [属性和编译器参数](27-attr-and-compiler-args/27-00-preface.md)「elton」
   1. [属性](27-attr-and-compiler-args/27-01-attributes.md)
   2. [编译器参数](27-attr-and-compiler-args/27-02-rustc-options.md)
@@ -107,14 +129,14 @@ https://wayslog.gitbooks.io/rustprimer/content/
   2. [评测 (benchmark)](29-testing/29-02-bench.md)
 30. [代码风格](30-coding-style/30-01-style.md)「tiansiyuan」
 31. [Any与反射](31-any/31-01-any.md)「wayslog」
-32. [安全（safety）](32-safety/32-01-safety.md)「daogangtang」
-33. [常用数据结构实现](33-data-struct/33-00-preface.md)「Naupio」
-  1. [栈结构](33-data-struct/33-01-stack.md)
-  2. [队列](33-data-struct/33-02-queue.md)
-  3. [优先队列](33-data-struct/33-03-priority_queue.md)
-  4. [二叉树](33-data-struct/33-04-binary_tree.md)
-  5. [链表](33-data-struct/33-05-linked_list.md)
-  6. [图结构](33-data-struct/33-06-graph.md)
+32. [安全（safe）](32-safe/32-01-safe.md)「daogangtang」
+33. [常用数据结构实现](33-data-structure/33-00-preface.md)「Naupio」
+  1. [栈结构](33-data-structure/33-01-stack.md)
+  2. [队列](33-data-structure/33-02-queue.md)
+  3. [优先队列](33-data-structure/33-03-priority_queue.md)
+  4. [二叉树](33-data-structure/33-04-binary_tree.md)
+  5. [链表](33-data-structure/33-05-linked_list.md)
+  6. [图结构](33-data-structure/33-06-graph.md)
 34. [标准库介绍](34-std/34-00-overview.md)「wayslog」
   1. [系统命令:调用grep](34-std/34-01-process.md)
   2. [目录操作:简单grep](34-std/34-02-fs-and-path.md)
@@ -126,7 +148,7 @@ https://wayslog.gitbooks.io/rustprimer/content/
 
 ## 版权规定
 
-本书使用 `CC BY-NC-SA 4.0` 协议，转载请注明地址。
+本书使用 `CC BY-SA 3.0` 协议，转载请注明地址。
 
 ## gitbook生成
 

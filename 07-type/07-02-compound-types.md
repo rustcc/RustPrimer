@@ -60,15 +60,13 @@ struct D;
 
 不过到目前为止，空结构体后面不能加大括号，这么写会编译错误：
 
-补充： 注意，最新的nightly版本已经允许这么写编译通过了！
+补充： 注意，1.9 nightly版本已经允许这么写编译通过了！
 
 ```rust
 struct C {
 
 }
 ```
-
-不过也有人提出来，这样的写法应该编译通过：https://github.com/rust-lang/rfcs/pull/1506
 
 ### 实现结构体 impl
 

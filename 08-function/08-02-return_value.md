@@ -5,16 +5,16 @@
     //statements
   }
   ```
-  我们知道，函数的返回值类型是在参数列表后，加上箭头、类型来指定的。但是我们看到，main函数后面并没有指定参数类型，我们之前也说过main函数没有返回值。那不是矛盾了吗？其实并没有矛盾，main函数也有返回值，只不过默认省略了而已。main函数的完整形式如下：
+  之前有说过，函数的返回值类型是在参数列表后，加上箭头和类型来指定的。不过，一般我们看到的main函数的定义并没有这么做。这是因为main函数的返回值是`()`，在rust中，当一个函数返回`()`时，可以省略。main函数的完整形式如下：
   ```rust
   fn main() -> () {
     //statements
   }
   ```
-  可以看到，main函数返回的是`()`，它是一个特殊的元组——没有元素的元组，称为`unit`。在Rust Reference的[8.1.3 Tuple types](https://doc.rust-lang.org/reference.html#tuple-types)中是的描述如下：
+  main函数的返回值类型`()`，它是一个特殊的元组——没有元素的元组，称为`unit`，它表示一个函数没有任何信息需要返回。在Rust Reference的[8.1.3 Tuple types](https://doc.rust-lang.org/reference.html#tuple-types)中是的描述如下：
   > For historical reasons and convenience, the tuple type with no elements (__()__) is often called ‘unit’ or ‘the unit type’.
 
-  不过，由于返回的`()`是没用用处的，所以，__一般返回`()`的函数，我们说它没有返回值，并且默认省略不写__。`()`类型，其实就像是C/C++或是Java、C#中的`void`类型，用于说明函数没有返回值。
+  `()`类型，其实类似于C/C++、Java、C#中的`void`类型。
 
   下面来看一个有返回值的例子：
   ```rust
@@ -77,7 +77,7 @@ fn diverging() -> ! {
   panic!("This function will never return");
 }
   ```
-  由于发散函数不会返回，所以就算其后再有其他语句也是不会执行的。倘若其后还有其他语句，会出现如下编译警告：![error](../image/08-02-img1.png)
+  由于发散函数不会返回，所以就算其后再有其他语句也是不会执行的。倘若其后还有其他语句，会出现如下编译警告：![error](../image/08-02-img1.png)。当然了，我们要知道的是不发散的函数也是可以不返回的，比如无限循环之类的。
   发散函数一般都以`panic!`宏调用或其他调用其他发散函数结束，所以，调用发散函数会导致当前线程崩溃。[Rust Reference 6.1.3.2 Diverging functions][ref]中的描述如下：
   > We call such functions "diverging" because they never return a value to the caller. Every control path in a diverging function must end with a panic!() or a call to another diverging function on every control path. The ! annotation does not denote a type.
 
