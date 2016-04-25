@@ -24,9 +24,9 @@ sudo make install
 前面说了,Spacemacs就是个Emacs的配置文件库，因此我们可以通过非常简单的方式安装它：
 ```bash
 git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+mv ~/.emacs ~/_emacs.backup
 cd ~/.emacs.d
 echo $(git describe --tags $(git rev-list --tags --max-count=1)) | xargs git checkout
-touch ~/.spacemacs
 ```
 其中，后三行是笔者加的，这里必须要吐槽一下的是，Spacemacs的master分支实际上是及其落后而且有错误的！其目前的release都是从develop分支上打的tag。
 
