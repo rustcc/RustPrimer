@@ -73,7 +73,7 @@ fn foo<T: Debug + Clone>(s: T) {
 
 #### where关键字
 
-约束的trait增加后，语法看起来就变得诡异了，这时候需要使用`where`从句：
+约束的trait增加后，代码看起来就变得诡异了，这时候需要使用`where`从句：
 
 ```rust
 use std::fmt::Debug;
