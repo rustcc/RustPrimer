@@ -32,8 +32,6 @@ blog: https://rust-china.org/
 
 wiki: https://wiki.rust-china.org/
 
-### 聊天工具
-
 ## 大纲
 
 1. [初识Rust](./01-1st-glance/README.md)「daogangtang, tiansiyuan」

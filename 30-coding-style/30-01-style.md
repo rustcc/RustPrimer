@@ -122,10 +122,10 @@ let diameter = 7;
 ## 文档注释
 
 文档注释前面加三个斜线(`///`)而且提示你希望将注释包含在 Rustdoc 的输出里。
-它们支持 [Markdown 语法](https://en.wikipedia.org/wiki/Markdown)
+它们支持 [Markdown 语言](https://en.wikipedia.org/wiki/Markdown)
 而且是注释你的公开API的主要方式。
 
-支持的 markdown 语法包括列在 [GitHub Flavored Markdown](https://help.github.com/articles/github-flavored-markdown) 文档中的所有扩展，加上上角标。
+支持的 markdown 功能包括列在 [GitHub Flavored Markdown](https://help.github.com/articles/github-flavored-markdown) 文档中的所有扩展，加上上角标。
 
 ### 总结行
 
