@@ -80,7 +80,7 @@ WaySLOG来自: HeBei
 
 我们在编程的过程中，经常遇到这样的场景，统计一个字符串中所有的字符总共出现过几次。借助各种语言内置的Map类型我们总能完成这件事，但是完成的几乎都并不令人满意。很多人讨厌的一点是：为什么我要判断这个字符在字典中有没有出现，就要写一个大大的if条件！烦不烦？烦！于是，现代化的编程语言开始集成了类似Python里`setdefault`类似的特性（方法），下面是一段Python代码：
 
-```rust
+```python
 val = {}
 for c in "abcdefasdasdawe":
     val[c] = 1 + val.setdefault(c, 0)
