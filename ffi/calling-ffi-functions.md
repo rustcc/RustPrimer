@@ -96,7 +96,7 @@ struct RustObject {
 
 ### Enum
 
-和rust一样，添加`#[repr(C)]`标记即可。
+和`struct`一样，添加`#[repr(C)]`标记即可。
 
 ### 回调函数
 
