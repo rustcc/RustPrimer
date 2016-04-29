@@ -1,4 +1,4 @@
-**引用&借用（References&Borrowing**
+**引用&借用（References&Borrowing）**
 -------------
 
 如上所示，Owership让我们改变一个变量的值变得“复杂”，那能否像其他编程语言那样随意改变变量的值呢？答案是有的。

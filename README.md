@@ -83,7 +83,7 @@ wiki: https://wiki.rust-china.org/
   * [闭包的语法](closure/syntax.md)
   * [闭包的实现](closure/implementation.md)
   * [闭包作为参数和返回值](closure/as_argument_return_value.md)
-* [集合类型(collections/overview.md)「wayslog」
+* [集合类型](collections/overview.md)「wayslog」
   * [动态数组](collections/vec.md)
   * [哈希表](collections/hashmap.md)
 * [迭代器](iterator/overview.md)「wayslog」
