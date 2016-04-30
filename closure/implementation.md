@@ -1,6 +1,6 @@
 # 闭包的实现
 
-Rust 的闭包实现与其它语言有些许不用。它们实际上是trait的语法糖。在这以前你会希望阅读[trait章节](https://doc.rust-lang.org/stable/book/traits.html)，和[trait对象](https://doc.rust-lang.org/stable/book/trait-objects.html)。
+Rust 的闭包实现与其它语言有些许不同。它们实际上是trait的语法糖。在这以前你会希望阅读[trait章节](https://doc.rust-lang.org/stable/book/traits.html)，和[trait对象](https://doc.rust-lang.org/stable/book/trait-objects.html)。
 
 都理解吗？很好。
 
