@@ -11,7 +11,7 @@
 ## 文档
 Rust 自带有文档功能的注释，分别是`///`和`//!`。支持 Markdown 格式
 1. `///`用来描述的它后面接着的项。
-2. `//!`用来描述包含它的项，一班用在模块文件的头部。
+2. `//!`用来描述包含它的项，一般用在模块文件的头部。
 比如在 main.rs 文件中输入以下内容： 
 ```rust
 //! # The first line
@@ -34,8 +34,8 @@ fn add_one(x: i32) -> i32 {
 }
 ```
 ### 生成 html 文档
-* > rustdoc main.rs  
+* `rustdoc main.rs`  
 
 或者
 
-* > cargo doc  
+* `cargo doc`  
