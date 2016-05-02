@@ -32,11 +32,11 @@ Rust 运行在以下操作系统上：Linux, OS X, Windows, FreeBSD, Android, iO
 
 本书是整个 Rust 中文社区共同努力的结果。其中，参与本书书写及校订的 Rustacean 有（排名不分先后）：
 
-- daogangtang（Mike猫）
-- wayslog（猫猫反抗团团长）
-- marvin-min
-- tiansiyuan
-- marvinguo
+- [daogangtang（Mike猫）](https://github.com/daogangtang)
+- [wayslog（猫猫反抗团团长）](https://github.com/wayslog)
+- [marvin-min](https://github.com/marvin-min)
+- [tiansiyuan](https://github.com/tiansiyuan)
+- [marvinguo](https://github.com/marvinguo)
 - ee0703
 - fuyingfuying
 - qdao
