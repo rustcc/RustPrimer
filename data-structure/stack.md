@@ -1,9 +1,6 @@
-# 33-01-data-struct-stack
+# 栈
 
-tags： RustPrimer
-
-----------------
-## 栈(stack)
+## 栈简介
 
 - 栈作为一种数据结构，是一种只能在**一端**进行**插入**和**删除**操作的特殊线性表。
 
@@ -11,8 +8,7 @@ tags： RustPrimer
 
 >栈（stack）又名堆栈，它是一种运算受限的线性表。其限制是仅允许在表的一端进行插入和删除运算。这一端被称为栈顶，相对地，把另一端称为栈底。向一个栈插入新元素又称作进栈、入栈或压栈，它是把新元素放到栈顶元素的上面，使之成为新的栈顶元素；从一个栈删除元素又称作出栈或退栈，它是把栈顶元素删除掉，使其相邻的元素成为新的栈顶元素。
 
------
-我们来看看栈的实现步骤：
+## 栈的实现步骤：
 
 - [x] 1. 定义一个栈结构`Stack`
 - [x] 2. 定义组成栈结构的栈点`StackNode`
@@ -20,7 +16,7 @@ tags： RustPrimer
 - [x] 4. 实现进栈函数`push( )`
 - [x] 5. 实现退栈函数`pop( )`
 
-### 1. 定义一个栈结构`Stack`
+## 定义一个栈结构`Stack`
 
 ```rust
 #[derive(Debug)]
@@ -34,7 +30,7 @@ struct Stack<T> {
 - 第二行是定义了一个`Stack`结构体，这个结构体包含一个泛型参数`T`。
 - 第三行比较复杂，在定义`StackNode`的时候介绍
 
-### 2. 定义组成栈结构的栈点`StackNode`
+## 定义组成栈结构的栈点`StackNode`
 ```rust
 #[derive(Clone,Debug)]
 struct StackNode<T> {
@@ -59,7 +55,8 @@ struct StackNode<T> {
 > **那么为什么还需要使用`Option`来封装呢？**
 
 > `Option`是 Rust 里面的一个抽象类型，定义如下：
-> ```rust
+> 
+```rust
 pub enum Option<T> {
     None,
     Some(T),
@@ -74,7 +71,7 @@ Option 里面包括元素，None 和 Some(T) ，这样就很轻松的描述了 n
 
 [rustbyexample 的 Options with Results部分](http://rustbyexample.com/error/option_with_result.html)
 
-### 3. 实现 `new( ) push( ) pop( )`
+## 实现 `new( ) push( ) pop( )`
 接下来是实现 stack 的主要功能了。
 
 ```rust
@@ -112,7 +109,7 @@ impl<T> Stack<T> {
 
 - `pop( )`的功能是取出栈顶的元素，如果栈顶为 None 则返回 None。
 
-### 完整代码（包含简单的测试）
+## 完整代码（包含简单的测试）
 ```rust
 #[derive(Debug)]
 struct Stack<T> {
