@@ -49,7 +49,7 @@ wiki: https://wiki.rust-china.org/
   * [sublime](editors/sublime.md)「domty」
   * [visual studio](editors/visualstudio.md)「marvinguo」
   * [spacemacs](editors/spacemacs.md)「wayslog」
-* [Rust快速入门](quickstart/intro.md)「Naupio」
+* [Rust快速入门](quickstart/quickstart.md)「Naupio」
   * [Rust旅程](quickstart/rust-travel.md)
   * [基础类型](quickstart/primitive-type.md)
   * [向量与字符串](quickstart/vector-string.md)
