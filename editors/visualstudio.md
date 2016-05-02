@@ -1,7 +1,7 @@
 # Visual Studio
 本文是使用VisualRust和VS GDB Debugger / VisualGDB 完成在VisualStudio中，编辑和调试Rust程序。
 
-## 7.1 安装Rust, Cargo
+## 安装Rust, Cargo
 
 首先需要下载Rust, 下载地址https://www.rust-lang.org/downloads.html
 
@@ -18,7 +18,7 @@ Racer是用来做Rust自动完成的，会在VisualRust使用。这里我们使�
 RUST_SRC_PATH为Rust源代码src的目录
 ![](../image/editor-visualstudio-racersc.png)
 
-## 7.2 安装VisualRust和VS GDB Debugger
+## 安装VisualRust和VS GDB Debugger
 
 做完上述工作，就可以安装VisualRust和VS GDB Debugger,在这里下载 
 https://github.com/PistonDevelopers/VisualRust
@@ -27,7 +27,7 @@ https://visualstudiogallery.msdn.microsoft.com/35dbae07-8c1a-4f9d-94b7-bac16cad9
 VisualGDB可在这里购买
 http://www.visualgdb.com/
 
-## 7.3 编译Rust项目
+## 编译Rust项目
 
 新建Rust项目
 ![](../image/editor-visualstudio-newproject.png)
@@ -36,7 +36,7 @@ http://www.visualgdb.com/
 这时候就可以在写代码的时候就可以自动提示了。像下面这样
 ![](../image/editor-visualstudio-autocomplete.png)
 
-## 7.4 用VS GDB Debugger调试Rust项目
+## 用VS GDB Debugger调试Rust项目
 
 ok,愉快的开始你的Rust之旅吧。下面开始使用VS GDB Debugger调试Rust.
 
@@ -59,7 +59,7 @@ ok,愉快的开始你的Rust之旅吧。下面开始使用VS GDB Debugger调试R
 ![](../image/editor-visualstudio-debugging2.png)
 
 
-## 7.5 用VisualGDB调试Rust项目
+## 用VisualGDB调试Rust项目
 
 
 Build完Rust程序，点击debug, 选择quick debug with gdb

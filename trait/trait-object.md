@@ -1,4 +1,4 @@
-# 10.2 trait对象 （trait object）
+# trait对象 （trait object）
 
 trait对象在**Rust**中是指使用指针封装了的 trait，比如 `&SomeTrait` 和 `Box<SomeTrait>`。
 

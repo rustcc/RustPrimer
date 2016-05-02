@@ -164,6 +164,12 @@ gitbook serve
 
 即可
 
+
+## 成为Contributors
+
+我们欢迎RustPrimer的Contributor们将自己的 `[blog/github/社交帐号]` 添加在 [1st-glance/README.md](./1st-glance/README.md)里。但严禁未参与者恶意添加帐号，违者将会被永久拒绝PR和issue权限。
+
 ## ChangeLog
 
 1. 2016年3月31日，初稿完成。发布 v1.0 版。
+2. 2016年5月2日,完成1.1.0版本。
