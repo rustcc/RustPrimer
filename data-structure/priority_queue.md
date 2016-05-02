@@ -1,8 +1,6 @@
-# 33-03-data-struct-priority_queue
+# 优先队列
 
-tags： RustPrimer
-
-----------------
+## 简介
 普通的队列是一种先进先出的数据结构，元素在队列尾追加，而从队列头删除。在优先队列中，元素被赋予优先级。当访问元素时，具有最高优先级的元素最先删除。优先队列具有最高级先出 （largest-in，first-out）的行为特征。
 
 >优先队列是0个或多个元素的集合，每个元素都有一个优先权或值，对优先队列执行的操作有：
@@ -11,7 +9,7 @@ tags： RustPrimer
 3) 删除。
 在最小优先队列(min priority queue)中，查找操作用来搜索优先权最小的元素，删除操作用来删除该元素；对于最大优先队列(max priority queue)，查找操作用来搜索优先权最大的元素，删除操作用来删除该元素。优先权队列中的元素可以有相同的优先权，查找与删除操作可根据任意优先权进行。
 
-下面是优先队列的实现：
+## 优先队列的实现：
 
 首先定义 PriorityQueue 结构体
 ```rust
@@ -22,7 +20,7 @@ struct PriorityQueue<T> where T: PartialOrd + Clone {
 ```
 第二行的`where T: PartialOrd + Clone`指的是 PriorityQueue 存储的泛型 T 是满足 `PartialOrd` 和 `Clone` trait 约束的，意味着泛型 T 是可排序和克隆的。
 
-后面是一下基本的方法实现，比较简单，就直接看代码吧。
+后面是一些基本的方法实现，比较简单，就直接看代码吧。
 ```rust
 impl<T> PriorityQueue<T> where T: PartialOrd + Clone {
     fn new() -> PriorityQueue<T> {
@@ -87,7 +85,7 @@ impl<T> PriorityQueue<T> where T: PartialOrd + Clone {
 }
 ```
 
-下面是测试代码：
+## 测试代码：
 ```rust
 fn test_keep_min() {
     let mut pq = PriorityQueue::new();
