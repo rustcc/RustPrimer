@@ -1,4 +1,4 @@
-# 36.1 附录I-术语表
+# 附录I-术语表
 
 * ADT(Algebraic Data Type:代数数据类型):
 * ARC(Atomic Reference Counting:原子引用计数):

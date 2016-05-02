@@ -6,13 +6,13 @@
 
 Windows的Emacs用户仅作参考。
 
-## 1.1 简介
+## 简介
 
 Emacs 的 rust-mode 提供了语法高亮显示和 elisp 函数，可以围绕 Rust 函数定义移动光标。有几个插件提供了附加的功能，如自动补全和动态语法检查。
 
 ![](../image/editor-emacs-base.png)
 
-## 1.2 安装插件
+## 安装插件
 
 首先，需要将 melpa 代码库添加到你的插件列表中，才能安装 Rust 需要的插件。将下面的代码片段加入你的```~/.emacs.d/init.el``` 文件中。
 
@@ -86,7 +86,7 @@ Emacs 的 rust-mode 提供了语法高亮显示和 elisp 函数，可以围绕 R
 
 ![](../image/editor-emacs-error-checking.png)
 
-## 1.3 配置 Racer
+## 配置 Racer
 
 Racer 需要 Rust 的源代码用于自动补全。
 
@@ -95,7 +95,7 @@ Racer 需要 Rust 的源代码用于自动补全。
 
 ![](../image/editor-emacs-completion.png)
 
-## 1.4 结论
+## 结论
 
 现在，可以在 Emacs 中编辑 Rust 源代码文件了。功能总结如下：
 
