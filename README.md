@@ -58,7 +58,7 @@ wiki: https://wiki.rust-china.org/
   * [函数与方法](quickstart/function-method.md)
   * [特性](quickstart/trait.md)
   * [注释与文档](quickstart/comments-document.md)
-  * [输入输出流](quickstart/rust-travel.md)
+  * [输入输出流](quickstart/io-stream.md)
 * [Cargo项目管理器](cargo-projects-manager/cargo-projects-manager.md)「fuyingfuying」
 * [基本程序结构](flow/preface.md)「daogangtang」
   * [注释](flow/comment.md)
