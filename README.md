@@ -49,10 +49,16 @@ wiki: https://wiki.rust-china.org/
   * [sublime](editors/sublime.md)「domty」
   * [visual studio](editors/visualstudio.md)「marvinguo」
   * [spacemacs](editors/spacemacs.md)「wayslog」
-* [Rust一小时快速入门](quickstart/intro.md)「ee0703」
-  * [第一个Rust程序](quickstart/hello-world.md)
-  * [简单的数学运算](quickstart/basic-math.md)
-  * [快速上手](quickstart/cheet-sheet.md)
+* [Rust快速入门](quickstart/intro.md)「Naupio」
+  * [Rust旅程](quickstart/rust-travel.md)
+  * [基础类型](quickstart/primitive-type.md)
+  * [向量与字符串](quickstart/vector-string.md)
+  * [结构体与枚举](quickstart/struct-enum.md)
+  * [操作流](quickstart/control-stream.md)
+  * [函数与方法](quickstart/function-method.md)
+  * [特性](quickstart/trait.md)
+  * [注释与文档](quickstart/comments-document.md)
+  * [输入输出流](quickstart/io-stream.md)
 * [Cargo项目管理器](cargo-projects-manager/cargo-projects-manager.md)「fuyingfuying」
 * [基本程序结构](flow/preface.md)「daogangtang」
   * [注释](flow/comment.md)
