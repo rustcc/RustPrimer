@@ -46,7 +46,7 @@ Rust 运行在以下操作系统上：Linux, OS X, Windows, FreeBSD, Android, iO
 - anzhihun
 - zonyitoo(Elton,e猫)
 - 42
-- Naupio（N猫）
+- [Naupio（N猫）](https://github.com/Naupio)
 - F001（失落的神喵）
 - wangyu190810
 - domty
