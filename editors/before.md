@@ -28,7 +28,7 @@ sudo /usr/local/bin/cargo install --git 'https://github.com/phildawes/racer.git'
 
 ### 编译安装
 
-事实上我更推荐有条件的用户通过这种方式安装，因为自己实战操作一遍总是有些收获的。 
+事实上我更推荐有条件的用户通过这种方式安装，因为自己实战操作一遍总是有些收获的。
 
 #### 下载源码
 
@@ -38,7 +38,7 @@ sudo /usr/local/bin/cargo install --git 'https://github.com/phildawes/racer.git'
 git clone https://github.com/phildawes/racer.git
 ```
 
-#### 进行编译 
+#### 进行编译
 
 然后，进入目录然后进行编译
 

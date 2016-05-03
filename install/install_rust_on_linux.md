@@ -22,10 +22,10 @@ Rust 为Linux用户提供了两种安装方式：
 
 下载安装包后解压运行即可。*在书写本章时，最新的稳定版本为1.5.0，*
  解压：`tar -zxvf rust-1.5.0-x86_64-unknown-linux-gnu.tar.gz`
- 
+
  解压完进入对应的目录：`cd rust-1.5.0-x86_64-unknown-linux-gnu`
  执行 `./install.sh`
- 
+
 上述命令执行完成后会打印： **Rust is ready to roll.** 表明安装成功
 
 此时执行: `rustc --version`, 你会看到对应的 rust 版本信息,如下图所示：

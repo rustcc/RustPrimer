@@ -18,14 +18,14 @@ fn main() {
 
     colors.par_iter_mut().for_each(|color| {
         let c : f32 = if *color < 0.0 {
-                0.0 
+                0.0
             } else if *color > 255.0 {
-                255.0 
-            } else { 
-                *color 
+                255.0
+            } else {
+                *color
             };
         *color = c / 255.0;
-    }); 
+    });
     println!("transformed: {:?}", &colors);
 }
 ```

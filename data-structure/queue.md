@@ -23,7 +23,7 @@ impl <T> Queue<T> {
 
     fn push(&mut self, item:T) {
         self.qdata.push(item);
-    } 
+    }
 
     fn pop(&mut self) -> T{
         self.qdata.remove(0)

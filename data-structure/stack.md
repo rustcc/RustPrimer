@@ -55,7 +55,7 @@ struct StackNode<T> {
 > **那么为什么还需要使用`Option`来封装呢？**
 
 > `Option`是 Rust 里面的一个抽象类型，定义如下：
-> 
+>
 ```rust
 pub enum Option<T> {
     None,

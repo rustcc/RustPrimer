@@ -77,7 +77,7 @@ wiki: https://wiki.rust-china.org/
 * [模式匹配](match/overview.md)「wayslog」
   * [match关键字](match/match.md)
   * [模式](match/pattern.md)
-* [Trait （特征）](trait/overview.md)「JohnSmithX」
+* [Trait（特征）](trait/overview.md)「JohnSmithX」
   * [trait关键字](trait/trait.md)
   * [trait对象](trait/trait-object.md)
 * [泛型](generics/generics.md)「stormgbs」
@@ -129,8 +129,8 @@ wiki: https://wiki.rust-china.org/
   * [编译器参数](attr-and-compiler-args/rustc-options.md)
 * [Cargo参数配置](cargo-detailed-cfg/cargo-detailed-cfg.md)「fuyingfuying」
 * [测试与评测](testing/preface.md)「daogangtang」
-  * [测试 (testing/threearchtest.md)
-  * [评测 (testing/bench.md)
+  * [测试](testing/threearchtest.md)
+  * [评测](testing/bench.md)
 * [代码风格](coding-style/style.md)「tiansiyuan」
 * [Any与反射](any/any.md)「wayslog」
 * [安全（safe）](safe/safe.md)「daogangtang」
@@ -142,9 +142,9 @@ wiki: https://wiki.rust-china.org/
   * [链表](data-structure/linked_list.md)
   * [图结构](data-structure/graph.md)
 * [标准库介绍](std/overview.md)「wayslog」
-  * [系统命令:调用grep](std/process.md)
-  * [目录操作:简单grep](std/fs-and-path.md)
-  * [网络模块:W回音](std/net.md)
+  * [系统命令：调用grep](std/process.md)
+  * [目录操作：简单grep](std/fs-and-path.md)
+  * [网络模块：W回音](std/net.md)
 * [实战篇](action/preface.md)「wangyu190810」
   * [实战：Json处理](action/json_data/readme.md)
   * [实战：Web 应用开发入门](action/mysite/readme.md)
@@ -154,7 +154,7 @@ wiki: https://wiki.rust-china.org/
 
 本书使用 `CC BY-SA 3.0` 协议，转载请注明地址。
 
-## gitbook生成
+## GitBook 生成
 
 直接用：
 
@@ -162,7 +162,7 @@ wiki: https://wiki.rust-china.org/
 gitbook serve
 ```
 
-即可
+即可。
 
 
 ## 成为Contributors
@@ -172,4 +172,4 @@ gitbook serve
 ## ChangeLog
 
 1. 2016年3月31日，初稿完成。发布 v1.0 版。
-2. 2016年5月2日,完成1.1.0版本。
+2. 2016年5月2日，完成 1.1.0 版本。

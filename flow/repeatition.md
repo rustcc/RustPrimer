@@ -122,7 +122,7 @@ while !done {
 
 ```rust
 while true {
-    // do something    
+    // do something
 }
 ```
 

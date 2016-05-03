@@ -69,7 +69,7 @@ use std::sync::Arc;
 fn main() {
 	let var : Arc<i32> = Arc::new(5);
 	let share_var = var.clone();
-	
+
 	// 创建一个新线程
 	let new_thread = thread::spawn(move|| {
 		println!("share value in new thread: {}, address: {:p}", share_var, &*share_var);
@@ -105,7 +105,7 @@ pub fn new(data: T) -> Arc<T> {
 
     1. 资源何时释放？
     2. 线程如何安全的并发修改和读取？
-    
+
 由于上面两个问题的存在，这就是为什么我们不能直接用`Box`变量在线程中共享的原因，可以看出来，共享内存比消息传递机制似乎要复杂许多。Rust用了引用计数的方式来解决第一个问题，在标准库中提供了两个包裹类，除了上面一个用于多线程的`std::sync::Arc`之外，还有一个不能用于多线程的`std::rc::Rc`。在使用时，可以根据需要进行选择。如果你一不小心把`std::rc::Rc`用于多线程中，编译器会毫不客气地纠正你的。
 
 关于上面的第二个问题，Rust语言及标准库提供了一系列的同步手段来解决。下面的章节我们将详细讲解这些方式和用法。

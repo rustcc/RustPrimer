@@ -52,7 +52,7 @@ circle c has an area of 3.141592653589793
 ```rust
 use std::fmt::Debug;
 fn foo<T: Debug>(s: T) {
-    println!("{:?}", s); 
+    println!("{:?}", s);
 }
 ```
 
@@ -65,8 +65,8 @@ fn foo<T: Debug>(s: T) {
 ```rust
 use std::fmt::Debug;
 fn foo<T: Debug + Clone>(s: T) {
-    s.clone(); 
-    println!("{:?}", s); 
+    s.clone();
+    println!("{:?}", s);
 }
 ```
 `<T: Debug + Clone>`中`Debug`和`Clone`使用`+`连接，标示泛型`T`需要同时实现这两个trait。
@@ -91,8 +91,8 @@ fn foo<T, K>(x: T, y: K) where T: Clone, K: Clone + Debug {
 }
 
 // 或者
-fn foo<T, K>(x: T, y: K) 
-    where T: Clone, 
+fn foo<T, K>(x: T, y: K)
+    where T: Clone,
           K: Clone + Debug {
     x.clone();
     y.clone();

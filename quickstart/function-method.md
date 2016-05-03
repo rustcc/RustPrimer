@@ -40,7 +40,7 @@ let plus_num = |x: i32| x + num;
 ```rust
 let mut num = 5;
 
-{ 
+{
     let mut add_num = move |x: i32| num += x;
 
     add_num(5);
