@@ -54,7 +54,7 @@ wiki: https://wiki.rust-china.org/
   * [基础类型](quickstart/primitive-type.md)
   * [向量与字符串](quickstart/vector-string.md)
   * [结构体与枚举](quickstart/struct-enum.md)
-  * [操作流](quickstart/control-stream.md)
+  * [操作流](quickstart/control-flow.md)
   * [函数与方法](quickstart/function-method.md)
   * [特性](quickstart/trait.md)
   * [注释与文档](quickstart/comments-document.md)
