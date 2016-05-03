@@ -68,7 +68,7 @@ let hello: &'static str = "Hello, world!";
 
 **例子：**
 ```rust
-// 穿件一个空的字符串
+// 创建一个空的字符串
 let mut s = String::new();
 // 从 `&str` 类型转化成 `String` 类型
 let mut hello = String::from("Hello, ");
