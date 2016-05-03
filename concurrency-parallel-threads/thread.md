@@ -93,7 +93,7 @@ fn main() {
             println!("I am a new thread.");
         }
     });
-    
+
     // 不等待新创建的线程执行完成
     // new_thread.join().unwrap();
 }
@@ -113,7 +113,7 @@ fn main() {
 	        }
     	})
     });
-    
+
     // 等待新创建的线程执行完成
     new_thread.join().unwrap();
     println!("Child thread is finish!");

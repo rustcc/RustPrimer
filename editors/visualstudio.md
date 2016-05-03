@@ -20,7 +20,7 @@ RUST_SRC_PATH为Rust源代码src的目录
 
 ## 安装VisualRust和VS GDB Debugger
 
-做完上述工作，就可以安装VisualRust和VS GDB Debugger,在这里下载 
+做完上述工作，就可以安装VisualRust和VS GDB Debugger,在这里下载
 https://github.com/PistonDevelopers/VisualRust
 https://visualstudiogallery.msdn.microsoft.com/35dbae07-8c1a-4f9d-94b7-bac16cad9c01
 

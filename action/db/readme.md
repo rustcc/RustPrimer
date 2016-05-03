@@ -25,7 +25,7 @@ postgres="*"
 
 当然我们还是进行最简单的操作，直接粘贴复制，[代码来源](https://github.com/sfackler/rust-postgres#overview)
 
-``` rust 
+``` rust
 
 extern crate postgres;
 
@@ -108,10 +108,10 @@ pub fn insert_info(conn : &Connection,title : &str, body: &str){
     let stmt = match conn.prepare("insert into blog (title, body) values ($1, $2)") {
         Ok(stmt) => stmt,
         Err(e) => {
-            println!("Preparing query failed: {:?}", e); 
+            println!("Preparing query failed: {:?}", e);
             return;
-        }   
-    };  
+        }
+    };
         stmt.execute(&[&title, &body]).expect("Inserting blogposts failed");
 }
 
@@ -126,9 +126,9 @@ pub fn query<T>(conn: &Connection,query: &str) ->PgResult<T>
                 //rows.iter().next().unwrap()
             row.get_opt(2).unwrap()
 
-} 
+}
 
-pub fn query_all(conn: &Connection,query: &str){ 
+pub fn query_all(conn: &Connection,query: &str){
             println!("Executing query: {}", query);
             for row in &conn.query(query,&[]).unwrap(){
                 let person = Person{
@@ -139,7 +139,7 @@ pub fn query_all(conn: &Connection,query: &str){
             println!("Found person {}", person.name);
             }
 
-} 
+}
 
 ```
 然后在main.rs 中调用相应的函数代码如下
@@ -150,7 +150,7 @@ pub fn query_all(conn: &Connection,query: &str){
 
 ``` rust
 extern crate postgres;
-extern crate db; 
+extern crate db;
 
 use postgres::{Connection, SslMode};
 
@@ -162,19 +162,19 @@ struct Blog {
 }
 
 fn main() {
-    let conn:Connection=connect(); 
-     
+    let conn:Connection=connect();
+
     let blog = Blog{
         title: String::from("title"),
         body: String::from("body"),
-    };  
+    };
     let title = blog.title.to_string();
     let body = blog.body.to_string();
-    insert_info(&conn,&title,&body); 
+    insert_info(&conn,&title,&body);
 
    for row in query::<String>(&conn,"select * from blog"){
         println!("{:?}",row);
-    }   
+    }
     let sql = "select * from person";
     query_all(&conn,&sql);
 }
@@ -192,14 +192,14 @@ fn main() {
 说返回的是一个可迭代的数据，那也就是说，我可以使用for循环，将数据打印，
 但是发现怎么也不能实现：
 
-``` rust 
+``` rust
 
-pub fn query_all(conn: &Connection,query: &str){ 
+pub fn query_all(conn: &Connection,query: &str){
             println!("Executing query: {}", query);
-            for row in &conn.query(query,&[]).unwrap(){  
+            for row in &conn.query(query,&[]).unwrap(){
                   println!("Found person {:?}", row.get_opt(1));
             }
-} 
+}
 
 ```
 报错如下：

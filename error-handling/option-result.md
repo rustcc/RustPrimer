@@ -1,4 +1,4 @@
-# 17.错误处理 
+# 17.错误处理
 错误处理是保证程序健壮性的前提，在编程语言中错误处理的方式大致分为两种：抛出异常（exceptions）和作为值返回。
 
 **Rust**将错误作为值返回并且提供了原生的优雅的错误处理方案。
@@ -207,7 +207,7 @@ pub trait FromStr {
 impl FromStr for i32 {
     type Err = ParseIntError;
     fn from_str(src: &str) -> Result<i32, ParseIntError> {
-        
+
     }
 }
 ```
