@@ -63,7 +63,7 @@ wiki: https://wiki.rust-china.org/
 * [基本程序结构](flow/preface.md)「daogangtang」
   * [注释](flow/comment.md)
   * [条件](flow/condition.md)
-  * [循环](flow/repeatition.md)
+  * [循环](flow/repetition.md)
 * [类型、运算符和字符串](type/preface.md)「wayslog」
   * [基础类型](type/types.md)
   * [复合类型](type/compound-types.md)
@@ -73,7 +73,7 @@ wiki: https://wiki.rust-china.org/
   * [函数参数](function/arguement.md)
   * [函数返回值](function/return_value.md)
   * [语句和表达式](function/statement_expression.md)
-  * [高阶函数](function/high_order_function.md)
+  * [高阶函数](function/higher_order_function.md)
 * [模式匹配](match/overview.md)「wayslog」
   * [match关键字](match/match.md)
   * [模式](match/pattern.md)
