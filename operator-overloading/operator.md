@@ -1,10 +1,10 @@
 # 运算符重载
 
-Rust可以让我们对某些运算符进行重载，这其中大部分的重载都是对`std::ops`下的trait进行重载而实现的。
+Rust可以让我们对某些运算符进行重载,这其中大部分的重载都是对`std::ops`下的trait进行重载而实现的.
 
 ## 重载加法
 
-我们现在来实现一个只支持加法的阉割版[复数](https://zh.wikipedia.org/wiki/%E5%A4%8D%E6%95%B0_%28%E6%95%B0%E5%AD%A6%29)：
+我们现在来实现一个只支持加法的阉割版[复数](https://zh.wikipedia.org/wiki/%E5%A4%8D%E6%95%B0_%28%E6%95%B0%E5%AD%A6%29):
 
 ```rust
 use std::ops::Add;
@@ -34,7 +34,7 @@ fn main() {
 Complex { a: 6, b: 10.1}
 ```
 
-这里我们实现了`std::ops::Add`这个trait。这时候有同学一拍脑门，原来如此，没错……其实Rust的大部分运算符都是`std::ops`下的trait的语法糖！
+这里我们实现了`std::ops::Add`这个trait.这时候有同学一拍脑门,原来如此,没错……其实Rust的大部分运算符都是`std::ops`下的trait的语法糖!
 
 我们来看看`std::ops::Add`的具体结构
 
@@ -48,10 +48,10 @@ impl Add<i32> for Point {
 }
 ```
 ## 神奇的Output以及动态分发
-有的同学会问了，这个`Output`是肿么回事？答，类型转换哟亲！
-举个不太恰当的栗子，我们在现实中会出现`0.5+0.5=1`这样的算式，用Rust的语言来描述就是： 两个`f32`相加得到了一个`i8`。显而易见，Output就是为这种情况设计的。
+有的同学会问了,这个`Output`是肿么回事?答,类型转换哟亲!
+举个不太恰当的栗子,我们在现实中会出现`0.5+0.5=1`这样的算式,用Rust的语言来描述就是: 两个`f32`相加得到了一个`i8`.显而易见,Output就是为这种情况设计的.
 
-还是看代码：
+还是看代码:
 ```rust
 use std::ops::Add;
 
@@ -85,7 +85,7 @@ fn main() {
 }
 ```
 
-输出结果：
+输出结果:
 ```
 Complex { a: 6, b: 10.1 }
 39
@@ -93,8 +93,8 @@ Complex { a: 6, b: 10.1 }
 
 ## 对范型的限制
 
-Rust的运算符是基于trait系统的，同样的，运算符可以被当成一种对范型的限制，我们可以这么要求`范型T必须实现了trait Mul<Output=T>`。
-于是，我们得到了如下的一份代码：
+Rust的运算符是基于trait系统的,同样的,运算符可以被当成一种对范型的限制,我们可以这么要求`范型T必须实现了trait Mul<Output=T>`.
+于是,我们得到了如下的一份代码:
 ```rust
 use std::ops::Mul;
 
@@ -126,6 +126,6 @@ fn main() {
 }
 ```
 
-对于trait `HasArea<T>`和 struct `Square<T>`，我们通过`where T: Mul<Output=T> + Compy` 限制了`T`必须实现乘法。同时Copy则限制了Rust不再将self.side给move到返回值里去。
+对于trait `HasArea<T>`和 struct `Square<T>`,我们通过`where T: Mul<Output=T> + Compy` 限制了`T`必须实现乘法.同时Copy则限制了Rust不再将self.side给move到返回值里去.
 
-写法简单，轻松愉快。
+写法简单,轻松愉快.

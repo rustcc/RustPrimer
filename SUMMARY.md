@@ -43,7 +43,7 @@
 * [模式匹配](match/overview.md)「wayslog」
   * [match关键字](match/match.md)
   * [模式](match/pattern.md)
-* [Trait （特征）](trait/overview.md)「JohnSmithX」
+* [Trait (特征)](trait/overview.md)「JohnSmithX」
   * [trait关键字](trait/trait.md)
   * [trait对象](trait/trait-object.md)
 * [泛型](generic/generic.md)「stormgbs」
@@ -61,7 +61,7 @@
 * [迭代器](iterator/overview.md)「wayslog」
   * [迭代器、适配器、消费者](iterator/iterator.md)
 * [模块和包系统、Prelude](module/preface.md)「daogangtang」
-  * [模块（module）和包（crate）](module/module.md)
+  * [模块(module)和包(crate)](module/module.md)
   * [Prelude](module/prelude.md)
 * [Option、Result与错误处理](error-handling/option-result.md)「JohnSmithX」
 * [宏系统](macro/macro.md)「tennix」
@@ -77,7 +77,7 @@
   * [Deref 与 Deref coercions](intoborrow/deref.md)
   * [Cow 及其在 String 和 &str 上的应用](intoborrow/cow.md)
 * [Send 和 Sync](marker/sendsync.md)「daogangtang」
-* [并发，并行，多线程编程](concurrency-parallel-thread/preface.md)「anzhihun」
+* [并发,并行,多线程编程](concurrency-parallel-thread/preface.md)「anzhihun」
   * [线程](concurrency-parallel-thread/thread.md)
   * [消息传递](concurrency-parallel-thread/message-passing.md)
   * [共享内存](concurrency-parallel-thread/share-memory.md)
@@ -99,7 +99,7 @@
   * [评测 (benchmark)](testing/bench.md)
 * [代码风格](coding-style/style.md)「tiansiyuan」
 * [Any与反射](any/any.md)「wayslog」
-* [安全（safe）](safe/safety.md)「daogangtang」
+* [安全(safe)](safe/safety.md)「daogangtang」
 * [常用数据结构实现](data-structure/preface.md)「Naupio」
   * [栈结构](data-structure/stack.md)
   * [队列](data-structure/queue.md)
@@ -112,7 +112,7 @@
   * [目录操作:简单grep](std/fs-and-path.md)
   * [网络模块:W回音](std/net.md)
 * [实战篇](action/preface.md)「wangyu190810」
-  * [实战：Json处理](action/json_data/readme.md)
-  * [实战：Web 应用开发入门](action/mysite/readme.md)
-  * [实战：使用Postgresql数据库](action/db/readme.md)
+  * [实战:Json处理](action/json_data/readme.md)
+  * [实战:Web 应用开发入门](action/mysite/readme.md)
+  * [实战:使用Postgresql数据库](action/db/readme.md)
 * [附录-术语表](appendix/glossary.md)「tennix」

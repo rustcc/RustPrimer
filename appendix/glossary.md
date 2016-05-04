@@ -58,7 +58,7 @@
 * result:
 * shadowing:
 * static dispatch(静态分发):
-* slice(切片): 某种数据类型的视图，例如 string, vector
+* slice(切片): 某种数据类型的视图,例如 string, vector
 * statement(): 与 expression 相区别
 * trait:
 * trait object:
