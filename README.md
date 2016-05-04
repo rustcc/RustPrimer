@@ -68,7 +68,7 @@ wiki: https://wiki.rust-china.org/
   * [基础类型](type/types.md)
   * [复合类型](type/compound-types.md)
   * [字符串类](type/strings.md)
-  * [基础运算符和字符串格式化](type/operator-and-format.md)
+  * [基础运算符和字符串格式化](type/operator-and-formatting.md)
 * [函数](function/overview.md)「qdao」
   * [函数参数](function/arguement.md)
   * [函数返回值](function/return_value.md)
