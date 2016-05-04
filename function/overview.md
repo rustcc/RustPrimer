@@ -11,6 +11,6 @@ fn main() {
   1. [函数参数](arguement.md)
   2. [函数返回值](return_value.md)
   3. [语句和表达式](statement_expression.md)
-  4. [高阶函数](high_order_function.md)
+  4. [高阶函数](higher_order_function.md)
 
 > ### 注：本章所有例子均在rustc1.4下编译通过，且例子中说明的所有的编译错误都是rustc1.4版本给出的。

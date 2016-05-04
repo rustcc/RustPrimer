@@ -29,28 +29,28 @@
 * [基本程序结构](flow/preface.md)「daogangtang」
   * [注释](flow/comment.md)
   * [条件](flow/condition.md)
-  * [循环](flow/repeatition.md)
+  * [循环](flow/repetition.md)
 * [类型、运算符和字符串](type/preface.md)「wayslog」
   * [基础类型](type/types.md)
   * [复合类型](type/compound-types.md)
-  * [字符串类](type/strings.md)
-  * [基础运算符和字符串格式化](type/operator-and-format.md)
+  * [字符串类](type/string.md)
+  * [基础运算符和字符串格式化](type/operator-and-formatting.md)
 * [函数](function/overview.md)「qdao」
   * [函数参数](function/arguement.md)
   * [函数返回值](function/return_value.md)
   * [语句和表达式](function/statement_expression.md)
-  * [高阶函数](function/high_order_function.md)
+  * [高阶函数](function/higher_order_function.md)
 * [模式匹配](match/overview.md)「wayslog」
   * [match关键字](match/match.md)
   * [模式](match/pattern.md)
 * [Trait （特征）](trait/overview.md)「JohnSmithX」
   * [trait关键字](trait/trait.md)
   * [trait对象](trait/trait-object.md)
-* [泛型](generics/generics.md)「stormgbs」
+* [泛型](generic/generic.md)「stormgbs」
 * [可变性、所有权、租借和生命期](ownership-system/ownership_system.md)「stormgbs」
   * [所有权](ownership-system/ownership.md)
-  * [引用和借用](ownership-system/borrowing_references.md)
-  * [生命周期](ownership-system/lifetimes.md)
+  * [引用和借用](ownership-system/borrowing_reference.md)
+  * [生命周期](ownership-system/lifetime.md)
 * [闭包](closure/overview.md)「qdao」
   * [闭包的语法](closure/syntax.md)
   * [闭包的实现](closure/implementation.md)
@@ -60,9 +60,9 @@
   * [哈希表](collections/hashmap.md)
 * [迭代器](iterator/overview.md)「wayslog」
   * [迭代器、适配器、消费者](iterator/iterator.md)
-* [模块和包系统、Prelude](modules/preface.md)「daogangtang」
-  * [模块（module）和包（crate）](modules/module.md)
-  * [Prelude](modules/prelude.md)
+* [模块和包系统、Prelude](module/preface.md)「daogangtang」
+  * [模块（module）和包（crate）](module/module.md)
+  * [Prelude](module/prelude.md)
 * [Option、Result与错误处理](error-handling/option-result.md)「JohnSmithX」
 * [宏系统](macro/macro.md)「tennix」
 * [堆、栈与Box](heap-stack/heap-stack.md)「tennix」
@@ -77,29 +77,29 @@
   * [Deref 与 Deref coercions](intoborrow/deref.md)
   * [Cow 及其在 String 和 &str 上的应用](intoborrow/cow.md)
 * [Send 和 Sync](marker/sendsync.md)「daogangtang」
-* [并发，并行，多线程编程](concurrency-parallel-threads/preface.md)「anzhihun」
-  * [线程](concurrency-parallel-threads/thread.md)
-  * [消息传递](concurrency-parallel-threads/message-passing.md)
-  * [共享内存](concurrency-parallel-threads/share-memory.md)
-  * [同步](concurrency-parallel-threads/synchronize.md)
-  * [并行](concurrency-parallel-threads/parallel.md)
+* [并发，并行，多线程编程](concurrency-parallel-thread/preface.md)「anzhihun」
+  * [线程](concurrency-parallel-thread/thread.md)
+  * [消息传递](concurrency-parallel-thread/message-passing.md)
+  * [共享内存](concurrency-parallel-thread/share-memory.md)
+  * [同步](concurrency-parallel-thread/synchronize.md)
+  * [并行](concurrency-parallel-thread/parallel.md)
 * [Unsafe、原始指针](unsafe-rawpointer/preface.md)「JohnSmithX」
   * [Unsafe](unsafe-rawpointer/unsafe.md)
   * [原始指针](unsafe-rawpointer/raw-pointer.md)
 * [FFI](ffi/preface.md)「42」
-  * [rust调用ffi函数](ffi/calling-ffi-functions.md)
+  * [rust调用ffi函数](ffi/calling-ffi-function.md)
   * [将rust编译成库](ffi/compiling-rust-to-lib.md)
 * [运算符重载](operator-overloading/operator.md)「wayslog」
-* [属性和编译器参数](attr-and-compiler-args/preface.md)「elton」
-  * [属性](attr-and-compiler-args/attributes.md)
-  * [编译器参数](attr-and-compiler-args/rustc-options.md)
+* [属性和编译器参数](attr-and-compiler-arg/preface.md)「elton」
+  * [属性](attr-and-compiler-arg/attribute.md)
+  * [编译器参数](attr-and-compiler-arg/rustc-option.md)
 * [Cargo参数配置](cargo-detailed-cfg/cargo-detailed-cfg.md)「fuyingfuying」
 * [测试与评测](testing/preface.md)「daogangtang」
   * [测试 (testing)](testing/threearchtest.md)
   * [评测 (benchmark)](testing/bench.md)
 * [代码风格](coding-style/style.md)「tiansiyuan」
 * [Any与反射](any/any.md)「wayslog」
-* [安全（safe）](safe/safe.md)「daogangtang」
+* [安全（safe）](safe/safety.md)「daogangtang」
 * [常用数据结构实现](data-structure/preface.md)「Naupio」
   * [栈结构](data-structure/stack.md)
   * [队列](data-structure/queue.md)
