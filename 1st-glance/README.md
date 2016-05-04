@@ -50,7 +50,7 @@ Rust 运行在以下操作系统上：Linux, OS X, Windows, FreeBSD, Android, iO
 - F001（失落的神喵）
 - wangyu190810
 - domty
-- [MarisaKirisame（帅气可爱的魔理沙）](https://github.com/MarisaKirisame)
+- [MarisaKirisame（帅气可爱魔理沙）](https://github.com/MarisaKirisame)
 - [Knight42](https://github.com/knight42)
 
 等。在此，向他们的辛苦工作和无私奉献表示尊敬和感谢！
