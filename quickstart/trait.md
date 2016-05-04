@@ -202,4 +202,6 @@ impl Graph for SimpleGraph {
 
 let graph = SimpleGraph;
 let object = Box::new(graph) as Box<Graph<N=Node, E=Edge>>;
+
 ```
+

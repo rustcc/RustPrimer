@@ -96,13 +96,11 @@ use std::rc::Rc;
 
 struct Owner {
     name: String
-    // ...other fields
 }
 
 struct Gadget {
     id: i32,
     owner: Rc<Owner>
-    // ...other fields
 }
 
 fn main() {
