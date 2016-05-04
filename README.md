@@ -80,11 +80,11 @@ wiki: https://wiki.rust-china.org/
 * [Trait（特征）](trait/overview.md)「JohnSmithX」
   * [trait关键字](trait/trait.md)
   * [trait对象](trait/trait-object.md)
-* [泛型](generics/generics.md)「stormgbs」
+* [泛型](generic/generic.md)「stormgbs」
 * [可变性、所有权、租借和生命期](ownership-system/ownership_system.md)「stormgbs」
   * [所有权](ownership-system/ownership.md)
-  * [引用和借用](ownership-system/borrowing_references.md)
-  * [生命周期](ownership-system/lifetimes.md)
+  * [引用和借用](ownership-system/borrowing_reference.md)
+  * [生命周期](ownership-system/lifetime.md)
 * [闭包](closure/overview.md)「qdao」
   * [闭包的语法](closure/syntax.md)
   * [闭包的实现](closure/implementation.md)
@@ -94,9 +94,9 @@ wiki: https://wiki.rust-china.org/
   * [哈希表](collections/hashmap.md)
 * [迭代器](iterator/overview.md)「wayslog」
   * [迭代器、适配器、消费者](iterator/iterator.md)
-* [模块和包系统、Prelude](modules/preface.md)「daogangtang」
-  * [模块（module）和包（crate）](modules/module.md)
-  * [Prelude](modules/prelude.md)
+* [模块和包系统、Prelude](module/preface.md)「daogangtang」
+  * [模块（module）和包（crate）](module/module.md)
+  * [Prelude](module/prelude.md)
 * [Option、Result与错误处理](error-handling/option-result.md)「JohnSmithX」
 * [宏系统](macro/macro.md)「tennix」
 * [堆、栈与Box](heap-stack/heap-stack.md)「tennix」
@@ -111,22 +111,22 @@ wiki: https://wiki.rust-china.org/
   * [Deref 与 Deref coercions](intoborrow/deref.md)
   * [Cow 及其在 String 和 &str 上的应用](intoborrow/cow.md)
 * [Send 和 Sync](marker/sendsync.md)「daogangtang」
-* [并发，并行，多线程编程](concurrency-parallel-threads/preface.md)「anzhihun」
-  * [线程](concurrency-parallel-threads/thread.md)
-  * [消息传递](concurrency-parallel-threads/message-passing.md)
-  * [共享内存](concurrency-parallel-threads/share-memory.md)
-  * [同步](concurrency-parallel-threads/synchronize.md)
-  * [并行](concurrency-parallel-threads/parallel.md)
+* [并发，并行，多线程编程](concurrency-parallel-thread/preface.md)「anzhihun」
+  * [线程](concurrency-parallel-thread/thread.md)
+  * [消息传递](concurrency-parallel-thread/message-passing.md)
+  * [共享内存](concurrency-parallel-thread/share-memory.md)
+  * [同步](concurrency-parallel-thread/synchronize.md)
+  * [并行](concurrency-parallel-thread/parallel.md)
 * [Unsafe、原始指针](unsafe-rawpointer/preface.md)「JohnSmithX」
   * [Unsafe](unsafe-rawpointer/unsafe.md)
   * [原始指针](unsafe-rawpointer/raw-pointer.md)
 * [FFI](ffi/preface.md)「42」
-  * [rust调用ffi函数](ffi/calling-ffi-functions.md)
+  * [rust调用ffi函数](ffi/calling-ffi-function.md)
   * [将rust编译成库](ffi/compiling-rust-to-lib.md)
 * [运算符重载](operator-overloading/operator.md)「wayslog」
-* [属性和编译器参数](attr-and-compiler-args/preface.md)「elton」
-  * [属性](attr-and-compiler-args/attributes.md)
-  * [编译器参数](attr-and-compiler-args/rustc-options.md)
+* [属性和编译器参数](attr-and-compiler-arg/preface.md)「elton」
+  * [属性](attr-and-compiler-arg/attribute.md)
+  * [编译器参数](attr-and-compiler-arg/rustc-option.md)
 * [Cargo参数配置](cargo-detailed-cfg/cargo-detailed-cfg.md)「fuyingfuying」
 * [测试与评测](testing/preface.md)「daogangtang」
   * [测试](testing/threearchtest.md)
