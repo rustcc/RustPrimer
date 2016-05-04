@@ -12,7 +12,8 @@ use std::thread;
 
 fn main() {
     // 创建一个通道
-    let (tx, rx): (mpsc::Sender<i32>, mpsc::Receiver<i32>) = mpsc::channel();
+    let (tx, rx): (mpsc::Sender<i32>, mpsc::Receiver<i32>) = 
+        mpsc::channel();
 
     // 创建线程用于发送消息
     thread::spawn(move || {
@@ -60,7 +61,8 @@ impl fmt::Display for Student {
 
 fn main() {
     // 创建一个通道
-    let (tx, rx): (mpsc::Sender<Rc<Student>>, mpsc::Receiver<Rc<Student>>) = mpsc::channel();
+    let (tx, rx): (mpsc::Sender<Rc<Student>>, mpsc::Receiver<Rc<Student>>) = 
+        mpsc::channel();
 
     // 创建线程用于发送消息
     thread::spawn(move || {
@@ -76,7 +78,8 @@ fn main() {
 ```
 编译代码，奇迹没有出现，编译时错误，错误提示：
 ```
-error: the trait `core::marker::Send` is not implemented for the type `alloc::rc::Rc<Student>` [E0277]
+error: the trait `core::marker::Send` is not 
+implemented for the type `alloc::rc::Rc<Student>` [E0277]
 note: `alloc::rc::Rc<Student>` cannot be sent between threads safely
 ```
 看来并不是所有类型的消息都可以通过通道发送，消息类型必须实现`marker trait Send`。Rust之所以这样强制要求，主要是为了解决并发安全的问题，再一次强调，**安全**是Rust考虑的重中之重。如果一个类型是`Send`，则表明它可以在线程间安全的转移所有权(`ownership`)，当所有权从一个线程转移到另一个线程后，同一时间就只会存在一个线程能访问它，这样就避免了数据竞争，从而做到线程安全。`ownership`的强大又一次显示出来了。通过这种做法，在编译时即可要求所有的代码必须满足这一约定，这种方式方法值得借鉴，`trait`也是非常强大。
@@ -143,7 +146,9 @@ receive 2
 在代码中，我们故意让`main`所在的主线程睡眠2秒，从而让发送者所在线程优先执行，通过结果可以发现，发送者发送消息时确实没有阻塞。还记得在前面提到过很多关于通道的问题吗？从这个例子里面还发现什么没？除了不阻塞之外，我们还能发现另外的三个特征：
 
     1. 通道是可以同时支持多个发送者的，通过`clone`的方式来实现。
-    这类似于`Rc`的共享机制，其实从`Channel`所在的库名`std::sync::mpsc`也可以知道这点，因为`mpsc`就是多生产者单消费者(Multiple Producers Single Consumer)的简写。
+    这类似于`Rc`的共享机制。
+    其实从`Channel`所在的库名`std::sync::mpsc`也可以知道这点。
+    因为`mpsc`就是多生产者单消费者(Multiple Producers Single Consumer)的简写。
     可以有多个发送者,但只能有一个接收者，即支持的N:1模式。
 
     2. 异步通道具备消息缓存的功能，因为1和2是在没有接收之前就发了的，在此之后还能接收到这两个消息。

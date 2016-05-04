@@ -74,7 +74,10 @@ i = 4 and j = 9
 再比如：
 
 ```rust
-let lines = "Content of line one\nContent of line two\nContent of line three\nContent of line four".lines();
+let lines = "Content of line one
+Content of line two
+Content of line three
+Content of line four".lines();
 for (linenumber, line) in lines.enumerate() {
     println!("{}: {}", linenumber, line);
 }
