@@ -33,8 +33,8 @@ let length = Inches(10);
 let Inches(integer_length) = length;
 
 // unit-like structs
-struct Null;
-let empty = Null;
+struct EmptyStruct;
+let empty = EmptyStruct;
 ```
 
 一个包含`..`的`struct`可以用来从其它结构体拷贝一些值或者在解构时忽略一些域：
