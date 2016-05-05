@@ -45,8 +45,8 @@ import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc5
 
 ```shell
 
-{  
-  "racer": "E:/soft/racer-master/target/release/racer.exe",  
+{
+  "racer": "E:/soft/racer-master/target/release/racer.exe",
   "search_paths": [    "E:/soft/rustc-1.7.0/src"   ]
 }
 

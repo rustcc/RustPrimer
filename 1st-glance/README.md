@@ -1,6 +1,6 @@
 Rust 是一门系统级编程语言，被设计为保证内存和线程安全，并防止段错误。作为系统级编程语言，它的基本理念是 “零开销抽象”。理论上来说，它的速度与 C / C++ 同级。
 
-Rust 可以被归为通用的、多范式、编译型的编程语言，类似 C 或者 C++。与这两门编程语言不同的是，Rust 是线程安全的 ！
+Rust 可以被归为通用的、多范式、编译型的编程语言，类似 C 或者 C++。与这两门编程语言不同的是，Rust 是线程安全的！
 
 Rust 编程语言的目标是，创建一个高度安全和并发的软件系统。它强调安全性、并发和内存控制。尽管 Rust 借用了 C 和 C++ 的语法，它不允许空指针和悬挂指针，二者是 C 和 C++ 中系统崩溃、内存泄露和不安全代码的根源。
 
@@ -44,13 +44,13 @@ Rust 运行在以下操作系统上：Linux, OS X, Windows, FreeBSD, Android, iO
 - stormgbs
 - tennix
 - anzhihun
-- zonyitoo(Elton,e猫)
+- zonyitoo（Elton, e猫）
 - 42
 - [Naupio（N猫）](https://github.com/Naupio)
 - F001（失落的神喵）
 - wangyu190810
 - domty
-- [MarisaKirisame(帅气可爱的魔理沙)](https://github.com/MarisaKirisame)
+- [MarisaKirisame（帅气可爱魔理沙）](https://github.com/MarisaKirisame)
 - [Knight42](https://github.com/knight42)
 
 等。在此，向他们的辛苦工作和无私奉献表示尊敬和感谢！

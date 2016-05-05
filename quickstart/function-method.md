@@ -12,7 +12,7 @@ fn add_one(x: i32) -> i32 {
 提前返回使用`return`关键字。Rust编译器会对未使用的函数提出警告，
 可以使用属性`#[allow(dead_code)]`禁用无效代码检查。
 
-Rust有一个特殊特性适用于发散函数 (diverging function)，它不返回值：
+Rust有一个特殊特性适用于发散函数 (diverging function)，它不返回：
 
 ```rust
 fn diverges() -> ! {
@@ -40,7 +40,7 @@ let plus_num = |x: i32| x + num;
 ```rust
 let mut num = 5;
 
-{ 
+{
     let mut add_num = move |x: i32| num += x;
 
     add_num(5);

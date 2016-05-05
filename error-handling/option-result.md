@@ -1,4 +1,4 @@
-# 17.错误处理 
+# 17.错误处理
 错误处理是保证程序健壮性的前提，在编程语言中错误处理的方式大致分为两种：抛出异常（exceptions）和作为值返回。
 
 **Rust**将错误作为值返回并且提供了原生的优雅的错误处理方案。
@@ -71,7 +71,7 @@ impl<T> Option<T> {
 `unwrap`当遇到`None`值时会panic，如前面所说这不是一个好的工程实践。不过有些时候却非常有用：
 
 * **在例子和简单快速的编码中** 有的时候你只是需要一个小例子或者一个简单的小程序，输入输出已经确定，你根本没必要花太多时间考虑错误处理，使用`unwrap`变得非常合适。
-* **有些bug需要panic** 当程序遇到了致命的bug是必须要终止时
+* **当程序遇到了致命的bug，panic是最优选择**
 
 
 #### map
@@ -207,7 +207,7 @@ pub trait FromStr {
 impl FromStr for i32 {
     type Err = ParseIntError;
     fn from_str(src: &str) -> Result<i32, ParseIntError> {
-        
+
     }
 }
 ```

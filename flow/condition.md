@@ -68,16 +68,16 @@ let y = if x == 5 { 10 } else { 15 }; // y: i32
 let x = Some(5);
 
 if let Some(y) = x {
-    println!("{}", y);      // 这里输出为：5    
+    println!("{}", y);      // 这里输出为：5
 }
 
 let z = if let Some(y) = x {
-    y      
+    y
 }
 else {
     0
 };
-// z 值为 5    
+// z 值为 5
 
 ```
 
@@ -87,7 +87,7 @@ else {
 let x = Some(5);
 match x {
     Some(y) => println!("{}", y),
-    None => ()    
+    None => ()
 }
 
 let z = match x {

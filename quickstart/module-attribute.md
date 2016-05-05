@@ -14,21 +14,21 @@ Rust有两个与模块 (module) 系统相关的独特术语：`crate`和`module`
 
 mod chinese {
     mod greetings {
-    
+
     }
 
     mod farewells {
-    
+
     }
 }
 
 mod english {
     mod greetings {
-    
+
     }
 
     mod farewells {
-    
+
     }
 }
 ```

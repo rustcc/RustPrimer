@@ -43,19 +43,19 @@ struct StackNode<T> {
 >现在我们重点来看看第四行：
 我们**从里到外**拆分来看看，首先是`Box<StackNode<T>`，这里的`Box`是 Rust 用来显式分配堆内存的类型：
 
-> `pub struct Box<T> where T: ?Sized(_);`
+> `pub struct Box<T> where T: ?Sized(_);`  
 [详细文档请参考Rust的标准库](http://doc.rust-lang.org/nightly/std/boxed/struct.Box.html)
 
-> 在 Rust 里面用强大的类型系统做了统一的抽象。在这里相当于在堆空间里申请了一块内存保存`StackNode<T>`。
+> 在 Rust 里面用强大的类型系统做了统一的抽象。在这里相当于在堆空间里申请了一块内存保存`StackNode<T>`。  
 
-> **为什么要这么做了？如果不用Box封装会怎么样呢？**
+> **为什么要这么做了？如果不用Box封装会怎么样呢？**  
 
-> 如果不用 Box 封装，rustc 编译器会报错，在 Rust 里面，rustc 默认使用栈空间，但是这里的`StackNode`定义的时候使用了递归的数据结构，next 属性的类型是 `StackNode<T>`，而这个类型是无法确定大小的，所有这种无法确定大小的类型，都不能保存在栈空间。所以需要使用`Box`来封装。这样的话`next`的类型就是一个指向某一块堆空间的指针，而指针是可以确定大小的，因此能够保存在栈空间。
+> 如果不用 Box 封装，rustc 编译器会报错，在 Rust 里面，rustc 默认使用栈空间，但是这里的`StackNode`定义的时候使用了递归的数据结构，next 属性的类型是 `StackNode<T>`，而这个类型是无法确定大小的，所有这种无法确定大小的类型，都不能保存在栈空间。所以需要使用`Box`来封装。这样的话`next`的类型就是一个指向某一块堆空间的指针，而指针是可以确定大小的，因此能够保存在栈空间。  
 
-> **那么为什么还需要使用`Option`来封装呢？**
+> **那么为什么还需要使用`Option`来封装呢？**  
 
-> `Option`是 Rust 里面的一个抽象类型，定义如下：
-> 
+> `Option`是 Rust 里面的一个抽象类型，定义如下：  
+>
 ```rust
 pub enum Option<T> {
     None,
@@ -103,7 +103,7 @@ impl<T> Stack<T> {
 - `new( )`比较简单，Stack 初始化的时候为空，栈顶元素 `top` 就没有任何值，所以 `top` 为 `None`。
 
 - `push( )`的主要功能是往栈里面推入元素，把新的 StackNode 指向 Stack 里面旧的值，同时更新 Stack 栈顶指向新进来的值。
-> 这里有个需要注意的地方是第8行代码里面，`let next = self.top.take();`，使用了 Option 类型的 take 方法：
+> 这里有个需要注意的地方是第8行代码里面，`let next = self.top.take();`，使用了 Option 类型的 take 方法：  
 `fn take(&mut self) -> Option<T>`
 它会把 Option 类型的值取走，并把它的元素改为 None
 

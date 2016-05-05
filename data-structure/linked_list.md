@@ -40,7 +40,7 @@ impl List {
     fn len(&self) -> u32 {
         // `self` 的类型是 `&List`, `*self` 的类型是 `List`,
         // 匹配一个类型 `T` 好过匹配一个引用 `&T`
-        match *self { 
+        match *self {
             // 因为`self`是借用的，所以不能转移 tail 的所有权
             // 因此使用 tail 的引用
             Cons(_, ref tail) => 1 + tail.len(),

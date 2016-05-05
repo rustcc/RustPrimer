@@ -14,7 +14,7 @@
 > ps: subl helloworld.rs # 本章以后使用 subl 代替 notepad  
 
 注意这里用的后缀名是.rs，一般编程语言的代码文件都有惯用的后缀名，比如：
-    C语言是.c，java是.java，python是.py等等，**请务必记住Rust语言的惯用后缀名是.rs**（虽然用别的后缀名也能通过rustc的编译）。 
+    C语言是.c，java是.java，python是.py等等，**请务必记住Rust语言的惯用后缀名是.rs**（虽然用别的后缀名也能通过rustc的编译）。
 
 - 在 helloworld.rs 文件中输入 Rust 代码
 
@@ -36,7 +36,7 @@ fn main() {
 
 没有`ps:`前缀的表示为控制台打印输出。
 
-我们已经用rust编写第一个可执行程序，打印出了'hello world!'，很酷，对吧！  
+我们已经用rust编写第一个可执行程序，打印出了'hello world!'，很酷，对吧！
 但是这段代码到底是什么意思呢，作为新手的你一定云里雾里吧，让我们先看一下这个程序：
 
 1. 第一行中 fn 表示定义一个**函数**，main是这个函数的名字，花括号{}里的语句则表示这个函数的内容。
@@ -49,13 +49,13 @@ fn main() {
 
 - 创建项目 hellorust
 
-> ps: cargo new hellorust --bin  
+> ps: cargo new hellorust --bin
 
 - 查看目录结构
 
 > ps: tree # win10 powershell 自带有 tree 查看文件目录结构的功能  
 > └─hellorust  
-> ----└─src  
+> ----└─src
 
 这里显示的目录结构，在hellorust目录下有 src 文件夹和 Cargo.toml 文件，同时这个目录会初始化为 git 项目
 
@@ -65,8 +65,8 @@ fn main() {
 > [package]  
 name = "hellorust"  
 version = "0.1."  
-authors = ["YourName <YourEmail>"]  
-> [dependencies]
+authors = ["YourName <YourEmail>"]
+> [dependencies]  
 
 - 编辑src目录下的main.rs文件
 
