@@ -41,7 +41,7 @@ Rust 运行在以下操作系统上：Linux, OS X, Windows, FreeBSD, Android, iO
 - fuyingfuying
 - qdao
 - JohnSmithX
-- stormgbs
+- [stormgbs (AX) ](https://github.com/stormgbs)
 - tennix
 - anzhihun
 - zonyitoo（Elton, e猫）

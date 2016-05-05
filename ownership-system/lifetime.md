@@ -1,4 +1,4 @@
-生命周期（ Lifetimes ）
+生命周期（ Lifetime ）
 -------------
 
 下面是一个资源借用的例子：
@@ -270,7 +270,7 @@ struct Person {
 <anon>:2 	age: &str,
 ```
 
-之所以会报错，这是因为Rust要确保`Person`的Lifetime不会比它的借用`name`长，不然会出现`Dangling Pointer`的严重内存问题。所以我们需要为`name`引用声明Lifetime：
+之所以会报错，这是因为Rust要确保`Person`的Lifetime不会比它的`age`借用长，不然会出现`Dangling Pointer`的严重内存问题。所以我们需要为`age`借用声明Lifetime：
 
 ```rust
 struct Person<'a> {
