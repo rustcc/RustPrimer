@@ -1,6 +1,6 @@
 {
   "name": "rust-primer",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "The Rust primer for beginners.",
   "scripts": {
     "test": "textlint $(ls --ignore='node_modules')",
