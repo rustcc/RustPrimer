@@ -17,7 +17,7 @@
   * [spacemacs](editors/spacemacs.md)「wayslog」
 * [Rust快速入门](quickstart/quickstart.md)「Naupio」
   * [Rust旅程](quickstart/rust-travel.md)
-  * [基础类型](quickstart/primitive-type.md)
+  * [变量绑定与原生类型](quickstart/primitive-type.md)
   * [向量与字符串](quickstart/vector-string.md)
   * [结构体与枚举](quickstart/struct-enum.md)
   * [操作流](quickstart/control-flow.md)
@@ -56,8 +56,8 @@
   * [闭包的实现](closure/implementation.md)
   * [闭包作为参数和返回值](closure/as_argument_return_value.md)
 * [集合类型(Collections)](collections/overview.md)「wayslog」
-  * [动态数组](collections/vec.md)
-  * [哈希表](collections/hashmap.md)
+  * [向量Vec](collections/vec.md)
+  * [哈希表HashMap](collections/hashmap.md)
 * [迭代器](iterator/overview.md)「wayslog」
   * [迭代器、适配器、消费者](iterator/iterator.md)
 * [模块和包系统、Prelude](module/preface.md)「daogangtang」
