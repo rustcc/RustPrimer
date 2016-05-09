@@ -71,7 +71,7 @@ fn main() {
 let miao = vec![229,150,181];
 
 // 我们知道这些字节是合法的UTF-8编码字符串，所以直接unwarp()
-let meow = String::from_utf8(sparkle_heart).unwrap();
+let meow = String::from_utf8(miao).unwrap();
 
 assert_eq!("喵", meow);
 ```
