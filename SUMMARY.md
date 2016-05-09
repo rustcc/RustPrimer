@@ -103,8 +103,8 @@
 * [常用数据结构实现](data-structure/preface.md)「Naupio」
   * [栈结构](data-structure/stack.md)
   * [队列](data-structure/queue.md)
-  * [优先队列](data-structure/priority_queue.md)
   * [二叉树](data-structure/binary_tree.md)
+  * [优先队列](data-structure/priority_queue.md)
   * [链表](data-structure/linked_list.md)
   * [图结构](data-structure/graph.md)
 * [标准库介绍](std/overview.md)「wayslog」

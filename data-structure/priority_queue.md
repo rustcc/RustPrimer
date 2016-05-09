@@ -20,7 +20,7 @@ struct PriorityQueue<T> where T: PartialOrd + Clone {
 ```
 第二行的`where T: PartialOrd + Clone`指的是 PriorityQueue 存储的泛型 T 是满足 `PartialOrd` 和 `Clone` trait 约束的，意味着泛型 T 是可排序和克隆的。
 
-后面是一些基本的方法实现，比较简单，就直接看代码吧。
+后面是一些基本的方法实现，比较简单，就直接看代码吧。这个优先队列是基于Vec实现的，有O(1)的插入和O(n)的最大/最小值出列。
 ```rust
 impl<T> PriorityQueue<T> where T: PartialOrd + Clone {
     fn new() -> PriorityQueue<T> {
@@ -153,3 +153,6 @@ fn main() {
     test_keep_min();
 }
 ```
+
+## 练习
+基于二叉堆实现一个优先队列，以达到O(1)的出列和O(log n)的入列
