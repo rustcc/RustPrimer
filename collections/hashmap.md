@@ -1,4 +1,4 @@
-# 哈希表
+# 哈希表 HashMap
 
 和动态数组`Vec`一样，哈希表(HashMap)也是Rust内置的集合类型之一，同属`std::collections`模块下。
 
