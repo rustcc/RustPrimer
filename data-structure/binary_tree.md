@@ -3,9 +3,9 @@
 ## 二叉树简介
 在计算机科学中，二叉树是每个节点最多有两个子树的树结构。通常子树被称作“左子树”（left subtree）和“右子树”（right subtree）。二叉树常被用于实现二叉查找树和二叉堆。
 
->二叉查找树的子节点与父节点一般满足一定的顺序关系，习惯上，左节点的值少于父亲节点的值，右节点的值大于父亲节点的值。
+>二叉查找树的子节点与父节点的键一般满足一定的顺序关系，习惯上，左节点的键少于父亲节点的键，右节点的键大于父亲节点的键。
 
->二叉堆是一种特殊的堆，二叉堆是完全二元树（二叉树）或者是近似完全二元树（二叉树）。二叉堆有两种：最大堆和最小堆。最大堆：父结点的键值总是大于或等于任何一个子节点的键值；最小堆：父结点的键值总是小于或等于任何一个子节点的键值。
+>二叉堆是一种特殊的堆，二叉堆是完全二元树（二叉树）或者是近似完全二元树（二叉树）。二叉堆有两种：最大堆和最小堆。最大堆：父结点的键总是大于或等于任何一个子节点的键；最小堆：父结点的键总是小于或等于任何一个子节点的键。
 
 >二叉树的每个结点至多只有二棵子树(不存在度大于2的结点)，二叉树的子树有左右之分，次序不能颠倒。二叉树的第i层至多有2^{i-1}个结点；深度为k的二叉树至多有2^k-1个结点；对任何一棵二叉树T，如果其终端结点数为n_0，度为2的结点数为n_2，则n_0=n_2+1。
 
@@ -18,41 +18,51 @@
 2. 树的结点无左、右之分，而二叉树的结点有左、右之分。
 
 ## 定义二叉树的结构
+二叉树的每个节点由键key、值value与左右子树left/right组成，这里我们把节点声明为一个泛型结构。
 ```rust
-type TreeNode = Option<Box<Node>>;
-type BinarySearchTree = Node;
-
+type TreeNode<K,V> = Option<Box<Node<K,V>>>;
 #[derive(Debug)]
-struct Node {
-   left: TreeNode,
-   right: TreeNode,
-   value: i32,
+struct Node<K,V: std::fmt::Display> {
+   left: TreeNode<K,V>,
+   right: TreeNode<K,V>,
+   key: K,
+   value: V,
 }
 ```
-## 实现二叉树的初始化二叉查找树的插入
+## 实现二叉树的初始化与二叉查找树的插入
+由于二叉查找树要求键可排序，我们要求K实现PartialOrd
 ```rust
-impl Node {
-    fn new(value: i32) -> Self {
-        Node {
+trait BinaryTree<K,V> {
+	fn pre_order(&self);
+	fn in_order(&self);
+	fn pos_order(&self);
+}
+trait BinarySearchTree<K:PartialOrd,V>:BinaryTree<K,V> {
+	fn insert(&mut self, key:K,value: V);
+}
+impl<K,V:std::fmt::Display> Node<K,V> {
+    fn new(key: K,value: V) -> Self {
+        Node{
             left: None,
             right: None,
             value: value,
+			key: key,
         }
     }
 }
-impl BinarySearchTree {
-    fn insert(&mut self, value: i32) {
-        if self.value < value {
+impl<K:PartialOrd,V:std::fmt::Display> BinarySearchTree<K,V> for Node<K,V>{
+    fn insert(&mut self, key:K,value:V) {
+        if self.key < key {
             if let Some(ref mut right) = self.right {
-                right.insert(value);
+                right.insert(key,value);
             } else {
-                self.right = Some(Box::new(Node::new(value)));
+                self.right = Some(Box::new(Node::new(key,value)));
             }
         } else {
             if let Some(ref mut left) = self.left {
-                left.insert(value);
+                left.insert(key,value);
             } else {
-                self.left = Some(Box::new(Node::new(value)));
+                self.left = Some(Box::new(Node::new(key,value)));
             }
         }
     }
@@ -66,7 +76,7 @@ impl BinarySearchTree {
 
 下面是代码实现：
 ```rust
-impl Node {
+impl<K,V:std::fmt::Display> BinaryTree<K,V> for Node<K,V> {
     fn pre_order(&self) {
         println!("{}", self.value);
 
@@ -100,19 +110,21 @@ impl Node {
 ```
 ## 测试代码
 ```rust
+type BST<K,V> = Node<K,V>;
+
 fn test_insert() {
-    let mut root = BinarySearchTree::new(3);
-    root.insert(2);
-    root.insert(4);
-    root.insert(5);
-    root.insert(6);
-    root.insert(1);
+    let mut root = BST::<i32,i32>::new(3,4);
+    root.insert(2,3);
+    root.insert(4,6);
+    root.insert(5,5);
+    root.insert(6,6);
+    root.insert(1,8);
     if let Some(ref left) = root.left {
-        assert_eq!(left.value, 2);
+        assert_eq!(left.value, 3);
     }
 
     if let Some(ref right) = root.right {
-        assert_eq!(right.value, 4);
+        assert_eq!(right.value, 6);
         if let Some(ref right) = right.right {
             assert_eq!(right.value, 5);
         }

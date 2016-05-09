@@ -18,7 +18,7 @@
 * [Rust快速入门](quickstart/quickstart.md)「Naupio」
   * [Rust旅程](quickstart/rust-travel.md)
   * [变量绑定与原生类型](quickstart/primitive-type.md)
-  * [向量与字符串](quickstart/vector-string.md)
+  * [数组、动态数组和字符串](quickstart/vector-string.md)
   * [结构体与枚举](quickstart/struct-enum.md)
   * [操作流](quickstart/control-flow.md)
   * [函数与方法](quickstart/function-method.md)
@@ -42,8 +42,8 @@
   * [高阶函数](function/higher_order_function.md)
 * [模式匹配](match/overview.md)「wayslog」
   * [match关键字](match/match.md)
-  * [模式](match/pattern.md)
-* [Trait （特征）](trait/overview.md)「JohnSmithX」
+  * [模式 pattern](match/pattern.md)
+* [特征 Trait](trait/overview.md)「JohnSmithX」
   * [trait关键字](trait/trait.md)
   * [trait对象](trait/trait-object.md)
 * [泛型](generic/generic.md)「stormgbs」
@@ -55,13 +55,13 @@
   * [闭包的语法](closure/syntax.md)
   * [闭包的实现](closure/implementation.md)
   * [闭包作为参数和返回值](closure/as_argument_return_value.md)
-* [集合类型(Collections)](collections/overview.md)「wayslog」
-  * [向量Vec](collections/vec.md)
-  * [哈希表HashMap](collections/hashmap.md)
+* [集合类型 Collections](collections/overview.md)「wayslog」
+  * [动态数组 Vec](collections/vec.md)
+  * [哈希表 HashMap](collections/hashmap.md)
 * [迭代器](iterator/overview.md)「wayslog」
   * [迭代器、适配器、消费者](iterator/iterator.md)
 * [模块和包系统、Prelude](module/preface.md)「daogangtang」
-  * [模块（module）和包（crate）](module/module.md)
+  * [模块 module 和包 crate](module/module.md)
   * [Prelude](module/prelude.md)
 * [Option、Result与错误处理](error-handling/option-result.md)「JohnSmithX」
 * [宏系统](macro/macro.md)「tennix」
