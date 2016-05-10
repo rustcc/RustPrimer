@@ -5,7 +5,7 @@
 刚刚学习Rust的同学可能会被Rust的字符串搞混掉，比如`str`，`String`， `OsStr`， `CStr`，`CString`等等……
 事实上，如果你不做FFI的话，常用的字符串类型就只有前两种。我们就来着重研究一下Rust的前两种字符串。
 
-你要明白的是，Rust中的字符串实际上是被编码成UTF-8的一个Unicode字符数组。这么说比较拗口，简单来说，Rust字符串内部存储的是一个UTF-8数组，但是这个数组是Unicode字符经过编码得来的。因此，可以看成Rust原生就支持Unicode字符集（Python2的码农泪流满面）。
+你要明白的是，Rust中的字符串实际上是被编码成UTF-8的一个字节数组。这么说比较拗口，简单来说，Rust字符串内部存储的是一个u8数组，但是这个数组是Unicode字符经过UTF-8编码得来的。因此，可以看成Rust原生就支持Unicode字符集（Python2的码农泪流满面）。
 
 ## str
 
@@ -64,6 +64,17 @@ fn main() {
 
 
 需要知道的是，将`String`转换成`&str`是非常轻松的几乎没有任何开销的。但是反过来，将`&str`转换成`String`是需要在堆上请求内存的，因此，要慎重。
+
+我们还可以将一个UTF-8编码的字节数组转换成String，如
+```rust
+// 存储在Vec里的一些字节
+let miao = vec![229,150,181];
+
+// 我们知道这些字节是合法的UTF-8编码字符串，所以直接unwarp()
+let meow = String::from_utf8(miao).unwrap();
+
+assert_eq!("喵", meow);
+```
 
 ## 索引访问
 
