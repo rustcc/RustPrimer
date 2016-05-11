@@ -45,6 +45,6 @@ Rust 提供简单的一键安装，命令如下：
 除了稳定版之外，Rust 还提供了 Beta 和 Nightly 版本，下载地址如下：
 https://www.rust-lang.org/downloads.html
 
-如果你不想安装 Rust 在你的电脑上，但是你还是像尝试一下 rust，那么这里有一个在线的环境：http://play.rust-lang.org/
+如果你不想安装 Rust 在你的电脑上，但是你还是想尝试一下 rust，那么这里有一个在线的环境：http://play.rust-lang.org/
 
 中国科学技术大学镜像源包含 [rust-static](http://mirrors.ustc.edu.cn/rust-static/)，梯子暂时出问题的同学可以尝试从这里下载编译器；除此之外。还有 Crates 源，详见[这里的说明](https://servers.ustclug.org/2016/01/mirrors-add-rust-crates/)。
