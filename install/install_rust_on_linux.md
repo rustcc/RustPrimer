@@ -20,7 +20,7 @@ Rust 为Linux用户提供了两种安装方式：
 
 如果是**x86-32**则需要[下载](https://static.rust-lang.org/dist/rust-1.5.0-i686-unknown-linux-gnu.tar.gz)32位安装包
 
-下载安装包后解压运行即可。*在书写本章时，最新的稳定版本为1.5.0，*
+下载安装包后解压运行即可。*在书写本章时，最新的稳定版本为1.5.0*
  解压：`tar -zxvf rust-1.5.0-x86_64-unknown-linux-gnu.tar.gz`
 
  解压完进入对应的目录：`cd rust-1.5.0-x86_64-unknown-linux-gnu`
