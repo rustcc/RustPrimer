@@ -86,7 +86,7 @@ fn foo<'a>(x: &'a str) -> &'a str {
 }
 ```
 
-在这里，约束返回值的Lifetime必须大约或等于参数`x`的Lifetime。下面函数写法也是合法的：
+在这里，约束返回值的Lifetime必须大于或等于参数`x`的Lifetime。下面函数写法也是合法的：
 
 ```rust
 fn foo<'a>(x: &'a str) -> &'a str {
@@ -164,7 +164,7 @@ fn foo<'a>(x: &'a str, y: &'a str) -> &'a str {
 }
 ```
 
-因为返回值同事依赖输入参数`x`和`y`，所以
+因为返回值同时依赖输入参数`x`和`y`，所以
 
 ```
 	Lifetime(返回值) ⊆ ( Lifetime(x) ∩ Lifetime(y) )
@@ -203,7 +203,7 @@ fn foo<'a, 'b>(x: &'a str, y: &'b str) -> &'a str {
 <anon>:6 	}
 ```
 
-编译器说自己无法正确的推导返回值的Lifetime，读者可能会疑问，“我们不是已经指定返回值的Lifetime为`'a`了吗？"。
+编译器说自己无法正确地推导返回值的Lifetime，读者可能会疑问，“我们不是已经指定返回值的Lifetime为`'a`了吗？"。
 
 这儿我们同样可以通过生命周期推导公式推导：
 
