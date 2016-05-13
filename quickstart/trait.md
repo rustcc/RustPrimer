@@ -122,10 +122,10 @@ Trait::method(args);
 意为对于给定参数可以有多种形式的函数或类型。先看Rust中的一个泛型例子：
 
 ```rust
-enum Option<T> {
-    Some(T),
-    None,
-}
+// enum Option<T> {
+//     Some(T),
+//     None,
+// }
 
 let x: Option<i32> = Some(5);
 let y: Option<f64> = Some(5.0f64);
