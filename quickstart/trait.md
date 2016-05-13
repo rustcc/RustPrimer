@@ -119,14 +119,18 @@ Trait::method(args);
 ## 泛型和多态
 
 泛型 (generics) 在类型理论中称作参数多态 (parametric polymorphism)，
-意为对于给定参数可以有多种形式的函数或类型。先看Rust中的一个泛型例子：
+意为对于给定参数可以有多种形式的函数或类型。先看Rust中的一个泛型例子：  
+
+Option在rust标准库中的定义:  
 
 ```rust
-// enum Option<T> {
-//     Some(T),
-//     None,
-// }
-
+enum Option<T> {
+    Some(T),
+    None,
+}
+```
+Option的典型用法:  
+```rust
 let x: Option<i32> = Some(5);
 let y: Option<f64> = Some(5.0f64);
 ```
