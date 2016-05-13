@@ -67,11 +67,11 @@ fn main() {
 
 我们还可以将一个UTF-8编码的字节数组转换成String，如
 ```rust
-// 存储在向量里的一些字节
+// 存储在Vec里的一些字节
 let miao = vec![229,150,181];
 
-// 我们知道这些字节是合法的UTF-8编码字符，所以直接unwarp()
-let meow = String::from_utf8(sparkle_heart).unwrap();
+// 我们知道这些字节是合法的UTF-8编码字符串，所以直接unwarp()
+let meow = String::from_utf8(miao).unwrap();
 
 assert_eq!("喵", meow);
 ```

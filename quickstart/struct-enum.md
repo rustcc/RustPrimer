@@ -20,7 +20,7 @@ let mut point = Point { x: 0, y: 0 };
 // tuple structs
 struct Color(u8, u8, u8);
 let android_green = Color(0xa4, 0xc6, 0x39);
-let (red, green, blue) = android_green;
+let Color(red, green, blue) = android_green;
 
 // A tuple struct’s constructors can be used as functions.
 struct Digit(i32);
