@@ -41,11 +41,13 @@ let plus_num = |x: i32| x + num;
 let mut num = 5;
 
 {
-    let mut add_num = move |x: i32| num += x;
+    let mut add_num = move |x: i32| num += x;   // 闭包通过move获取了num的所有权
 
     add_num(5);
 }
 
+// 下面的num在被move之后还能继续使用是因为其实现了Copy特性
+// 具体可见所有权(Owership)章节
 assert_eq!(5, num);
 ```
 ## 高阶函数
