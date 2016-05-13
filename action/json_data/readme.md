@@ -148,7 +148,7 @@ fn main() {
     // Deserialize using `json::decode`
     // 将json字符串中的数据转化成TestStruct对应的数据，相当于初始化
     let decoded: TestStruct = json::decode(&encoded).unwrap();
-    println!("{?}",decoded.data_vector);
+    println!("{:?}",decoded.data_vector);
 }
 
 ```
