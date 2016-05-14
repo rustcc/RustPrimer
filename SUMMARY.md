@@ -5,7 +5,7 @@
   * [Linux](install/install_rust_on_linux.md)
   * [Mac](install/install_rust_on_mac_os.md)
   * [Windows](install/install_rust_on_windows.md)
-  * [版本管理工具: multirust](install/multirust.md)
+  * [版本管理工具: rustup](install/rustup.md)
 * [编辑器](editors/preface.md)
   * [前期准备](editors/before.md)「wayslog」
   * [vim](editors/vim.md)「wayslog」
