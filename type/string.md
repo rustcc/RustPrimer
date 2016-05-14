@@ -70,7 +70,7 @@ fn main() {
 // 存储在Vec里的一些字节
 let miao = vec![229,150,181];
 
-// 我们知道这些字节是合法的UTF-8编码字符串，所以直接unwarp()
+// 我们知道这些字节是合法的UTF-8编码字符串，所以直接unwrap()
 let meow = String::from_utf8(miao).unwrap();
 
 assert_eq!("喵", meow);
