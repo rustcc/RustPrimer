@@ -17,7 +17,7 @@ let a = 1;
 let b = &a as *const i32;
 
 let mut x = 2;
-let y = &x as *mut i32;
+let y = &mut x as *mut i32;
 ```
 
 解引用需要在`unsafe`中进行：
