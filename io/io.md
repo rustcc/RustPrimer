@@ -9,7 +9,7 @@
 
 Read 和 Write 这两个 Trait 都有定义了好多方法，具体可以参考标准库 API 文档中的[Read](http://doc.rust-lang.org/stable/std/io/trait.Read.html) 和 [Write](http://doc.rust-lang.org/stable/std/io/trait.Write.html)
 
-Read 是基于字节读的，每读一个字节都要调用一次操作系统 API 与内核交互，效率很低，尤其是连续读时。这种情况我们把读请求攒起来，像过马路一样等凑足一波再让操作系统真正的读一次，这就是 `BufRead` Trait。一个普通的 reader 通过 `io::BufReader::new(reader)` 或者 `io::BufReader::with_capacity(bufSize, reader)` 就可以得到一个 BufReader 了，显然这两个创建 BufReader 的函数一个是使用默认大小的 buffer 一个可以指定 buffer 大小。BufReader 比较常用的两个方法是按行读： `read_line(&mut self, buf: &mut String) -> Result<usize>` 和 `lines(&mut self) -> Lines<Self>`，从函数签名上就可以大概猜出函数的用法所以就不啰嗦了，需要注意的是后者返回的是一个迭代器。详细说明直接看 API 文档中的[BufRead](http://doc.rust-lang.org/stable/std/io/trait.BufRead.html)
+Read 由于每调用一次 `read` 方法都会调用一次系统API与内核交互，效率比较低，如果给 reader 增加一个 buffer，在调用时 `read` 方法时多读一些数据放在 buffer 里面，下次调用 `read` 方法时就有可能只需要从 buffer 里面取数据而不用调用系统API了，从而减少了系统调用次数提高了读取效率，这就是所谓的 `BufRead` Trait。一个普通的 reader 通过 `io::BufReader::new(reader)` 或者 `io::BufReader::with_capacity(bufSize, reader)` 就可以得到一个 BufReader 了，显然这两个创建 BufReader 的函数一个是使用默认大小的 buffer 一个可以指定 buffer 大小。BufReader 比较常用的两个方法是按行读： `read_line(&mut self, buf: &mut String) -> Result<usize>` 和 `lines(&mut self) -> Lines<Self>`，从函数签名上就可以大概猜出函数的用法所以就不啰嗦了，需要注意的是后者返回的是一个迭代器。详细说明直接看 API 文档中的[BufRead](http://doc.rust-lang.org/stable/std/io/trait.BufRead.html)
 
 同样有 `BufWriter` 只不过由于其除了底层加了 buffer 之外并没有增加新的写方法，所以并没有专门的 `BufWrite` Trait，可以通过 `io::BufWriter::new(writer)` 或 `io::BufWriter::with_capacity(bufSize, writer)` 创建 `BufWriter`。
 
@@ -40,12 +40,43 @@ fn write_to_stdout(buf: &[u8]) -> io::Result<()> {
 }
 ```
 
-可以看到上面的例子都是返回了 `io::Result<()>` 类型，这不是偶然，而是 IO 操作通用的写法，因为 IO 操作是程序与外界打交道，所以都是有可能失败的，用 `io::Result<T>` 把结果包起来，`io::Result<T>` 是标准 `Result<T,E>` 中 `E` 特化为 `std::io::Error` 的版本，而作为有副作用的操作我们一般是不用关心其返回值的，因为执行这类函数其真正的意义都体现在副作用上面了，所以返回值只是用来表示是否成功执行，而本身 `Result` 类型本身已经可以表示执行状态了，里面的 `T` 是什么则无关紧要，既然 `T` 没什么意义，那我们就选没什么意义的 `unit` 类型好了，所以 IO 操作基本上都是使用 `io::Result<()>`。
+可以看到上面的例子都是返回了 `io::Result<()>` 类型，这不是偶然，而是 IO 操作通用的写法，因为 IO 操作是程序与外界打交道，所以都是有可能失败的，用 `io::Result<T>` 把结果包起来，`io::Result<T>` 只是标准 `Result<T,E>` 中 `E` 固定为 `io::Error` 后类型的别名，而作为有副作用的操作我们一般是不用关心其返回值的，因为执行这类函数其真正的意义都体现在副作用上面了，所以返回值只是用来表示是否成功执行，而本身 `Result` 类型本身已经可以表示执行状态了，里面的 `T` 是什么则无关紧要，既然 `T` 没什么意义，那我们就选没什么意义的 `unit` 类型好了，所以 IO 操作基本上都是使用 `io::Result<()>`。
 
-另外有一个地方需要注意的是由于 IO 操作可能会失败所以一般都是和 `try!` 宏一起使用的，但是 `try!` 在遇到错误时会把错误 `return` 出去的，所以需要保证包含 `try!` 语句的函数其返回类型是 `io::Result<T>`，很多新手文档没仔细看就直接查 std api 文档，然后照着 api 文档里面的例子把带 IO 操作的 `try!` 宏写到了 `main` 函数里。结果一编译，擦，照着文档写都编译不过，什么烂文档。其实点一下 api 文档上面的运行按钮就会发现文档里面的例子都是把 `try!` 放在另一个函数里面的，因为 `main` 函数是没有返回值的，而 `try!` 会返回 `io::Result<T>`，所以直接把 `try!` 放 `main` 函数里面肯定要跪。
+另外有一个地方需要注意的是由于 IO 操作可能会失败所以一般都是和 `try!` 宏一起使用的，但是 `try!` 在遇到错误时会把错误 `return` 出去的，所以需要保证包含 `try!` 语句的函数其返回类型是 `io::Result<T>`，很多新手文档没仔细看就直接查 std api 文档，然后照着 api 文档里面的例子把带 IO 操作的 `try!` 宏写到了 `main` 函数里。结果一编译，擦，照着文档写都编译不过，什么烂文档。其实点一下 api 文档上面的运行按钮就会发现文档里面的例子都是把 `try!` 放在另一个函数里面的，因为 `main` 函数是没有返回值的，而 `try!` 会返回 `io::Result<T>`，所以直接把 `try!` 放 `main` 函数里面肯定要跪。比如下面的从标准输入读取一行输入，由于把 `try!` 放在了 main 函数里，所以是编译不过的。
+
+```rust
+use std::io;
+
+fn main() {
+	let mut input = String::new();
+	try!(io::stdin().read_line(&mut input));
+	println!("You typed: {}", input.trim());
+}
+```
 
 还有一点一些从其它语言转过来的程序猿可能会疑惑的是，如何从命令行接受输入参数，因为 C 里面的 main 函数可以带参数所以可以直接从 main 函数的参数里获取输入参数。但其实这类输入与我们这里讲的有很大的差别的，它在 Rust 里面被归为环境变量，可以通过 `std::env::args()` 获取，这个函数返回一个 `Args` 迭代器，其中第一个就是程序名，后面的都是输入给程序的命令行参数。
 
+```rust
+use std::env;
+
+fn main() {
+	let args = env::args();
+	for arg in args {
+		println!("{}", arg);
+	}
+}
+```
+
+将上面的程序存为 *args.rs* 然后编译执行，结果如下
+
+```
+$ rustc args.rs
+$ ./args a b c
+./args
+a
+b
+c
+```
 
 ## 文件输入与输出
 
