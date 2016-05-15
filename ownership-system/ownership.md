@@ -88,7 +88,7 @@ Move前后的内存示意如下：
 > **Before move:**  
 a  <=> 内存(地址：**A**，内容："xyz")  
 **After move:**  
-a
+a  
 b  <=> 内存(地址：**A**，内容："xyz")  
 
 被move的变量不可以继续被使用。否则提示错误`error: use of moved value`。
