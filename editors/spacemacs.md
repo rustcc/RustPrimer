@@ -1,5 +1,5 @@
 # Spacemacs
-spacemacs，是一个给vimer的emacs。
+spacemacs，是一个给vimer的Emacs。
 ## 简介
 spacemacs是一个专门给那些习惯vim的操作，同时又向往emacs的扩展能力的人。它非常适合我这种折腾过vim，配置过emacs的人，但同时也欢迎任何没有基础的新人使用。简单来说，它是一个开箱即用的Emacs！这对一个比很多人年龄都大的软件来说是一件极其不容易的事情。
 
@@ -10,7 +10,7 @@ spacemacs是一个专门给那些习惯vim的操作，同时又向往emacs的扩
 
 在*nix系统中，都不一定会默认安装了Emacs，就算安装了，也不一定是最新的版本。在这里，我强烈建议各位卸载掉系统自带的Emacs，因为你不知道系统给你安装的是个什么奇怪的存在，最遭心的，我碰见过只提供阉割版Emacs的linux发行版。
 
-建议各位自己去emacs项目主页下载emacs-24.5（本书写作时的最新版）极其以上版本，然后下载下来源码。至于emacs的安装也非常简单，linux平台老三步。
+建议各位自己去emacs项目主页下载Emacs-24.5（本书写作时的最新版）极其以上版本，然后下载下来源码。至于Emacs的安装也非常简单，linux平台老三步。
 ```bash
 ./configure
 make

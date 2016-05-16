@@ -21,7 +21,7 @@ racer是一个由rust的爱好者提供的rust自动补全和语法分析工具�
 
 ```bash
 sudo /usr/local/bin/cargo install --git 'https://github.com/phildawes/racer.git'
-注：现已更新为： cargo install racer
+# 注：现已更新为： cargo install racer
 ```
 
 来安装最新版的racer。（注：windows版的请大家补充，笔者还没有真正实践过。）
@@ -58,7 +58,7 @@ export RUST_SRC_HOME=/path/to/your/rust/source/
 export RUST_SRC_PATH=$RUST_SRC_HOME/src
 ```
 
-而Windows用户请在你的环境变量里增加两个环境变量： `RUST_SRC_HOME` 为 `你的源码文件解压路径` ； `RUST_SRC_PATH`为 `%RUST_SRC_HOME%\src\`
+而Windows用户请在你的环境变量里增加两个环境变量： `RUST_SRC_HOME` 为 `你的源码文件解压路径` ； `RUST_SRC_PATH` 为 `%RUST_SRC_HOME%\src\`
 
 ### 测试
 
