@@ -22,7 +22,7 @@ let x:&'static str = "Hello";
 
 ```rust
 let z = "foo
-bar"
+bar";
 let w = "foo\nbar";
 assert_eq!(z, w);
 ```
