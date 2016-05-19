@@ -1,5 +1,6 @@
 # Built files
 _book/
+src/*/target/
 
 # Node-related ignoring, copied from https://github.com/github/gitignore/blob/master/Node.gitignore
 # Logs

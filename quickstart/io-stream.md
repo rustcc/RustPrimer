@@ -19,7 +19,7 @@ fn read_input() -> io::Result<()> {
 }
 
 fn main() {
-    read_input();
+    read_input().unwrap();
 }
 ```
 **例子2：**

@@ -19,24 +19,28 @@ Rust 自带有文档功能的注释，分别是`///`和`//!`。支持 Markdown �
 2. `//!`用来描述包含它的项，一般用在模块文件的头部。
 比如在 main.rs 文件中输入以下内容：
 
-        //! # The first line
-        //! The second line
-        /// Adds one to the number given.
-        ///
-        /// # Examples
-        ///
-        /// ```
-        /// let five = 5;
-        ///
-        /// assert_eq!(6, add_one(5));
-        /// # fn add_one(x: i32) -> i32 {
-        /// #     x + 1
-        /// # }
-        /// ```
-        fn add_one(x: i32) -> i32 {
-            x + 1
-        }
-    
+```rust
+//! # The first line
+//! The second line
+
+/// Adds one to the number given.
+///
+/// # Examples
+///
+/// ```
+/// let five = 5;
+///
+/// assert_eq!(6, add_one(5));
+/// # fn add_one(x: i32) -> i32 {
+/// #     x + 1
+/// # }
+/// ```
+pub fn add_one(x: i32) -> i32 {
+    x + 1
+}
+```
+
+
 
 ### 生成 html 文档
 * `rustdoc main.rs`
