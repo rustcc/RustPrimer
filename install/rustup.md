@@ -25,7 +25,7 @@ rustup 是rust官方的版本管理工具。
 
 ### Windows
 
-在[rustup的主页](www.rustup.rs)下载并运行rustup-init.exe,并按照提示选择选项。
+在[rustup的主页](http://www.rustup.rs)下载并运行rustup-init.exe,并按照提示选择选项。
 
 在Windows下工具链会安装到`%USERPROFILE%\.cargo\bin`文件夹下并添加到`$PATH`环境变量。
 
