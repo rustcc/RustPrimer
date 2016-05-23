@@ -11,10 +11,8 @@
 这下可坏了……Rust不支持重载啊！于是有人就很单纯的写了两个函数～～！
 
 其实不用……我们只需要这么写……
-* 只能在nightly下编译通过
 
 ```rust
-#![feature(vec_push_all)]
 use std::any::Any;
 use std::fmt::Debug ;
 
@@ -27,7 +25,7 @@ fn load_config<T:Any+Debug>(value: &T) -> Vec<String>{
     };
 
     match value.downcast_ref::<Vec<String>>() {
-        Some(v) => cfgs.push_all(&v),
+        Some(v) => cfgs.extend_from_slice(&v),
         None =>(),
     }
 
