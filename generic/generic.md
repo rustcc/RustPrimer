@@ -29,7 +29,7 @@ fn main() {
 
 概念
 -------------
-泛型程序设计是程序设计语言的一种风格或范式。允许程序员在强类型程序设计语言中编写代码时使用一些以后才指定的类型，在实例化时（instantiate）作为参数指明这些类型（在Rust中，有的时候类型还可以被编译器推倒出来）。各种程序设计语言和其编译器、运行环境对泛型的支持均不一样。Ada, Delphi, Eiffel, Java, C#, F#, Swift, and Visual Basic .NET称之为泛型（generics）；ML, Scala and Haskell称之为参数多态（parametric polymorphism）；C++与D称之为模板。具有广泛影响的1994年版的《Design Patterns》一书称之为参数化类型（parameterized type）。
+泛型程序设计是程序设计语言的一种风格或范式。允许程序员在强类型程序设计语言中编写代码时使用一些以后才指定的类型，在实例化时（instantiate）作为参数指明这些类型（在Rust中，有的时候类型还可以被编译器推导出来）。各种程序设计语言和其编译器、运行环境对泛型的支持均不一样。Ada, Delphi, Eiffel, Java, C#, F#, Swift, and Visual Basic .NET称之为泛型（generics）；ML, Scala and Haskell称之为参数多态（parametric polymorphism）；C++与D称之为模板。具有广泛影响的1994年版的《Design Patterns》一书称之为参数化类型（parameterized type）。
 >提示：
 >以上概念摘自[《维基百科-泛型》](https://zh.wikipedia.org/wiki/%E6%B3%9B%E5%9E%8B)
 
