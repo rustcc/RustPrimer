@@ -1,20 +1,20 @@
-# 条件分支
+# Conditional branches
 
-- if
-- if let
-- match
+- If
+- If let
+- Match
 
-## if 表达式
+## If expression
 
-Rust 中的 if 表达式基本就是如下几种形式：
+Rust if the expression is substantially the following forms:
 
-```rust
-// 形式 1
+`` `Rust
+// Form 1
 if expr1 {
 
 }
 
-// 形式 2
+// Form 2
 if expr1 {
 
 }
@@ -22,100 +22,100 @@ else {
 
 }
 
-// 形式 3
+// Form 3
 if expr1 {
 
 }
 else if expr2 {
-    // else if 可多重
+    // Else if multiples,
 }
 else {
 
 }
 
-```
+`` `
 
-相对于 C 系语言，Rust 的 if 表达式的显著特点是：
+With respect to the C-based language, a distinctive feature of Rust if the expression is:
 
-1. 判断条件不用小括号括起来；
-2. 它是表达式，而不是语句。
+1. determine the conditions do not enclosed in parentheses;
+2. It is an expression, not statements.
 
-鉴于上述第二点，因为是表达式，所以我们可以写出如下代码：
+In view of the second point, because it is an expression, so we can write the following code:
 
-```rust
+`` `Rust
 let x = 5;
 
 let y = if x == 5 {
-    10
-} else {
-    15
-}; // y: i32
-```
+    10
+} Else {
+    15
+}; // Y: i32
+`` `
 
-或者压缩成一行：
+Or compressed into a single line:
 
-```rust
+`` `Rust
 let x = 5;
 
-let y = if x == 5 { 10 } else { 15 }; // y: i32
-```
+let y = if x == 5 {10} else {15}; // y: i32
+`` `
 
-## if let
+## If let
 
-我们在代码中常常会看到 `if let` 成对出现，这实际上是一个 match 的简化用法。直接举例来说明：
+We often see in the code `if let` pairs, which is actually simplifies the usage of a match. Direct example to illustrate:
 
-```rust
-let x = Some(5);
+`` `Rust
+let x = Some (5);
 
-if let Some(y) = x {
-    println!("{}", y);      // 这里输出为：5    
+if let Some (y) = x {
+    ! Println ( "{}", y); // output here is: 5
 }
 
-let z = if let Some(y) = x {
-    y      
+let z = if let Some (y) = x {
+    y
 }
 else {
-    0
+    0
 };
-// z 值为 5    
+// Z value of 5
 
-```
+`` `
 
-上面代码等价于
+The above code is equivalent to
 
-```rust
-let x = Some(5);
+`` `Rust
+let x = Some (5);
 match x {
-    Some(y) => println!("{}", y),
-    None => ()    
+    Some (y) => println! ( "{}", Y),
+    None => ()
 }
 
 let z = match x {
-    Some(y) => y,
-    None => 0
+    Some (y) => y,
+    None => 0
 };
-```
+`` `
 
-设计这个语法的目的是，在条件判断的时候，直接做一次模式匹配，方便代码书写，使代码更紧凑。
+The syntax is designed for this purpose, in the conditions when the judge directly do a pattern match, easy to write the code, make the code more compact.
 
-## match
+## Match
 
-Rust 中没有类似于 C 的 `switch` 关键字，但它有用于模式匹配的 `match`，能实现同样的功能，并且强大太多。
+Rust is not C-like `switch` keywords, but it has for pattern matching` match`, can achieve the same function, and much stronger.
 
-match 的使用非常简单，举例如下：
+match very simple to use, for example as follows:
 
-```rust
+`` `Rust
 let x = 5;
 
 match x {
-    1 => {
-        println!("one")
-    },
-    2 => println!("two"),
-    3 => println!("three"),
-    4 => println!("four"),
-    5 => println!("five"),
-    _ => println!("something else"),
+    1 => {
+        println! ( "one")
+    },
+    2 => println! ( "Two"),
+    3 => println! ( "Three"),
+    4 => println! ( "Four"),
+    5 => println! ( "Five"),
+    _ => Println! ( "Something else"),
 }
-```
-注意，match 也是一个表达式。match 后面会专门论述，请参见 **模式匹配** 这一章。
+`` `
+Note, match is also an expression. Later match will be devoted, see chapter ** ** pattern matching.
