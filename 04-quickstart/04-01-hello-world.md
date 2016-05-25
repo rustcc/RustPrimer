@@ -1,67 +1,67 @@
-# 4.1 第一个Rust程序 -- 你好，世界！
+# 4.1 The first Rust program - Hello, World!
 
-> 学习一门新程序设计语言的唯一途径就是使用它编写程序。  
-> 对于所有初学者来说，编写的第一个程序几乎都是相同的，即：    
->  
-> 打印 *hello, world*  
+> The only way to learn a new programming language is to use it to write programs.
+> For all beginners, the first program written in almost all the same, namely:
 >
-> -- Brian Kernighan 《The C Programming Language》
+> Print * hello, world *
+>
+> - Brian Kernighan "The C Programming Language"
 
-## 4.1.1 第一个Rust程序
+## 4.1.1 The first program Rust
 
-Rust的HelloWorld程序和某些其它语言很相似，非常简洁明了。
+Rust's HelloWorld program and some other languages ​​are very similar, very clear and concise.
 
-1. 首先，创建一个名为'hello.rs'的文件。  
+1. First, create a file called 'hello.rs' files.
 
-    >注意这里用的后缀名是.rs，一般编程语言的代码文件都有惯用的后缀名，比如：
-    C语言是.c，java是.java，python是.py等等，**请务必记住Rust语言的惯用后缀名是.rs**（虽然用别的后缀名也能通过rustc的编译）。  
+    > Note the use of the suffix is ​​.rs, general programming language code files have the usual suffix, such as:
+    C language is .c, java is .java, python is .py etc. ** Be sure to remember Rust language customary name suffix .rs ** (although with another extension but also through rustc compilation).
 
-2. 用你喜欢的编辑器编辑hello.rs，输入以下代码
+2. Use your favorite editor hello.rs, enter the following code
 
-```rust
-fn main(){
-    println!("hello world!");
+`` `Rust
+fn main () {
+    println ( "hello world!")!;
 }
-```
+`` `
 
-3. 保存上面的代码后，我们发现hello.rs只是一个包含代码的文本文件，并不能直接运行。
-我们需要把包含rust代码的文本文件转化成可执行文件，这个过程叫做**编译**，我们可以通过以下命令来编译这段代码
+3. Save the above code, we find hello.rs just a text file that contains the code, and can not run.
+We need to put a text file that contains rust conversion code into an executable file, a process called ** ** compile, we can through the following command to compile the code
 
-```
+`` `
 rustc hello.rs
-```
+`` `
 
-4. 如果程序没有什么错误（比如漏掉或拼错字符），我们的程序将顺利通过编译，生成一个可执行文件hello，可以输入以下命令运行它
+4. If the program there is nothing wrong (such as missing or misspelled characters), our program will compile successfully, generate an executable file hello, enter the following command to run it
 
-```
+`` `
 ./hello
-```
+`` `
 
-5. 可以看到运行结果，将会打印输出：
+5. You can see the results, it will print out:
 
-```
+`` `
 hello world!
-```
+`` `
 
-太棒了，这可能是你用Rust写的第一个程序，但它确实是一个完整的程序。
+Great, this may be your first use Rust write a program, but it really is a complete program.
 
-## 4.1.2 简单的讲解
+## 4.1.2 Simple explanation
 
-我们已经用rust编写第一个可执行程序，打印出了'hello world!'，很酷，对吧！  
-但是这段代码到底是什么意思呢，作为新手的你一定云里雾里吧，让我们先看一下这个程序：
+We have written rust first executable program, print out 'hello world!', Cool, right!
+But this code in the end what does that mean, as a novice you must foggy, let us look at this program:
 
-- 第一行中 fn 表示定义一个**函数**，main是这个函数的名字，花括号{}里的语句则表示这个函数的内容
-- 名字叫做**main**的函数有特殊的用途，那就是作为程序的入口，也就是说程序每次都从这个函数开始运行
-- 函数中只有一句 ```println!("hello world!");```，这里```println!```是一个Rust语言自带的**宏**，
-这个宏的功能就是打印文本(结尾会换行)，而"hello world!"这个用引号包起来的东西是一个**字符串**，就是我们要打印的文本啦
-- 你一定注意到了```;```吧， 在Rust语言中，分号```;```用来把语句分隔开，也就是说语句的末尾一般用分号做为结束标志
+- Fn represents the first line defines a function ** **, main is the name of this function, curly braces {} in the statement said that the content of this function
+- The function name is ** main ** has a special purpose, that is, as the entry procedure, which means that every time the program starts running from this function
+- Only one function `` `println (" hello world! ");` ``, Where `` `println` `` Rust is a macro language built-in ** **!!
+This macro function is to print the text (the end of the line will change), and the "hello world!" Wrap this thing in quotes is a string ** ** that we want to print text friends
+- You must have noticed `` `;` `` right in the Rust language, the semicolon `;` `for the separated statement, that statement at the end with a semicolon as a general end flag
 
-你可以试试把引号里的hello world!换成别的文本：
+You can try to put quotes replaced by another version of hello world!:
 
-```rust
-fn main(){
-    println!("你好，世界!");
+`` `Rust
+fn main () {
+    ! Println ( "Hello, World!");
 }
-```
+`` `
 
-这段程序将打印出中文的```你好，世界!```，是不是很惊讶，这是因为Rust语言默认使用utf8编码，因此可以处理中文字符串！  
+This program will print the Chinese `` `Hello, world!` `` Is not very surprised, because the Rust language utf8 encoding is used by default, so you can deal with Chinese string!
