@@ -1,290 +1,290 @@
-# 4.3 快速上手 - 速查手册
+# 4.3 Quick Start - Quick Reference Guide
 
->本小节的以下内容来自[learnxinyminutes](https://github.com/adambard/learnxinyminutes-docs)，作者是[Guangming Mao](http://maogm.com/)，遵从creative commons协议。
+> Following from this section [learnxinyminutes] (https://github.com/adambard/learnxinyminutes-docs), the author is [Guangming Mao] (http://maogm.com/), to comply with creative commons agreement.
 
-Rust 是由 Mozilla 研究院开发的编程语言。Rust 将底层的性能控制与高级语言的便利性和安全保障结合在了一起。
+Rust is a programming language developed by Mozilla Institute. Rust will facilitate control of the underlying performance and security high-level language and combine together.
 
-而 Rust 并不需要一个垃圾回收器或者运行时即可实现这个目的，这使得 Rust 库可以成为一种 C 语言的替代品。
+The Rust does not need to achieve this goal a garbage collector or run time, which makes Rust library can become a substitute for the C language.
 
-Rust 第一版（0.1 版）发布于 2012 年 1 月，3 年以来一直在紧锣密鼓地迭代。
-因为更新太频繁，一般建议使用每夜构建版而不是稳定版，直到最近 1.0 版本的发布。
+Rust First Edition (version 0.1) was released in January 2012, he has been in full swing in iteration 3 years.
+Because the update too frequently, usually recommend building stable release version instead use per night, until recently released version 1.0.
 
-2015 年 3 月 15 日，Rust 1.0 发布，完美向后兼容，最新的每夜构建版提供了缩短编译时间等新特性。
-Rust 采用了持续迭代模型，每 6 周一个发布版。Rust 1.1 beta 版在 1.0 发布时同时发布。
+March 15, 2015, Rust 1.0 release, perfect backward compatibility, the latest nightly build version provides new features such as compilation time.
+Rust uses a continuous iterative model, a release every six weeks. Rust 1.1 beta version 1.0 release also released.
 
-尽管 Rust 相对来说是一门底层语言，它提供了一些常见于高级语言的函数式编程的特性。这让 Rust 不仅高效，并且易用。
+Although Rust is a relatively low-level language, it provides a common language for advanced functional programming features. This allows Rust is not only efficient, and easy to use.
 
-```rust
-// 这是注释，单行注释...
-/* ...这是多行注释 */
+`` `Rust
+// This is a comment, single-line comments ...
+/ * ... This is a multi-line comment * /
 
 ///////////////
-// 1. 基础   //
+// // 1. Basic
 ///////////////
 
-// 函数 (Functions)
-// `i32` 是有符号 32 位整数类型(32-bit signed integers)
-fn add2(x: i32, y: i32) -> i32 {
-    // 隐式返回 (不要分号)
-    x + y
+// Function (Functions)
+// `I32` is a signed 32-bit integer type (32-bit signed integers)
+fn add2 (x: i32, y: i32) -> i32 {
+    // Implicit return (not a semicolon)
+    x + y
 }
 
-// 主函数(Main function)
-fn main() {
-    // 数字 (Numbers) //
+// Main function (Main function)
+fn main () {
+    // Digital (Numbers) //
 
-    // 不可变绑定
-    let x: i32 = 1;
+    // Immutable binding
+    let x: i32 = 1;
 
-    // 整形/浮点型数 后缀
-    let y: i32 = 13i32;
-    let f: f64 = 1.3f64;
+    // Plastic / floating-point number suffix
+    let y: i32 = 13i32;
+    let f: f64 = 1.3f64;
 
-    // 类型推导
-    // 大部分时间，Rust 编译器会推导变量类型，所以不必把类型显式写出来。
-    // 这个教程里面很多地方都显式写了类型，但是只是为了示范。
-    // 绝大部分时间可以交给类型推导。
-    let implicit_x = 1;
-    let implicit_f = 1.3;
+    // Type inference
+    // Most of the time, Rust compiler deduced types of variables, it is not necessary to type explicitly written.
+    // This tutorial there are many places to explicitly write types, but only for demonstration.
+    // Type inference can be handed most of the time.
+    let implicit_x = 1;
+    let implicit_f = 1.3;
 
-    // 算术运算
-    let sum = x + y + 13;
+    // Arithmetic
+    let sum = x + y + 13;
 
-    // 可变变量
-    let mut mutable = 1;
-    mutable = 4;
-    mutable += 2;
+    // Variable Variable
+    let mut mutable = 1;
+    mutable = 4;
+    mutable + = 2;
 
-    // 字符串 (Strings) //
+    // String (Strings) //
 
-    // 字符串字面量
-    let x: &str = "hello world!";
+    // String literal
+    let x: & str = "hello world!";
 
-    // 输出
-    println!("{} {}", f, x); // 1.3 hello world
+    // Output
+    println ( "{} {}", f, x);! // 1.3 hello world
 
-    // 一个 `String` – 在堆上分配空间的字符串
-    let s: String = "hello world".to_string();
+    // A `String` - string space allocated on the heap
+    let s: String = "hello world" .to_string ();
 
-    // 字符串分片(slice) - 另一个字符串的不可变视图
-    // 基本上就是指向一个字符串的不可变指针，它不包含字符串里任何内容，只是一个指向某个东西的指针
-    // 比如这里就是 `s`
-    let s_slice: &str = &s;
+    // String slicing (slice) - immutable view of another string
+    // Basically immutable pointer pointing to a string, it does not contain any of the contents of the string, just a pointer pointing to something
+    // For example, this is `s`
+    let s_slice: & str = & s;
 
-    println!("{} {}", s, s_slice); // hello world hello world
+    ! Println ( "{} {}", s, s_slice); // hello world hello world
 
-    // 数组 (Vectors/arrays) //
+    // Array (Vectors / arrays) //
 
-    // 长度固定的数组 (array)
-    let four_ints: [i32; 4] = [1, 2, 3, 4];
+    // Fixed length arrays (array)
+    let four_ints: [i32; 4] = [1, 2, 3, 4];
 
-    // 变长数组 (vector)
-    let mut vector: Vec<i32> = vec![1, 2, 3, 4];
-    vector.push(5);
+    // Variable length arrays (vector)
+    let mut vector: Vec <i32> = vec [1, 2, 3, 4];!
+    vector.push (5);
 
-    // 分片 - 某个数组(vector/array)的不可变视图
-    // 和字符串分片基本一样，只不过是针对数组的
-    let slice: &[i32] = &vector;
+    // Fragmentation - an array (vector / array) immutable view
+    // String slicing and essentially the same, except for array
+    let slice: & [i32] = & vector;
 
-    // 使用 `{:?}` 按调试样式输出
-    println!("{:?} {:?}", vector, slice); // [1, 2, 3, 4, 5] [1, 2, 3, 4, 5]
+    `{// Use:?}` Press debugging output style
+    ! Println ( "{:?} {:?}", Vector, slice); // [1, 2, 3, 4, 5] [1, 2, 3, 4, 5]
 
-    // 元组 (Tuples) //
+    // Tuple (Tuples) //
 
-    // 元组是固定大小的一组值，可以是不同类型
-    let x: (i32, &str, f64) = (1, "hello", 3.4);
+    // Tuple is a set of values ​​fixed size, can be of different types
+    let x: (i32, & str, f64) = (1, "hello", 3.4);
 
-    // 解构 `let`
-    let (a, b, c) = x;
-    println!("{} {} {}", a, b, c); // 1 hello 3.4
+    // Deconstruction `let`
+    let (a, b, c) = x;
+    println ( "{} {} {}", a, b, c);! // 1 hello 3.4
 
-    // 索引
-    println!("{}", x.1); // hello
+    // Index
+    ! Println ( "{}", x.1); // hello
 
-    //////////////
-    // 2. 类型 (Type)  //
-    //////////////
+    //////////////
+    // 2. Type (Type) //
+    //////////////
 
-    // 结构体（Sturct)
-    struct Point {
-        x: i32,
-        y: i32,
-    }
+    // Structure (Sturct)
+    struct Point {
+        x: i32,
+        y: i32,
+    }
 
-    let origin: Point = Point { x: 0, y: 0 };
+    let origin: Point = Point {x: 0, y: 0};
 
-    // 匿名成员结构体，又叫“元组结构体”（‘tuple struct’）
-    struct Point2(i32, i32);
+    // Anonymous member of a structure, called "tuples structure" ( 'tuple struct')
+    struct Point2 (i32, i32);
 
-    let origin2 = Point2(0, 0);
+    let origin2 = Point2 (0, 0);
 
-    // 基础的 C 风格枚举类型（enum）
-    enum Direction {
-        Left,
-        Right,
-        Up,
-        Down,
-    }
+    // C style based on enumerated types (enum)
+    enum Direction {
+        Left,
+        Right,
+        Up,
+        Down,
+    }
 
-    let up = Direction::Up;
+    let up = Direction :: Up;
 
-    // 有成员的枚举类型
-    enum OptionalI32 {
-        AnI32(i32),
-        Nothing,
-    }
+    There are members of the enumeration type //
+    enum OptionalI32 {
+        AnI32 (i32),
+        Nothing,
+    }
 
-    let two: OptionalI32 = OptionalI32::AnI32(2);
-    let nothing = OptionalI32::Nothing;
+    let two: OptionalI32 = OptionalI32 :: AnI32 (2);
+    let nothing = OptionalI32 :: Nothing;
 
-    // 泛型 (Generics) //
+    // Generics (Generics) //
 
-    struct Foo<T> { bar: T }
+    struct Foo <T> {bar: T}
 
-    // 这个在标准库里面有实现，叫 `Option`
-    enum Optional<T> {
-        SomeVal(T),
-        NoVal,
-    }
+    // This has achieved the standard library inside, called `Option`
+    enum Optional <T> {
+        SomeVal (T),
+        NoVal,
+    }
 
-    // 方法 (Methods) //
+    // Method (Methods) //
 
-    impl<T> Foo<T> {
-        // 方法需要一个显式的 `self` 参数
-        fn get_bar(self) -> T {
-            self.bar
-        }
-    }
+    impl <T> Foo <T> {
+        // Method requires an explicit `self` parameters
+        fn get_bar (self) -> T {
+            self.bar
+        }
+    }
 
-    let a_foo = Foo { bar: 1 };
-    println!("{}", a_foo.get_bar()); // 1
+    let a_foo = Foo {bar: 1};
+    println ( "{}", a_foo.get_bar ());! // 1
 
-    // 接口（Traits） （其他语言里叫 interfaces 或 typeclasses） //
+    // Interface (Traits) (or any other language, called interfaces typeclasses) //
 
-    trait Frobnicate<T> {
-        fn frobnicate(self) -> Option<T>;
-    }
+    trait Frobnicate <T> {
+        fn frobnicate (self) -> Option <T>;
+    }
 
-    impl<T> Frobnicate<T> for Foo<T> {
-        fn frobnicate(self) -> Option<T> {
-            Some(self.bar)
-        }
-    }
+    impl <T> Frobnicate <T> for Foo <T> {
+        fn frobnicate (self) -> Option <T> {
+            Some (self.bar)
+        }
+    }
 
-    let another_foo = Foo { bar: 1 };
-    println!("{:?}", another_foo.frobnicate()); // Some(1)
+    let another_foo = Foo {bar: 1};
+    ! Println ( "{:?}", another_foo.frobnicate ()); // Some (1)
 
-    ///////////////////////////////////
-    // 3. 模式匹配 (Pattern matching) //
-    ///////////////////////////////////
+    ///////////////////////////////////
+    // 3. Pattern Matching (Pattern matching) //
+    ///////////////////////////////////
 
-    let foo = OptionalI32::AnI32(1);
-    match foo {
-        OptionalI32::AnI32(n) => println!("it’s an i32: {}", n),
-        OptionalI32::Nothing  => println!("it’s nothing!"),
-    }
+    let foo = OptionalI32 :: AnI32 (1);
+    match foo {
+        ! OptionalI32 :: AnI32 (n) => println ( "it's an i32: {}", n),
+        OptionalI32 :: Nothing => println! ( "It's nothing!"),
+    }
 
-    // 高级模式匹配
-    struct FooBar { x: i32, y: OptionalI32 }
-    let bar = FooBar { x: 15, y: OptionalI32::AnI32(32) };
+    // Advanced Pattern Matching
+    struct FooBar {x: i32, y: OptionalI32}
+    let bar = FooBar {x: 15, y: OptionalI32 :: AnI32 (32)};
 
-    match bar {
-        FooBar { x: 0, y: OptionalI32::AnI32(0) } =>
-            println!("The numbers are zero!"),
-        FooBar { x: n, y: OptionalI32::AnI32(m) } if n == m =>
-            println!("The numbers are the same"),
-        FooBar { x: n, y: OptionalI32::AnI32(m) } =>
-            println!("Different numbers: {} {}", n, m),
-        FooBar { x: _, y: OptionalI32::Nothing } =>
-            println!("The second number is Nothing!"),
-    }
+    match bar {
+        FooBar {x: 0, y: OptionalI32 :: AnI32 (0)} =>
+            println! ( "The numbers are zero!"),
+        FooBar {x: n, y: OptionalI32 :: AnI32 (m)} if n == m =>
+            println! ( "The numbers are the same"),
+        FooBar {x: n, y: OptionalI32 :: AnI32 (m)} =>
+            println! ( "Different numbers: {} {}", n, m),
+        FooBar {x: _, y: OptionalI32 :: Nothing} =>
+            println! ( "The second number is Nothing!"),
+    }
 
-    ///////////////////////////////
-    // 4. 流程控制 (Control flow) //
-    ///////////////////////////////
+    ///////////////////////////////
+    // 4. Process Control (Control flow) //
+    ///////////////////////////////
 
-    // `for` 循环
-    let array = [1, 2, 3];
-    for i in array.iter() {
-        println!("{}", i);
-    }
+    // `For` cycle
+    let array = [1, 2, 3];
+    for i in array.iter () {
+        println ( "{}", i)!;
+    }
 
-    // 区间 (Ranges)
-    for i in 0u32..10 {
-        print!("{} ", i);
-    }
-    println!("");
-    // 输出 `0 1 2 3 4 5 6 7 8 9 `
+    // Interval (Ranges)
+    for i in 0u32..10 {
+        print ( "{}", i)!;
+    }
+    ! Println ( "");
+    // Output `0123456789 '
 
-    // `if`
-    if 1 == 1 {
-        println!("Maths is working!");
-    } else {
-        println!("Oh no...");
-    }
+    // `If`
+    if 1 == 1 {
+        ! Println ( "Maths is working!");
+    } Else {
+        println ( "Oh no ...")!;
+    }
 
-    // `if` 可以当表达式
-    let value = if true {
-        "good"
-    } else {
-        "bad"
-    };
+    // `If` can When the expression
+    let value = if true {
+        "Good"
+    } Else {
+        "Bad"
+    };
 
-    // `while` 循环
-    while 1 == 1 {
-        println!("The universe is operating normally.");
-    }
+    // `While` cycle
+    while 1 == 1 {
+        ! Println ( "The universe is operating normally.");
+    }
 
-    // 无限循环
-    loop {
-        println!("Hello!");
-    }
+    // Infinite loop
+    loop {
+        println ( "Hello!")!;
+    }
 
-    ////////////////////////////////////////////////
-    // 5. 内存安全和指针 (Memory safety & pointers) //
-    ////////////////////////////////////////////////
+    ////////////////////////////////////////////////
+    // 5. Memory Security and pointer (Memory safety & pointers) //
+    ////////////////////////////////////////////////
 
-    // 独占指针 (Owned pointer) - 同一时刻只能有一个对象能“拥有”这个指针
-    // 意味着 `Box` 离开他的作用域后，会被安全地释放
-    let mut mine: Box<i32> = Box::new(3);
-    *mine = 5; // 解引用
-    // `now_its_mine` 获取了 `mine` 的所有权。换句话说，`mine` 移动 (move) 了
-    let mut now_its_mine = mine;
-    *now_its_mine += 2;
+    // Exclusive pointer (Owned pointer) - the same time, only one object can "own" the pointer
+    // Means `Box` after leaving his scope, can be safely released
+    let mut mine: Box <i32> = Box :: new (3);
+    * Mine = 5; // dereference
+    // `Now_its_mine` acquired ownership of` mine`. In other words, `mine` move (move) the
+    let mut now_its_mine = mine;
+    * Now_its_mine + = 2;
 
-    println!("{}", now_its_mine); // 7
-    // println!("{}", mine); // 编译报错，因为现在 `now_its_mine` 独占那个指针
+    println ( "{}", now_its_mine);! // 7
+    // Println ( "{}", mine);! // Compiler error, because now the exclusive `now_its_mine` pointer
 
-    // 引用 (Reference) – 引用其他数据的不可变指针
-    // 当引用指向某个值，我们称为“借用”这个值，因为是被不可变的借用，所以不能被修改，也不能移动
-    // 借用一直持续到生命周期结束，即离开作用域
-    let mut var = 4;
-    var = 3;
-    let ref_var: &i32 = &var;
+    // Reference (Reference) - a reference to an immutable pointers to other data
+    // When the reference point to a certain value, which we call "borrow" this value, because borrowing is immutable, it can not be changed, can not move
+    // Borrowing continued until the end of the life cycle, that is out of scope
+    let mut var = 4;
+    var = 3;
+    let ref_var: & i32 = & var;
 
-    println!("{}", var); //不像 `box`, `var` 还可以继续使用
-    println!("{}", *ref_var);
-    // var = 5; // 编译报错，因为 `var` 被借用了
-    // *ref_var = 6; // 编译报错，因为 `ref_var` 是不可变引用
+    println ( "{}", var);! // unlike `box`,` var` can continue to use
+    println ( "{}", * ref_var)!;
+    // Var = 5; // compiler error, because `var` be borrowed
+    // * Ref_var = 6; // compiler error, because `ref_var` are immutable references
 
-    // 可变引用 (Mutable reference)
-    // 当一个变量被可变地借用时，也不可使用
-    let mut var2 = 4;
-    let ref_var2: &mut i32 = &mut var2;
-    *ref_var2 += 2;
+    // Variable references (Mutable reference)
+    // When a variable is variably borrow, and do not use
+    let mut var2 = 4;
+    let ref_var2: & mut i32 = & mut var2;
+    * Ref_var2 + = 2;
 
-    println!("{}", *ref_var2); // 6
-    // var2 = 2; // 编译报错，因为 `var2` 被借用了
+    println ( "{}", * ref_var2);! // 6
+    // Var2 = 2; // compiler error, because `var2` be borrowed
 }
-```
+`` `
 
-## 更深入的资料
+## More in-depth information
 
-Rust 还有很多很多其他内容 - 这只是 Rust 最基本的功能，帮助你了解 Rust 里面最重要的东西。
-如果想深入学习 Rust，可以去读
-[The Rust Programming Language](http://doc.rust-lang.org/book/index.html)
-或者上 reddit [/r/rust](http://reddit.com/r/rust) 订阅。
-同时 irc.mozilla.org 的 #rust 频道上的小伙伴们也非常欢迎新来的朋友。
+Rust and many other things - it's just Rust basic features to help you understand Rust inside the most important thing.
+If you want in-depth study Rust, can be read
+[The Rust Programming Language] (http://doc.rust-lang.org/book/index.html)
+Or on reddit [/r/rust](http://reddit.com/r/rust) subscription.
+While small partners #rust channel on irc.mozilla.org also very welcome new friends.
 
-你可以在这个在线编译器 [Rust playpen](http://play.rust-lang.org) 上尝试 Rust 的一些特性
-或者上[官方网站](http://rust-lang.org).
+Rust some of the features you can try on this online compiler [Rust playpen] (http://play.rust-lang.org)
+Or on the [official website] (http://rust-lang.org).
