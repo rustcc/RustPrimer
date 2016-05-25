@@ -1,64 +1,64 @@
-# 注释
+Comment #
 
-Rust 代码文件中，通常我们可以看到 3 种注释。
+Rust code file, usually we can see three kinds of comments.
 
-- 行注释
-- 文档注释
-- 模块注释
+- Line comments
+- Documentation Comments
+- Module Notes
 
-## 行注释
+##-Line comments
 
-使用 `//` 进行行注释。
+// Use `` conduct line comment.
 
-```rust
-// 创建一个绑定
+`` `Rust
+// Create a binding
 let x = 5;
 
-let y = 6; // 创建另一个绑定
-```
+let y = 6; // create another binding
+`` `
 
-## 文档注释
+## Documentation Comments
 
-文档注释使用 ```///```，一般用于函数或结构体（字段）的说明，置于要说明的对象上方。文档注释内部可使用markdown格式的标记语法，可用于 rustdoc 工具的自动文档提取。
+Note the use of the document `` `` `` /// described generally used for a function or structure (field), placed over the object to be described. Doc comments can be used inside markup syntax markdown format, it can be used for automatic document rustdoc extraction tool.
 
-    /// Adds one to the number given.
-    ///
-    /// # Examples
-    ///
-    /// ```
-    /// let five = 5;
-    ///
-    /// assert_eq!(6, add_one(5));
-    /// # fn add_one(x: i32) -> i32 {
-    /// #     x + 1
-    /// # }
-    /// ```
-    fn add_one(x: i32) -> i32 {
-        x + 1
-    }
+    /// Adds one to the number given.
+    ///
+    /// # Examples
+    ///
+    /// `` `
+    /// Let five = 5;
+    ///
+    /// Assert_eq (6, add_one (5))!;
+    /// # Fn add_one (x: i32) -> i32 {
+    /// # X + 1
+    } /// #
+    /// `` `
+    fn add_one (x: i32) -> i32 {
+        x + 1
+    }
 
 
-## 模块注释
+## Module Notes
 
-模块注释使用 ```//!```，用于说明本模块的功能。一般置于模块文件的头部。
+Note the use of the module `` `@!` `, For explaining the function of the module. Usually placed in the head module file.
 
-```rust
+`` `Rust
 //! # The Rust Standard Library
 //!
 //! The Rust Standard Library provides the essential runtime
-//! functionality for building portable Rust software.
-```
+//! Functionality for building portable Rust software.
+`` `
 
-PS: 相对于 `///`, `//!` 用来注释包含它的项（也就是说，crate，模块或者函数），而不是位于它之后的项。
+PS: /// respect `` @ `` used to annotate it contains items (that is to say, crate, module or function), rather than in the entry after it!.
 
 
-## 其它：兼容C语言的注释
+## Other: Compatible with C language comments
 
-Rust 也支持兼容 C 的块注释写法：`/* */`。但是不推荐使用，请尽量不要使用这种注释风格（会被鄙视的）。
+Rust also supports compatible C block comments written: `/ * * /`. But not recommended, please try not to use this comment style (be despised).
 
-```rust
-/*
-    let x = 42;
-    println!("{}", x);
-*/
-```
+`` `Rust
+/ *
+    let x = 42;
+    println ( "{}", x)!;
+* /
+`` `
