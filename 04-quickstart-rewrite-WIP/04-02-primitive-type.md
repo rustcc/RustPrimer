@@ -1,73 +1,73 @@
-# 基本类型
+# basic type
 
-## 变量绑定
-Rust 通过 let 关键字进行变量绑定。
-```rust
-fn main() {
-    let a1 = 5;
-    let a2:i32 = 5;
-    assert_eq!(a1, a2);
-    //let 绑定 整数变量默认类型推断是 i32
+## Variable bindings
+Rust by keyword let variable bindings.
+`` `Rust
+fn main () {
+    let a1 = 5;
+    let a2: i32 = 5;
+    assert_eq (a1, a2)!;
+    // Let bind default integer variable type inference is i32
 
-    let b1:u32 = 5;
-    //assert_eq!(a1, b1);
-    //去掉上面的注释会报错，因为类型不匹配
-    //errer: mismatched types
+    let b1: u32 = 5;
+    // Assert_eq (a1, b1)!;
+    // Remove the above comments will be error, because the type does not match
+    // Errer: mismatched types
 }
-```
-这里的 assert_eq! 宏的作用是判断两个参数是不是相等的，但如果是两个不匹配的类型，就算字面值相等也会报错。
+`` `
+Here assert_eq! Macro is used to determine the two parameters are not equal, but if the two do not match the type of error will be equal even literal.
 
-## 可变绑定
-rust 在声明变量时，在变量前面加入 mut 关键字，变量就会成为可变绑定的变量。
-```rust
-fn main() {
-    let mut a: f64 = 1.0;
-    let b = 2.0f32;
+## Variable bindings
+rust when you declare a variable, the variable is added in front of mut keywords will become variable variable variable bindings.
+`` `Rust
+fn main () {
+    let mut a: f64 = 1.0;
+    let b = 2.0f32;
 
-    //改变 a 的绑定
-    a = 2.0;
-    println!("{:?}", a);
+    // Change a binding
+    a = 2.0;
+    println ( "{:?}", a)!;
 
-    //重新绑定为不可变
-    let a = a;
+    // Rebinding immutable
+    let a = a;
 
-    //不能赋值
-    //a = 3.0;
+    // Can not be assigned
+    // A = 3.0;
 
-    //类型不匹配
-    //assert_eq!(a, b);
+    // Type mismatch
+    // Assert_eq (a, b)!;
 }
-```
-这里的 b 变量，绑定了 2.0f32。这是 Rust 里面值类型显式标记的语发。语法规定为`value`+`tpye`的形式。
+`` `
+Here b variables bound 2.0f32. This is the type of value inside Rust explicit markup language issue. The syntax is defined as `value` +` tpye` form.
 
-**例如：**
-固定大小类型：
-> 1u8 1i8  
-> 1u16 1i16  
-> 1u32 1i32  
-> 1u64 1i64  
+**E.g:**
+Fixed-size type:
+> 1u8 1i8
+> 1u16 1i16
+> 1u32 1i32
+> 1u64 1i64
 
-可变大小类型：
-> 1usize 1isize  
+Variable size type:
+> 1usize 1isize
 
-浮点类型：
-> 1f32 1f64  
+Floating-point type:
+> 1f32 1f64
 
-## let解构
-为什么在 Rust 里面生命一个变量的时候要采用 let 绑定语法？
-那是因为 let 绑定语法的表达能力更强，而且 let 语言其实是一种模式。
+## Let Deconstruction
+Why Rust life inside a variable time to use let-binding syntax?
+That is because the let binding expression syntax stronger, and let the language is actually a pattern.
 
-**例如：**
-```rust
-fn main() {
-    let (a, mut b): (bool,bool) = (true, false);
-    println!("a = {:?}, b = {:?}", a, b);
-    //a 不可变绑定
-    //a = false;
-    
-    //b 可变绑定
-    b = true;
-    assert_eq!(a, b);
+**E.g:**
+`` `Rust
+fn main () {
+    let (a, mut b): (bool, bool) = (true, false);
+    ! Println ( "a = {:?}, B = {:?}", A, b);
+    // A immutable binding
+    // A = false;
+    
+    // B variable bindings
+    b = true;
+    assert_eq (a, b)!;
 }
-```
-这里使用了 bool，只有true和false两个值，通常用来做逻辑判断的类型。
+`` `
+As used herein, a bool, only two values ​​true and false, are generally used for the type of logic judgment.
