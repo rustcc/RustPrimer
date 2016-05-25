@@ -1,3 +1,3 @@
-# 安装Rust
+# Installation Rust
 
-本章讲解在三大平台 Linux, MacOS, Windows 上分别安装 Rust 的步骤。
+This chapter describes the steps Rust are mounted on the three major platforms Linux, MacOS, Windows.
