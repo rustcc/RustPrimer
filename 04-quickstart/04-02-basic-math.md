@@ -1,75 +1,75 @@
-# 4.2 简单的数学运算
+Simple math # 4.2
 
-数学运算是非常有用的功能，现实中会经常用到，比如：计算商品总价、学生的平均成绩、个人所得税等等。
+Math is a very useful feature, in reality, will be frequently used, for example: calculate the total price of goods, the student's grade point average, personal income tax and so on.
 
-# 4.2.1 数字
+# 4.2.1 Digital
 
-在了解数学运算之前，让我们先简单的了解一下`变量`和`数字`，更改上一小节的HelloWorld程序:
+In understanding the math, let us simply look at the `` and `` digital change on a section of the HelloWorld program:
 
-```rust
-fn main(){
-    let x = 5;
-    println!("{}", x);
+`` `Rust
+fn main () {
+    let x = 5;
+    println ( "{}", x)!;
 }
-```
+`` `
 
-运行这个程序，将会打印出数字5，在这个程序中：
+Run the program will print out the number 5 in this program:
 
-- let 表示定义一个**变量**, 变量名叫x
-- = 符号 表示给 x **赋值**, 并且值为5
-- 5 是一个`数字`, Rust会自动把它当成一个**整数**处理
-- println!("{}", x) 是格式化输出语句，{}是一个占位符，它表示后面的变量x的值会嵌入这里，也就是打印x的值(这里大致了解一下就行，后续章节会有详细讲解)
+- Let represents definition of a ** ** variable, the variable named x
+- = Symbol for assignment x ** ** and the value 5
+--5 Is a digital ``, Rust will automatically put it as an integer ** ** Treatment
+-! Println ( "{}", x) is the formatted output statements, {} is a placeholder that represents the value of the variable x will later be embedded here, that is, to print the value of x (here an overview on the line, subsequent chapters will explain in detail)
 
-# 4.2.2 简单的数学运算
+# 4.2.2 Simple math
 
-我们可以对数字进行加减乘除运算：
+We can perform addition, subtraction digital operations:
 
-```rust
-fn main(){
-    let x = 5 + 10;
-    println!("{}", x);
+`` `Rust
+fn main () {
+    let x = 5 + 10;
+    println ( "{}", x)!;
 }
-```
+`` `
 
-以上程序将输出15, 也就是5+10的结果。当然我们也可以对变量做运算，以下程序的输出结果是一样的：
+The above program will output 15, which is the result of 5 + 10. Of course, we can also do variable operation, the output of the following procedure is the same:
 
-```rust
-fn main(){
-    let x = 5;
-    let y = 10;
-    let z = x + y;
-    println!("{}", z);
+`` `Rust
+fn main () {
+    let x = 5;
+    let y = 10;
+    let z = x + y;
+    println ( "{}", z)!;
 }
-```
+`` `
 
-除了加法，我们还可以做更多别的运算, 以下是常用的四则运算：
+Apart addition, we can also do more other operations, the following is a commonly used four operations:
 
-| 运算 | 符号 | 示例  |
-| --- |:---:| ---:|
-| 加 | + | 10 + 5 |
-| 减 | - | 10 - 5 |
-| 乘 | * | 10 * 5 |
-| 除 | / | 10 / 5 |
+| Op | Symbol | Example |
+| --- |: ---: | ---: |
+| Plus | + | 10 + 5 |
+| Save | - | 10 - 5 |
+| Multiply | * | 10 * 5 |
+| Except | / | 10/5 |
 
 
-# 4.2.3 整数和浮点数
+# 4.2.3 integer and floating point
 
-上述例子的`let x = 5;`中, 5会当成一个整数, 正整数是没有小数部分的, 例如:
+The above example of `let x = 5;`, five will be treated as an integer, n is an integer no fractional part, for example:
 
-```rust
-fn main(){
-    println!("{}", 5 / 10);
+`` `Rust
+fn main () {
+    ! Println ( "{}", 5/10);
 }
-```
+`` `
 
-这个程序打印出 5/10 的运算结果是0, 而不是0.5！ 因为**两个整数的除法运算结果也是整数**
+The program prints out the 5/10 operation result is 0, not 0.5! ** Two integers because the result is an integer division **
 
-如果希望得到比较精确的结果, 我们需要使用浮点数:
+If you wish to obtain more accurate results, we need to use floating-point numbers:
 
-```rust
-fn main(){
-    println!("{}", 5.0 / 10.0);
+`` `Rust
+fn main () {
+    ! Println ( "{}", 5.0 / 10.0);
 }
-```
+`` `
 
-这个程序会输出0.5, 这里的`5.0`和`10.0`因为带小数点，所以会被当成浮点数处理, 而浮点数的除法可以得到比较精确的结果
+This program will output 0.5, where `5.0` and` 10.0` because a decimal point, it will be treated as a floating-point, and floating-point division can obtain more accurate results

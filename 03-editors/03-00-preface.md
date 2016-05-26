@@ -1,3 +1,3 @@
-# 编辑器
+# editor
 
-本章描述几种常用编辑器针对 Rust 开发环境的配置。
+This chapter describes some common configuration editor for Rust development environment.

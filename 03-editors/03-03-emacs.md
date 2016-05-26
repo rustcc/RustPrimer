@@ -1,113 +1,113 @@
 # Emacs
 
-本节介绍 Emacs (Version 24) 的 Rust 配置，假设你已经安装好了 Emacs，并且有使用 Emacs 的经验。具体的安装和使用说明，见网上相关文档，在此不赘述。
+This section describes the Emacs (Version 24) of Rust configuration, assuming you have installed Emacs, and have experience in using Emacs. Specific installation and usage instructions, see the documentation online, not in this repeat.
 
-另外，本节的例子是在 Mac OS 上，在 Linux 上面基本一样。
+In addition, the examples in this section is on the Mac OS, Linux is basically the same in the above.
 
-Windows的Emacs用户仅作参考。
+Emacs for Windows users only for reference.
 
-## 1.1 简介
+## 1.1 Introduction
 
-Emacs 的 rust-mode 提供了语法高亮显示和 elisp 函数，可以围绕 Rust 函数定义移动光标。有几个插件提供了附加的功能，如自动补全和动态语法检查。
+Emacs is rust-mode provides syntax highlighting and elisp function, you can define a function to move the cursor around the Rust. There are several plug-ins provide additional features such as auto-completion and syntax checking dynamic.
 
-![](../image/03-editor-emacs-base.png)
+! [] (../ Image / 03-editor-emacs-base.png)
 
-## 1.2 安装插件
+## 1.2 Installing the plug
 
-首先，需要将 melpa 代码库添加到你的插件列表中，才能安装 Rust 需要的插件。将下面的代码片段加入你的```~/.emacs.d/init.el``` 文件中。
+First, you need to add the code base to melpa your plugin list, you can install the plug-Rust need. The following code snippet on your `` `~ / .emacs.d / init.el``` file.
 
-```
+`` `
 ;; Add melpa repository to archives
-(add-to-list 'package-archives
-    '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(Add-to-list 'package-archives
+    '( "Melpa". "Http://melpa.milkbox.net/packages/") t)
 
 ;; Initialize packages
-(package-initialize)
+(Package-initialize)
 
-```
+`` `
 
-运行下面的命令，更新插件列表。
+Run the following command to update the plug-in list.
 
 - M-x eval-buffer
 - M-x package-refresh-contents
 
-然后，就可以安装插件，在 Emacs 中使用 Rust 了。运行 ```M-x package-list-packages```，用 ```i``` 标记下述插件进行安装，当所有的插件选择好了之后，用 ```x``` 执行安装。
+Then, you can install plug-ins, use the Rust in Emacs. Run `` `M-x package-list-packages```, marked by` `` i``` following plug-ins installed, when all the plug-ins to choose a good after using `` `x``` perform the installation.
 
-- company
-- company-racer
-- racer
-- flycheck
-- flycheck-rust
-- rust-mode
+- Company
+- Company-racer
+- Racer
+- Flycheck
+- Flycheck-rust
+- Rust-mode
 
-将下面的代码片段加入你的```~/.emacs.d/init.el``` 文件：
+The following code snippet on your `` `~ / .emacs.d / init.el``` file:
 
-```
+`` `
 ;; Enable company globally for all mode
-(global-company-mode)
+(Global-company-mode)
 
 ;; Reduce the time after which the company auto completion popup opens
-(setq company-idle-delay 0.2)
+(Setq company-idle-delay 0.2)
 
 ;; Reduce the number of characters before company kicks in
-(setq company-minimum-prefix-length 1)
+(Setq company-minimum-prefix-length 1)
 ;; Set path to racer binary
-(setq racer-cmd "/usr/local/bin/racer")
+(Setq racer-cmd "/ usr / local / bin / racer")
 
 ;; Set path to rust src directory
-(setq racer-rust-src-path "/Users/YOURUSERNAME/.rust/src/")
+(Setq racer-rust-src-path "/Users/YOURUSERNAME/.rust/src/")
 
 ;; Load rust-mode when you open `.rs` files
-(add-to-list 'auto-mode-alist '("\\.rs\\'" . rust-mode))
+(Add-to-list 'auto-mode-alist' ( "\\. Rs \\ '". Rust-mode))
 
 ;; Setting up configurations when you load rust-mode
-(add-hook 'rust-mode-hook
+(Add-hook 'rust-mode-hook
 
-     '(lambda ()
-     ;; Enable racer
-     (racer-activate)
-  
-	 ;; Hook in racer with eldoc to provide documentation
-     (racer-turn-on-eldoc)
-	 
-	 ;; Use flycheck-rust in rust-mode
-     (add-hook 'flycheck-mode-hook #'flycheck-rust-setup)
-	 
-	 ;; Use company-racer in rust mode
-     (set (make-local-variable 'company-backends) '(company-racer))
-	 
-	 ;; Key binding to jump to method definition
-     (local-set-key (kbd "M-.") #'racer-find-definition)
-	 
-	 ;; Key binding to auto complete and indent
-     (local-set-key (kbd "TAB") #'racer-complete-or-indent)))
+     '(Lambda ()
+     ;; Enable racer
+     (Racer-activate)
+  
+;; Hook in racer with eldoc to provide documentation
+     (Racer-turn-on-eldoc)
 
-```
+;; Use flycheck-rust in rust-mode
+     (Add-hook 'flycheck-mode-hook #' flycheck-rust-setup)
 
-![](../image/03-editor-emacs-error-checking.png)
+;; Use company-racer in rust mode
+     (Set (make-local-variable 'company-backends)' (company-racer))
 
-## 1.3 配置 Racer
+;; Key binding to jump to method definition
+     (Local-set-key (kbd "M-.") # 'Racer-find-definition)
 
-Racer 需要 Rust 的源代码用于自动补全。
+;; Key binding to auto complete and indent
+     (Local-set-key (kbd "TAB") # 'racer-complete-or-indent)))
 
-- git clone https://github.com/rust-lang/rust.git ~/.rust
-- 重新启动 Emacs 并打开一个 Rust 源代码文件。
+`` `
 
-![](../image/03-editor-emacs-completion.png)
+! [] (../ Image / 03-editor-emacs-error-checking.png)
 
-## 1.4 结论
+## 1.3 Configuring Racer
 
-现在，可以在 Emacs 中编辑 Rust 源代码文件了。功能总结如下：
+Racer Rust need the source code for automatic completion.
 
-- 语法高亮显示和自动缩进
-- 自动补全
-- 动态语法错误检查
-- 跳转到函数定义
-- 内嵌文档
+- Git clone https://github.com/rust-lang/rust.git ~ / .rust
+- Restart Emacs Rust and open a source code file.
 
-![](../image/03-editor-emacs-jump.gif)
+! [] (../ Image / 03-editor-emacs-completion.png)
 
-## 注释
+## 1.4 Conclusions
 
-1. 本节的内容适用于 Emacs Version 24；版本 23 的配置方法不同；版本 22 及以下不支持。
-2. MacOS 自带的 Emacs 版本是 22，版本 24 可以从[这里](http://emacsformacosx.com/)下载。
+Now, you can edit the source code files in Rust in the Emacs. Features are summarized as follows:
+
+- Syntax highlighting and auto-indentation
+- Auto-completion
+- Dynamic syntax error checking
+- Jump to function definition
+- Embedded documents
+
+! [] (../ Image / 03-editor-emacs-jump.gif)
+
+## Comments
+
+1. The content of this section applies to Emacs Version 24; 23 of different configuration versions; version 22 and below is not supported.
+2. MacOS comes with Emacs version 22, version 24 can be downloaded from [here] (http://emacsformacosx.com/).

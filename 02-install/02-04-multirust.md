@@ -1,93 +1,93 @@
-# Rust 版本管理工具: multirust
+# Rust Version Manager: multirust
 
-multirust 是一个简单的 Rust 版本管理工具.
+multirust Rust is a simple version management tools.
 
-项目主页是: <https://github.com/brson/multirust>
+Project home page is: <https://github.com/brson/multirust>
 
 ## Features
 
-* 管理安装多个官方版本的 Rust 二进制程序.
-* 配置基于目录的 Rust 工具链.
-* 安装和更新来自 Rust 的发布通道: nightly, beta 和 stable.
-* 接收来自发布通道更新的通知.
-* 从官方安装历史版本的 nightly 工具链.
-* 通过指定 stable 版本来安装.
-* 安装额外的 std 用于交叉编译.
-* 安装自定义的工具链.
-* 独立每个安装的 Cargo metadata.
-* 校验下载的 hash 值.
-* 校验签名 (如果 GPG 存在).
-* 断点续传.
-* 只依赖 bash, curl 和常见 unix 工具.
-* 支持 Linux, OS X, Windows(via MSYS2).
+* Manage multiple install the official version of the Rust binaries.
+* Configure Rust directory-based tool chain.
+* Install and update release of channels from Rust: nightly, beta and stable.
+* Receive notifications from publishers channel updates.
+* Install from the official version of history nightly tool chain.
+* Install by specifying the stable version.
+* Install additional std for cross-compilation.
+* Install the custom tool chains.
+* Separate each installed Cargo metadata.
+* Hash value check download.
+* Verify the signature (if GPG exists).
+* http.
+* Depends only on the bash, curl and common unix tools.
+* Support for Linux, OS X, Windows (via MSYS2).
 
-## 安装
+## Installation
 
-```
+`` `
 curl -sf https://raw.githubusercontent.com/brson/multirust/master/blastoff.sh | sh
-```
+`` `
 
-这个命令将会编译和安装 multirust, 安装过程中可能会提示你输入 sudo 的密码. 然后, 他会下载和安装 stable 版本的工具链, 当执行 rustc, rustdoc 和 cargo 时, 将会配置他为默认工具链.
+This command will compile and install multirust, the installation process may be prompted to enter your sudo password. He then download and install the stable version of the tool chain, when executed rustc, rustdoc and cargo, he will be configured as the default tool chain.
 
-`*nix` 上安装后工具链会被安装到 `~/.multirust/toolchains`.
+After you install the tool chain will be installed into `~ / .multirust / toolchains` on` * nix`.
 
-## 卸载
+## Uninstall
 
-```
-curl -sf https://raw.githubusercontent.com/brson/multirust/master/blastoff.sh | sh -s -- --uninstall
-```
+`` `
+curl -sf https://raw.githubusercontent.com/brson/multirust/master/blastoff.sh | sh -s - --uninstall
+`` `
 
-## 用法
+## Usage
 
-安装后会得到一个 multirust 命令, 多使用命令自带的帮助提示, 可以快速定位你需要功能.
+Will be installed after a multirust command, use the command comes more helpful tips, you can quickly locate the required function.
 
-### 帮助
+### Help
 
-运行 `multirust -h` 你将会得到如下提示:
+Run `multirust -h` you will get the following message:
 
-```
+`` `
 ❯ multirust -h
 # Usage: multirust <command> [--verbose] [--version]
 #
 # Commands:
 #
-#     default          Set the default toolchain
-#     override         Set the toolchain override for the current directory tree
-#     update           Install or update a given toolchain (for example, "stable", "beta", "nightly")
-#     show-override    Show information about the current override
-#     show-default     Show information about the current default
-#     list-overrides   List all overrides
-#     list-toolchains  List all installed toolchains
-#     remove-override  Remove an override, for current directory unless specified
-#     remove-toolchain Uninstall a toolchain
-#     list-available-targets
-#                      List targets available to install
-#     add-target       Add additional compilation targets to an existing toolchain
-#     run              Run a command in an environment configured for a toolchain
-#     delete-data      Delete all user metadata, including installed toolchains
-#     upgrade-data     Upgrade the ~/.multirust directory from previous versions
-#     doc              Open the documentation for the currently active toolchain
-#     which            Report location of the currently active Rust tool.
-#     help             Show help for this command or subcommands
+# Default Set the default toolchain
+# Override Set the toolchain override for the current directory tree
+# Update Install or update a given toolchain (for example, "stable", "beta", "nightly")
+# Show-override Show information about the current override
+# Show-default Show information about the current default
+# List-overrides List all overrides
+# List-toolchains List all installed toolchains
+# Remove-override Remove an override, for current directory unless specified
+# Remove-toolchain Uninstall a toolchain
+# List-available-targets
+# List targets available to install
+# Add-target Add additional compilation targets to an existing toolchain
+# Run Run a command in an environment configured for a toolchain
+# Delete-data Delete all user metadata, including installed toolchains
+# Upgrade-data Upgrade the ~ / .multirust directory from previous versions
+# Doc Open the documentation for the currently active toolchain
+# Which Report location of the currently active Rust tool.
+# Help Show help for this command or subcommands
 #
 # Use `multirust help <command>` for detailed help.
 #
-```
+`` `
 
-根据提示, 使用 `multirust help <command>` 来查看子命令的帮助, 基本看这些帮助文档就足够了.
+When prompted, `multirust help <command>` to view the help subcommand, look at these basic help documentation is sufficient.
 
-下面着重介绍几个常用的命令.
+The following highlights some commonly used commands.
 
-`multirust default beta|stable|nightly` 配置默认的工具链.
+`Multirust default beta | stable | nightly` configure the default tool chain.
 
-`multirust override beta|stable|nightly` 配置一个目录以及其子目录的工具链.
+`Multirust override beta | stable | nightly` configure a directory and its subdirectories tool chain.
 
-`multirust show-default` 显示当前默认的工具链信息.
+`Multirust show-default` current default tool chain information.
 
-`multirust show-override` 显示当前目录的 override 的工具链信息.
+`Multirust show-override` tool chain display information of the current directory override.
 
-`multirust list-toolchains` 显示所有安装的工具链.
+`Multirust list-toolchains` Show all toolchain installed.
 
-`multirust list-overrides` 显示所有的 override 的工具链.
+`Multirust list-overrides` displays all override tool chain.
 
-`multirust update` 更新所有的发布通道的工具链.
+`Multirust update` Update tool chain for all publishing channels.

@@ -1,98 +1,98 @@
-# Rust旅程
+# Rust journey
 
 ## HelloWorld
-按照编程语言的传统，学习第一门编程语言的第一个程序都是打印 Hello World！
-下面根据我们的步骤创建 Rust 的 Hello World！程序：
+According to the traditional programming language, learning first programming language is the first program to print Hello World!
+Rust created below the Hello World According to our step! program:
 
-**下面的命令操作，如果没有特别说明，都是在shell下运行。本文为了简单统一，所有例子都在 win10 的 powershell 下运行，所有命令都运行在`ps:`标识符之后**
+** The following command operation, unless otherwise specified, are run in shell. In this paper, for simple and uniform, are all examples of powershell to run under win10, all commands run in `ps:` identifier after **
 
-- 创建一个 Doing 目录和 helloworld.rs 文件
+- Doing create a directory and file helloworld.rs
 
-> ps: mkdir ~/Doing  
-> ps: cd ~/Doing  
-> ps: notepad helloworld.rs # 作者偏向于使用 sublime 作为编辑器  
-> ps: subl helloworld.rs # 本章以后使用 subl 代替 notepad  
+> Ps: mkdir ~ / Doing
+> Ps: cd ~ / Doing
+> Ps: notepad helloworld.rs # sublime authors prefer to use as editor
+> Ps: subl helloworld.rs # subl chapter later use instead of notepad
 
-注意这里用的后缀名是.rs，一般编程语言的代码文件都有惯用的后缀名，比如：
-    C语言是.c，java是.java，python是.py等等，**请务必记住Rust语言的惯用后缀名是.rs**（虽然用别的后缀名也能通过rustc的编译）。 
+Note the use of the suffix is ​​.rs, general programming language code files have the usual suffix, such as:
+    C language is .c, java is .java, python is .py etc. ** Be sure to remember Rust language customary name suffix .rs ** (although with another extension but also through rustc compilation).
 
-- 在 helloworld.rs 文件中输入 Rust 代码
+- Enter the code in Rust helloworld.rs file
 
-```rust
-fn main() {
-    println!("Hello World!");
+`` `Rust
+fn main () {
+    println ( "Hello World!")!;
 }
-```
+`` `
 
-- 编译 helloworld.rs 文件
+- Compile helloworld.rs file
 
-> ps: rustc helloworld.rs  
-> ps: rustc helloworld.rs -O # 也可以选择优化编译  
+> Ps: rustc helloworld.rs
+> Ps: rustc helloworld.rs -O # You can also select Optimizing Compiler
 
-- 运行程序
+- Run the program
 
-> ps: ./helloworld.exe # windows 平台下需要加 .exe 后缀  
-> Hello World!  
+> Ps: next ./helloworld.exe # windows platform need to add .exe suffix
+> Hello World!
 
-没有`ps:`前缀的表示为控制台打印输出。
+No `ps:` prefix indicates the console printout.
 
-我们已经用rust编写第一个可执行程序，打印出了'hello world!'，很酷，对吧！  
-但是这段代码到底是什么意思呢，作为新手的你一定云里雾里吧，让我们先看一下这个程序：
+We have written rust first executable program, print out 'hello world!', Cool, right!
+But this code in the end what does that mean, as a novice you must foggy, let us look at this program:
 
-1. 第一行中 fn 表示定义一个**函数**，main是这个函数的名字，花括号{}里的语句则表示这个函数的内容。
-2. 名字叫做**main**的函数有特殊的用途，那就是作为程序的入口，也就是说程序每次都从这个函数开始运行。
-3. 函数中只有一句 ```println!("Hello World!");```，这里```println!```是一个Rust语言自带的**宏**，
-这个宏的功能就是打印文本(结尾会换行)，而"Hello World!"这个用引号包起来的东西是一个**字符串**，就是我们要打印的文本。
-4. 你一定注意到了```;```吧， 在Rust语言中，分号```;```用来把语句分隔开，也就是说语句的末尾一般用分号做为结束标志。
+1. The first line fn represents a defined function ** **, main is the name of this function, curly braces {} in the statement said that the content of this function.
+2. The function name is ** main ** has a special purpose, that is, as the entry procedure, which means that every time the program starts running from this function.
+3. The function is only a `` `println (" Hello World! ");!` ``, Where `` `println` `` Rust is a macro language built-in ** **!
+This macro function is to print the text (the end of the line will change), and "Hello World!" Wrap this thing in quotes is a string ** ** that we want to print text.
+4. You must have noticed `` `;` `` right in the Rust language, the semicolon `;` `for the separated statement, that statement with a semicolon as the end of the end of the general mark.
 
 ## HelloRust
 
-- 创建项目 hellorust
+- Create Project hellorust
 
-> ps: cargo new hellorust --bin  
+> Ps: cargo new hellorust --bin
 
-- 查看目录结构
+- Check the directory structure
 
-> ps: tree # win10 powershell 自带有 tree 查看文件目录结构的功能  
-> └─hellorust  
-> ----└─src  
+> Ps: tree # win10 powershell comes with a function to view the file directory tree structure
+> └─hellorust
+> ---- └─src
 
-这里显示的目录结构，在hellorust目录下有 src 文件夹和 Cargo.toml 文件，同时这个目录会初始化为 git 项目
+The directory structure shown here, in the src directory hellorust Cargo.toml folders and files, and the directory is initialized to the git project
 
-- 查看Cargo.toml文件
+- View Cargo.toml file
 
-> ps: cat Cargo.toml  
-> [package]  
-name = "hellorust"  
-version = "0.1."  
-authors = ["YourName <YourEmail>"]  
-> [dependencies]
+> Ps: cat Cargo.toml
+> [Package]
+name = "hellorust"
+version = "0.1."
+authors = [ "YourName <YourEmail>"]
+> [Dependencies]
 
-- 编辑src目录下的main.rs文件
+- Main.rs file edit src directory
 
-> ps: subl ./src/main.rs
+> Ps: subl ./src/main.rs
 
-cargo 创建的项目，在src目录下会有一个初始化的main.rs文件，内容为：
-```rust
-fn main() {
-    println!("Hello, world!");
+Project cargo created in the src directory there will be a main.rs initialization file content:
+`` `Rust
+fn main () {
+    println ( "Hello, world!")!;
 }
-```
-现在我们编辑这个文件，改为：
-```rust
-fn main() {
-    let rust = "Rust";
-    println!("Hello, {}!", rust);
+`` `
+Now let's edit this file, the following:
+`` `Rust
+fn main () {
+    let rust = "Rust";
+    ! Println ( "! Hello, {}", rust);
 }
-```
-这里的 `let rust = "Rust"` 是把 rust 变量绑定为 "Rust" ，
-`println!("Hello, {}!", rust);`里把 rust 变量的值代入到`"Hello, {}!"`中的`{}`。
+`` `
+Where `let rust =" Rust "` is binding for the variable rust "Rust",
+! `Println ("! Hello, {} ", rust);` generation of rust in the value of the variable into the `" Hello, {}! "` The `` {}.
 
-- 编译和运行
+- Compile and run
 
-> ps: cargo build  
-> ps: cargo build --release # 这个属于优化编译  
-> ps: ./target/debug/hellorust.exe  
-> ps: ./target/release/hellorust.exe # 如果前面是优化编译，则这样运行  
-> ps: cargo run # 编译和运行合在一起  
-> ps: cargo run --release # 同上，区别是是优化编译的  
+> Ps: cargo build
+> Ps: cargo build --release # This belongs optimizing compiler
+> Ps: ./target/debug/hellorust.exe
+> Ps: ./target/release/hellorust.exe # If the front is an optimizing compiler, then this run
+> Ps: cargo run # compile and run together
+> Ps: cargo run --release # above, except that the optimizing compiler

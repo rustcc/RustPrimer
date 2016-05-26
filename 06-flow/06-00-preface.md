@@ -1,7 +1,5 @@
-# 基本程序结构
+The basic program structure #
 
-Rust 是多泛型语言，当然支持命令式编程风格。本章讲解 Rust 中的几中基本程序结构。
+Rust is a more generic language, of course, support the imperative programming style. This chapter describes Rust in several basic program structure.
 
-把注释放在这一章，是因为注释在 Rust 中也是非常重要的一环，可以作为程序的基本结构之一。
-
-
+The comments on this chapter, because the comments in Rust is also a very important part, as one of the basic structure of the program.

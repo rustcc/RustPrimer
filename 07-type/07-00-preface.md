@@ -1,3 +1,3 @@
-# 类型、运算符和字符串
+# Types, operators and strings
 
-本章讲解 Rust 中的类型相关基础知识、运算符相关知识、和字符串的基本知识。
+Rust This chapter describes the types of basic knowledge, basic knowledge of operator knowledge, and strings.

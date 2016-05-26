@@ -1,30 +1,30 @@
-#Rust for Windows
+#Rust For Windows
 
-Rust 支持主流的操作系统，Linux,Mac和 Windows。
+Rust supports major operating systems, Linux, Mac and Windows.
 
-Rust在Windows上的安装和你在windows上安装其它软件一样。
+Rust is installed on Windows and other software you install on windows the same.
 
-### 1、下载安装包：
+### 1, download the installation package:
 
-  [下载地址](https://www.rust-lang.org/downloads.html)
+  [Download] (https://www.rust-lang.org/downloads.html)
 
-  Rust提供了多个版本和多个平台的安装包，下载对应的即可，此处我们以[1.6.0](https://static.rust-lang.org/dist/rust-1.6.0-x86_64-pc-windows-gnu.msi)的稳定版为例。
+  Rust provides installation package multiple versions and multiple platforms, you can download the corresponding, here we [1.6.0] (https://static.rust-lang.org/dist/rust-1.6.0- x86_64-pc-windows-gnu.msi) stable version, for example.
 
-### 2、安装：
-双击下载到的安装包，如下图所示：
+### 2, the installation:
+Double-click to download the installation package, as shown below:
 
-![Mac-os-inofrmatoin](../image/01-install-on-windows-1st.png)
+! [Mac-os-inofrmatoin] (../ image / 01-install-on-windows-1st.png)
 
-默认，rust将安装到所有用户下，选择“Advanced”，可以指定安装用户和安装路径。然后点击"install"等待几分钟即可（中间可能会有安全提示，点击允许即可，如果你装了360之类的，需要小心360阻止写入注册表）。
+By default, rust will be installed to all users, select "Advanced", the user can specify the installation path and installation. Then click "install" Wait (the middle can be a security prompt, click Allow to, if you installed the 360 ​​and the like, need to be careful to block write to the registry 360) a few minutes.
 
-### 3.验证安装：
+### 3. Verify the installation:
 
-安装完成后，运行windows命令行，然后输入:
+After installation is complete, run the windows command line and enter:
 
-`rustc --version`
+`Rustc --version`
 
-看到 以 **rustc 1.6.0** 开头，说明你安装成功了。
+** Rustc 1.6.0 ** to see the beginning, that you install a success.
 
-**注意**
+**note**
 
-中国科学技术大学镜像源包含 [rust-static](http://mirrors.ustc.edu.cn/rust-static/)，梯子暂时出问题的同学可以尝试从这里下载编译器；除此之外。还有 Crates 源，详见[这里的说明](https://servers.ustclug.org/2016/01/mirrors-add-rust-crates/)。
+China University of Science and Technology of the source image contains [rust-static] (http://mirrors.ustc.edu.cn/rust-static/), ladders temporary problem students can try to download the compiler from here; in addition. There Crates source, see [description here] (https://servers.ustclug.org/2016/01/mirrors-add-rust-crates/).

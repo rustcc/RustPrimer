@@ -1,62 +1,61 @@
 # Sublime
 
-Sublime Text是一款非常有名的文本编辑器，其本身也具备强大的插件机制。通过配置各种插件可以在使用Sublime Text编辑rust代码时获得更加良好的支持。
+Sublime Text is a very famous text editor, which itself has a powerful plug-in mechanism. You can get more good support when using Sublime Text editor rust codes you can configure various plug-ins.
 
-本文主要展示在已经预装rust的Windows环境下的安装，如果您还没有安装rust，请先参照本书的[安装章节](../02-install/02-03-install_rust_on_windows.md)安装rust。
+This paper shows installed in the Windows environment preinstalled rust, if you have not installed rust, please reference book [installation chapter] (../ 02-install / 02-03-install_rust_on_windows.md) installation rust .
 
-## 安装
+## Installation
 
-### Sublime Text3安装
+### Sublime Text3 installation
 
-请在 [Sublime Text3官网](http://www.sublimetext.com/3)上选择适合当前机器版本的Sublime Text版本进行下载和安装。
+Please [Sublime Text3 official website] to select the machine for the current version of Sublime Text version downloaded and installed (http://www.sublimetext.com/3) on.
 
-### rust的安装
+### Rust Installation
 
-请在rust官网的[下载页面](https://www.rust-lang.org/downloads.html)下载rust的源代码压缩包并在本地解压缩安装，在稍后的配置环节我们将会用到这个路径。如果国内下载速度过慢，可以考虑使用中科大的[镜像](http://mirrors.ustc.edu.cn/)下载rust源码包。
+Please rust official website [download page] (https://www.rust-lang.org/downloads.html) Download rust source code archive and extract the installation locally at a later configuration step we will use to this path. If domestic download speed is too slow, consider using USTC [Mirror] (http://mirrors.ustc.edu.cn/) Download Source Package rust.
 
-### 下载Rust并编译代码提示插件racer
+### Rust download and compile the code hints widget racer
 
-具体安装和编译内容请查看本章第一节的[安装准备](../03-editors/03-01-before.md)，请牢记编译后的racer.exe文件路径，在稍后的配置环节中我们将用到它。
+Specific installation and compile content please see the section of this chapter [Preparations] (../ 03-editors / 03-01-before.md), racer.exe Keep in mind that the compiled file path, in a later part of the configuration we will use it.
 
-## 配置
+## Configuration
 
-### Sublime Text3相关插件安装
+### Sublime Text3 related plug-in installation
 
-#### 安装Package Control
+#### Install Package Control
 
-Sublime Text3在安装各种插件前需要先安装Package Control，如果您的编辑器已安装Package Control请跳过本段直接安装rust相关插件。
+Sublime Text3 Before installing the plug-in will need to install Package Control, if your editor has been installed Package Control skip this paragraph rust mounted directly related plug-ins.
 
-您可以查看[Package Control官网](https://packagecontrol.io/installation)学习如何安装。
-也可以直接在编辑器中使用 `ctrl+~` 快捷键启动控制台，粘贴以下代码并回车进行安装。
+You can view the [Package Control official website] (https://packagecontrol.io/installation) learn how to install.
+You can also use `ctrl directly in the editor + ~` shortcut key to start the console, paste the following code and press Enter to install.
 
-```shell
+`` `Shell
 
-import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)
+import urllib.request, os, hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path (); urllib.request.install_opener (urllib.request.build_opener ( urllib.request.ProxyHandler ())); by = urllib.request.urlopen ( 'http://packagecontrol.io/' + pf.replace ( '', '% 20')) read ();. dh = hashlib .sha256 (by) .hexdigest ();! print ( 'Error validating download (got% s instead of% s), please try manual install'% (dh, h)) if dh = h else open (os.path. join (ipp, pf), 'wb') .write (by)
 
-```
+`` `
 
-#### rust相关插件
+#### Rust related plug-ins
 
-在编辑器下使用快捷键 `ctrl+shift+p` 启动命令行工具，输入Install Package按回车进入插件安装，选择或输入插件名称并回车即可完成插件的安装。
+Use shortcuts in the editor `ctrl + shift + p` start a command-line tool, enter the Install Package and press Enter to enter the plug-in installation, select or enter the name of the plug and press Enter to complete the installation of plug-ins.
 
-使用上述方式安装Rust插件\(rust语法高亮\)、RustAutoComplete\(rust代码提示和自动补全插件\)。
+Using the plug-in installed Rust \ (rust syntax highlighting \), RustAutoComplete \ (rust code hints and auto-completion plugins \).
 
-此时安装尚未完成，我们需要将本地的 racer.exe配置进RustAutoComplete插件中。打开编辑器顶端的Preferences选项卡，依次 Preferences->Package Settings->RustAutoComplete->Settings-User 来打开 RustAutoComplete 的配置文件，在文件中配置以下信息并保存。
+The installation has not been completed, we need to be configured into the local racer.exe RustAutoComplete plugin. Open the top of the editor of the Preferences tab, and then click Preferences-> Package Settings-> RustAutoComplete-> Settings-User to open RustAutoComplete profile, configure the following information in the file and save it.
 
-```shell
+`` `Shell
 
-{  
-  "racer": "E:/soft/racer-master/target/release/racer.exe",  
-  "search_paths": [    "E:/soft/rustc-1.7.0/src"   ]
+{
+  "Racer": "E: /soft/racer-master/target/release/racer.exe",
+  "Search_paths": [ "E: /soft/rustc-1.7.0/src"]
 }
 
-```
+`` `
 
-其中racer是编译后的racer.exe程序的绝对路径。search_paths是rust源码文件下src目录的绝对路径。
+Wherein racer is the absolute path compiled racer.exe program. search_paths is the absolute path rust source file src directory.
 
-编辑器重启后插件即可生效。
+After restarting the editor widget to take effect.
 
-## 快速编译
+## Quick compilation
 
-Sublime本身支持多种编译系统，在Tools选项卡下的Build System中选择Rust或者Cargo作为编译系统，选中后使用快捷键 `ctrl+B` 即可对代码进行快速编译。
-
+Sublime itself supports a variety of compiler system, select Rust or Cargo in Build System Tools tab of a build system, select and use the keyboard shortcut `ctrl + B` to quickly compile the code.
