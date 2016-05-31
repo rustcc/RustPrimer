@@ -206,45 +206,46 @@ struct Bar {  //不可实现Copy特性
 
 **那么我们如何来实现`Copy`特性呢？**
 有两种方式可以实现。
+
 1. **通过`derive`让Rust编译器自动实现**
 
-```rust
-#[derive(Copy, Clone)]
-struct Foo {
-    a: i32,
-    b: bool,
-}
-```
+    ```rust
+    #[derive(Copy, Clone)]
+    struct Foo {
+        a: i32,
+        b: bool,
+    }
+    ```
 
-编译器会自动检查`Foo`的所有属性是否实现了`Copy`特性，一旦检查通过，便会为`Foo`自动实现`Copy`特性。
+    编译器会自动检查`Foo`的所有属性是否实现了`Copy`特性，一旦检查通过，便会为`Foo`自动实现`Copy`特性。
 
 2. **手动实现`Clone`和`Copy` trait**
 
-```rust
-#[derive(Debug)]
-struct Foo {
-    a: i32,
-    b: bool,
-}
-impl Copy for Foo {}
-impl Clone for Foo {
-    fn clone(&self) -> Foo {
-        Foo{a: self.a, b: self.b}
+    ```rust
+    #[derive(Debug)]
+    struct Foo {
+        a: i32,
+        b: bool,
     }
-}
-fn main() {
-    let x = Foo{ a: 100, b: true};
-    let mut y = x;
-    y.b = false;
+    impl Copy for Foo {}
+    impl Clone for Foo {
+        fn clone(&self) -> Foo {
+            Foo{a: self.a, b: self.b}
+        }
+    }
+    fn main() {
+        let x = Foo{ a: 100, b: true};
+        let mut y = x;
+        y.b = false;
 
-    println!("{:?}", x);  //打印：Foo { a: 100, b: true }
-    println!("{:?}", y);  //打印：Foo { a: 100, b: false }
-}
+        println!("{:?}", x);  //打印：Foo { a: 100, b: true }
+        println!("{:?}", y);  //打印：Foo { a: 100, b: false }
+    }
 
-```
+    ```
 
-从结果我们发现`let mut y = x`后，`x`并没有因为所有权`move`而出现不可访问错误。
-因为`Foo`继承了`Copy`特性和`Clone`特性，所以例子中我们实现了这两个特性。
+    从结果我们发现`let mut y = x`后，`x`并没有因为所有权`move`而出现不可访问错误。
+    因为`Foo`继承了`Copy`特性和`Clone`特性，所以例子中我们实现了这两个特性。
 
 
 ### **高级move**
