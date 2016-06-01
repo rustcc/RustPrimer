@@ -25,7 +25,7 @@ fn main() {
 
 * **Owner**: 资源的所有者 `a`
 * **Borrower**: 资源的借用者 `x`
-* **Scope**: 作用域，资源/借用的有效期
+* **Scope**: 作用域，资源被借用/引用的有效期
 
 
 强调下，无论是资源的所有者还是资源的借用/引用，都存在在一个有效的存活时间或区间，这个时间区间称为**生命周期**， 也可以直接以**Scope作用域**去理解。
@@ -101,7 +101,7 @@ fn foo<'a>(x: &'a str) -> &'a str {
 
 `'a`是什么呢？它是Lifetime的标识符，这里的`a`也可以用`b`、`c`、`d`、`e`、...，甚至可以用`this_is_a_long_name`等，当然实际编程中并不建议用这种冗长的标识符，这样会严重降低程序的可读性。`foo`后面的`<'a>`为Lifetime的声明，可以声明多个，如`<'a, 'b>`等等。
 
-另外，除非编译器无法自动推导出Lifetime，否则不建议显示指定Lifetime标识符，会降低程序的可读性。
+另外，除非编译器无法自动推导出Lifetime，否则不建议显式指定Lifetime标识符，会降低程序的可读性。
 
 ## 显式Lifetime
 当输入参数为多个借用/引用时会发生什么呢？
@@ -253,7 +253,7 @@ fn foo<'a, 'b: 'a>(x: &'a str, y: &'b str) -> &'a str {
 
 
 ## Lifetime in struct
-上面我们更多讨论了函数中Lifetime中的应用，在`struct`中Lifetime同样重要。
+上面我们更多讨论了函数中Lifetime的应用，在`struct`中Lifetime同样重要。
 
 我们来定义一个`Person`结构体：
 
@@ -278,7 +278,7 @@ struct Person<'a> {
 }
 ```
 
-不需要对`Person`后面的`<'a>`感到疑惑，这里的`'a`并不是指`Person`这个`struct`的Lifetime，仅仅是一个泛型参数而已，`struct`可以有多个Lifetime参数用来约束不同的`field`，实例的Lifetime应该是所有`field`Lifetime交集的子集。例如：
+不需要对`Person`后面的`<'a>`感到疑惑，这里的`'a`并不是指`Person`这个`struct`的Lifetime，仅仅是一个泛型参数而已，`struct`可以有多个Lifetime参数用来约束不同的`field`，实际的Lifetime应该是所有`field`Lifetime交集的子集。例如：
 
 ```
 fn main() {
