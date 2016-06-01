@@ -53,6 +53,7 @@ Rust 运行在以下操作系统上：Linux, OS X, Windows, FreeBSD, Android, iO
 - [MarisaKirisame（帅气可爱魔理沙）](https://github.com/MarisaKirisame)
 - [Liqueur Librazy](https://github.com/Librazy)
 - [Knight42](https://github.com/knight42)
+- [Ryan Kung](https://github.com/ryankung)
 
 等。在此，向他们的辛苦工作和无私奉献表示尊敬和感谢！
 

@@ -23,13 +23,13 @@ fn main() {
 }
 ```
 
-如果有很多地方都需要支持多种类型，编程的代码量就非常繁重，而且代码也非常臃肿，编程就真的变成了苦逼搬砖的感觉，枯燥而乏味:D。
-学过C++的人也许很容易理解泛型，但本教程面向Rust初学者，所以不会对C++的泛型、多态和Rust进行对比，去增加学习的复杂度和造成不必要的困扰，让Rust初学者更容易理解和接受Rust泛型。
+如果有很多地方都需要支持多种类型，那么代码量就会非常大，而且代码也会非常臃肿，编程就真的变成了苦逼搬砖的工作，枯燥而乏味:D。
+学过C++的人也许很容易理解泛型，但本教程面向的是Rust初学者，所以不会拿C++的泛型、多态和Rust进行对比，以免增加学习的复杂度和不必要的困扰，从而让Rust初学者更容易理解和接受Rust泛型。
 
 
 概念
 -------------
-泛型程序设计是程序设计语言的一种风格或范式。允许程序员在强类型程序设计语言中编写代码时使用一些以后才指定的类型，在实例化时（instantiate）作为参数指明这些类型（在Rust中，有的时候类型还可以被编译器推倒出来）。各种程序设计语言和其编译器、运行环境对泛型的支持均不一样。Ada, Delphi, Eiffel, Java, C#, F#, Swift, and Visual Basic .NET称之为泛型（generics）；ML, Scala and Haskell称之为参数多态（parametric polymorphism）；C++与D称之为模板。具有广泛影响的1994年版的《Design Patterns》一书称之为参数化类型（parameterized type）。
+泛型程序设计是程序设计语言的一种风格或范式。允许程序员在强类型程序设计语言中编写代码时使用一些以后才指定的类型，在实例化时（instantiate）作为参数指明这些类型（在Rust中，有的时候类型还可以被编译器推导出来）。各种程序设计语言和其编译器、运行环境对泛型的支持均不一样。Ada, Delphi, Eiffel, Java, C#, F#, Swift, and Visual Basic .NET称之为泛型（generics）；ML, Scala and Haskell称之为参数多态（parametric polymorphism）；C++与D称之为模板。具有广泛影响的1994年版的《Design Patterns》一书称之为参数化类型（parameterized type）。
 >提示：
 >以上概念摘自[《维基百科-泛型》](https://zh.wikipedia.org/wiki/%E6%B3%9B%E5%9E%8B)
 

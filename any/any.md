@@ -1,6 +1,6 @@
 # Any和反射
 
-熟悉Java的同学肯定对Java的反射能力记忆尤新，同样的，Rust也提供了运行时反射的能力。但是，这里有点小小的不同，因为 Rust 不带 VM 不带 Runtime ,因此，其提供的反射更像是一种编译时反射。
+熟悉Java的同学肯定对Java的反射能力记忆犹新，同样的，Rust也提供了运行时反射的能力。但是，这里有点小小的不同，因为 Rust 不带 VM 不带 Runtime ,因此，其提供的反射更像是一种编译时反射。
 
 因为，Rust只能对 `'static` 生命周期的变量（常量）进行反射！
 
@@ -11,10 +11,8 @@
 这下可坏了……Rust不支持重载啊！于是有人就很单纯的写了两个函数～～！
 
 其实不用……我们只需要这么写……
-* 只能在nightly下编译通过
 
 ```rust
-#![feature(vec_push_all)]
 use std::any::Any;
 use std::fmt::Debug ;
 
@@ -27,7 +25,7 @@ fn load_config<T:Any+Debug>(value: &T) -> Vec<String>{
     };
 
     match value.downcast_ref::<Vec<String>>() {
-        Some(v) => cfgs.push_all(&v),
+        Some(v) => cfgs.extend_from_slice(&v),
         None =>(),
     }
 
