@@ -52,11 +52,6 @@ gitbook serve
 
 即可。
 
-
-## 成为Contributors
-
-在你提交Pull Request以前，你必须看[before-you-contribute.md](./before-you-contribute.md)。
-
 ## ChangeLog
 
 1. 2016年3月31日，初稿完成。发布 v1.0 版。
