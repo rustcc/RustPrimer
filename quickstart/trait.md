@@ -103,7 +103,7 @@ Trait::method(args);
 
 * 如果一个特性不在当前作用域内，它就不能被实现。
 * 不管是特性还是`impl`，都只能在当前的包装箱内起作用。
-* 带有特性约束的泛型函数使用单态 (monomorphization)，
+* 带有特性约束的泛型函数使用单态化实现 (monomorphization)，
 所以它是静态派分的 (statically dispatched)。
 
 下面列举几个非常有用的标准库特性：
