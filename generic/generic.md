@@ -78,9 +78,9 @@ fn main() {
 }
 ```
 
->**输出:**  
->101  
->200.33  
+>**输出:**
+>101
+>200.33
 
 ```add<T: Add<T, Output=T>>(a:T, b:T) -> T```就是我们泛型函数，返回值也是泛型T，Add<>中的含义可以暂时忽略，大体意思就是只要参数类型实现了Add trait，就可以被传入到我们的add函数，因为我们的add函数中有相加+操作，所以要求传进来的参数类型必须是可相加的，也就是必须实现了Add trait（具体参考std::ops::Add）。
 
@@ -119,10 +119,10 @@ fn main() {
 	println!("{:?}", add(p1, p2));
 }
 ```
->**输出:**  
->101  
-200.33  
-Point { x: 3, y: 3 }  
+>**输出:**
+>101
+200.33
+Point { x: 3, y: 3 }
 
 上面的例子稍微更复杂些了，只是我们增加了自定义的类型，然后让add函数依然可以在上面工作。如果对trait不熟悉，请查阅trait相关章节。
 
@@ -162,9 +162,9 @@ fn main() {
 }
 ```
 
->**输出：**  
->Point { x: 3.2, y: 3.2 }  
-Point { x: 3, y: 3 }  
+>**输出：**
+>Point { x: 3.2, y: 3.2 }
+Point { x: 3, y: 3 }
 
 上面的列子更复杂了些，我们不仅让自定义的Point类型支持了add操作，同时我们也为Point做了泛型化。
 
@@ -172,3 +172,39 @@ Point { x: 3, y: 3 }
 
 ### 总结
 上面区区几十行的代码，却实现了非泛型语言百行甚至千行代码才能达到的效果，足见泛型的强大。
+
+### 习题
+
+#### 1. Generic lines iterator
+
+##### 问题描述
+有时候我们可能做些文本分析工作, 数据可能来源于外部或者程序内置的文本.
+请实现一个 `parse` 函数, 只接收一个 lines iterator 为参数, 并输出每行.
+要求既能输出内置的文本, 也能输出文件内容.
+
+##### 调用方式及输出参考
+```
+let lines = "some\nlong\ntext".lines()
+parse(do_something_or_nothing(lines))
+```
+```
+some
+long
+text
+```
+
+```
+use std::fs:File;
+use std::io::prelude::*;
+use std::io::BufReader;
+let lines = BufReader::new(File::open("/etc/hosts").unwrap()).lines()
+parse(do_some_other_thing_or_nothing(lines))
+```
+```
+127.0.0.1       localhost.localdomain   localhost
+::1             localhost.localdomain   localhost
+...
+```
+
+##### Hint
+本书`类型系统中的几个常见 trait`章节中介绍的 AsRef, Borrow 等 trait 应该能派上用场.
