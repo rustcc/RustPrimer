@@ -1,4 +1,4 @@
-**所有权（Owership）**
+**所有权（Ownership）**
 -------------
 在进入正题之前，大家先回忆下一般的编程语言知识。
 对于一般的编程语言，通常会先声明一个变量，然后初始化它。
@@ -18,7 +18,7 @@ int* foo() {
 所以，内存安全和内存管理通常是程序员眼中的两大头疼问题。令人兴奋的是，Rust却不再让你担心内存安全问题，也不用再操心内存管理的麻烦，那Rust是如何做到这一点的？请往下看。
 
 ### **绑定（Binding）**
-**重要**：首先必须强调下，准确地说Rust中并没有变量这一概念，而应该称为`标识符`，目标`资源`(内存，存放value)`绑定`到这个`资源`：
+**重要**：首先必须强调下，准确地说Rust中并没有变量这一概念，而应该称为`标识符`，目标`资源`(内存，存放value)`绑定`到这个`标识符`：
 ```rust
 {
     let x: i32;       // 标识符x, 没有绑定任何资源
@@ -117,7 +117,7 @@ move前后的`a`和`b`对应资源内存的地址不同。
 在Rust中，基本数据类型(Primitive Types)均实现了Copy特性，包括i8, i16, i32, i64, usize, u8, u16, u32, u64, f32, f64, (), bool, char等等。其他支持Copy的数据类型可以参考官方文档的[Copy章节](https://doc.rust-lang.org/std/marker/trait.Copy.html "Copy Trait")。
 
 ### **浅拷贝与深拷贝**
-对于上面move String和i32的两个例子的区别，其实类似于很多面向对象编程语言中“浅拷贝”和“深拷贝”的区别。对于基本数据类型来说，“深拷贝”和“浅拷贝“产生的效果相同。对于引用对象类型来说，”浅拷贝“更像仅仅拷贝了对象的内存地址。
+前面例子中move String和i32用法的差异，其实和很多面向对象编程语言中“浅拷贝”和“深拷贝”的区别类似。对于基本数据类型来说，“深拷贝”和“浅拷贝“产生的效果相同。对于引用对象类型来说，”浅拷贝“更像仅仅拷贝了对象的内存地址。
 如果我们想实现对`String`的”深拷贝“怎么办？  可以直接调用`String`的Clone特性实现对内存的值拷贝而不是简单的地址拷贝。
 ```rust
 {
@@ -202,49 +202,50 @@ struct Bar {  //不可实现Copy特性
 }
 ```
 
-因为`Foo`的属性`a`和`b`的类型`i32`和`bool`均实现了`Copy`特性，所以`Fo`o也是可以实现Copy特性的。但对于`Bar`来说，它的属性`l`是`Vec<T>`类型，这种类型并没有实现`Copy`特性，所以`Bar`也是无法实现`Copy`特性的。
+因为`Foo`的属性`a`和`b`的类型`i32`和`bool`均实现了`Copy`特性，所以`Foo`也是可以实现Copy特性的。但对于`Bar`来说，它的属性`l`是`Vec<T>`类型，这种类型并没有实现`Copy`特性，所以`Bar`也是无法实现`Copy`特性的。
 
 **那么我们如何来实现`Copy`特性呢？**
 有两种方式可以实现。
+
 1. **通过`derive`让Rust编译器自动实现**
 
-```rust
-#[derive(Copy, Clone)]
-struct Foo {
-    a: i32,
-    b: bool,
-}
-```
+    ```rust
+    #[derive(Copy, Clone)]
+    struct Foo {
+        a: i32,
+        b: bool,
+    }
+    ```
 
-编译器会自动检查`Foo`的所有属性是否实现了`Copy`特性，一旦检查通过，便会为`Foo`自动实现`Copy`特性。
+    编译器会自动检查`Foo`的所有属性是否实现了`Copy`特性，一旦检查通过，便会为`Foo`自动实现`Copy`特性。
 
 2. **手动实现`Clone`和`Copy` trait**
 
-```rust
-#[derive(Debug)]
-struct Foo {
-    a: i32,
-    b: bool,
-}
-impl Copy for Foo {}
-impl Clone for Foo {
-    fn clone(&self) -> Foo {
-        Foo{a: self.a, b: self.b}
+    ```rust
+    #[derive(Debug)]
+    struct Foo {
+        a: i32,
+        b: bool,
     }
-}
-fn main() {
-    let x = Foo{ a: 100, b: true};
-    let mut y = x;
-    y.b = false;
+    impl Copy for Foo {}
+    impl Clone for Foo {
+        fn clone(&self) -> Foo {
+            Foo{a: self.a, b: self.b}
+        }
+    }
+    fn main() {
+        let x = Foo{ a: 100, b: true};
+        let mut y = x;
+        y.b = false;
 
-    println!("{:?}", x);  //打印：Foo { a: 100, b: true }
-    println!("{:?}", y);  //打印：Foo { a: 100, b: false }
-}
+        println!("{:?}", x);  //打印：Foo { a: 100, b: true }
+        println!("{:?}", y);  //打印：Foo { a: 100, b: false }
+    }
 
-```
+    ```
 
-从结果我们发现`let mut y = x`后，`x`并没有因为所有权`move`而出现不可访问错误。
-因为`Foo`继承了`Copy`特性和`Clone`特性，所以例子中我们实现了这两个特性。
+    从结果我们发现`let mut y = x`后，`x`并没有因为所有权`move`而出现不可访问错误。
+    因为`Foo`继承了`Copy`特性和`Clone`特性，所以例子中我们实现了这两个特性。
 
 
 ### **高级move**
