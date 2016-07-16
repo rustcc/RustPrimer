@@ -26,7 +26,7 @@ Read 由于每调用一次 `read` 方法都会调用一次系统API与内核交�
 use std::io;
 
 fn read_from_stdin(buf: &mut String) -> io::Result<()> {
-	try!(io::stdin().read_line(&mut buf));
+	try!(io::stdin().read_line(buf));
 	Ok(())
 }
 ```
