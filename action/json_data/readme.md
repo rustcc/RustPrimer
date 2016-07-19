@@ -90,7 +90,7 @@ cargo build 执行之后的提示信息
         `-- native
 
 ```
-可以看到多了很多文件，重点关注`cargo.lock`,开打文件:
+可以看到多了很多文件，重点关注`cargo.lock`,打开文件:
 
 ```toml
 [root]
