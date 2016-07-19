@@ -21,6 +21,7 @@ enum List {
 ```
 
 ## 实现链表的方法
+
 ```rust
 impl List {
     // 创建一个空链表
@@ -66,6 +67,7 @@ impl List {
 ```
 
 ## 代码测试
+
 ```rust
 fn main() {
     let mut list = List::new();

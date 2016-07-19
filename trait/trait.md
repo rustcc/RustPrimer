@@ -9,6 +9,7 @@ trait HasArea {
     fn area(&self) -> f64;
 }
 ```
+
 **trait**里面的函数可以没有函数体，实现代码交给具体实现它的类型去补充：
 
 ```rust
@@ -33,6 +34,7 @@ fn main() {
     println!("circle c has an area of {}", c.area());
 }
 ```
+
 **注**: **&self**表示的是**area**这个函数会将调用者的借代引用作为参数
 
 这个程序会输出：
@@ -69,6 +71,7 @@ fn foo<T: Debug + Clone>(s: T) {
     println!("{:?}", s);
 }
 ```
+
 `<T: Debug + Clone>`中`Debug`和`Clone`使用`+`连接，标示泛型`T`需要同时实现这两个trait。
 
 #### where关键字

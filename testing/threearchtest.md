@@ -68,6 +68,7 @@ fn it_works() {
     assert!(false);
 }
 ```
+
 运行 `cargo test`，你会得到类似下面这样的提示
 
 ```
@@ -98,6 +99,7 @@ thread '<main>' panicked at 'Some tests failed', /home/steve/src/rust/src/libtes
 如果你的测试函数没完成，或没有更新，或是故意让它崩溃，但为了让测试能够顺利完成，我们主动可以给测试函数加上 `#[should_panic]` 标识，就不会让 `cargo test` 报错了。
 
 如
+
 ```rust
 #[test]
 #[should_panic]
@@ -142,6 +144,7 @@ fn expensive_test() {
 ## 模块级测试
 
 有时，我们会组织一批测试用例，这时，模块化的组织结构就有助于建立结构性的测试体系。Rust 中，可以类似如下写法：
+
 ```rust
 pub fn add_two(a: i32) -> i32 {
     a + 2
@@ -157,6 +160,7 @@ mod tests {
     }
 }
 ```
+
 也即在 `mod` 的上面写上 `#[cfg(test)]` ，表明这个模块是个测试模块。一个测试模块中，可以包含若干测试函数，测试模块中还可以继续包含测试模块，即模块的嵌套。
 
 如此，就形式了结构化的测试体系，甚是方便。
@@ -186,11 +190,13 @@ fn it_works() {
     assert_eq!(4, adder::add_two(2));
 }
 ```
+
 这里，比如，我们 src 中，写了一个库，提供了一个 `add_two` 函数，现在进行集成测试。
 
 首先，用 `extern crate` 的方式，引入这个库，由于是同一个项目，cargo 会自动找。引入后，就按模块的使用方法调用就行了，其它的测试标识与前面相同。
 
 写完后，运行一下 `cargo test`，提示类似如下：
+
 ```
 $ cargo test
    Compiling adder v0.0.1 (file:///home/you/projects/adder)

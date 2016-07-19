@@ -6,10 +6,12 @@
 
 Rust自带了`bool`类型，其可能值为`true`或者`false`。
 我们可以通过这样的方式去声明它：
+
 ```rust
 let is_she_love_me = false;
 let mut is_he_love_me: bool = true;
 ```
+
 当然，bool类型被用的最多的地方就是在`if表达式`里了。
 
 ## char
@@ -152,7 +154,9 @@ for i in &mut v1 {
 }
 
 ```
+
 输出结果：
+
 ```
 1
 123

@@ -73,18 +73,22 @@ authors = ["YourName <YourEmail>"]
 > ps: subl ./src/main.rs
 
 cargo 创建的项目，在src目录下会有一个初始化的main.rs文件，内容为：
+
 ```rust
 fn main() {
     println!("Hello, world!");
 }
 ```
+
 现在我们编辑这个文件，改为：
+
 ```rust
 fn main() {
     let rust = "Rust";
     println!("Hello, {}!", rust);
 }
 ```
+
 这里的 `let rust = "Rust"` 是把 rust 变量绑定为 "Rust" ，
 `println!("Hello, {}!", rust);`里把 rust 变量的值代入到`"Hello, {}!"`中的`{}`。
 

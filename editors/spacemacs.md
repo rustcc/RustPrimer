@@ -1,4 +1,5 @@
 # Spacemacs
+
 spacemacs，是一个给vimer的Emacs。
 ## 简介
 spacemacs是一个专门给那些习惯vim的操作，同时又向往emacs的扩展能力的人。它非常适合我这种折腾过vim，配置过emacs的人，但同时也欢迎任何没有基础的新人使用。简单来说，它是一个开箱即用的Emacs！这对一个比很多人年龄都大的软件来说是一件极其不容易的事情。
@@ -11,23 +12,27 @@ spacemacs是一个专门给那些习惯vim的操作，同时又向往emacs的扩
 在*nix系统中，都不一定会默认安装了Emacs，就算安装了，也不一定是最新的版本。在这里，我强烈建议各位卸载掉系统自带的Emacs，因为你不知道系统给你安装的是个什么奇怪的存在，最遭心的，我碰见过只提供阉割版Emacs的linux发行版。
 
 建议各位自己去emacs项目主页下载Emacs-24.5（本书写作时的最新版）极其以上版本，然后下载下来源码。至于Emacs的安装也非常简单，linux平台老三步。
+
 ```bash
 ./configure
 make
 sudo make install
 ```
+
 什么？你没有make？没有GCC？缺少依赖？
 请安装它们……
 
 ### Spacemacs安装
 
 前面说了,Spacemacs就是个Emacs的配置文件库，因此我们可以通过非常简单的方式安装它：
+
 ```bash
 git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 mv ~/.emacs ~/_emacs.backup
 cd ~/.emacs.d
 echo $(git describe --tags $(git rev-list --tags --max-count=1)) | xargs git checkout
 ```
+
 其中，后三行是笔者加的，这里必须要吐槽一下的是，Spacemacs的master分支实际上是极其落后而且有错误的！其目前的release都是从develop分支上打的tag。
 
 因此，一！定！不！要！用！主！分！支！
@@ -49,6 +54,7 @@ echo $(git describe --tags $(git rev-list --tags --max-count=1)) | xargs git che
 Spacemacs文档中提供了一份标准的spacemacs[配置文件](https://github.com/syl20bnr/spacemacs/blob/master/core/templates/.spacemacs.template)，你可以将其加入到你自己的`~/.spacemacs`文件中。
 
 这里，我们需要修改的是其关于自定义插件的部分：
+
 ```lisp
 (defun dotspacemacs/layers ()
   "Configuration Layers declaration.

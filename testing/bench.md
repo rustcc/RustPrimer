@@ -4,6 +4,7 @@
 通常来讲，所谓性能评测，指的是测量程序运行的速度，即运行一次要多少时间（通常是执行多次求平均值）。Rust 竟然连这个特性都集成在语言基础特性中，真的是一门很重视工程性的语言。
 
 下面直接说明如何使用。
+
 ```
 cargo new benchit
 cd benchit
@@ -36,7 +37,9 @@ mod tests {
     }
 }
 ```
+
 注意：
+
 1. 这里虽然使用了 `extern crate test;`，但是项目的 `Cargo.toml` 文件中依赖区并不需要添加对 `test` 的依赖；
 2. 评测函数 `fn bench_add_two(b: &mut Bencher) {}` 上面使用 `#[bench]` 做标注，同时函数接受一个参数，`b` 就是 Rust 提供的评测器。这个写法是固定的。
 
@@ -45,7 +48,9 @@ mod tests {
 ```
 cargo bench
 ```
+
 输出结果类似如下：
+
 ```
 $ cargo bench
    Compiling benchit v0.0.1 (file:///home/mike/tmp/benchit)
@@ -57,6 +62,7 @@ test tests::bench_add_two ... bench:         1 ns/iter (+/- 0)
 
 test result: ok. 0 passed; 0 failed; 1 ignored; 1 measured
 ```
+
 可以看到，Rust 的性能评测是以纳秒 ns 为单位。
 
 写测评代码的时候，需要注意以下一些点：

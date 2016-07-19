@@ -26,6 +26,7 @@ is_hello(s);
 let s = "hello".to_string();
 is_hello(s);
 ```
+
 因为 `String` 和 `&str` 都实现了 `AsRef<str>`。
 
 

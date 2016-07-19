@@ -1,4 +1,4 @@
-#Rust for Linux
+# Rust for Linux
 
 Rust 支持主流的操作系统，Linux,Mac和 windows。
 
@@ -14,7 +14,7 @@ Rust 为Linux用户提供了两种安装方式：
 
 结果如下图所示：
 
-![check system info](../image/install-on-linux-check-system.png)
+![check system info](../images/install-on-linux-check-system.png)
 
 如上图所示，如果是 **x86_64** 则证明是64位系统，需要[下载](https://static.rust-lang.org/dist/rust-1.5.0-x86_64-unknown-linux-gnu.tar.gz)64位安装包；
 
@@ -30,7 +30,7 @@ Rust 为Linux用户提供了两种安装方式：
 
 此时执行: `rustc --version`, 你会看到对应的 rust 版本信息,如下图所示：
 
-![Success and show rust version info](../image/install-on-linux-rust-success.png)
+![Success and show rust version info](../images/install-on-linux-rust-success.png)
 
 ### 2、命令行一键安装：
 Rust 提供简单的一键安装，命令如下：

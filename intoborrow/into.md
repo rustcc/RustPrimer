@@ -32,6 +32,7 @@ fn is_hello<T: Into<Vec<u8>>>(s: T) {
 let s = "hello".to_string();
 is_hello(s);
 ```
+
 因为 `String` 类型实现了 `Into<Vec<u8>>`。
 
 下面拿一个实际生产中字符串作为函数参数的例子来说明。
@@ -66,6 +67,7 @@ let person = Person::new(name);
 ```rust
 let person = Person::new("Herman");
 ```
+
 就会报类型不匹配的错误。
 
 好了，下面 `Into` 出场。我们可以定义结构体为
@@ -100,6 +102,7 @@ impl Person {
     }
 }
 ```
+
 参数类型为 `S`， 是一个泛型参数，表示可以接受不同的类型。`S: Into<String>` 表示 `S` 类型必须实现了 `Into<String>`（约束）。而 `&str` 类型，符合这个要求。因此 `&str` 类型可以直接传进来。
 
 而 `String` 本身也是实现了 `Into<String>` 的。当然也可以直接传进来。
@@ -107,11 +110,13 @@ impl Person {
 然后，下面 `name: name.into()` 这里也挺神秘的。它的作用是将 `name` 转换成 `String` 类型的另一个对象。当 name 是 `&str` 时，它会转换成 `String` 对象，会做一次字符串的拷贝（内存的申请、复制）。而当 name 本身是 `String` 类型时，`name.into()` 不会做任何转换，代价为零（有没有恍然大悟）。
 
 根据参考资料，上述内容通过下面三式获得：
+
 ```rust
 impl<'a> From<&'a str> for String {}
 impl<T> From<T> for T {}
 impl<T, U> Into<U> for T where U: From<T> {}
 ```
+
 更多内容，请参考：
 
 - [http://doc.rust-lang.org/std/convert/trait.Into.html](http://doc.rust-lang.org/std/convert/trait.Into.html)
