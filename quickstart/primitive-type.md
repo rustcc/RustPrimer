@@ -2,6 +2,7 @@
 
 ## 变量绑定
 Rust 通过 let 关键字进行变量绑定。
+
 ```rust
 fn main() {
     let a1 = 5;
@@ -15,10 +16,12 @@ fn main() {
     //errer: mismatched types
 }
 ```
+
 这里的 assert_eq! 宏的作用是判断两个参数是不是相等的，但如果是两个不匹配的类型，就算字面值相等也会报错。
 
 ## 可变绑定
 rust 在声明变量时，在变量前面加入 mut 关键字，变量就会成为可变绑定的变量。
+
 ```rust
 fn main() {
     let mut a: f64 = 1.0;
@@ -38,6 +41,7 @@ fn main() {
     //assert_eq!(a, b);
 }
 ```
+
 这里的 b 变量，绑定了 2.0f32。这是 Rust 里面值类型显式标记的语法，规定为`value`+`type`的形式。
 
 **例如：**
@@ -58,6 +62,7 @@ fn main() {
 那是因为 let 绑定表达式的表达能力更强，而且 let 表达式实际上是一种模式匹配。
 
 **例如：**
+
 ```rust
 fn main() {
     let (a, mut b): (bool,bool) = (true, false);
@@ -70,6 +75,7 @@ fn main() {
     assert_eq!(a, b);
 }
 ```
+
 这里使用了 bool，只有true和false两个值，通常用来做逻辑判断的类型。
 
 ## 原生类型

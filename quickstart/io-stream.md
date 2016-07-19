@@ -5,6 +5,7 @@
 标准输入也叫作控制台输入，是常见输入的一种。
 
 **例子1：**
+
 ```rust
 use std::io;
 
@@ -22,7 +23,9 @@ fn main() {
     read_input();
 }
 ```
+
 **例子2：**
+
 ```rust
 use std::io;
 fn main() {
@@ -33,6 +36,7 @@ fn main() {
     println!("You typed: {}", input.trim());
 }
 ```
+
 这里体现了常见的标准输入的处理方式。两个例子都是声明了一个可变的字符串来保存输入的数据。
 他们的不同之处在在于处理潜在输入异常的方式。
 
@@ -44,6 +48,7 @@ fn main() {
 标准输出也叫控制台输出，Rust 里面常见的标准输出宏有 `print!` 和 `println!`。它们的区别是后者比前者在末尾多输出一个换行符。
 
 **例子1：**
+
 ```rust
 fn main() {
     print!("this ");
@@ -57,13 +62,16 @@ fn main() {
     print!("this string has a newline, why not choose println! instead?\n");
 }
 ```
+
 **例子2：**
+
 ```rust
 fn main() {
     println!("hello there!");
     println!("format {} arguments", "some");
 }
 ```
+
 这里两个例子都比较简单。读者可以运行一下查看输出结果对比一下他们的区别。
 值得注意的是例子 2 中，`{ }` 会被 `"some"` 所替换。这是 rust 里面的一种格式化输出。
 
@@ -71,6 +79,7 @@ fn main() {
 文件输入和标准输入都差不多，除了输入流指向了文件而不是控制台。下面例子采用了模式匹配来处理潜在的输入错误
 
 **例子：**
+
 ```rust
 use std::error::Error;
 use std::fs::File;
@@ -104,6 +113,7 @@ fn main() {
 文件输出和标准库输出也差不多，只不过是把输出流重定向到文件中。下面详细看例子。
 
 **例子：**
+
 ```rust
 // 输出文本
 static LOREM_IPSUM: &'static str =

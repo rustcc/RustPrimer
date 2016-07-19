@@ -157,4 +157,5 @@ assert_eq!(5, num);
 它就不能继续在原先的函数中使用了，只能在闭包内使用。
 
 不过在我们讨论获取或返回闭包之前，我们应该更多的了解一下闭包实现的方法。作为一个系统语言，Rust给予你了大量的控制你代码的能力，而闭包也是一样。
+
 > ### 这部分引用自[The Rust Programming Language中文版](https://github.com/KaiserY/rust-book-chinese/blob/master/content/Closures%20%E9%97%AD%E5%8C%85.md)

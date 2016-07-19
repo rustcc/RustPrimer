@@ -14,12 +14,15 @@
 #[no_mangle]
 extern "C" fn test() {}
 ```
+
 在nm中观察到为
+
 ```
 ...
 00000000001a7820 T test
 ...
 ```
+
 至此，`test`函数将能够被正常的由`cffi`调用。
 ## 指定`crate`类型
 `rustc`默认编译产生`rust`自用的`rlib`格式库，要让`rustc`产生动态链接库或者静态链接库，需要显式指定。
@@ -33,6 +36,7 @@ extern "C" fn test() {}
 ## 小技巧: `Any`
 
 由于在跨越`ffi`过程中，`rust`类型信息会丢失，比如当用`rust`提供一个`OpaqueStruct`给别的语言时：
+
 ```rust
 use std::mem::transmute;
 
@@ -68,6 +72,7 @@ extern "C" fn push_foo_element_c(foo: *mut c_void){
 因此在`ffi`调用时往往会丧失掉`rust`类型系统带来的方便和安全。在这里提供一个小技巧:使用`Box<Box<Any>>`来包装你的类型。
 
 `rust`的`Any`类型为`rust`带来了运行时反射的能力，使用`Any`跨越`ffi`边界将极大提高程序安全性。
+
 ```rust
 use std::any::Any;
 
@@ -101,4 +106,5 @@ extern "C" fn push_foo_element_c(foo: *mut c_void){
     }
 }
 ```
+
 这样一来，就非常不容易出错了。

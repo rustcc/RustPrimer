@@ -72,6 +72,7 @@ fn main() {
     shared_map.borrow_mut().insert("marbles", 38);
 }
 ```
+
 从上例可看出，用了 `RefCell` 后，外面是 `不可变引用` 的情况，一样地可以修改被包裹的对象。
 
 常用方法
@@ -79,6 +80,7 @@ fn main() {
 不可变借用被包裹值。同时可存在多个不可变借用。
 
 比如：
+
 ```rust
 use std::cell::RefCell;
 
@@ -89,6 +91,7 @@ let borrowed_five2 = c.borrow();
 ```
 
 下面的例子会崩溃：
+
 ```rust
 use std::cell::RefCell;
 use std::thread;
@@ -108,6 +111,7 @@ assert!(result.is_err());
 可变借用被包裹值。同时只能有一个可变借用。
 
 比如：
+
 ```rust
 use std::cell::RefCell;
 
@@ -117,6 +121,7 @@ let borrowed_five = c.borrow_mut();
 ```
 
 下面的例子会崩溃：
+
 ```rust
 use std::cell::RefCell;
 use std::thread;

@@ -44,12 +44,10 @@ import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc5
 此时安装尚未完成，我们需要将本地的 racer.exe配置进RustAutoComplete插件中。打开编辑器顶端的Preferences选项卡，依次 Preferences->Package Settings->RustAutoComplete->Settings-User 来打开 RustAutoComplete 的配置文件，在文件中配置以下信息并保存。
 
 ```shell
-
 {
   "racer": "E:/soft/racer-master/target/release/racer.exe",
   "search_paths": [    "E:/soft/rustc-1.7.0/src"   ]
 }
-
 ```
 
 其中racer是编译后的racer.exe程序的绝对路径。search_paths是rust源码文件下src目录的绝对路径。

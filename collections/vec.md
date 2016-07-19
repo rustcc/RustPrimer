@@ -59,6 +59,7 @@ let v: Vec<_> = (1..5).collect();
 就像数组一样，因为Vec借助`Index`和`IndexMut`提供了随机访问的能力，我们通过`[index]`来对其进行访问，当然，既然存在随机访问就会出现越界的问题。而在Rust中，一旦越界的后果是极其严重的，可以导致Rust当前线程panic。因此，除非你确定自己在干什么或者在`for`循环中，不然我们不推荐通过下标访问。
 
 以下是例子：
+
 ```rust
 let a = vec![1, 2, 3];
 assert_eq!(a[1usize], 2);
@@ -125,6 +126,7 @@ time spend: Duration { secs: 0, nanos: 259878787 }
 ./demo  0.62s user 0.01s system 99% cpu 0.632 total
 
 ```
+
 好像并没有太大差异？然而切换到release版本的时候:
 
 ```

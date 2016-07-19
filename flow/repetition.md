@@ -10,20 +10,25 @@
 ## for
 
 for 语句用于遍历一个迭代器。
+
 ```rust
 for var in iterator {
     code
 }
 ```
+
 Rust 迭代器返回一系列的元素，每个元素是循环中的一次重复。然后它的值与 var 绑定，它在循环体中有效。每当循环体执行完后，我们从迭代器中取出下一个值，然后我们再重复一遍。当迭代器中不再有值时，for 循环结束。
 
 比如：
+
 ```rust
 for x in 0..10 {
     println!("{}", x); // x: i32
 }
 ```
+
 输出
+
 ```
 0
 1
@@ -62,6 +67,7 @@ for (i,j) in (5..10).enumerate() {
     println!("i = {} and j = {}", i, j);
 }
 ```
+
 输出：
 
 ```
@@ -71,6 +77,7 @@ i = 2 and j = 7
 i = 3 and j = 8
 i = 4 and j = 9
 ```
+
 再比如：
 
 ```rust
@@ -82,7 +89,9 @@ for (linenumber, line) in lines.enumerate() {
     println!("{}: {}", linenumber, line);
 }
 ```
+
 输出：
+
 ```
 0: Content of line one
 1: Content of line two
@@ -175,6 +184,7 @@ while !done {
     }
 }
 ```
+
 可以优化成：
 
 ```rust
@@ -188,6 +198,7 @@ loop {
     if x % 5 == 0 { break; }
 }
 ```
+
 这样感觉更直观一点。
 
 下面这个例子演示 continue 的用法：
@@ -199,6 +210,7 @@ for x in 0..10 {
     println!("{}", x);
 }
 ```
+
 它的作用是打印出 `0~9` 的奇数。结果如下：
 
 ```

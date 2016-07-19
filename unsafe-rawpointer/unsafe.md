@@ -7,7 +7,9 @@
 因此在安全的Rust背后，还需要`unsafe`的支持。
 
 `unsafe`块能允许程序员做的额外事情有：
+
 * 解引用一个裸指针`*const T`和`*mut T`
+ 
 ```rust
 let x = 5;
 let raw = &x as *const i32;
@@ -16,6 +18,7 @@ println!("raw points at {}", points_at);
 ```
 
 * 读写一个可变的静态变量`static mut`
+
 ```rust
 static mut N: i32 = 5;
 unsafe {
@@ -25,6 +28,7 @@ unsafe {
 ```
 
 * 调用一个不安全函数
+
 ```rust
 unsafe fn foo() {
 	//实现
@@ -39,6 +43,7 @@ fn main() {
 ## 使用`unsafe`
 
 `unsafe fn`不安全函数标示如果调用它可能会违反**Rust**的内存安全语意：
+
 ```rust
 unsafe fn danger_will_robinson() {
     // 实现
@@ -46,6 +51,7 @@ unsafe fn danger_will_robinson() {
 ```
 
 `unsafe block`不安全块可以在其中调用不安全的代码：
+
 ```rust
 unsafe {
     // 实现
@@ -53,6 +59,7 @@ unsafe {
 ```
 
 `unsafe trait`不安全trait及它们的实现，所有实现它们的具体类型有可能是不安全的:
+
 ```rust
 unsafe trait Scary { }
 unsafe impl Scary for i32 {}
@@ -61,12 +68,14 @@ unsafe impl Scary for i32 {}
 ## safe != no bug
 
 对于**Rust**来说禁止你做任何不安全的事是它的本职，不过有些是编写代码时的`bug`，它们并不属于“内存安全”的范畴：
+
 * 死锁
 * 内存或其他资源溢出
 * 退出未调用析构函数
 * 整型溢出
 
 使用`unsafe`时需要注意一些特殊情形：
+
 * 数据竞争
 * 解引用空裸指针和悬垂裸指针
 * 读取未初始化的内存

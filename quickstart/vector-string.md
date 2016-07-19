@@ -5,6 +5,7 @@ Rust 使用数组存储相同类型的数据集。
 `[T; N]`表示一个拥有 T 类型，N 个元素的数组。数组的大小是固定。
 
 **例子：**
+
 ```rust
 fn main() {
     let mut array: [i32; 3] = [0; 3];
@@ -20,10 +21,12 @@ fn main() {
     }
 }
 ```
+
 ### 动态数组 Vec
 动态数组是一种基于堆内存申请的连续动态数据类型，拥有 O(1) 时间复杂度的索引、压入（push）、弹出（pop)。
 
 **例子：**
+
 ```rust
 //创建空Vec
 let v: Vec<i32> = Vec::new();
@@ -44,6 +47,7 @@ let mut v = vec![1, 2, 3];
 let three = v[2];
 v[1] = v[1] + 5;
 ```
+
 ## 字符串
 Rust 里面有两种字符串类型。`String` 和 `str`。
 
@@ -52,6 +56,7 @@ Rust 里面有两种字符串类型。`String` 和 `str`。
 常见的的字符串字面值就是 `&'static str` 类型。这是一种带有 `'static` 生命周期的 &str 类型。
 
 **例子：**
+
 ```rust
 // 字符串字面值
 let hello = "Hello, world!";
@@ -66,6 +71,7 @@ let hello: &'static str = "Hello, world!";
 显然 `String` 类型也有压入和弹出。
 
 **例子：**
+
 ```rust
 // 创建一个空的字符串
 let mut s = String::new();

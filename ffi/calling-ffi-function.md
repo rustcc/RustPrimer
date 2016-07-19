@@ -17,6 +17,7 @@ libc = "0.2.9"
 ```
 
 在你的rs文件中引入库:
+
 ```rust
 extern crate libc
 ```
@@ -48,6 +49,7 @@ extern {
 
 声明完成后就可以进行调用了。
 由于此函数来自外部的c库，所以rust并不能保证该函数的安全性。因此，调用任何一个`ffi`函数需要一个`unsafe`块。
+
 ```rust
 let result: size_t = unsafe {
     your_func(1 as c_int, Box::into_raw(Box::new(3)) as *mut c_void)
@@ -58,6 +60,7 @@ let result: size_t = unsafe {
 
 作为一个库作者，对外暴露不安全接口是一种非常不合格的做法。在做c库的`rust binding`时，我们做的最多的将是将不安全的c接口封装成一个安全接口。
 通常做法是：在一个叫`ffi.rs`之类的文件中写上所有的`extern块`用以声明ffi函数。在一个叫`wrapper.rs`之类的文件中进行包装：
+
 ```rust
 // ffi.rs
 #[link(name = "yourlib")]
@@ -65,12 +68,14 @@ extern {
     fn your_func(arg1: c_int, arg2: *mut c_void) -> size_t;
 }
 ```
+
 ```rust
 // wrapper.rs
 fn your_func_wrapper(arg1: i32, arg2: &mut i32) -> isize {
     unsafe { your_func(1 as c_int, Box::into_raw(Box::new(3)) as *mut c_void) } as isize
 }
 ```
+
 对外暴露(pub use) `your_func_wrapper`函数即可。
 
 ## 数据结构对应
@@ -88,6 +93,7 @@ struct RustObject {
     // other members
 }
 ```
+
 此外，如果使用`#[repr(C, packed)]`将不为此结构体填充空位用以对齐。
 
 ### Union
@@ -118,7 +124,9 @@ fn main() {
     }
 }
 ```
+
 对应c库代码:
+
 ```c
 typedef void (*rust_callback)(int32_t);
 
@@ -134,6 +142,7 @@ rust为了应对不同的情况，有很多种字符串类型。其中`CStr`和`
 #### CStr
 
 对于产生于c的字符串(如在c程序中使用`malloc`产生)，rust使用`CStr`来表示，和`str`类型对应，表明我们并不拥有这个字符串。
+
 ```rust
 use std::ffi::CStr;
 use libc::c_char;
@@ -150,6 +159,7 @@ fn get_string() -> String {
     }
 }
 ```
+
 在这里`get_string`使用`CStr::from_ptr`从c的`char*`获取一个字符串，并且转化成了一个String.
 
 * 注意to_string_lossy()的使用：因为在rust中一切字符都是采用utf8表示的而c不是，
@@ -159,6 +169,7 @@ fn get_string() -> String {
 #### CString
 
 和`CStr`表示从c中来，rust不拥有归属权的字符串相反，`CString`表示由rust分配，用以传给c程序的字符串。
+
 ```rust
 use std::ffi::CString;
 use std::os::raw::c_char;
@@ -172,6 +183,7 @@ unsafe {
     my_printer(c_to_print.as_ptr()); // 使用 as_ptr 将CString转化成char指针传给c函数
 }
 ```
+
 注意c字符串中并不能包含`\0`字节(因为`\0`用来表示c字符串的结束符),因此`CString::new`将返回一个`Result`，
 如果输入有`\0`的话则为`Error(NulError)`。
 
@@ -181,6 +193,7 @@ C库存在一种常见的情况：库作者并不想让使用者知道一个数�
 比较典型的是`ncurse`库中的`WINDOW`类型。
 
 当参数是`void*`时，在rust中可以和c一样，使用对应类型`*mut libc::c_void`进行操作。如果参数为不透明结构体，rust中可以使用空白`enum`进行代替:
+
 ```rust
 enum OpaqueStruct {}
 
@@ -188,7 +201,9 @@ extern "C" {
     pub fn foo(arg: *mut OpaqueStruct);
 }
 ```
+
 C代码：
+
 ```c
 struct OpaqueStruct;
 void foo(struct OpaqueStruct *arg);
