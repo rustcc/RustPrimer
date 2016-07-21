@@ -106,6 +106,7 @@ rustup self uninstall
 <date>          = YYYY-MM-DD
 <host>          = <target-triple>
 ```
+
 如`stable-x86_64-pc-windows-msvc` `nightly-2014-12-18` `1.8.0`等都是合法的toolchain名称。
 
 我们也可以采用[自定义toolchain](https://github.com/rust-lang-nursery/rustup.rs#working-with-custom-toolchains)配合rustup。

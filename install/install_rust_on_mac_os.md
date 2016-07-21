@@ -11,7 +11,7 @@ Rust 为 mac 用户提供了两种安装方式：
 
 `uname -a`
 
-![Mac-os-inofrmatoin](../image/get-mac-os-information.png)
+![Mac-os-inofrmatoin](../images/get-mac-os-information.png)
 
 如上图红色部分所示，如果是 **x86_64** 则证明是64位系统，需要[下载](https://static.rust-lang.org/dist/rust-1.5.0-x86_64-apple-darwin.pkg)64位安装包；
 如果是**x86-32**则需要[下载](https://static.rust-lang.org/dist/rust-1.5.0-i686-apple-darwin.pkg)32位安装包

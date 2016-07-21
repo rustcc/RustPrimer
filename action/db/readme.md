@@ -142,6 +142,7 @@ pub fn query_all(conn: &Connection,query: &str){
 }
 
 ```
+
 然后在main.rs 中调用相应的函数代码如下
 1. extern db ,引入db，也就是将项目本身引入
 2. use db 使用db，中的可以被引入的函数
@@ -182,6 +183,7 @@ fn main() {
 ```
 
 自己遇到的坑
+
 - 创建连接函数时，连接必须有一个返回值，所以必须指定返回值的类型，
 对于一个写python的人而言，我觉得是痛苦的，我想按照官方的写法match
 一下，发现可能产生多个返回值。在编译时直接无法通过编译，所以最终
@@ -202,7 +204,9 @@ pub fn query_all(conn: &Connection,query: &str){
 }
 
 ```
+
 报错如下：
+
 ``` rust
 vagrant@ubuntu-14:~/tmp/test/rustprimer/db$ cargo run
    Compiling db v0.1.0 (file:///home/vagrant/tmp/test/rustprimer/db)
@@ -217,6 +221,7 @@ error: aborting due to previous error
 Could not compile `db`.
 
 ```
+
 然后去查看了关于postgres模块的所有函数，尝试了无数种办法，依旧没有解决。
 
 可能自己眼高手低，如果从头再把rust的相关教程看一下，可能很早就发现这个问题，

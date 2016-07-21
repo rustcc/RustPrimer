@@ -17,6 +17,7 @@ racer是一个由rust的爱好者提供的rust自动补全和语法分析工具�
 
 ### cargo自动安装
 在rust 1.5版本以后，其安装包自带的cargo工具已经支持了cargo install命令，这个命令可以帮助我们通过简单的方式获取到`racer`的最新版。
+
 在linux和unix系统中，你可以通过
 
 ```bash
@@ -65,13 +66,17 @@ export RUST_SRC_PATH=$RUST_SRC_HOME/src
 请重新打开终端，并进入到关闭之前的路径。
 执行如下代码：
 linux:
+
 ```
 ./target/release/racer complete std::io::B
 ```
+
 windows:
+
 ```
 target\release\racer complete std::io::B
 ```
+
 你将会看到racer的提示，这表示racer已经执行完成了。
 
 

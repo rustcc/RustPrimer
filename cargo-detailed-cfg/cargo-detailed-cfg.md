@@ -1,5 +1,6 @@
 筒子们好，我们又见面了。之前第5章，我们一起探讨了cargo的一些常用的基本技能。通过第5章的学习，大家基本能解决日常项目开发中遇到的大多数问题。但实际上，cargo提供给我们所使用的功能不仅限于此。我只想说一个字：cargo很好很强大，而且远比你想象的强大。
 本章将深入探讨cargo的一些细节问题，这包括以下几个方面：
+
 - 基于语义化版本的项目版本声明与管理
 - cargo的toml描述文件配置字段详细参考
 
@@ -15,6 +16,7 @@ version = "0.1.0"
 libc = "0.2"
 
 ```
+
 这里package段落中的version字段的值，以及dependencies段落中的libc字段的值，这些值的写法，都涉及到语义化版本控制的问题。语义化版本控制是用一组简单的规则及条件来约束版本号的配置和增长。这些规则是根据（但不局限于）已经被各种封闭、开放源码软件所广泛使用的惯例所设计。简单来说，语义化版本控制遵循下面这些规则：
 
 - 版本格式：主版本号.次版本号.修订号，版本号递增规则如下：
@@ -28,8 +30,10 @@ libc = "0.2"
 关于语义化版本控制的具体细节问题，大家可以参考[这里](http://semver.org/lang/zh-CN/)，我不再赘述。
 
 # cargo的toml描述文件配置字段详细参考
+
 ## [package]段落
 啥也不多说了，直接上例子，大家注意我在例子中的中文解释，个人觉得这样比较一目了然：
+
 ```toml
 [package]
  # 软件包名称，如果需要在别的地方引用此软件包，请用此名称。
@@ -78,6 +82,7 @@ license-file = "..."
 
 ## 依赖的详细配置
 最直接的方式在之前第五章探讨过，这里不在赘述，例如这样：
+
 ```toml
 [dependencies]
 hammer = "0.5.0"
@@ -177,6 +182,7 @@ debug-assertions = true
 codegen-units = 1
 
 ```
+
 需要注意的是，当调用编译器时，只有位于调用最顶层的软件包的模板文件有效，其他的子软件包或者依赖软件包的模板定义将被顶层软件包的模板覆盖。
 
 ## [features]段落
@@ -217,13 +223,16 @@ civet = { version = "*", optional = true }
 ```
 
 如果其他软件包要依赖使用上述awesome软件包，可以在其描述文件中这样写：
+
 ```toml
 [dependencies.awesome]
 version = "1.3.5"
 default-features = false # 禁用awesome 的默认features
 features = ["secure-password", "civet"] # 使用此处列举的各项features
 ```
+
 使用features时需要遵循以下规则：
+
 - feature名称在本描述文件中不能与出现的软件包名称冲突
 - 除了default feature，其他所有的features均是可选的
 - features不能相互循环包含
@@ -235,8 +244,10 @@ features的一个重要用途就是，当开发者需要对软件包进行最终
 ```
 $ cargo build --release --features "shumway pdf"
 ```
+
 ## 关于测试
 当运行cargo test命令时，cargo将会按做以下事情：
+
 - 编译并运行软件包源代码中被#[cfg(test)] 所标志的单元测试
 - 编译并运行文档测试
 - 编译并运行集成测试

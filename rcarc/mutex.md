@@ -10,6 +10,7 @@
 4. 在多线程中，`Mutex` 一般和 `Arc` 配合使用。
 
 示例：
+
 ```rust
 use std::sync::{Arc, Mutex};
 use std::thread;

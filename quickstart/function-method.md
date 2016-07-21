@@ -3,11 +3,13 @@
 ## 函数
 
 要声明一个函数，需要使用关键字`fn`，后面跟上函数名，比如
+
 ```rust
 fn add_one(x: i32) -> i32 {
     x + 1
 }
 ```
+
 其中函数参数的类型不能省略，可以有多个参数，但是最多只能返回一个值，
 提前返回使用`return`关键字。Rust编译器会对未使用的函数提出警告，
 可以使用属性`#[allow(dead_code)]`禁用无效代码检查。
@@ -19,6 +21,7 @@ fn diverges() -> ! {
     panic!("This function never returns!");
 }
 ```
+
 其中`panic!`是一个宏，使当前执行线程崩溃并打印给定信息。返回类型`!`可用作任何类型：
 
 ```rust
@@ -34,6 +37,7 @@ Rust使用闭包 (closure) 来创建匿名函数：
 let num = 5;
 let plus_num = |x: i32| x + num;
 ```
+
 其中闭包`plus_num`借用了它作用域中的`let`绑定`num`。如果要让闭包获得所有权，
 可以使用`move`关键字：
 
@@ -50,6 +54,7 @@ let mut num = 5;
 // 具体可见所有权(Owership)章节
 assert_eq!(5, num);
 ```
+
 ## 高阶函数
 
 Rust 还支持高阶函数 (high order function)，允许把闭包作为参数来生成新的函数：

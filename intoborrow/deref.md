@@ -1,4 +1,3 @@
-
 # Deref
 
 `Deref` 是 `deref` 操作符 `*` 的 trait，比如 `*v`。
@@ -41,6 +40,7 @@ let owned = "Hello".to_string();
 // therefore, this works:
 foo(&owned);
 ```
+
 因为 `String` 实现了 `Deref<Target=str>`。
 
 ```rust
@@ -69,6 +69,7 @@ let owned = vec![1, 2, 3];
 
 foo(&owned);
 ```
+
 因为 `Vec<T>` 实现了 `Deref<Target=[T]>`。
 
 ```rust
@@ -85,6 +86,7 @@ f.foo();
 (&&f).foo();
 (&&&&&&&&f).foo();
 ```
+
 上面那几种函数的调用，效果是一样的。
 
 

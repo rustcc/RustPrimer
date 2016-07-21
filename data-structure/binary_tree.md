@@ -19,6 +19,7 @@
 
 ## 定义二叉树的结构
 二叉树的每个节点由键key、值value与左右子树left/right组成，这里我们把节点声明为一个泛型结构。
+
 ```rust
 type TreeNode<K,V> = Option<Box<Node<K,V>>>;
 #[derive(Debug)]
@@ -29,8 +30,10 @@ struct Node<K,V: std::fmt::Display> {
    value: V,
 }
 ```
+
 ## 实现二叉树的初始化与二叉查找树的插入
 由于二叉查找树要求键可排序，我们要求K实现PartialOrd
+
 ```rust
 trait BinaryTree<K,V> {
 	fn pre_order(&self);
@@ -68,6 +71,7 @@ impl<K:PartialOrd,V:std::fmt::Display> BinarySearchTree<K,V> for Node<K,V>{
     }
 }
 ```
+
 ## 二叉树的遍历
 
 - 先序遍历：首先访问根，再先序遍历左（右）子树，最后先序遍历右（左）子树。
@@ -75,6 +79,7 @@ impl<K:PartialOrd,V:std::fmt::Display> BinarySearchTree<K,V> for Node<K,V>{
 - 后序遍历：首先后序遍历左（右）子树，再后序遍历右（左）子树，最后访问根。
 
 下面是代码实现：
+
 ```rust
 impl<K,V:std::fmt::Display> BinaryTree<K,V> for Node<K,V> {
     fn pre_order(&self) {
@@ -108,7 +113,9 @@ impl<K,V:std::fmt::Display> BinaryTree<K,V> for Node<K,V> {
     }
 }
 ```
+
 ## 测试代码
+
 ```rust
 type BST<K,V> = Node<K,V>;
 

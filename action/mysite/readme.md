@@ -10,10 +10,12 @@ rust目前比较有名的框架是iron和nickel，我们两个都写一下简单
 接上一篇，使用cargo获取第三方库。`cargo new mysite --bin`
 
 在cargo.toml中添加iron的依赖，
+
 ```toml
 [dependencies]
 iron = "*"
 ```
+
 然后build将依赖下载到本地 `cargo build`
 
 如果报ssl错误，那可能你需要安装linux的ssl开发库。
@@ -32,6 +34,7 @@ fn main() {
     }).http("localhost:3000").unwrap();
 }
 ```
+
 然后运行
 
 `cargo run`
@@ -53,6 +56,7 @@ let plus_one = |x: i32| x + 1;
 
 assert_eq!(2, plus_one(1));
 ```
+
 具体的怎么使用 ，可以暂时不用理会，因为你只要知道如何完成web，因为我也不会。。
 结合之前一章节的json处理，我们来看看web接口怎么返回json,当然也要 rustc_serialize 放到 cargo.toml 中
 
@@ -82,12 +86,14 @@ fn main() {
     println!("On 3000");
 }
 ```
+
 执行 cargo run 使用 curl 测试结果:
 
 ```
 curl localhost:3000
 {"msg":"Hello, World"}
 ```
+
 当然可以可以实现更多的业务需求，通过控制自己的json。
 
 既然有了json了，如果要多个路由什么的，岂不是完蛋了，所以不可能这样的，我们需要考虑一下怎么实现路由的定制
@@ -133,8 +139,10 @@ fn main() {
     Iron::new(router).http("localhost:3000").unwrap();
 }
 ```
+
 这次添加了路由的实现和获取客户端发送过来的数据，有了get，post,所以现在一个基本的api网站已经完成了。不过
 并不是所有的网站都是api来访问，同样需要html模版引擎和直接返回静态页面。等等
+
 ```
 vagrant@ubuntu-14:~/tmp/test/rustprimer/mysite$ cargo build
    Compiling mysite v0.1.0 (file:///home/vagrant/tmp/test/rustprimer/mysite)
@@ -146,6 +154,7 @@ src/main.rs:29:36: 29:52 help: candidate #1: use `std::io::Read`
 error: aborting due to previous error
 Could not compile `mysite`.
 ```
+
 编译出错了，太糟糕了，提示说没有read_to_string这个方法，然后我去文档查了一下，发现有[read_to_string方法](http://ironframework.io/doc/iron/request/struct.Body.html)
 再看提示信息
 
@@ -201,6 +210,7 @@ let mut buffer = String::new();
 try!(f.read_to_string(&mut buffer));
 
 ```
+
 用法比较简单，我们修改一下刚刚的函数：
 
 ```
@@ -213,12 +223,14 @@ fn set_greeting(request: &mut Request) -> IronResult<Response> {
         Ok(Response::with((status::Ok, payload)))
     }
 ```
+
 从request中读取字符串，读取的结果存放到payload中，然后就可以进行操作了，编译之后运行，使用curl提交一个post数据
 
 ```
 $curl -X POST -d '{"msg":"Just trust the Rust"}' http://localhost:3000/set
 {"msg":"Just trust the Rust"}
 ```
+
 iron 基本告一段落
 当然还有如何使用html模版引擎，那就是直接看文档就行了。
 
@@ -247,6 +259,7 @@ fn main() {
     server.listen("127.0.0.1:6767");
 }
 ```
+
 简单来看，也就是这样回事。
 
 1. 引入了nickel的宏
@@ -276,18 +289,21 @@ fn main() {
 }
 
 ```
+
 上面的信息你可以编译，使用curl看看发现出现
 
 ```
 $ curl http://127.0.0.1:6767
 Internal Server Error
 ```
+
 看看文档，没发现什么问题，我紧紧更换了一个文件夹的名字，这个文件夹我也创建了。
 然后我在想难道是服务器将目录写死了吗？于是将上面的路径改正这个，问题解决。
 
 ```rust
 return response.render("examples/assets/template.tpl", &data);
 ```
+
 我们看一下目录结构
 
 ```
