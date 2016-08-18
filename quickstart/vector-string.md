@@ -66,7 +66,7 @@ let hello: &'static str = "Hello, world!";
 ```
 
 ### String
-`String` 是一种堆内存申请的 `Vec<[u8]>` 类型，你可以理解为 `str` 类型的动态形式。
+`String` 是一个带有的 `vec:Vec<u8>` 成员的结构体，你可以理解为 `str` 类型的动态形式。
 它们的关系相当于 `[T]` 和 `Vec<T>` 的关系。
 显然 `String` 类型也有压入和弹出。
 
