@@ -5,7 +5,7 @@
   * [Linux](install/install_rust_on_linux.md)
   * [Mac](install/install_rust_on_mac_os.md)
   * [Windows](install/install_rust_on_windows.md)
-  * [版本管理工具: multirust](install/multirust.md)
+  * [版本管理工具: rustup](install/rustup.md)
 * [编辑器](editors/preface.md)
   * [前期准备](editors/before.md)「wayslog」
   * [vim](editors/vim.md)「wayslog」
@@ -20,7 +20,7 @@
   * [变量绑定与原生类型](quickstart/primitive-type.md)
   * [数组、动态数组和字符串](quickstart/vector-string.md)
   * [结构体与枚举](quickstart/struct-enum.md)
-  * [操作流](quickstart/control-flow.md)
+  * [控制流](quickstart/control-flow.md)
   * [函数与方法](quickstart/function-method.md)
   * [特性](quickstart/trait.md)
   * [注释与文档](quickstart/comments-document.md)
@@ -64,6 +64,7 @@
   * [模块 module 和包 crate](module/module.md)
   * [Prelude](module/prelude.md)
 * [Option、Result与错误处理](error-handling/option-result.md)「JohnSmithX」
+* [输入与输出](io/io.md)「tennix」
 * [宏系统](macro/macro.md)「tennix」
 * [堆、栈与Box](heap-stack/heap-stack.md)「tennix」
 * [几种智能指针](rcarc/preface.md)「daogangtang」

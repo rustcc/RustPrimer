@@ -10,11 +10,11 @@
 
 ## 栈的实现步骤：
 
-- [x] 1. 定义一个栈结构`Stack`
-- [x] 2. 定义组成栈结构的栈点`StackNode`
-- [x] 3. 实现栈的初始化函数`new( )`
-- [x] 4. 实现进栈函数`push( )`
-- [x] 5. 实现退栈函数`pop( )`
+- 定义一个栈结构`Stack`
+- 定义组成栈结构的栈点`StackNode`
+- 实现栈的初始化函数`new( )`
+- 实现进栈函数`push( )`
+- 实现退栈函数`pop( )`
 
 ## 定义一个栈结构`Stack`
 
@@ -24,6 +24,7 @@ struct Stack<T> {
     top: Option<Box<StackNode<T>>>,
 }
 ```
+
 让我们一步步来分析
 
 - 第一行的`#[derive(Debug)]`是为了让`Stack`结构体可以打印调试。
@@ -31,6 +32,7 @@ struct Stack<T> {
 - 第三行比较复杂，在定义`StackNode`的时候介绍
 
 ## 定义组成栈结构的栈点`StackNode`
+
 ```rust
 #[derive(Clone,Debug)]
 struct StackNode<T> {
@@ -38,6 +40,7 @@ struct StackNode<T> {
     next: Option<Box<StackNode<T>>>,
 }
 ```
+
 在这段代码的第三行， 我们定义了一个`val`保存`StackNode`的值。
 
 >现在我们重点来看看第四行：
@@ -56,6 +59,7 @@ struct StackNode<T> {
 
 > `Option`是 Rust 里面的一个抽象类型，定义如下：  
 >
+
 ```rust
 pub enum Option<T> {
     None,
@@ -110,6 +114,7 @@ impl<T> Stack<T> {
 - `pop( )`的功能是取出栈顶的元素，如果栈顶为 None 则返回 None。
 
 ## 完整代码（包含简单的测试）
+
 ```rust
 #[derive(Debug)]
 struct Stack<T> {

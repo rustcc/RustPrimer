@@ -1,12 +1,12 @@
-# VIM/GVIM安装配置
+# vim/GVim安装配置
 
-本文是VIM的Rust支持配置，在阅读本文之前，我们假定你已经拥有了一个可执行的rustc程序，并编译好了racer。
+本节介绍vim的Rust支持配置，在阅读本节之前，我们假定你已经拥有了一个可执行的rustc程序，并编译好了racer。
 
 ## 我的vim截图
 
 应邀而加
 
-![此处应该有截图](../image/editor-vim-wayslog.png)
+![此处应该有截图](../images/editor-vim-wayslog.png)
 
 ## 使用vundle
 
@@ -14,6 +14,7 @@ vundle是vim的一个插件管理工具，基本上算是本类当中最为易�
 首先我们需要安装它
 
 ### linux or OS X
+
 ```bash
 mkdir -p  ~/.vim/bundle/
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
@@ -78,9 +79,10 @@ let $RUST_SRC_PATH="<path-to-rust-srcdir>/src/"
 
 #### 使用 YouCompleteMe
 
-YouCompleteMe 是 Vim 下的智能补全插件, 支持 C-family, Python, Rust 等的语法补全, 整合了多种插件, 功能强大. Linux 各发行版的官方源里基本都有软件包, 可直接安装. 如果有需要进行编译安装的话, 可参考[官方教程](https://github.com/Valloric/YouCompleteMe#installation)
+YouCompleteMe 是 vim 下的智能补全插件, 支持 C-family, Python, Rust 等的语法补全, 整合了多种插件, 功能强大. Linux 各发行版的官方源里基本都有软件包, 可直接安装. 如果有需要进行编译安装的话, 可参考[官方教程](https://github.com/Valloric/YouCompleteMe#installation)
 
 让 YCM 支持 Rust 需要在安装 YCM 过程中执行 ./install.py 时加上 --racer-completer, 并在 .vimrc 中添加如下设置
+
 ```
 let g:ycm_rust_src_path="<path-to-rust-srcdir>/src/"
 "" 一些方便的快捷键
@@ -100,10 +102,10 @@ inoremap <leader>; <C-x><C-o>
 
 总体来看支持度并不高。
 
-![此处应该有第二张截图](../image/editor-vim-welldone.png)
+![此处应该有第二张截图](../images/editor-vim-welldone.png)
 
 ### 额外的
-Q1. 颜色好搓
+Q1. 颜色好挫
 
 A1. 我推荐一个配色，也是我自己用的 [molokai](https://github.com/tomasr/molokai)
 

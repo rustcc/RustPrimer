@@ -1,4 +1,4 @@
-# 控制流
+# 控制流(control flow)
 
 ## If
 
@@ -37,6 +37,7 @@ for var in expression {
     code
 }
 ```
+
 其中`expression`是一个迭代器 (iterator)，具体的例子为`0..10` (不包含最后一个值)，
 或者`[0, 1, 2].iter()`。
 
@@ -74,6 +75,7 @@ match day {
   _ => println!("invalid"),
 }
 ```
+
 其中`|`用于匹配多个值，`...`匹配一个范围 (包含最后一个值)，并且`_`在这里是必须的，
 因为`match`强制进行穷尽性检查 (exhaustiveness checking)，必须覆盖所有的可能值。
 如果需要得到`|`或者`...`匹配到的值，可以使用`@`绑定变量：

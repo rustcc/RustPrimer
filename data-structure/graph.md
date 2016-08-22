@@ -16,6 +16,7 @@
 当图带权值时，则可以直接在二维数值中存放权值，A(i,j) = null 表示不存在边 (Vi,Vj)。
 
 下面看看我们使用邻接矩阵实现的图结构：
+
 ```rust
 #[derive(Debug)]
 struct Node {

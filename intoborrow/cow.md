@@ -73,6 +73,7 @@ fn abs_all(input: &mut Cow<[i32]>) {
 题目：写一个函数，过滤掉输入的字符串中的所有空格字符，并返回过滤后的字符串。
 
 对这个简单的问题，不用思考，我们都可以很快写出代码：
+
 ```rust
 fn remove_spaces(input: &str) -> String {
    let mut buf = String::with_capacity(input.len());
@@ -86,6 +87,7 @@ fn remove_spaces(input: &str) -> String {
    buf
 }
 ```
+
 设计函数输入参数的时候，我们会停顿一下，这里，用 `&str` 好呢，还是 `String` 好呢？思考一番，从性能上考虑，有如下结论：
 
 1. 如果使用 `String`， 则外部在调用此函数的时候，
@@ -121,6 +123,7 @@ fn remove_spaces<'a>(input: &'a str) -> Cow<'a, str> {
 }
 
 ```
+
 完美解决了业务逻辑与返回值类型冲突的问题。本例可细细品味。
 
 外部程序，拿到这个 `Cow` 返回值后，按照我们上文描述的 `Cow` 的特性使用就好了。
