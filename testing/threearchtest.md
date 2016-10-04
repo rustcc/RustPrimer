@@ -227,7 +227,7 @@ Rust 对文档的哲学，是不要单独写文档，一是代码本身是文档
 
 比如，我们给上面库加点文档：
 
-```rust
+``````rust
 //! The `adder` crate provides functions that add numbers to other numbers.
 //!
 //! # Examples
@@ -259,7 +259,7 @@ mod tests {
       assert_eq!(4, add_two(2));
    }
 }
-```
+``````
 
 
 运行 `cargo test`，结果如下：
