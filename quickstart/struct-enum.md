@@ -15,7 +15,7 @@ struct Point {
   x: i32,
   y: i32,
 }
-let mut point = Point { x: 0, y: 0 };
+let point = Point { x: 0, y: 0 };
 
 // tuple structs
 struct Color(u8, u8, u8);

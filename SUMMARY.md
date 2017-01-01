@@ -100,7 +100,7 @@
   * [评测 (benchmark)](testing/bench.md)
 * [代码风格](coding-style/style.md)「tiansiyuan」
 * [Any与反射](any/any.md)「wayslog」
-* [安全（safe）](safe/safety.md)「daogangtang」
+* [安全](safe/safety.md)「daogangtang」
 * [常用数据结构实现](data-structure/preface.md)「Naupio」
   * [栈结构](data-structure/stack.md)
   * [队列](data-structure/queue.md)
