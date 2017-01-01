@@ -65,8 +65,8 @@ fn main() {
 > [package]  
 name = "hellorust"  
 version = "0.1."  
-authors = ["YourName <YourEmail>"]
-> [dependencies]  
+authors = ["YourName <YourEmail>"]  
+[dependencies]  
 
 - 编辑src目录下的main.rs文件
 

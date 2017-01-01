@@ -263,7 +263,7 @@ use super::xxx;
 
 路径中的 `*` 符号：
 ```rust
-use xxx:*
+use xxx::*;
 ```
 表示导入 `xxx` 模块下的所有可见 item（加了 pub 标识的 item）。
 

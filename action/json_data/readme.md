@@ -1,10 +1,10 @@
-# rust json处理
+# Rust json处理
 
-json是一种比较重要的格式，尤其是现在的web开发领域，json相比于传统的xml更加容易操作和减小传输。
+JSON是一种比较重要的格式，尤其是现在的web开发领域，JSON相比于传统的XML更加容易操作和减小传输。
 
-rust中的json处理依赖 cargo 中的rustc-serialize模块
+Rust中的JSON处理依赖 cargo 中的rustc-serialize模块
 
-###先简单的创建一个rust项目工程
+###先简单的创建一个Rust项目工程
 
 ``` rust
 $ cargo new json_data --bin
@@ -64,7 +64,7 @@ $ cargo build
 *注意一个问题由于国内网络访问github不稳定，这些第三方库很多托管在github上，所以可能需要修改你的
 网络访问*
 
-1. 在安装rust之后，会在你的用户目录之下生成一个`.cargo`文件夹，进入这个文件夹
+1. 在安装Rust之后，会在你的用户目录之下生成一个`.cargo`文件夹，进入这个文件夹
 2. 在`.cargo`文件夹下，创建一个`config`文件，在文件中填写中科大软件源，可能以后会出现其他的源，先用这个
 3. `config`文件内容如下
 

@@ -118,8 +118,7 @@ match pair {
 }
 ```
 
-`match`的这种解构同样适用于结构体或者枚举。如果有必要，
-还可以使用`..`来忽略域或者数据：
+`match`的这种解构同样适用于结构体或者枚举。如果有必要，还可以使用`..`来忽略域或者数据：
 
 ```rust
 struct Point {
@@ -141,6 +140,7 @@ enum OptionalInt {
 let x = OptionalInt::Value(5);
 
 match x {
+    // 这里是 match 的 if guard 表达式，我们将在以后的章节进行详细介绍
     OptionalInt::Value(i) if i > 5 => println!("Got an int bigger than five!"),
     OptionalInt::Value(..) => println!("Got an int!"),
     OptionalInt::Missing => println!("No such luck."),
