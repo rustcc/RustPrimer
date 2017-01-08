@@ -6,7 +6,7 @@ Rust在Windows上的安装和你在windows上安装其它软件一样。
 
 ### 1、下载安装包：
 
-  [下载地址](https://www.rust-lang.org/downloads.html)
+  [下载地址](https://www.rust-lang.org/zh-CN/other-installers.html)
 
   Rust提供了多个版本和多个平台的安装包，下载对应的即可，此处我们以[1.6.0](https://static.rust-lang.org/dist/rust-1.6.0-x86_64-pc-windows-gnu.msi)的稳定版为例。
 
