@@ -75,7 +75,40 @@ fn main() {
 这里两个例子都比较简单。读者可以运行一下查看输出结果对比一下他们的区别。
 值得注意的是例子 2 中，`{ }` 会被 `"some"` 所替换。这是 rust 里面的一种格式化输出。
 
+标准化的输出是行缓冲(line-buffered)的,这就导致标准化的输出在遇到一个新行之前并不会被隐式刷新。
+换句话说  `print!` 和 `println!` 二者的效果并不总是相同的。
+如果说得更简单明了一点就是，您不能把 `print!` 当做是C语言中的 `printf` 譬如：
+
+```rust
+use std::io;
+fn main() {
+    print!("请输入一个字符串：");
+    let mut input = String::new();
+    io::stdin()
+        .read_line(&mut input)
+        .expect("读取失败");
+    print!("您输入的字符串是：{}\n", input);
+}
+```
+
+在这段代码运行时则不会先出现预期的提示字符串，因为行没有被刷新。
+如果想要达到预期的效果就要显示的刷新：
+
+```rust
+use std::io::{self, Write};
+fn main() {
+    print!("请输入一个字符串：");
+    io::stdout().flush().unwrap();
+    let mut input = String::new();
+    io::stdin()
+        .read_line(&mut input)
+        .expect("读取失败");
+    print!("您输入的字符串是：{}\n", input);
+}
+```
+
 ## 文件输入
+
 文件输入和标准输入都差不多，除了输入流指向了文件而不是控制台。下面例子采用了模式匹配来处理潜在的输入错误
 
 **例子：**
