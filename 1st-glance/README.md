@@ -54,6 +54,43 @@ Rust 运行在以下操作系统上：Linux, OS X, Windows, FreeBSD, Android, iO
 - [Liqueur Librazy](https://github.com/Librazy)
 - [Knight42](https://github.com/knight42)
 - [Ryan Kung](https://github.com/ryankung)
+- lambdaplus
+- doomsplayer
+- lucklove
+- veekxt
+- lk-chen
+- RyanKung
+- arrowrowe
+- marvin-min
+- ghKelo
+- wy193777
+- domty
+- xusss
+- wangyu190810
+- nextzhou
+- zhongke
+- [ryuki](https://github.com/3442853561)
+- codeworm96
+- anzhihun
+- lidashuang
+- sceext2
+- loggerhead
+- twq0076262
+- passchaos
+- yyrust
+- markgeek
+- ts25504
+- overvenus
+- Akagi201
+- theJian
+- jqs7
+- ahjdzx
+- chareice
+- chenshaobo
+- marvinguo
+- izgzhen
+- ziqin
+- peng1999
 
 等。在此，向他们的辛苦工作和无私奉献表示尊敬和感谢！
 
