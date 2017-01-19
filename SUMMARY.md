@@ -64,7 +64,10 @@
   * [模块 module 和包 crate](module/module.md)
   * [Prelude](module/prelude.md)
 * [Option、Result与错误处理](error-handling/option-result.md)「JohnSmithX」
-* [输入与输出](io/io.md)「tennix」
+* [输入与输出](io/preface.md)
+  * [标准输入输出](module/io.md)
+  * [print! 宏](module/output.md)「ryuki」
+  * [文件输入输出](module/file-io.md)「tennix」
 * [宏系统](macro/macro.md)「tennix」
 * [堆、栈与Box](heap-stack/heap-stack.md)「tennix」
 * [几种智能指针](rcarc/preface.md)「daogangtang」

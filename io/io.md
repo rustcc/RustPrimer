@@ -1,22 +1,4 @@
-# 输入与输出
-
-输入与输出可以说是一个实用程序的最基本要求，没有输入输出的程序是没有什么卵用的。虽然输入输出被函数式编程语言鄙称为副作用，但正是这个副作用才赋予了程序实用性，君不见某著名函数式语言之父称他主导设计的函数式语言"[is useless](https://www.youtube.com/watch?v=iSmkqocn0oQ)"。这章我们就来谈谈输入输出副作用。
-
-
-## 读写 Trait
-
-输入最基本的功能是读(Read)，输出最基本的功能是写(Write)。标准库里面把怎么读和怎么写抽象出来归到了 `Read` 和 `Write` 两个接口里面，实现了 `Read` 接口的叫 reader，而实现了 `Write` 的叫 writer。Rust里面的 Trait 比其它语言里面的接口更好的一个地方是 Trait 可以带默认实现，比如用户定义的 reader 只需要实现 `read` 一个方法就可以调用 `Read` trait 里面的任意其它方法，而 writer 也只需要实现 `write` 和 `flush` 两个方法。
-
-Read 和 Write 这两个 Trait 都有定义了好多方法，具体可以参考标准库 API 文档中的[Read](http://doc.rust-lang.org/stable/std/io/trait.Read.html) 和 [Write](http://doc.rust-lang.org/stable/std/io/trait.Write.html)
-
-Read 由于每调用一次 `read` 方法都会调用一次系统API与内核交互，效率比较低，如果给 reader 增加一个 buffer，在调用时 `read` 方法时多读一些数据放在 buffer 里面，下次调用 `read` 方法时就有可能只需要从 buffer 里面取数据而不用调用系统API了，从而减少了系统调用次数提高了读取效率，这就是所谓的 `BufRead` Trait。一个普通的 reader 通过 `io::BufReader::new(reader)` 或者 `io::BufReader::with_capacity(bufSize, reader)` 就可以得到一个 BufReader 了，显然这两个创建 BufReader 的函数一个是使用默认大小的 buffer 一个可以指定 buffer 大小。BufReader 比较常用的两个方法是按行读： `read_line(&mut self, buf: &mut String) -> Result<usize>` 和 `lines(&mut self) -> Lines<Self>`，从函数签名上就可以大概猜出函数的用法所以就不啰嗦了，需要注意的是后者返回的是一个迭代器。详细说明直接看 API 文档中的[BufRead](http://doc.rust-lang.org/stable/std/io/trait.BufRead.html)
-
-同样有 `BufWriter` 只不过由于其除了底层加了 buffer 之外并没有增加新的写方法，所以并没有专门的 `BufWrite` Trait，可以通过 `io::BufWriter::new(writer)` 或 `io::BufWriter::with_capacity(bufSize, writer)` 创建 `BufWriter`。
-
-输入与输出接口有了，我们接下来看看实际应用中最常用的两类 reader 和 writer：标准输入/输出，文件输入/输出
-
-
-## 标准输入与输出
+# 标准输入与输出
 
 回顾一下我们写的第一个 Rust 程序就是带副作用的，其副作用就是向标准输出(stdout)，通常是终端或屏幕，输出了 Hello, World! 让屏幕上这几个字符的地方点亮起来。`println!` 宏是最常见的输出，用宏来做输出的还有 `print!`，两者都是向标准输出(stdout)输出，两者的区别也一眼就能看出。至于格式化输出，[基础运算符和字符串格式化小节](../type/operator-and-formatting.md)有详细说明，这里就不再啰嗦了。
 
@@ -54,7 +36,36 @@ fn main() {
 }
 ```
 
-还有一点一些从其它语言转过来的程序猿可能会疑惑的是，如何从命令行接受输入参数，因为 C 里面的 main 函数可以带参数所以可以直接从 main 函数的参数里获取输入参数。但其实这类输入与我们这里讲的有很大的差别的，它在 Rust 里面被归为环境变量，可以通过 `std::env::args()` 获取，这个函数返回一个 `Args` 迭代器，其中第一个就是程序名，后面的都是输入给程序的命令行参数。
+这里有一件事需要主要的是 Rust 里面没有办法从键盘获取一个数字类型的值。实际上像 C 这样的语言也不是直接获取了数字类型，它只不过是做了一种转换。那么我们如果想要从键盘获取一个数字类型应该怎么做呢？
+
+```rust
+fn main() {
+	let mut input = String::new();
+		std::io::stdin()
+			.read_line(&mut input)
+			.expect("Failed to read line");
+	let num = input.trim().parse().unwrap();
+	println!("您输入的数字是：{}", num);
+}
+```
+
+如果有很多地方都需要输入数字可以自行编写一个 `numin` 宏:
+
+```rust
+macro_rules! numin {
+	() =>{
+	{let mut input = String::new();
+	std::io::stdin()
+	    .read_line(&mut input)
+        .expect("Failed to read line");
+	input.trim().parse().unwrap()}
+	};
+}
+```
+
+不过如果用户输入的不是数字，那么就会导致错误。这一点和 C 里面是非常相似的。当然您可以把程序写得再复杂一点儿来保证用户输入的一定是数字。不过这些就不是我们这一节要讨论的内容了。
+
+还有一点一些从其它语言转过来的程序员可能会疑惑的是，如何从命令行接受输入参数，因为 C 里面的 main 函数可以带参数所以可以直接从 main 函数的参数里获取输入参数。但其实这类输入与我们这里讲的有很大的差别的，它在 Rust 里面被归为环境变量，可以通过 `std::env::args()` 获取，这个函数返回一个 `Args` 迭代器，其中第一个就是程序名，后面的都是输入给程序的命令行参数。
 
 ```rust
 use std::env;
@@ -78,50 +89,3 @@ b
 c
 ```
 
-## 文件输入与输出
-
-文件 `std::fs::File` 本身实现了 `Read` 和 `Write` trait，所以文件的输入输出非常简单，只要得到一个 `File` 类型实例就可以调用读写接口进行文件输入与输出操作了。而要得到 `File` 就得让操作系统打开(open)或新建(create)一个文件。还是拿例子来说明
-
-```rust
-use std::io;
-use std::io::prelude::*;
-use std::fs::File;
-
-// create file and write something
-fn create_file(filename: &str, buf: &[u8]) -> io::Result<()> {
-	let mut f = try!(File::create(filename));
-	try!(f.write(&buf));
-	Ok(())
-}
-
-// read from file to String
-fn read_file(filename: &str, mut buf: &mut String) -> io::Result<()> {
-	let mut f = try!(File::open(filename));
-	try!(f.read_to_string(&mut buf));
-	Ok(())
-}
-
-fn main() {
-	let f = "foo.txt";
-	let mut buf = String::new();
-	match create_file(f, b"Hello, World!") {
-		Ok(()) => {
-		    match read_file(f, &mut buf) {
-		        Ok(()) => {println!("{}", buf);},
-		        Err(e) => {println!("{}", e);},
-            };
-		},
-		Err(e) => {println!("{}", e);},
-	}
-}
-```
-
-文件操作上面 Rust 与其它语言处理方式有些不一样，其它语言一般把读写选项作为函数参数传给 open 函数，而 Rust 则是在 option 上面调用 open 函数。 [`std::fs::OpenOptions`](http://doc.rust-lang.org/stable/std/fs/struct.OpenOptions.html) 是一个 builder，通过 new 函数创建后，可以链式调用设置打开文件的选项，是 read, write, append, truncate 还是 create 等，OpenOptions 构建完成后就可以再接着调用 open 方法了，看下下面的例子就明白了
-
-```rust
-use std::fs::OpenOptions;
-
-let file = OpenOptions::new().write(true).truncate(true).open("foo.txt");
-```
-
-Rust 这种用 builder pattern 来设置打开文件选项，相比于将选项以字符作为参数传给 open 函数的一个优点是可以让编译器保证检查选项合法性，不用等到运行时才发现手抖把 read-mode 的 `r` 写成了 `t`。
