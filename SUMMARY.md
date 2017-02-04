@@ -47,7 +47,7 @@
   * [trait关键字](trait/trait.md)
   * [trait对象](trait/trait-object.md)
 * [泛型](generic/generic.md)「stormgbs」
-* [可变性、所有权、租借和生命期](ownership-system/ownership_system.md)「stormgbs」
+* [可变性、所有权、租借和生命期](ownership-system/preface.md)「stormgbs」
   * [所有权](ownership-system/ownership.md)
   * [引用和借用](ownership-system/borrowing_reference.md)
   * [生命周期](ownership-system/lifetime.md)
