@@ -44,7 +44,9 @@ fn main() {
 		std::io::stdin()
 			.read_line(&mut input)
 			.expect("Failed to read line");
-	let num = input.trim().parse().unwrap();
+    // 这里等效的写法是：
+    // let num: i32 = input.trim().parse().unwrap(); 
+	let num = input.trim().parse::<i32>().unwrap();
 	println!("您输入的数字是：{}", num);
 }
 ```
@@ -53,13 +55,25 @@ fn main() {
 
 ```rust
 macro_rules! numin {
-	() =>{
-	{let mut input = String::new();
-	std::io::stdin()
-	    .read_line(&mut input)
-        .expect("Failed to read line");
-	input.trim().parse().unwrap()}
-	};
+	  () =>{
+	      {
+            let mut input = String::new();
+	          std::io::stdin()
+	              .read_line(&mut input)
+                .expect("Failed to read line");
+	          input.trim().parse().unwrap()
+        }
+    };
+}
+```
+
+于是上面的程序可以被改写成：
+
+```
+
+fn main() {
+    let num: i32 = numin!();
+	println!("您输入的数字是：{}", num);
 }
 ```
 
