@@ -11,12 +11,12 @@ The Rust primer for beginners.
 
 ## 在线阅读地址
 
-[点我阅读](https://wayslog.gitbooks.io/rustprimer/content/)
+[点我阅读](https://rustcc.gitbooks.io/rustprimer/content/)
 
 也可复制以下链接：
 
 ```
-https://wayslog.gitbooks.io/rustprimer/content/
+https://rustcc.gitbooks.io/rustprimer/content/
 ```
 
 ## 社区
