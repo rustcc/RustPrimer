@@ -28,6 +28,13 @@ let w = "foo\nbar";
 assert_eq!(z, w);
 ```
 
+也可以在字符串字面量前加上`r`来避免转义
+
+    //没有转义序列
+    let d: &'static str = r"abc \n abc";
+    //等价于
+    let c: &'static str = "abc \\n abc";
+
 ## String
 
 光有`str`，确实不够什么卵用，毕竟我们在实际应用中要的更多的还是一个可变的，不定长的字符串。这时候，一种在堆上声明的字符串`String`被设计了出来。
