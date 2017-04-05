@@ -1,7 +1,7 @@
-# 实战篇
+# Actual combat articles
 
-本章举 3 个实际中的例子，来小小展示一下 Rust 在实际中的应用。它们分别是：
+This chapter gives three practical examples, to showcase the application of Rust in reality. they are, respectively:
 
-- Json处理
-- Web 应用开发入门
-- 使用Postgresql数据库
+- Json processing
+- Web application development entry
+- Use the Postgresql database

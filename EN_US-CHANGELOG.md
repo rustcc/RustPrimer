@@ -5,7 +5,8 @@
 
 - 0.0.2
   - Translated main README.md
-  
+  - Rough translated action > readme & action > mysite > readme
+
 - 0.0.1
   - Started changelog, ditched my messed up translations, scrapped old branches.
   - 1st glance rough translation in.

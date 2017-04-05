@@ -1,26 +1,27 @@
-# rust web 开发
+# Rust web development
 
-rust既然是系统级的编程语言，所以当然也能用来开发 web,不过想我这样凡夫俗子，肯定不能从头自己写一个 web
-服务器，肯定要依赖已经存在的 rust web开发框架来完成 web 开发。
+Since Rust is a system-level programming language, of course, can also be used to develop for the web, ___***but I like this mortal, certainly not from scratch to write a web
+Server, must rely on the existing rust web development framework to complete the web development.***___
 
-rust目前比较有名的框架是iron和nickel，我们两个都写一下简单的使用教程。
+Currently the most popular web frameworks are iron and nickel, ___***we both write a simple use of tutorials.***___
 
-##iron
+## iron
 
-接上一篇，使用cargo获取第三方库。`cargo new mysite --bin`
+We will use the cargo package manager to install and use third party libraries. `Cargo new mysite --bin`
+First, lets add Iron to our project.
 
-在cargo.toml中添加iron的依赖，
-```toml
-[dependencies]
-iron = "*"
+Add iron dependencies in cargo.toml,
+```Toml
+[Dependencies]
+Iron = "*"
 ```
-然后build将依赖下载到本地 `cargo build`
+The build will depend on downloading to our local machine `cargo build`
 
-如果报ssl错误，那可能你需要安装linux的ssl开发库。
+If you recieve ssl errors, then you will need to install a proper ssl development library.
 
-首先还是从 hello world 开始吧,继续抄袭官方的例子：
+From the official Iron example:
 
-``` rust
+```rust
 extern crate iron;
 
 use iron::prelude::*;
@@ -32,31 +33,30 @@ fn main() {
     }).http("localhost:3000").unwrap();
 }
 ```
-然后运行
+Then
 
-`cargo run`
+`Cargo run`
 
-使用curl直接就可以访问你的网站了。
+Use curl to visit your website!
 
 `curl localhost:3000`
 
-`Hello World!`
+`// Hello World!`
 
-仔细一看，发现这个例子很无厘头啊，对于习惯了写python的我来说，确实不习惯。
-简单点看：
+At first I found that this example was a bit nonsense... ah, I am accustomed to writing python and not really used to this style.
+Simple point of view:
 
-`iron::new().http("localhost:3000").unwrap()`
-这句是服务器的基本的定义，new内部是一个[rust lambda 表达式](https://doc.rust-lang.org/book/closures.html)
-
+`Iron :: new (). Http (" localhost: 3000 "). Unwrap ()`
+This is the basic definition of the server, new internal is a [rust lambda expression](https://doc.rust-lang.org/book/closures.html)
 ```rust
 let plus_one = |x: i32| x + 1;
 
 assert_eq!(2, plus_one(1));
 ```
-具体的怎么使用 ，可以暂时不用理会，因为你只要知道如何完成web，因为我也不会。。
-结合之前一章节的json处理，我们来看看web接口怎么返回json,当然也要 rustc_serialize 放到 cargo.toml 中
+___***How to use the specific, you can temporarily ignore, because you just know how to complete the web, because I will not. 
+The Combined with the previous section of the json processing, we take a look at how the web interface to return json, of course, also rustc_serialize into cargo.toml***___
 
-*下面的代码直接参考开源代码[地址](https://github.com/brson/httptest#lets-make-a-web-service-and-client-in-rust)*
+* The following code refers directly to the open source code [address](https://github.com/brson/httptest#lets-make-a-web-service-and-client-in-rust) *
 
 ```rust
 extern crate iron;
@@ -82,18 +82,18 @@ fn main() {
     println!("On 3000");
 }
 ```
-执行 cargo run 使用 curl 测试结果:
+Execute cargo run using curl to test results:
 
 ```
-curl localhost:3000
-{"msg":"Hello, World"}
+Curl localhost: 3000
+{"Msg": "Hello, World"}
 ```
-当然可以可以实现更多的业务需求，通过控制自己的json。
 
-既然有了json了，如果要多个路由什么的，岂不是完蛋了，所以不可能这样的，我们需要考虑一下怎么实现路由的定制
+Of course you can achieve much more complex ___***business needs by controlling your own json.***___
 
-不说话直接上代码，同一样要在你的cargo.toml文件中添加对router的依赖
+___***Since there is a json, and if there is more than what routing, it would not be finished, so it is impossible***___, we need to consider how to achieve the custom routing!
 
+Do not speak directly on the code, the same in your cargo.toml file to add the dependence on the router
 ``` rust
 extern crate iron;
 extern crate router;
@@ -133,29 +133,28 @@ fn main() {
     Iron::new(router).http("localhost:3000").unwrap();
 }
 ```
-这次添加了路由的实现和获取客户端发送过来的数据，有了get，post,所以现在一个基本的api网站已经完成了。不过
-并不是所有的网站都是api来访问，同样需要html模版引擎和直接返回静态页面。等等
+___***This time to add the implementation of the routing and access to the client to send the data, with get, post, so now a basic api site has been completed. but...
+Not all sites are api to visit, the same need html template engine and directly return to static pages. and many more***___
 ```
-vagrant@ubuntu-14:~/tmp/test/rustprimer/mysite$ cargo build
-   Compiling mysite v0.1.0 (file:///home/vagrant/tmp/test/rustprimer/mysite)
-src/main.rs:29:36: 29:52 error: no method named `read_to_string` found for type `iron::request::Body<'_, '_>` in the current scope
-src/main.rs:29         let payload = request.body.read_to_string();
-                                                  ^~~~~~~~~~~~~~~~
-src/main.rs:29:36: 29:52 help: items from traits can only be used if the trait is in scope; the following trait is implemented but not in scope, perhaps add a `use` for it:
-src/main.rs:29:36: 29:52 help: candidate #1: use `std::io::Read`
-error: aborting due to previous error
+Vagrant @ ubuntu-14: ~ / tmp / test / rustprimer / mysite $ cargo build
+   Compiling mysite v0.1.0 (file: /// home / vagrant / tmp / test / rustprimer / mysite)
+Src / main.rs: 29: 36: 29:52 error: no method named `read_to_string` found for type` iron :: request :: Body <'_,' _> `in the current scope
+Src / main.rs: 29 let payload = request.body.read_to_string ();
+                                                  ^ ~~~~~~~~~~~~~~~
+Src / main.rs: 29: 36: 29:52 help: items from traits can only be used if the trait is in scope; the following trait is implemented but not in scope, maybe add a `use` for it:
+Src / main.rs: 29: 36: 29:52 help: candidate # 1: use `std :: io :: Read`
+Error: aborting due to previous error
 Could not compile `mysite`.
 ```
-编译出错了，太糟糕了，提示说没有read_to_string这个方法，然后我去文档查了一下，发现有[read_to_string方法](http://ironframework.io/doc/iron/request/struct.Body.html)
-再看提示信息
+Compiler wrong, too bad, suggesting that there is no read_to_string this method, and then I went to the document and found a [read_to_string method](http://ironframework.io/doc/iron/request/struct.Body.html)
+Look at the message
 
 ```
-src/main.rs:29:36: 29:52 help: items from traits can only be used if the trait is in scope; the following trait is implemented but not in scope, perhaps add a `use` for it:
-src/main.rs:29:36: 29:52 help: candidate #1: use `std::io::Read`
+Src / main.rs: 29: 36: 29:52 help: items from traits can only be used if the trait is in scope; the following trait is implemented but not in scope, maybe add a `use` for it:
+Src / main.rs: 29: 36: 29:52 help: candidate # 1: use `std :: io :: Read`
 ```
 
-让我们添加一个`std::io::Read`,这个如果操作过文件，你一定知道怎么写，添加一下，应该能过去了，还是继续出错了，看看报错
-
+Let us add a `std :: io :: Read`, this if the operation of the file, you must know how to write, add it, should be able to go, or continue to go wrong, look at the error
 ```
    Compiling mysite v0.1.0 (file:///home/vagrant/tmp/test/rustprimer/mysite)
 src/main.rs:30:36: 30:52 error: this function takes 1 parameter but 0 parameters were supplied [E0061]
@@ -186,8 +185,8 @@ Could not compile `mysite`.
 
 ```
 
-第一句提示我们，这个read_to_string(),至少要有一个参数，但是我们一个都没有提供。
-我们看看[read_to_string的用法](https://doc.rust-lang.org/nightly/std/io/trait.Read.html#method.read_to_string)
+The first sentence prompts us that the read_to_string (), at least one parameter, but we are not provided.
+We look at the use of [read_to_string](https://doc.rust-lang.org/nightly/std/io/trait.Read.html#method.read_to_string)
 
 ``` rust
 
@@ -201,7 +200,7 @@ let mut buffer = String::new();
 try!(f.read_to_string(&mut buffer));
 
 ```
-用法比较简单，我们修改一下刚刚的函数：
+Usage is relatively simple, we just need to modify the function:
 
 ```
 fn set_greeting(request: &mut Request) -> IronResult<Response> {
@@ -213,91 +212,91 @@ fn set_greeting(request: &mut Request) -> IronResult<Response> {
         Ok(Response::with((status::Ok, payload)))
     }
 ```
-从request中读取字符串，读取的结果存放到payload中，然后就可以进行操作了，编译之后运行，使用curl提交一个post数据
+Read the string from the request, read the results stored in the payload, and then you can operate, compile and run, use curl to submit a post data
 
 ```
-$curl -X POST -d '{"msg":"Just trust the Rust"}' http://localhost:3000/set
+curl -X POST -d '{"msg":"Just trust the Rust"}' http://localhost:3000/set
 {"msg":"Just trust the Rust"}
 ```
-iron 基本告一段落
-当然还有如何使用html模版引擎，那就是直接看文档就行了。
+Iron basically come to an end
+Of course, how to use html template engine, that is, directly to see the document on the line.
 
-##[nickel](http://nickel.rs/)
+## [nickel](http://nickel.rs/)
 
-当然既然是web框架肯定是iron能干的nicke也能干，所以那我们就看看如何做一个hello 和返回一个html
-的页面
+Of course since the web framework is definitely iron capable nicke is also capable, so then we look at how to do a hello and return a html
+The page
 
-同样我们创建`cargo new site --bin`，然后添加nickel到cargo.toml中,`cargo build`
+Also we create `cargo new site - bin`, then add nickel to cargo.toml,` cargo build`
 
-``` rust
+```Rust
 
-#[macro_use] extern crate nickel;
+# [Macro_use] extern crate nickel;
 
-use nickel::Nickel;
+Use nickel :: Nickel;
 
-fn main() {
-    let mut server = Nickel::new();
+Fn main () {
+    Let mut server = Nickel :: new ();
 
-    server.utilize(router! {
-        get "**" => |_req, _res| {
+    Server.utilize (router! {
+        Get "**" => | _req, _res | {
             "Hello world!"
         }
     });
 
-    server.listen("127.0.0.1:6767");
+    Server.listen ("127.0.0.1:6767");
 }
 ```
-简单来看，也就是这样回事。
+In simple terms, that is the case.
 
-1. 引入了nickel的宏
-2. 初始化Nickel
-3. 调用utilize来定义路由模块。
-4. `router!` 宏，传入的参数是 get 方法和对应的路径，"\*\*"是全路径匹配。
-5. listen启动服务器
+1. The introduction of the nickel macro
+2. Initialize Nickel
+3. Call the phone to define the routing module.
+4.router!` Macro, the incoming parameter is the get method and the corresponding path, "\ * \ *" is the full path match.
+Listen to start the server
 
-[当然我们要引入关于html模版相关的信息](http://nickel.rs/#easy-templating)
+[Of course we want to introduce information about html templates](http://nickel.rs/#easy-templating)
 
-``` rust
-#[macro_use] extern crate nickel;
+```Rust
+# [Macro_use] extern crate nickel;
 
-use std::collections::HashMap;
-use nickel::{Nickel, HttpRouter};
+Use std :: collections :: HashMap;
+Use nickel :: {Nickel, HttpRouter};
 
-fn main() {
-    let mut server = Nickel::new();
+Fn main () {
+    Let mut server = Nickel :: new ();
 
-    server.get("/", middleware! { |_, response|
-        let mut data = HashMap::new();
-        data.insert("name", "user");
-        return response.render("site/assets/template.tpl", &data);
+    Server.get ("/", middleware! {| _, Response |
+        Let mut data = HashMap :: new ();
+        Data.insert ("name", "user");
+        Return response.render ("site / assets / template.tpl", & data);
     });
 
-    server.listen("127.0.0.1:6767");
+    Server.listen ("127.0.0.1:6767");
 }
 
 ```
-上面的信息你可以编译，使用curl看看发现出现
+The above information you can compile, use curl to see the discovery
 
 ```
-$ curl http://127.0.0.1:6767
+$ Curl http://127.0.0.1:6767
 Internal Server Error
 ```
-看看文档，没发现什么问题，我紧紧更换了一个文件夹的名字，这个文件夹我也创建了。
-然后我在想难道是服务器将目录写死了吗？于是将上面的路径改正这个，问题解决。
+Look at the document, did not find any problems, I tightly changed the name of a folder, this folder I also created.
+And then i wonder if the server will write the directory to die? So the above path to correct this, the problem is solved.
 
-```rust
-return response.render("examples/assets/template.tpl", &data);
+```Rust
+Return response.render ("examples / assets / template.tpl", & data);
 ```
-我们看一下目录结构
+Let's take a look at the directory structure
 
 ```
-.
-|-- Cargo.lock
-|-- Cargo.toml
-|-- examples
-|   `-- assets
-|       `-- template.tpl
-|-- src
-|   `-- main.rs
+The
+| - Cargo.lock
+| - Cargo.toml
+- examples
+|- assets
+|- template.tpl
+| - src
+|- main.rs
 
 ```
