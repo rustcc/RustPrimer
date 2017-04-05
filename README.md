@@ -6,58 +6,60 @@
 [build-url]: https://travis-ci.org/rustcc/RustPrimer
 
 The Rust primer for beginners.
-给初学者的Rust中文教程。
+To the beginner's Rust Chinese tutorial (English Translation.
 
-## 在线阅读地址
+## Read online
 
-[点我阅读](https://wayslog.gitbooks.io/rustprimer/content/)
+[Online Version](https://wayslog.gitbooks.io/rustprimer/content/)
 
-也可复制以下链接：
-
-```
-https://wayslog.gitbooks.io/rustprimer/content/
-```
-
-## 社区
-
-### QQ群
-
-群号：
-```
-    Rust语言中文社区 144605258 （已满）
-    Rust编程语言社区2群 303838735
-```
-
-*进群必须附带您的github地址，否则不予通过*
-
-### 社区
-
-chat: https://chat.rust-china.org/ (使用github验证登录)
-
-blog: https://rust-china.org/
-
-wiki: https://wiki.rust-china.org/
-
-## 版权规定
-
-本书使用 `CC BY-SA 3.0` 协议，转载请注明地址。
-
-## GitBook 生成
-
-直接用：
+You can also copy the following links:
 
 ```
-gitbook serve
+Https://wayslog.gitbooks.io/rustprimer/content/
 ```
 
-即可。
+## community
 
+### QQ group
 
-## 成为Contributors
+Group number:
+```
+    Rust Language Chinese Community 144605258 (Full)
+    Rust Programming Language Community 2 Group 303838735
+```
 
-我们欢迎RustPrimer的Contributor们将自己的 `[blog/github/社交帐号]` 添加在 [1st-glance/README.md](./1st-glance/README.md)里。但严禁未参与者恶意添加帐号，违者将会被永久拒绝PR和issue权限。
+*The group must be accompanied by your github address, otherwise it will not pass*
+
+### community
+
+Chat: https://chat.rust-china.org/ (log in using github authentication)
+
+Blog: https://rust-china.org/
+
+Wiki: https://wiki.rust-china.org/
+
+## Copyright requirements
+
+This book uses the `CC BY-SA 3.0` protocol, please specify the address.
+
+## GitBook generated
+
+Directly with:
+
+```
+Gitbook serve
+```
+
+You can.
+
+## Become a Contributor
+
+We welcome contributers of RustPrimer to add their own [blog / github / social account] to [1st-glance / README.md](./11-glance / README.md). 
+
+#### NOTE:
+Malicious users will be permanently rejected PR and issue permissions.
 
 ## ChangeLog
 
-1. 2016年3月31日，初稿完成。发布 v1.0 版。
-2. 2016年5月2日，完成 1.1.0 版本。
+1. On March 31, 2016, the first draft was completed. Release v1.0 version.
+2. On May 2, 2016, the 1.1.0 version was completed.
