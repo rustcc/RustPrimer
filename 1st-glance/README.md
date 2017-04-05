@@ -29,11 +29,11 @@ Rust provides the installer, you only need to download from the official website
 ## History 
 Rust started as a personal project from the first Mozilla employee Graydon Hoare. From 2009 onwards - with the support of the Mozilla Institute - the 2010 project was announced. From 2010 to 2011 to achieve the bootstrap. Since then, Rust has undergone tremendous design changes and repetitions (extremely difficult), and finally released version 1.0 on May 15, 2015. 
 
-In this research and development process, Rust established a strong and active community, ***forming a complete set of stable and stable project contribution mechanism (which is really terrible).*** Rust is now maintained by the Rust project developer community (https://github.com/rust-lang/rust).
+In this research and development process, Rust established a strong and active community, ___***forming a complete set of stable and stable project contribution mechanism (which is really terrible).***___ Rust is now maintained by the Rust project developer community (https://github.com/rust-lang/rust).
 
 Since the release of May 2001, a large number of excellent projects have emerged (which can be found on github for Rust), and large companies are increasingly actively involved in Rust's application development and feedback to open source communities.
 
-This book (RustPrimer) aims to provide a correct, up-to-date, easy-to-understand Chinese tutorial for Chinese Rustaceans beginners. ***This book will always be perfect follow up, never stop.***
+This book (RustPrimer) aims to provide a correct, up-to-date, easy-to-understand Chinese tutorial for Chinese Rustaceans beginners. ___***This book will always be perfect follow up, never stop.***___
 
 This book is the result of the joint efforts of the entire Rust Chinese community. Among them, Rustaceans who are involved in the preparation and revision of this book (in alphabetical order):
 
