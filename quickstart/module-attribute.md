@@ -5,7 +5,10 @@ Rust有两个与模块 (module) 系统相关的独特术语：`crate`和`module`
 每个包装箱都有一个隐藏的根模块，在根模块下可以定义一个子模块树，
 其路径采用`::`作为分隔符。包装箱由条目 (item) 构成，多个条目通过模块组织在一起。
 
-## 定义模块
+## 定义包装箱与模块
+首先，使用 cargo 建立`phrases`包装箱
+
+> ps: cargo init phrases
 
 使用`mod`关键字定义我们的模块：
 
@@ -189,4 +192,3 @@ mod foo {
 * `#[path="foo.rs"]`用于设置一个模块需要载入的文件路径。
 * `#[allow(dead_code)]`用于取消对死代码的默认lint检查。
 * `#[derive(PartialEq, Clone)]`用于自动推导`PartialEq`和`Clone`这两个特性的实现。
-

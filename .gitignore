@@ -1,5 +1,6 @@
 # Built files
 _book/
+src/*/target/
 
 # Node-related ignoring, copied from https://github.com/github/gitignore/blob/master/Node.gitignore
 # Logs
@@ -39,3 +40,6 @@ jspm_packages
 
 # Optional REPL history
 .node_repl_history
+src/quickstart/comment-document/target/
+src/quickstart/function-method/target/
+src/quickstart/module-attribute/phrases/target/
