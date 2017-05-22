@@ -61,7 +61,7 @@ Hello, world!
 # 基于cargo的rust项目组织结构
 这次不说废话了，先上高清无马图：
 
-![cargo项目组织结构](../image/project-structure.png)
+![cargo项目组织结构](../images/project-structure.png)
 
 对上述cargo默认的项目结构解释如下：
 
