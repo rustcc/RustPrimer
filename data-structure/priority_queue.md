@@ -44,13 +44,13 @@ impl<T> PriorityQueue<T> where T: PartialOrd + Clone {
         self.pq.push(value);
     }
 
-    fn max(&mut self) -> Option<T> {
+    fn max(&self) -> Option<T> {
         if self.is_empty() { return None }
         let max = self.max_index();
         Some(self.pq[max].clone())
     }
 
-    fn min(&mut self) -> Option<T> {
+    fn min(&self) -> Option<T> {
         if self.is_empty() { return None }
         let min = self.min_index();
         Some(self.pq[min].clone())
