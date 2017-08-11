@@ -39,7 +39,7 @@ pub mod a {
 
 这段代码编译无法通过，因为 `J` 无法在 `mod c` 的外部访问，而 `fn semisecret` 尝试在 `mod a` 中访问 `J`.
 
-在 rust1.18 之前，正确的写法是，将 `fn semisecret` 移动到 `mod c` 中，并将其 `pub`，之后根据需要可以重新导出 `semisecret`。
+在 rust1.18 之前，保持`J`私有，并能够让 `a` 使用 `fn semisecret` 的正确写法是，将 `fn semisecret` 移动到 `mod c` 中，并将其 `pub`，之后根据需要可以重新导出 `semisecret`。(如果不需要保持 `J` 的私有化，那么可以对其进行 `pub`，之后可以在 `b` 中 `pub use self::c::J` 或者直接 `pub c`)
 
 ```Rust
 // Intent: `a` exports `I`, `bar`, and `foo`, but nothing else.
@@ -64,7 +64,12 @@ pub mod a {
 }
 ```
 
-这种情况可以正常工作，但是，这里有个严重的问题：无法明确的说明 `fn semiseret` 是为什么要 `pub`。同时，如果在 `a` 中使用 `pub use self::b::semisecret` ，那么所有人都可以通过 `use` 访问 `fn semiseret`，但是实际上，这个函数只需要让 `mod a` 访问就可以了。
+这种情况可以正常工作，但是，这里有个严重的问题：没有人能够十分清晰的说明 `pub fn semiseret` 使用到了哪些地方，需要通过上下文进行判断：
+
+1. 所有可以访问 `semiseret` 的模块；
+2. 在所有可以访问 `semiseret` 的模块中，是否存在 `semiseret` 的 re-export;
+
+同时，如果在 `a` 中使用 `pub use self::b::semisecret` ，那么所有人都可以通过 `use` 访问 `fn semiseret`，但是实际上，这个函数只需要让 `mod a` 访问就可以了。
 
 ## pub restricted 的使用
 
