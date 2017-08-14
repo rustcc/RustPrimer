@@ -63,6 +63,7 @@
 * [模块和包系统、Prelude](module/preface.md)「daogangtang」
   * [模块 module 和包 crate](module/module.md)
   * [Prelude](module/prelude.md)
+  * [pub restricted](module/pub-restricted.md)
 * [Option、Result与错误处理](error-handling/option-result.md)「JohnSmithX」
 * [输入与输出](io/preface.md)
   * [标准输入输出](io/io.md) 
