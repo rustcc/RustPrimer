@@ -132,6 +132,6 @@ fn main() {
 }
 ```
 
-对于trait `HasArea<T>`和 struct `Square<T>`，我们通过`where T: Mul<Output=T> + Compy` 限制了`T`必须实现乘法。同时Copy则限制了Rust不再将self.side给move到返回值里去。
+对于trait `HasArea<T>`和 struct `Square<T>`，我们通过`where T: Mul<Output=T> + Copy` 限制了`T`必须实现乘法。同时Copy则限制了Rust不再将self.side给move到返回值里去。
 
 写法简单，轻松愉快。
