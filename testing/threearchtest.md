@@ -24,7 +24,7 @@ $ cd adder
 ```
 
 ### `#[test]` 标识
-打开 `src/lib,rs` 文件，可以看到如下代码
+打开 `src/lib.rs` 文件，可以看到如下代码
 
 ```rust
 #[test]
