@@ -58,7 +58,11 @@ cd racer && cargo build --release
 
 设置名为`RUST_SRC_PATH`的环境变量为`[path_to_your_rust_source]/src`
 
-其中`[path_to_your_rust_source]`表示源码所在文件夹，使用rustup获取Rust源码的情况下`[path_to_your_rust_source]`默认为`~/.multirust/toolchains/[your-toolchain]/lib/rustlib/src/rust/src`
+其中`[path_to_your_rust_source]`表示源码所在文件夹。
+
+使用rustup获取Rust源码的情况下, 源码会安装到该目录下：`$(rustc --print sysroot)/lib/rustlib/src/rust/src`
+
+为了设置环境变量，我们可以执行：`% export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"`
 
 ### 测试
 
@@ -99,7 +103,7 @@ rustup update nightly
 ```
 3. 正式安装RLS
 ```
-rustup component add rls --toolchain nightly
+rustup component add rls-preview --toolchain nightly
 rustup component add rust-analysis --toolchain nightly
 rustup component add rust-src --toolchain nightly
 ```
