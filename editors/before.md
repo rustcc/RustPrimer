@@ -103,7 +103,7 @@ rustup update nightly
 ```
 3. 正式安装RLS
 ```
-rustup component add rls --toolchain nightly
+rustup component add rls-preview --toolchain nightly
 rustup component add rust-analysis --toolchain nightly
 rustup component add rust-src --toolchain nightly
 ```
