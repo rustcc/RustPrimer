@@ -151,7 +151,7 @@ let result = f.write(buf);
 # result.unwrap(); // ignore the error
 ```
 
-这样就能无错误的编译了。
+这样就能无错误地编译了。
 
 
 ## trait的默认方法
@@ -195,7 +195,7 @@ impl FooBar for Baz {
 
 ## derive属性
 
-**Rust**提供了一个属性`derive`来自动实现一些trait，这样可以避免重复繁琐的实现他们，能被`derive`使用的trait包括：`Clone`, `Copy`, `Debug`, `Default`, `Eq`, `Hash`, `Ord`, `PartialEq`, `PartialOrd`
+**Rust**提供了一个属性`derive`来自动实现一些trait，这样可以避免重复繁琐地实现他们，能被`derive`使用的trait包括：`Clone`, `Copy`, `Debug`, `Default`, `Eq`, `Hash`, `Ord`, `PartialEq`, `PartialOrd`
 
 ```rust
 #[derive(Debug)]
