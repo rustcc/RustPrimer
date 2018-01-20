@@ -6,16 +6,17 @@
 [build-url]: https://travis-ci.org/rustcc/RustPrimer
 
 The Rust primer for beginners.
+
 给初学者的Rust中文教程。
 
 ## 在线阅读地址
 
-[点我阅读](https://wayslog.gitbooks.io/rustprimer/content/)
+[点我阅读](https://rustcc.gitbooks.io/rustprimer/content/)
 
 也可复制以下链接：
 
 ```
-https://wayslog.gitbooks.io/rustprimer/content/
+https://rustcc.gitbooks.io/rustprimer/content/
 ```
 
 ## 社区
@@ -51,11 +52,6 @@ gitbook serve
 ```
 
 即可。
-
-
-## 成为Contributors
-
-我们欢迎RustPrimer的Contributor们将自己的 `[blog/github/社交帐号]` 添加在 [1st-glance/README.md](./1st-glance/README.md)里。但严禁未参与者恶意添加帐号，违者将会被永久拒绝PR和issue权限。
 
 ## ChangeLog
 

@@ -59,6 +59,7 @@ let strong_five: Option<Rc<_>> = weak_five.upgrade();
 5. `Arc` 对于多线程的共享状态**几乎是必须的**（减少复制，提高性能）。
 
 示例：
+
 ```rust
 use std::sync::Arc;
 use std::thread;

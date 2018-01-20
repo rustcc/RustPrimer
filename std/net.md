@@ -5,9 +5,9 @@
 首先，我们需要一个一个服务器端。
 
 ```rust
-fn server<A: ToSocketAddrs>(addr: &A) -> io::Result<()> {
+fn server<A: ToSocketAddrs>(addr: A) -> io::Result<()> {
     // 建立一个监听程序
-    let listener = try!(TcpListener::bind(addr)) ;
+    let listener = try!(TcpListener::bind(&addr)) ;
     // 这个程序一次只需处理一个链接就好
     for stream in listener.incoming() {
         // 通过match再次解包 stream到
@@ -50,14 +50,14 @@ fn server<A: ToSocketAddrs>(addr: &A) -> io::Result<()> {
 然后，我们准备一个模拟TCP短链接的客户端：
 
 ```rust
-fn client<A: ToSocketAddrs>(addr: &A) -> io::Result<()> {
+fn client<A: ToSocketAddrs>(addr: A) -> io::Result<()> {
 
     let mut buf = vec![0u8;1024];
     loop {
         // 对比Listener，TcpStream就简单很多了
         // 本次模拟的是tcp短链接的过程，可以看作是一个典型的HTTP交互的基础IO模拟
         // 当然，这个通讯里面并没有HTTP协议 XD！
-        let mut stream = TcpStream::connect(addr).unwrap();
+        let mut stream = TcpStream::connect(&addr).unwrap();
         let msg = "WaySLOG comming!".as_bytes();
         // 避免发送数据太快而刷屏
         thread::sleep_ms(100);
@@ -80,10 +80,10 @@ use std::io::{Read, Write};
 use std::env;
 use std::thread;
 
-fn server<A: ToSocketAddrs>(addr: &A) -> io::Result<()> { .. }
+fn server<A: ToSocketAddrs>(addr: A) -> io::Result<()> { .. }
 
 
-fn client<A: ToSocketAddrs>(addr: &A) -> io::Result<()> { .. }
+fn client<A: ToSocketAddrs>(addr: A) -> io::Result<()> { .. }
 
 
 fn main() {
@@ -91,9 +91,9 @@ fn main() {
     args.next();
     let action = args.next().unwrap();
     if action == "s" {
-        server(&&*args.next().unwrap()).unwrap();
+        server(&args.next().unwrap()).unwrap();
     } else {
-        client(&&*args.next().unwrap()).unwrap();
+        client(&args.next().unwrap()).unwrap();
     }
 }
 

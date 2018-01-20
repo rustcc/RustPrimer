@@ -1,16 +1,16 @@
 # rust数据库操作
 
-编程时，我们依赖数据库来存储相应的数据，很多编程语言都支持对数据库的操作（为什么不是全部，因为还有html这样的东西），所以当然
-可以使用rust操作数据库。
+编程时，我们依赖数据库来存储相应的数据，很多编程语言都支持对数据库的操作，所以当然可以使用Rust操作数据库。
 
-不过在我自己操作时，发现很多问题，主要因为我不了解rust在操作数据库时，应该注意的事情，从而浪费了很多的时间，在进行数据查询时。
+不过在我自己操作时，发现很多问题，主要因为我不了解Rust在操作数据库时，应该注意的事情，从而浪费了很多的时间，在进行数据查询时。
 具体遇到的坑，我会做一些演示，从而让大家避免这些情况。
 
-首先使用rust操作postgresql,因为postgresql是我最喜欢的数据库。
+首先使用Rust操作PostgreSQL,因为PostgreSQL是我最喜欢的数据库。
 
 首先创建新项目 `cargo new db --bin`
 
-在cargo.toml中添加,postgres:
+在cargo.toml中添加 `postgres` 如下：
+
 
 ``` rust
 [package]
@@ -142,6 +142,7 @@ pub fn query_all(conn: &Connection,query: &str){
 }
 
 ```
+
 然后在main.rs 中调用相应的函数代码如下
 1. extern db ,引入db，也就是将项目本身引入
 2. use db 使用db，中的可以被引入的函数
@@ -182,14 +183,15 @@ fn main() {
 ```
 
 自己遇到的坑
+
 - 创建连接函数时，连接必须有一个返回值，所以必须指定返回值的类型，
-对于一个写python的人而言，我觉得是痛苦的，我想按照官方的写法match
+对于一个写Python的人而言，我觉得是痛苦的，我想按照官方的写法match
 一下，发现可能产生多个返回值。在编译时直接无法通过编译，所以最终
 使用了unwrap,解决问题，不过我还是没有学会，函数多值返回时我如何
 定义返回值
 
-- 在使用`&conn.query(query,&[]).unwrap()`时，我按照文档操作，文档
-说返回的是一个可迭代的数据，那也就是说，我可以使用for循环，将数据打印，
+- 在使用`&conn.query(query,&[]).unwrap()`时，我按照文档操作，文档说
+返回的是一个可迭代的数据，那也就是说，我可以使用for循环，将数据打印，
 但是发现怎么也不能实现：
 
 ``` rust
@@ -202,7 +204,9 @@ pub fn query_all(conn: &Connection,query: &str){
 }
 
 ```
+
 报错如下：
+
 ``` rust
 vagrant@ubuntu-14:~/tmp/test/rustprimer/db$ cargo run
    Compiling db v0.1.0 (file:///home/vagrant/tmp/test/rustprimer/db)
@@ -216,13 +220,14 @@ src/lib.rs:53:37: 53:47 help: run `rustc --explain E0282` to see a detailed expl
 error: aborting due to previous error
 Could not compile `db`.
 
-``
+```
+
 然后去查看了关于postgres模块的所有函数，尝试了无数种办法，依旧没有解决。
 
-可能自己眼高手低，如果从头再把rust的相关教程看一下，可能很早就发现这个问题，
-也有可能是因为习惯了写python，导致自己使用固有的思维来看待问题和钻牛角尖，才
+可能自己眼高手低，如果从头再把Rust的相关教程看一下，可能很早就发现这个问题，
+也有可能是因为习惯了写Python，导致自己使用固有的思维来看待问题和钻牛角尖，才
 导致出现这样的问题，浪费很多的时间。
 
 - 改变思维，把自己当作一个全新的新手，既要利用已有的思想来学习新的语言，同样不要
-被自己很精通的语言，固话自己的思维。
+被自己很精通的语言，固化自己的思维。
 

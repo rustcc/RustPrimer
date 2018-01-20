@@ -11,7 +11,7 @@ Rust 为 mac 用户提供了两种安装方式：
 
 `uname -a`
 
-![Mac-os-inofrmatoin](../image/get-mac-os-information.png)
+![Mac-os-inofrmatoin](../images/get-mac-os-information.png)
 
 如上图红色部分所示，如果是 **x86_64** 则证明是64位系统，需要[下载](https://static.rust-lang.org/dist/rust-1.5.0-x86_64-apple-darwin.pkg)64位安装包；
 如果是**x86-32**则需要[下载](https://static.rust-lang.org/dist/rust-1.5.0-i686-apple-darwin.pkg)32位安装包
@@ -44,7 +44,7 @@ Rust 提供简单的一键安装，命令如下：
 **注意**
 
 除了稳定版之外，Rust 还提供了 Beta 和 Nightly 版本，下载地址如下：
-https://www.rust-lang.org/downloads.html
+https://www.rust-lang.org/zh-CN/other-installers.html
 
 如果你不想安装 Rust 在你的电脑上，但是你还是像尝试一下 rust，那么这里有一个在线的环境：http://play.rust-lang.org/
 

@@ -15,7 +15,7 @@ struct Point {
   x: i32,
   y: i32,
 }
-let mut point = Point { x: 0, y: 0 };
+let point = Point { x: 0, y: 0 };
 
 // tuple structs
 struct Color(u8, u8, u8);
@@ -60,6 +60,7 @@ struct Point {
     y: i32,
 }
 ```
+
 这是因为可变性是绑定的一个属性，而不是结构体自身的。可以使用`Cell<T>`来模拟：
 
 ```rust
@@ -70,7 +71,7 @@ struct Point {
     y: Cell<i32>,
 }
 
-let mut point = Point { x: 5, y: Cell::new(6) };
+let point = Point { x: 5, y: Cell::new(6) };
 
 point.y.set(7);
 ```

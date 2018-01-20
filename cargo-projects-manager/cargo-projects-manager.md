@@ -1,10 +1,12 @@
 # cargo简介
+
 曾几何时，对于使用惯了`C/C++`语言的猿们来说，项目代码的组织与管理绝对是一场噩梦。为了解决`C/C++`项目的管理问题，猿神们想尽了各种办法，开发出了各种五花八门的项目管理工具，从一开始的`automake`到后来的`cmake`、`qmake`等等，但结果并不如人意，往往是解决了一些问题，却引入了更多的问题，`C/C++`猿们经常会陷入在掌握语言本身的同时，还要掌握复杂的构建工具语法的窘境。无独有偶，`java`的项目代码组织与管理工具`ant`和`maven`也存在同样的问题。复杂的项目管理配置参数，往往让猿们不知所措。
 
 作为一门现代语言，`rust`自然要摒弃石器时代项目代码管理的方法和手段。`rust`项目组为各位猿提供了超级大杀器`cargo`，以解决项目代码管理所带来的干扰和困惑。用过`node.js`的猿们，应该对`node.js`中的神器`npm`、`grunt`、`gulp`等工具印象深刻。作为新一代静态语言中的翘楚，`rust`官方参考了现有语言管理工具的优点，于是就产生了`cargo`。
 
 言而总之，作为`rust`的代码组织管理工具，`cargo`提供了一系列的工具，从项目的建立、构建到测试、运行直至部署，为`rust`项目的管理提供尽可能完整的手段。同时，与`rust`语言及其编译器`rustc`本身的各种特性紧密结合，可以说既是语言本身的知心爱人，又是`rust`猿们的贴心小棉袄，谁用谁知道。
 废话就不多说了，直接上例子和各种高清无马图。
+
 # cargo入门
 首先，当然还是废话，要使用cargo，自然首先要安装cargo。安装cargo有三种方法，前两种方法请参见rust的安装方法，因为cargo工具是官方正统出身，当然包含在官方的分发包中。第三种方法即从[`cargo`](https://github.com/rust-lang/cargo)项目的源码仓库进行构建。Oh，My God。的确是废话。
 
@@ -59,7 +61,7 @@ Hello, world!
 # 基于cargo的rust项目组织结构
 这次不说废话了，先上高清无马图：
 
-![cargo项目组织结构](../image/project-structure.png)
+![cargo项目组织结构](../images/project-structure.png)
 
 对上述cargo默认的项目结构解释如下：
 
@@ -89,6 +91,7 @@ authors = ["fuying"]
 
 [dependencies]
 ```
+
 toml文件是由诸如[package]或[dependencies]这样的段落组成，每一个段落又由多个字段组成，这些段落和字段就描述了项目组织的基本信息，例如上述toml文件中的[package]段落描述了`hello_world`项目本身的一些信息，包括项目名称（对应于name字段）、项目版本（对应于version字段）、作者列表（对应于authors字段）等；[dependencies]段落描述了`hello_world`项目的依赖项目有哪些。
 
 下面我们来看看toml描述文件中常用段落和字段的意义。
@@ -119,6 +122,7 @@ geometry = { path = "crates/geometry" }
 
 cargo另一个重要的功能，即将软件开发过程中必要且非常重要的测试环节进行集成，并通过代码属性声明或者toml文件描述来对测试进行管理。其中，单元测试主要通过在项目代码的测试代码部分前用`#[test]`属性来描述，而集成测试，则一般都会通过toml文件中的[[test]]段落进行描述。
 例如，假设集成测试文件均位于tests文件夹下，则toml可以这样来写：
+
 ```toml
 [[test]]
 name = "testinit"
@@ -127,8 +131,8 @@ path = "tests/testinit.rs"
 [[test]]
 name = "testtime"
 path = "tests/testtime.rs"
-
 ```
+
 上述例子中，name字段定义了集成测试的名称，path字段定义了集成测试文件相对于本toml文件的路径。
 看看，定义集成测试就是如此简单。
 需要注意的是:
@@ -149,6 +153,7 @@ name = "bin1"
 path = "bin/bin1.rs"
 
 ```
+
 对于'[[example]]'和'[[bin]]'段落中声明的examples和bins，需要通过'cargo run --example NAME'或者'cargo run --bin NAME'来运行，其中NAME对应于你在name字段中定义的名称。
 
 # 构建、清理、更新以及安装

@@ -37,6 +37,7 @@ fn print_area<T: HasArea>(shape: T) {
     println!("This shape has an area of {}", shape.area());
 }
 ```
+
 其中函数`print_area()`中的泛型参数`T`被添加了一个名为`HasArea`的特性约束 (trait constraint)，
 用以确保任何实现了`HasArea`的类型将拥有一个`.area()`方法。
 如果需要多个特性限定 (multiple trait bounds)，可以使用`+`：
@@ -59,6 +60,7 @@ fn bar<T, K>(x: T, y: K)
     println!("{:?}", y);
 }
 ```
+
 其中第二个例子使用了更灵活的`where`从句，它还允许限定的左侧可以是任意类型，
 而不仅仅是类型参数。
 
@@ -103,7 +105,7 @@ Trait::method(args);
 
 * 如果一个特性不在当前作用域内，它就不能被实现。
 * 不管是特性还是`impl`，都只能在当前的包装箱内起作用。
-* 带有特性约束的泛型函数使用单态 (monomorphization)，
+* 带有特性约束的泛型函数使用单态化实现 (monomorphization)，
 所以它是静态派分的 (statically dispatched)。
 
 下面列举几个非常有用的标准库特性：
@@ -134,6 +136,7 @@ Option的典型用法:
 let x: Option<i32> = Some(5);
 let y: Option<f64> = Some(5.0f64);
 ```
+
 其中`<T>`部分表明它是一个泛型数据类型。当然，泛型参数也可以用于函数参数和结构体域：
 
 ```rust

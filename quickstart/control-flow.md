@@ -37,6 +37,7 @@ for var in expression {
     code
 }
 ```
+
 其中`expression`是一个迭代器 (iterator)，具体的例子为`0..10` (不包含最后一个值)，
 或者`[0, 1, 2].iter()`。
 
@@ -74,6 +75,7 @@ match day {
   _ => println!("invalid"),
 }
 ```
+
 其中`|`用于匹配多个值，`...`匹配一个范围 (包含最后一个值)，并且`_`在这里是必须的，
 因为`match`强制进行穷尽性检查 (exhaustiveness checking)，必须覆盖所有的可能值。
 如果需要得到`|`或者`...`匹配到的值，可以使用`@`绑定变量：
@@ -116,8 +118,7 @@ match pair {
 }
 ```
 
-`match`的这种解构同样适用于结构体或者枚举。如果有必要，
-还可以使用`..`来忽略域或者数据：
+`match`的这种解构同样适用于结构体或者枚举。如果有必要，还可以使用`..`来忽略域或者数据：
 
 ```rust
 struct Point {
@@ -139,6 +140,7 @@ enum OptionalInt {
 let x = OptionalInt::Value(5);
 
 match x {
+    // 这里是 match 的 if guard 表达式，我们将在以后的章节进行详细介绍
     OptionalInt::Value(i) if i > 5 => println!("Got an int bigger than five!"),
     OptionalInt::Value(..) => println!("Got an int!"),
     OptionalInt::Missing => println!("No such luck."),

@@ -9,6 +9,7 @@ trait HasArea {
     fn area(&self) -> f64;
 }
 ```
+
 **trait**里面的函数可以没有函数体，实现代码交给具体实现它的类型去补充：
 
 ```rust
@@ -33,6 +34,7 @@ fn main() {
     println!("circle c has an area of {}", c.area());
 }
 ```
+
 **注**: **&self**表示的是**area**这个函数会将调用者的借代引用作为参数
 
 这个程序会输出：
@@ -43,7 +45,7 @@ circle c has an area of 3.141592653589793
 
 ## trait与泛型
 
-> 我们了解了Rust中trait的定义和使用，接下来我们介绍一下它的使用场景，从中我们可以窥探出面向接口编程带来的惊喜
+> 我们了解了Rust中trait的定义和使用，接下来我们介绍一下它的使用场景，从中我们可以窥探出接口这特性带来的惊喜
 
 我们知道泛型可以指任意类型，但有时这不是我们想要的，需要给它一些约束。
 
@@ -69,6 +71,7 @@ fn foo<T: Debug + Clone>(s: T) {
     println!("{:?}", s);
 }
 ```
+
 `<T: Debug + Clone>`中`Debug`和`Clone`使用`+`连接，标示泛型`T`需要同时实现这两个trait。
 
 #### where关键字
@@ -148,7 +151,7 @@ let result = f.write(buf);
 # result.unwrap(); // ignore the error
 ```
 
-这样就能无错误的编译了。
+这样就能无错误地编译了。
 
 
 ## trait的默认方法
@@ -192,7 +195,7 @@ impl FooBar for Baz {
 
 ## derive属性
 
-**Rust**提供了一个属性`derive`来自动实现一些trait，这样可以避免重复繁琐的实现他们，能被`derive`使用的trait包括：`Clone`, `Copy`, `Debug`, `Default`, `Eq`, `Hash`, `Ord`, `PartialEq`, `PartialOrd`
+**Rust**提供了一个属性`derive`来自动实现一些trait，这样可以避免重复繁琐地实现他们，能被`derive`使用的trait包括：`Clone`, `Copy`, `Debug`, `Default`, `Eq`, `Hash`, `Ord`, `PartialEq`, `PartialOrd`
 
 ```rust
 #[derive(Debug)]

@@ -47,7 +47,7 @@
   * [trait关键字](trait/trait.md)
   * [trait对象](trait/trait-object.md)
 * [泛型](generic/generic.md)「stormgbs」
-* [可变性、所有权、租借和生命期](ownership-system/ownership_system.md)「stormgbs」
+* [可变性、所有权、租借和生命期](ownership-system/preface.md)「stormgbs」
   * [所有权](ownership-system/ownership.md)
   * [引用和借用](ownership-system/borrowing_reference.md)
   * [生命周期](ownership-system/lifetime.md)
@@ -63,8 +63,12 @@
 * [模块和包系统、Prelude](module/preface.md)「daogangtang」
   * [模块 module 和包 crate](module/module.md)
   * [Prelude](module/prelude.md)
+  * [pub restricted](module/pub-restricted.md)
 * [Option、Result与错误处理](error-handling/option-result.md)「JohnSmithX」
-* [输入与输出](io/io.md)「tennix」
+* [输入与输出](io/preface.md)
+  * [标准输入输出](io/io.md) 
+  * [print! 宏](io/output.md)
+  * [文件输入输出](io/file-io.md)「tennix」
 * [宏系统](macro/macro.md)「tennix」
 * [堆、栈与Box](heap-stack/heap-stack.md)「tennix」
 * [几种智能指针](rcarc/preface.md)「daogangtang」
@@ -100,7 +104,7 @@
   * [评测 (benchmark)](testing/bench.md)
 * [代码风格](coding-style/style.md)「tiansiyuan」
 * [Any与反射](any/any.md)「wayslog」
-* [安全（safe）](safe/safety.md)「daogangtang」
+* [安全](safe/safety.md)「daogangtang」
 * [常用数据结构实现](data-structure/preface.md)「Naupio」
   * [栈结构](data-structure/stack.md)
   * [队列](data-structure/queue.md)

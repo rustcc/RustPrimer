@@ -6,21 +6,25 @@
 Rust 中，`crate` 是一个独立的可编译单元。具体说来，就是一个或一批文件（如果是一批文件，那么有一个文件是这个 crate 的入口）。它编译后，会对应着生成一个可执行文件或一个库。
 
 执行 `cargo new foo`，会得到如下目录层级：
+
 ```
 foo
 ├── Cargo.toml
 └── src
     └── lib.rs
 ```
+
 这里，`lib.rs` 就是一个 crate（入口），它编译后是一个库。一个工程下可以包含不止一个 crate，本工程只有一个。
 
 执行 `cargo new --bin bar`，会得到如下目录层级：
+
 ```
 bar
 ├── Cargo.toml
 └── src
     └── main.rs
 ```
+
 这里，`main.rs` 就是一个 crate（入口），它编译后是一个可执行文件。
 
 
@@ -48,6 +52,7 @@ mod aaa {
     }
 }
 ```
+
 我们可以继续写如下代码：
 
 ```rust
@@ -65,6 +70,7 @@ mod aaa {
     }
 }
 ```
+
 还可以继续写：
 
 ```rust
@@ -129,6 +135,7 @@ foo
     └── aaa.rs
     └── main.rs
 ```
+
 我们在 `aaa.rs` 中，写上：
 
 ```rust
@@ -136,6 +143,7 @@ pub fn print_aaa() {
     println!("{}", 25);
 }
 ```
+
 在 `main.rs` 中，写上：
 
 ```rust
@@ -161,7 +169,9 @@ Rust 的模块支持层级结构，但这种层级结构本身与文件系统目
 
 那么，Rust 的多层模块遵循如下两条规则：
 
-1. `mod xxx;` 默认优先查找，同级目录下的 `xxx.rs` 文件；
+1. 优先查找`xxx.rs` 文件
+    1.  `main.rs`、`lib.rs`、`mod.rs`中的`mod xxx;` 默认优先查找同级目录下的 `xxx.rs` 文件；
+    2.  其他文件`yyy.rs`中的`mod xxx;`默认优先查找同级目录的`yyy`目录下的 `xxx.rs` 文件；
 2. 如果 `xxx.rs` 不存在，则查找 `xxx/mod.rs` 文件，即 `xxx` 目录下的 `mod.rs` 文件。
 
 上述两种情况，加载成模块后，效果是相同的。Rust 就凭这两条规则，通过迭代使用，结合 `pub` 关键字，实现了对深层目录下模块的加载；
@@ -255,7 +265,7 @@ use super::xxx;
 
 路径中的 `*` 符号：
 ```rust
-use xxx:*
+use xxx::*;
 ```
 表示导入 `xxx` 模块下的所有可见 item（加了 pub 标识的 item）。
 
@@ -265,10 +275,12 @@ use xxx:*
 
 还是举上面那个 `a::b::c::d` 的例子。我们在 `main.rs` 中，要调用 `d`，得使用 `use a::b::c::d;` 来调用。而如果我们修改 `a/mod.rs` 文件为：
 `a/mod.rs` 文件内容：
+
 ```rust
 pub mod b;
 pub use b::c::d;
 ```
+
 那么，我们在 `main.rs` 中，就可以使用 `use a::d;` 来调用了。从这个例子来看没觉得方便多少。但是如果开发的一个库中有大量的内容，而且是在不同层次的模块中。那么，通过统一导出到一个地方，就能大大方便接口使用者。
 
 ### 加载外部 crate
@@ -278,11 +290,13 @@ pub use b::c::d;
 ```rust
 extern crate xxx;
 ```
+
 这样来引入的。
 
 注：要使上述引用生效，还必须在 `Cargo.toml` 的 `dependecies` 段，加上 `xxx="version num"` 这种依赖说明，详情见 `Cargo 项目管理` 这一章。
 
 引入后，就相当于引入了一个符号 `xxx`，后面可以直接以这个 `xxx` 为根引用这个 crate 中的 item：
+
 ```rust
 extern crate xxx;
 

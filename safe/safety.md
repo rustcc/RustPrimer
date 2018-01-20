@@ -58,10 +58,10 @@ Rust 中定义的不确定性行为有如下一些：
 
 下面一些链接，给出了安全性更详细的讲解（部分未来会有对应的中文翻译）。
 
-[1] [Unsafe](http://doc.rust-lang.org/book/unsafe.html)
-[2] [Meet Safe and Unsafe](http://doc.rust-lang.org/nightly/nomicon/meet-safe-and-unsafe.html)
-[3] [How Safe and Unsafe Interact](http://doc.rust-lang.org/nightly/nomicon/safe-unsafe-meaning.html)
-[4] [蓦然回首万事空 ————空指针漫谈](http://jimhuang.cn/2015/09/12/%E8%93%A6%E7%84%B6%E5%9B%9E%E9%A6%96%E4%B8%87%E4%BA%8B%E7%A9%BA%20%E2%80%94%E2%80%94%E2%80%94%E2%80%94%E7%A9%BA%E6%8C%87%E9%92%88%E6%BC%AB%E8%B0%88/)
+- [Unsafe](http://doc.rust-lang.org/book/unsafe.html)
+- [Meet Safe and Unsafe](http://doc.rust-lang.org/nightly/nomicon/meet-safe-and-unsafe.html)
+- [How Safe and Unsafe Interact](http://doc.rust-lang.org/nightly/nomicon/safe-unsafe-meaning.html)
+- [蓦然回首万事空 ————空指针漫谈](http://jimhuang.cn/2015/09/12/%E8%93%A6%E7%84%B6%E5%9B%9E%E9%A6%96%E4%B8%87%E4%BA%8B%E7%A9%BA%20%E2%80%94%E2%80%94%E2%80%94%E2%80%94%E7%A9%BA%E6%8C%87%E9%92%88%E6%BC%AB%E8%B0%88/)
 
 
 

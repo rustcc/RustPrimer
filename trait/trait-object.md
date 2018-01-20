@@ -20,7 +20,7 @@ fn main() {
 }
 ```
 
-`x: &Foo`其中`x`是一个trait对象，用指针的目的是因为，`x`可以是任意实现`Foo`的类型实例，内存大小并不确定，但指针的大小是固定的。
+`x: &Foo`其中`x`是一个trait对象，这里用指针是因为`x`可以是任意实现`Foo`的类型实例，内存大小并不确定，但指针的大小是固定的。
 
 ## trait对象的实现
 
@@ -141,6 +141,7 @@ pub trait Clone: Sized {
 总结：
 
 如果一个`trait`方法是`object safe`的，它需要满足：
+
 * 方法有`Self: Sized`约束， 或者
 * 同时满足以下所有条件：
   * 没有泛型参数
@@ -148,6 +149,7 @@ pub trait Clone: Sized {
   * 除了`self`之外的其它参数和返回值不能使用`Self`类型
 
 如果一个`trait`是`object-safe`的，它需要满足：
+
 * 所有的方法都是`object-safe`的，并且
 * trait 不要求 `Self: Sized` 约束
 
