@@ -7,7 +7,7 @@
 元组结构体 (tuple struct) 是由元组和结构体混合构成，元组结构体有名称，
 但是它的域没有。当元组结构体只有一个域时，称为新类型 (newtype)。
 没有任何域的结构体，称为类单元结构体 (unit-like struct)。
-结构体中的值默认是不可变的，需要使用`mut`使其可变。
+结构体中的值默认是不可变的，需要给结构体加上`mut`使其可变。
 
 ```rust
 // structs
@@ -75,7 +75,29 @@ let mut point = Point { x: 5, y: Cell::new(6) };
 point.y.set(7);
 ```
 
-此外，结构体的域默认是私有的，可以使用`pub`关键字将其设置成公开。
+此外，结构体的域对其所在模块 (mod) 之外默认是私有的，可以使用`pub`关键字将其设置成公开。
+
+```rust
+mod graph {
+    #[derive(Default)]
+    pub struct Point {
+        pub x: i32,
+        y: i32,
+    }
+
+    pub fn inside_fn() {
+        let p = Point {x:1, y:2};
+        println!("{}, {}", p.x, p.y);
+    }
+}
+
+fn outside_fn() {
+    let p = graph::Point::default();
+    println!("{}", p.x);
+    // println!("{}", p.y);
+    // field `y` of struct `graph::Point` is private
+}
+```
 
 ## 枚举
 Rust有一个集合类型，称为枚举 (enum)，代表一系列子数据类型的集合。
@@ -98,5 +120,5 @@ let x: Message = Message::Move { x: 3, y: 4 };
 也不支持像`+`和`*`这样的双目运算符，需要自己实现，或者使用`match`进行匹配。
 
 枚举默认也是私有的，如果使用`pub`使其变为公有，则它的元素也都是默认公有的。
-这一点是与结构体不同的：即使结构体是公有的，它的域仍然是默认私有的。
-此外，枚举和结构体也可以是递归的 (recursive)。
+这一点是与结构体不同的：即使结构体是公有的，它的域仍然是默认私有的。这里的共有/私有仍然
+是针对其定义所在的模块之外。此外，枚举和结构体也可以是递归的 (recursive)。
