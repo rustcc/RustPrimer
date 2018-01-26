@@ -164,7 +164,7 @@ format!("{:?}", "Hello");
 
 好了好了，说了这么多，估计你也头昏脑涨的了吧，下面来跟我写一下format宏的完整用法。仔细体会并提炼每一个词的意思和位置。
 
-```
+```rust
 format_string := <text> [ format <text> ] *
 format := '{' [ argument ] [ ':' format_spec ] '}'
 argument := integer | identifier
