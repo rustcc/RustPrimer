@@ -15,9 +15,9 @@ fn create_file(filename: &str, buf: &[u8]) -> io::Result<()> {
 }
 
 // read from file to String
-fn read_file(filename: &str, mut buf: &mut String) -> io::Result<()> {
+fn read_file(filename: &str, buf: &mut String) -> io::Result<()> {
 	let mut f = try!(File::open(filename));
-	try!(f.read_to_string(&mut buf));
+	try!(f.read_to_string(&buf));
 	Ok(())
 }
 
