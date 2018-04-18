@@ -133,8 +133,8 @@ enum Option<T> {
 ```
 Option的典型用法:  
 ```rust
-let x: Option<i32> = Some(5);
-let y: Option<f64> = Some(5.0f64);
+let x: Option<i32> = Option::Some(5);
+let y: Option<f64> = Option::Some(5.0f64);
 ```
 
 其中`<T>`部分表明它是一个泛型数据类型。当然，泛型参数也可以用于函数参数和结构体域：
