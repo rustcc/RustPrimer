@@ -206,4 +206,75 @@ fn main() {
 }
 ```
 
+## impl Trait
+在版本1.26 开始，Rust提供了`impl Trait`的写法，作为和Scala 对等的`既存型别(Existential Type)`的写法。
 
+在下面这个写法中，`fn foo()`将返回一个实作了`Trait`的trait。
+
+```rust
+//before
+fn foo() -> Box<Trait> {
+    // ...
+}
+
+//after
+fn foo() -> impl Trait {
+    // ...
+}
+```
+
+相较于1.25 版本以前的写法，新的写法会在很多场合中更有利于开发和执行效率。
+
+#### impl Trait 的普遍用例
+
+```rust
+trait Trait {
+    fn method(&self);
+}
+
+impl Trait for i32 {
+    // implementation goes here
+}
+
+impl Trait for f32 {
+    // implementation goes here
+}
+```
+
+利用Box 会意味：即便回传的内容是固定的，但也会使用到动态内存分配。利用`impl Trait` 的写法可以避免便用Box。
+
+```rust
+//before
+fn foo() -> Box<Trait> {
+    Box::new(5) as Box<Trait>
+}
+
+//after
+fn foo() -> impl Trait {
+    5
+}
+```
+
+#### 其他受益的用例
+
+闭包:
+```rust
+// before
+fn foo() -> Box<Fn(i32) -> i32> {
+    Box::new(|x| x + 1)
+}
+
+// after
+fn foo() -> impl Fn(i32) -> i32 {
+    |x| x + 1
+}
+```
+
+传参：
+```rust
+// before
+fn foo<T: Trait>(x: T) {
+
+// after
+fn foo(x: impl Trait) {
+```
