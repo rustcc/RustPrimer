@@ -254,7 +254,7 @@ Rust的枚举(`enum`)类型，跟C语言的枚举有点接近，然而更强大�
 enum Direction {
     West,
     North,
-    Sourth,
+    South,
     East,
 }
 ```
