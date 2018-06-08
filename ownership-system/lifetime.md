@@ -341,7 +341,7 @@ impl<'a> Person<'a> {
 
 `get_age`方法的输出值依赖一个输入值`&self`，这种情况下，Rust编译器可以自动推导为：
 
-```
+```rust
 impl<'a> Person<'a> {
 	fn get_age(&'a self) -> &'a u8 {
 		self.age
@@ -352,7 +352,7 @@ impl<'a> Person<'a> {
 **如果输出值（借用）依赖了多个输入值呢？**
 
 
-```
+```rust
 impl<'a, 'b> Person<'a> {
 	fn get_max_age(&'a self, p: &'a Person) -> &'a u8 {
 		if self.age > p.age {
