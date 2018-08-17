@@ -64,12 +64,12 @@ pub mod a {
 }
 ```
 
-这种情况可以正常工作，但是，这里有个严重的问题：没有人能够十分清晰的说明 `pub fn semiseret` 使用到了哪些地方，需要通过上下文进行判断：
+这种情况可以正常工作，但是，这里有个严重的问题：没有人能够十分清晰的说明 `pub fn semisecret` 使用到了哪些地方，需要通过上下文进行判断：
 
-1. 所有可以访问 `semiseret` 的模块；
-2. 在所有可以访问 `semiseret` 的模块中，是否存在 `semiseret` 的 re-export;
+1. 所有可以访问 `semisecret` 的模块；
+2. 在所有可以访问 `semisecret` 的模块中，是否存在 `semisecret` 的 re-export;
 
-同时，如果在 `a` 中使用 `pub use self::b::semisecret` ，那么所有人都可以通过 `use` 访问 `fn semiseret`，但是实际上，这个函数只需要让 `mod a` 访问就可以了。
+同时，如果在 `a` 中使用 `pub use self::b::semisecret` ，那么所有人都可以通过 `use` 访问 `fn semisecret`，但是实际上，这个函数只需要让 `mod a` 访问就可以了。
 
 ## pub restricted 的使用
 
