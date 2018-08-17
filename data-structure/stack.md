@@ -73,7 +73,7 @@ Option 里面包括元素，None 和 Some(T) ，这样就很轻松的描述了 n
 
 [Error Handling in Rust](http://blog.burntsushi.net/rust-error-handling/)
 
-[rustbyexample 的 Options with Results部分](http://rustbyexample.com/error/option_with_result.html)
+[rustbyexample 的 Error handling](https://doc.rust-lang.org/stable/rust-by-example/error.html)
 
 ## 实现 `new( ) push( ) pop( )`
 接下来是实现 stack 的主要功能了。
