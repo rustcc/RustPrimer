@@ -15,8 +15,8 @@
   }
   ```
   
-  main函数的返回值类型是`()`，它是一个特殊的元组——没有元素的元组，称为`unit`，它表示一个函数没有任何信息需要返回。在Rust Reference的[8.1.3 Tuple types](https://doc.rust-lang.org/reference.html#tuple-types)中是的描述如下：
-  > For historical reasons and convenience, the tuple type with no elements (__()__) is often called ‘unit’ or ‘the unit type’.
+  main函数的返回值类型是`()`，它是一个特殊的元组——没有元素的元组，称为`unit`，它表示一个函数没有任何信息需要返回。在Rust Reference的[Types](https://doc.rust-lang.org/reference/types.html#tuple-types)中是的描述如下：
+  > For historical reasons and convenience, the tuple type with no elements (`()`) is often called ‘unit’ or ‘the unit type’.
 
   `()`类型，其实类似于C/C++、Java、C#中的`void`类型。
 
