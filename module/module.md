@@ -149,7 +149,7 @@ pub fn print_aaa() {
 ```rust
 mod aaa;
 
-use aaa::print_aaa;
+use self::aaa::print_aaa;
 
 fn main () {
     print_aaa();
@@ -222,7 +222,7 @@ pub mod b;
 ```rust
 mod a;
 
-use a::b::c::d;
+use self::a::b::c::d;
 
 fn main() {
     d::print_ddd();
