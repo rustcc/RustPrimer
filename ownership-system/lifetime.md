@@ -86,7 +86,7 @@ fn foo<'a>(x: &'a str) -> &'a str {
 }
 ```
 
-在这里，约束返回值的Lifetime必须大于或等于参数`x`的Lifetime。下面函数写法也是合法的：
+在这里，约束返回值的Lifetime必须是其依赖的输入值参数`x`的Lifetime的子集。下面函数写法也是合法的：
 
 ```rust
 fn foo<'a>(x: &'a str) -> &'a str {
@@ -94,7 +94,7 @@ fn foo<'a>(x: &'a str) -> &'a str {
 }
 ```
 
-为什么呢？这是因为字符串"hello, world!"的类型是`&'static str`，我们知道`static`类型的Lifetime是整个程序的运行周期，所以她比任意传入的参数的Lifetime`'a`都要长，即`'static >= 'a`满足。
+为什么呢？这是因为字符串"hello, world!"的类型虽然是`&'static str`，我们知道`static`类型的Lifetime是整个程序的运行周期，但它的生命周期不依赖于输入值`x`的生命周期，因此可以编译成功。
 
 
 在上例中Rust可以自动推导Lifetime，所以并不需要程序员显式指定Lifetime `'a` 。
