@@ -48,5 +48,3 @@ In addition to the stable version，rust also provided Beta with Nightly version
 https://www.rust-lang.org/downloads.html
 
 If you don't want to install rust on your computer，but you still want try rust，Then here is an online environment：http://play.rust-lang.org/
-
-University of Science and Technology of China mirror source contains [rust-static](http://mirrors.ustc.edu.cn/rust-static/)，Students who have problems with the ladder temporarily can try to download the compiler from here; and also Crates source，See details[Instructions here](https://servers.ustclug.org/2016/01/mirrors-add-rust-crates/)。
