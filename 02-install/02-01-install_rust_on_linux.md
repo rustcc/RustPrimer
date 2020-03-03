@@ -41,7 +41,7 @@ Rust provide simple one-click installation, the command is as follows：
 Open the terminal and execute the above command.
 
 
-**note**
+**Notice**
 
 
 In addition to the stable version，rust also provided Beta with Nightly version，download address is as follows：
