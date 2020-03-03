@@ -9,7 +9,7 @@ Rust two installation methods for Linux users：
 To download the installation package directly, you need to check whether your current operating system is 64-bit or 32-bit, and download the corresponding installation package.
 
 To view the operating system, execute the following command in the terminal:
-
+**Only on Linux and MacOS**
 `uname -a`
 
 The result is shown below：
