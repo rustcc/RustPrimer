@@ -16,9 +16,9 @@ The result is shown below：
 
 ![check system info](../image/01-install-on-linux-check-system.png)
 
-As shown above, if it is **x86_64** 64-bit system，to [download] (https://static.rust-lang.org/dist/rust-1.5.0-x86_64-unknown-linux-gnu.tar.gz)64-bit installation package；
+As shown above, if it is **x86_64** 64-bit system，to [download](https://static.rust-lang.org/dist/rust-1.5.0-x86_64-unknown-linux-gnu.tar.gz) 64-bit installation package；
 
-If operating system is **x86-32** to [download] (https://static.rust-lang.org/dist/rust-1.5.0-i686-unknown-linux-gnu.tar.gz)32-bit installation package;
+If operating system is **x86-32** to [download](https://static.rust-lang.org/dist/rust-1.5.0-i686-unknown-linux-gnu.tar.gz) 32-bit installation package;
 
 After downloading the installation package, unzip and run. *At the time of this writing, the latest stable version is 1.5.0,*
  Unzip：`tar -zxvf rust-1.5.0-x86_64-unknown-linux-gnu.tar.gz`
