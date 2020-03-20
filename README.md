@@ -35,6 +35,7 @@ https://rustcc.gitbooks.io/rustprimer/content/
 ### telegram社群
 
 rust社区深水群：[https://t.me/rust_deep_water](https://t.me/rust_deep_water)
+
 rust众: [https://t.me/rust_zh](https://t.me/rust_zh)
 
 
