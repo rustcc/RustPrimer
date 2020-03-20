@@ -27,10 +27,16 @@ https://rustcc.gitbooks.io/rustprimer/content/
 ```
     Rust语言中文社区 144605258 （已满）
     Rust编程语言社区2群 303838735
-    rust社区深水群(telegram群)：https://t.me/rust_deep_water
+    (telegram群)：
 ```
 
 *进群必须附带您的github地址，否则不予通过*
+
+### telegram社群
+
+rust社区深水群：[https://t.me/rust_deep_water](https://t.me/rust_deep_water)
+rust众: [https://t.me/rust_zh](https://t.me/rust_zh)
+
 
 ### 社区
 
