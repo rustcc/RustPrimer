@@ -6,15 +6,7 @@
   * [Mac](install/install_rust_on_mac_os.md)
   * [Windows](install/install_rust_on_windows.md)
   * [版本管理工具: rustup](install/rustup.md)
-* [编辑器](editors/preface.md)
-  * [前期准备](editors/before.md)「wayslog」
-  * [vim](editors/vim.md)「wayslog」
-  * [emacs](editors/emacs.md)「tiansiyuan」
-  * [vscode](editors/vscode.md)「daogangtang」
-  * [atom](editors/atom.md)「wayslog」
-  * [sublime](editors/sublime.md)
-  * [visual studio](editors/visualstudio.md)「marvinguo」
-  * [spacemacs](editors/spacemacs.md)「wayslog」
+  * [IDE或编辑器](install/ide_or_editor.md)「DCjanus」
 * [Rust快速入门](quickstart/quickstart.md)「Naupio」
   * [Rust旅程](quickstart/rust-travel.md)
   * [变量绑定与原生类型](quickstart/primitive-type.md)
